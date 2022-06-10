@@ -86,6 +86,50 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/createClass.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+module.exports = _createClass;
+
+/***/ }),
+
 /***/ "./src/img/background.png":
 /*!********************************!*\
   !*** ./src/img/background.png ***!
@@ -199,19 +243,19 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _img_platform_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/platform.png */ "./src/img/platform.png");
-/* harmony import */ var _img_hills_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/hills.png */ "./src/img/hills.png");
-/* harmony import */ var _img_background_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/background.png */ "./src/img/background.png");
-/* harmony import */ var _img_tPlatform_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/tPlatform.png */ "./src/img/tPlatform.png");
-/* harmony import */ var _img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/toadRunRight.png */ "./src/img/toadRunRight.png");
-/* harmony import */ var _img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/toadRunLeft.png */ "./src/img/toadRunLeft.png");
-/* harmony import */ var _img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/toadRightStand.png */ "./src/img/toadRightStand.png");
-/* harmony import */ var _img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/toadLeftStand.png */ "./src/img/toadLeftStand.png");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _img_platform_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/platform.png */ "./src/img/platform.png");
+/* harmony import */ var _img_hills_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/hills.png */ "./src/img/hills.png");
+/* harmony import */ var _img_background_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/background.png */ "./src/img/background.png");
+/* harmony import */ var _img_tPlatform_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/tPlatform.png */ "./src/img/tPlatform.png");
+/* harmony import */ var _img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/toadRunRight.png */ "./src/img/toadRunRight.png");
+/* harmony import */ var _img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/toadRunLeft.png */ "./src/img/toadRunLeft.png");
+/* harmony import */ var _img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/toadRightStand.png */ "./src/img/toadRightStand.png");
+/* harmony import */ var _img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/toadLeftStand.png */ "./src/img/toadLeftStand.png");
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 
 
@@ -230,7 +274,7 @@ var gravity = 0.5;
 
 var Player = /*#__PURE__*/function () {
   function Player() {
-    _classCallCheck(this, Player);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Player);
 
     this.speed = 10;
     this.position = {
@@ -242,22 +286,23 @@ var Player = /*#__PURE__*/function () {
       y: 0
     };
     this.width = 90;
-    this.height = 120;
+    this.height = 120; //sprite animations imported
+
     this.frames = 0;
     this.sprites = {
       stand: {
-        right: createImage(_img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_6__["default"]),
-        left: createImage(_img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_7__["default"])
+        right: createImage(_img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_8__["default"]),
+        left: createImage(_img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_9__["default"])
       },
       run: {
-        right: createImage(_img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_4__["default"]),
-        left: createImage(_img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_5__["default"])
+        right: createImage(_img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_6__["default"]),
+        left: createImage(_img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_7__["default"])
       }
     };
     this.currentSprite = this.sprites.stand.right;
   }
 
-  _createClass(Player, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Player, [{
     key: "draw",
     value: function draw() {
       c.drawImage(this.currentSprite, 300 * this.frames, 0, 300, 400, this.position.x, this.position.y, this.width, this.height);
@@ -284,7 +329,7 @@ var Platform = /*#__PURE__*/function () {
         y = _ref.y,
         image = _ref.image;
 
-    _classCallCheck(this, Platform);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Platform);
 
     this.position = {
       x: x,
@@ -295,7 +340,7 @@ var Platform = /*#__PURE__*/function () {
     this.height = image.height;
   }
 
-  _createClass(Platform, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Platform, [{
     key: "draw",
     value: function draw() {
       c.drawImage(this.image, this.position.x, this.position.y);
@@ -311,7 +356,7 @@ var GenericObject = /*#__PURE__*/function () {
         y = _ref2.y,
         image = _ref2.image;
 
-    _classCallCheck(this, GenericObject);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, GenericObject);
 
     this.position = {
       x: x,
@@ -322,7 +367,7 @@ var GenericObject = /*#__PURE__*/function () {
     this.height = image.height;
   }
 
-  _createClass(GenericObject, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(GenericObject, [{
     key: "draw",
     value: function draw() {
       c.drawImage(this.image, this.position.x, this.position.y);
@@ -332,17 +377,59 @@ var GenericObject = /*#__PURE__*/function () {
   return GenericObject;
 }();
 
+var Zombie = /*#__PURE__*/function () {
+  function Zombie(_ref3) {
+    var position = _ref3.position,
+        velocity = _ref3.velocity;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Zombie);
+
+    this.position = {
+      x: position.x,
+      y: position.y
+    };
+    this.velocity = {
+      x: velocity.x,
+      y: velocity.y
+    };
+    this.width = 50;
+    this.height = 50;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Zombie, [{
+    key: "draw",
+    value: function draw() {
+      c.fillStyle = 'red';
+      c.fillRect(this.position.x, this.position.y, this.width, this.height);
+    }
+  }, {
+    key: "update",
+    value: function update() {
+      this.draw();
+      this.position.x += this.velocity.x;
+      this.position.y += this.velocity.y;
+      if (this.position.y + this.height + this.velocity.y <= canvas.height) this.velocity.y += gravity;
+    }
+  }]);
+
+  return Zombie;
+}(); //create image function
+
+
 function createImage(imageSrc) {
   var image = new Image();
   image.src = imageSrc;
   return image;
-}
+} //create player after platforms loaded function
+//defining platforms
 
-var platformImage = createImage(_img_platform_png__WEBPACK_IMPORTED_MODULE_0__["default"]);
-var tPlatformImage = createImage(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_3__["default"]);
+
+var platformImage = createImage(_img_platform_png__WEBPACK_IMPORTED_MODULE_2__["default"]);
+var tPlatformImage = createImage(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_5__["default"]);
 var player = new Player();
 var platforms = [];
 var genericObjects = [];
+var zombiez = [];
 var lastKey;
 var keys = {
   right: {
@@ -354,13 +441,29 @@ var keys = {
 };
 var scrollOffset = 0;
 
+function isOnTopOfPlatform(_ref4) {
+  var object = _ref4.object,
+      platform = _ref4.platform;
+  return object.position.y + object.height <= platform.position.y + 41 && object.position.y + object.height + object.velocity.y >= platform.position.y + 41 && object.position.x + object.width >= platform.position.x && object.position.x <= platform.position.x + platform.width;
+}
+
 function gameReset() {
-  platformImage = createImage(_img_platform_png__WEBPACK_IMPORTED_MODULE_0__["default"]);
+  //platform creation
   player = new Player();
+  zombiez = [new Zombie({
+    position: {
+      x: 800,
+      y: 100
+    },
+    velocity: {
+      x: -0.5,
+      y: 0
+    }
+  })];
   platforms = [new Platform({
     x: platformImage.width * 4 + 300 - 2 + platformImage.width - tPlatformImage.width,
     y: 325,
-    image: createImage(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+    image: createImage(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_5__["default"])
   }), new Platform({
     x: -1,
     y: 470,
@@ -389,11 +492,11 @@ function gameReset() {
   genericObjects = [new GenericObject({
     x: -1,
     y: -1,
-    image: createImage(_img_background_png__WEBPACK_IMPORTED_MODULE_2__["default"])
+    image: createImage(_img_background_png__WEBPACK_IMPORTED_MODULE_4__["default"])
   }), new GenericObject({
     x: -1,
     y: -1,
-    image: createImage(_img_hills_png__WEBPACK_IMPORTED_MODULE_1__["default"])
+    image: createImage(_img_hills_png__WEBPACK_IMPORTED_MODULE_3__["default"])
   })];
   scrollOffset = 0;
 }
@@ -408,14 +511,17 @@ function animate() {
   platforms.forEach(function (platform) {
     platform.draw();
   });
-  player.update(); //left and right movement
+  zombiez.forEach(function (zombie) {
+    zombie.update();
+  });
+  player.update(); //left and right movement 
 
   if (keys.right.pressed && player.position.x < 400) {
     player.velocity.x = player.speed;
   } else if (keys.left.pressed && player.position.x > 100 || keys.left.pressed && scrollOffset === 0 && player.position.x > 0) {
     player.velocity.x = -player.speed;
   } else {
-    player.velocity.x = 0;
+    player.velocity.x = 0; //scrolling code
 
     if (keys.right.pressed) {
       scrollOffset += player.speed;
@@ -425,6 +531,9 @@ function animate() {
       genericObjects.forEach(function (genericObject) {
         genericObject.position.x -= player.speed * 0.66;
       });
+      zombiez.forEach(function (zombie) {
+        zombie.position.x -= player.speed;
+      });
     } else if (keys.left.pressed && scrollOffset > 0) {
       scrollOffset -= player.speed;
       platforms.forEach(function (platform) {
@@ -433,14 +542,27 @@ function animate() {
       genericObjects.forEach(function (genericObject) {
         genericObject.position.x += player.speed * 0.66;
       });
+      zombiez.forEach(function (zombie) {
+        zombie.position.x += player.speed;
+      });
     }
   } // platform collision detection
 
 
   platforms.forEach(function (platform) {
-    if (player.position.y + player.height <= platform.position.y + 41 && player.position.y + player.height + player.velocity.y >= platform.position.y + 41 && player.position.x + player.width >= platform.position.x && player.position.x <= platform.position.x + platform.width) {
+    if (isOnTopOfPlatform({
+      object: player,
+      platform: platform
+    })) {
       player.velocity.y = 0;
     }
+
+    zombiez.forEach(function (zombie) {
+      if (isOnTopOfPlatform({
+        object: zombie,
+        platform: platform
+      })) zombie.velocity.y = 0;
+    });
   }); //Sprite Switching
 
   if (keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.run.right) {
@@ -469,8 +591,8 @@ function animate() {
 gameReset();
 animate(); // down key listener (asdw)
 
-addEventListener('keydown', function (_ref3) {
-  var keyCode = _ref3.keyCode;
+addEventListener('keydown', function (_ref5) {
+  var keyCode = _ref5.keyCode;
 
   switch (keyCode) {
     case 65:
@@ -496,8 +618,8 @@ addEventListener('keydown', function (_ref3) {
   }
 }); // up key listener (asdw)
 
-addEventListener('keyup', function (_ref4) {
-  var keyCode = _ref4.keyCode;
+addEventListener('keyup', function (_ref6) {
+  var keyCode = _ref6.keyCode;
 
   switch (keyCode) {
     case 65:

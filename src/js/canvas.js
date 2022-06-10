@@ -33,7 +33,7 @@ class Player {
         this.width = 90
         this.height = 120
 
-        
+        //sprite animations imported
         this.frames = 0
         this.sprites = {
             stand: {
@@ -112,18 +112,57 @@ class GenericObject {
     }
 }
 
+class Zombie {
+    constructor({position, velocity}) {
+        this.position = {
+            x: position.x,
+            y: position.y,
+        }
+
+        this.velocity = {
+            x: velocity.x,
+            y: velocity.y,
+        }
+
+        this.width = 50
+        this.height = 50
+    }
+
+    draw() {
+        c.fillStyle = 'red'
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
+    }
+
+    update() {
+        this.draw()
+
+        this.position.x += this.velocity.x
+        this.position.y += this.velocity.y
+
+        if (this.position.y +this.height + this.velocity.y <= canvas.height)
+            this.velocity.y += gravity
+    }
+}
+
+
+//create image function
 function createImage(imageSrc) {
     const image = new Image()
     image.src= imageSrc
     return image
 }
 
+
+//create player after platforms loaded function
+
+//defining platforms
 let platformImage = createImage(platform)
 let tPlatformImage = createImage(tPlatform)
 
 let player = new Player()
 let platforms = []
 let genericObjects = []
+let zombiez = []
 
 let lastKey
 const keys = {
@@ -136,11 +175,32 @@ const keys = {
 }
 
 let scrollOffset = 0
+function isOnTopOfPlatform({ object, platform }) {
+    return (
+        object.position.y + object.height <= 
+        platform.position.y + 41 && 
+        object.position.y + object.height + object.velocity.y >= 
+        platform.position.y + 41 && 
+        object.position.x + object.width >= 
+        platform.position.x && object.position.x <= platform.position.x + platform.width
+    )
+}
 
 function gameReset() {
-    platformImage = createImage(platform)
-
+   
+    //platform creation
     player = new Player()
+    zombiez = [
+        new Zombie({
+        position: {
+            x: 800,
+            y: 100,
+        },
+        velocity: {
+            x:-0.5,
+            y: 0,
+        }
+    })]
     platforms = [
         new Platform({
         x: platformImage.width *4 + 300 - 2 + platformImage.width - tPlatformImage.width, y: 325, image: createImage(tPlatform)
@@ -189,9 +249,13 @@ function animate() {
     platforms.forEach(platform => {
        platform.draw() 
     })
+
+    zombiez.forEach((zombie) => {
+        zombie.update()
+    })
     player.update()
 
-    //left and right movement
+    //left and right movement 
     if (keys.right.pressed && player.position.x < 400) {
         player.velocity.x = player.speed
     } else if (
@@ -202,6 +266,7 @@ function animate() {
     } else {
         player.velocity.x = 0
     
+        //scrolling code
         if (keys.right.pressed) {
             scrollOffset += player.speed
             platforms.forEach(platform => {
@@ -209,6 +274,10 @@ function animate() {
              })
              genericObjects.forEach((genericObject) => {
                  genericObject.position.x -= player.speed * 0.66
+             })
+
+             zombiez.forEach(zombie => {
+                zombie.position.x -= player.speed
              })
             
         } else if (keys.left.pressed && scrollOffset > 0) {
@@ -219,19 +288,31 @@ function animate() {
              genericObjects.forEach((genericObject) => {
                 genericObject.position.x += player.speed * 0.66
             })
+
+            zombiez.forEach(zombie => {
+                zombie.position.x += player.speed
+             })
         }
     }
 
     // platform collision detection
     platforms.forEach(platform => {
-        if (player.position.y + player.height <= 
-                platform.position.y + 41 && 
-            player.position.y + player.height + player.velocity.y >= 
-                platform.position.y + 41 && 
-            player.position.x + player.width >= 
-                platform.position.x && player.position.x <= platform.position.x + platform.width) {
+        if (
+            isOnTopOfPlatform({
+                object: player,
+                platform
+            })
+        ) {
             player.velocity.y = 0
-            } 
+        } 
+
+        zombiez.forEach(zombie => {
+            if (isOnTopOfPlatform({
+                object: zombie,
+                platform
+            })) 
+            zombie.velocity.y = 0
+        })
     })        
 
     //Sprite Switching
