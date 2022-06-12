@@ -154,10 +154,19 @@ function createImage(imageSrc) {
 
 
 //create player after platforms loaded function
+function createImageAsync(imageSrc) {
+    return new Promise((resolve) => {
+    const image = new Image()
+    image.onload = () => {
+        resolve(image)
+    }
+    image.src = imageSrc
+    })
+}
 
 //defining platforms
-let platformImage = createImage(platform)
-let tPlatformImage = createImage(tPlatform)
+let platformImage
+let tPlatformImage
 
 let player = new Player()
 let platforms = []
@@ -186,8 +195,10 @@ function isOnTopOfPlatform({ object, platform }) {
     )
 }
 
-function gameReset() {
-   
+async function gameReset() {
+   platformImage = await createImageAsync(platform)
+   tPlatformImage = await createImageAsync(tPlatform)
+
     //platform creation
     player = new Player()
     zombiez = [
@@ -329,7 +340,7 @@ function animate() {
     } 
 
     //win con
-    if (scrollOffset > platformImage.width *5 + 400 - 2) {
+    if (platformImage && scrollOffset > platformImage.width *5 + 400 - 2) {
         console.log('you WIN!')
     }
 
