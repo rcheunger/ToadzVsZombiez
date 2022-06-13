@@ -9,6 +9,8 @@ import toadRunLeft from '../img/toadRunLeft.png'
 import toadRightStand from '../img/toadRightStand.png'
 import toadLeftStand from '../img/toadLeftStand.png'
 
+import zombieSprite from '../img/zombieSprite.png'
+
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
@@ -124,16 +126,33 @@ class Zombie {
             y: velocity.y,
         }
 
-        this.width = 50
-        this.height = 50
+        this.width = 120
+        this.height = 150
+
+        this.image = createImage(zombieSprite)
+        this.frames= 0
     }
 
     draw() {
-        c.fillStyle = 'red'
-        c.fillRect(this.position.x, this.position.y, this.width, this.height)
+        // c.fillStyle = 'red'
+        // c.fillRect(this.position.x, this.position.y, this.width, this.height)
+    
+        c.drawImage(
+            this.image,
+            300 * this.frames,
+            0,
+            300,
+            400,
+            this.position.x, 
+            this.position.y, 
+            this.width, 
+            this.height,
+            this.position.x)
     }
 
     update() {
+        this.frames++
+        if (this.frames >= 48) this.frames = 0
         this.draw()
 
         this.position.x += this.velocity.x
@@ -192,6 +211,17 @@ function isOnTopOfPlatform({ object, platform }) {
         platform.position.y + 41 && 
         object.position.x + object.width >= 
         platform.position.x && object.position.x <= platform.position.x + platform.width
+    )
+}
+
+function collisionTop({ object1, object2 }) {
+    return (
+        object1.position.y + object1.height <= 
+        object2.position.y && 
+        object1.position.y + object1.height + object1.velocity.y >= 
+        object2.position.y && 
+        object1.position.x + object1.width >= 
+        object2.position.x && object1.position.x <= object2.position.x + object2.width
     )
 }
 
@@ -261,8 +291,24 @@ function animate() {
        platform.draw() 
     })
 
-    zombiez.forEach((zombie) => {
+    zombiez.forEach((zombie, index) => {
         zombie.update()
+
+        if (collisionTop({
+            object1: player,
+            object2: zombie
+        })) {
+            player.velocity.y -=30
+            setTimeout(() => {
+                zombiez.splice(index, 1)   
+            }, 0)
+        } else if (
+            player.position.x + player.width >= zombie.position.x
+                && 
+            player.position.y + player.height >= zombie.position.y
+                &&
+            player.position.x <= zombie.position.x + zombie.width
+        ) gameReset()
     })
     player.update()
 
