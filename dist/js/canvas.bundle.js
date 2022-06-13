@@ -516,6 +516,49 @@ var Zombie = /*#__PURE__*/function () {
   }]);
 
   return Zombie;
+}();
+
+var Particle = /*#__PURE__*/function () {
+  function Particle(_ref4) {
+    var position = _ref4.position,
+        velocity = _ref4.velocity,
+        radius = _ref4.radius;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Particle);
+
+    this.position = {
+      x: position.x,
+      y: position.y
+    };
+    this.velocity = {
+      x: velocity.x,
+      y: velocity.y
+    };
+    this.radius = radius;
+    this.ttl = 300;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Particle, [{
+    key: "draw",
+    value: function draw() {
+      c.beginPath();
+      c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, false);
+      c.fillStyle = 'green';
+      c.fill();
+      c.closePath();
+    }
+  }, {
+    key: "update",
+    value: function update() {
+      this.ttl--;
+      this.draw();
+      this.position.x += this.velocity.x;
+      this.position.y += this.velocity.y;
+      if (this.position.y + this.radius + this.velocity.y <= canvas.height) this.velocity.y += gravity * 0.5;
+    }
+  }]);
+
+  return Particle;
 }(); //create image function
 
 
@@ -545,6 +588,7 @@ var player = new Player();
 var platforms = [];
 var genericObjects = [];
 var zombiez = [];
+var particles = [];
 var lastKey;
 var keys = {
   right: {
@@ -556,16 +600,22 @@ var keys = {
 };
 var scrollOffset = 0;
 
-function isOnTopOfPlatform(_ref4) {
-  var object = _ref4.object,
-      platform = _ref4.platform;
+function isOnTopOfPlatform(_ref5) {
+  var object = _ref5.object,
+      platform = _ref5.platform;
   return object.position.y + object.height <= platform.position.y + 41 && object.position.y + object.height + object.velocity.y >= platform.position.y + 41 && object.position.x + object.width >= platform.position.x && object.position.x <= platform.position.x + platform.width;
 }
 
-function collisionTop(_ref5) {
-  var object1 = _ref5.object1,
-      object2 = _ref5.object2;
+function collisionTop(_ref6) {
+  var object1 = _ref6.object1,
+      object2 = _ref6.object2;
   return object1.position.y + object1.height <= object2.position.y && object1.position.y + object1.height + object1.velocity.y >= object2.position.y && object1.position.x + object1.width >= object2.position.x && object1.position.x <= object2.position.x + object2.width;
+}
+
+function isOnTopOfPlatformCircle(_ref7) {
+  var object = _ref7.object,
+      platform = _ref7.platform;
+  return object.position.y + object.radius <= platform.position.y + 41 && object.position.y + object.radius + object.velocity.y >= platform.position.y + 41 && object.position.x + object.radius >= platform.position.x && object.position.x <= platform.position.x + platform.width;
 }
 
 function gameReset() {
@@ -600,6 +650,7 @@ function _gameReset() {
                 y: 0
               }
             })];
+            particles = [];
             platforms = [new Platform({
               x: platformImage.width * 4 + 300 - 2 + platformImage.width - tPlatformImage.width,
               y: 325,
@@ -640,7 +691,7 @@ function _gameReset() {
             })];
             scrollOffset = 0;
 
-          case 11:
+          case 12:
           case "end":
             return _context.stop();
         }
@@ -661,17 +712,35 @@ function animate() {
     platform.draw();
   });
   zombiez.forEach(function (zombie, index) {
-    zombie.update();
+    zombie.update(); //zombie squish 
 
     if (collisionTop({
       object1: player,
       object2: zombie
     })) {
+      //squished zombie particles
+      for (var i = 0; i < 50; i++) {
+        particles.push(new Particle({
+          position: {
+            x: zombie.position.x + zombie.width / 2,
+            y: zombie.position.y + zombie.height / 2
+          },
+          velocity: {
+            x: (Math.random() - 0.5) * 5,
+            y: (Math.random() - 0.5) * 10
+          },
+          radius: Math.random() * 2.5
+        }));
+      }
+
       player.velocity.y -= 30;
       setTimeout(function () {
         zombiez.splice(index, 1);
       }, 0);
     } else if (player.position.x + player.width >= zombie.position.x && player.position.y + player.height >= zombie.position.y && player.position.x <= zombie.position.x + zombie.width) gameReset();
+  });
+  particles.forEach(function (particle) {
+    particle.update();
   });
   player.update(); //left and right movement 
 
@@ -693,6 +762,9 @@ function animate() {
       zombiez.forEach(function (zombie) {
         zombie.position.x -= player.speed;
       });
+      particles.forEach(function (particle) {
+        particle.position.x -= player.speed;
+      });
     } else if (keys.left.pressed && scrollOffset > 0) {
       scrollOffset -= player.speed;
       platforms.forEach(function (platform) {
@@ -704,6 +776,9 @@ function animate() {
       zombiez.forEach(function (zombie) {
         zombie.position.x += player.speed;
       });
+      particles.forEach(function (particle) {
+        particle.position.x += player.speed;
+      });
     }
   } // platform collision detection
 
@@ -714,8 +789,20 @@ function animate() {
       platform: platform
     })) {
       player.velocity.y = 0;
-    }
+    } //particle bounce
 
+
+    particles.forEach(function (particle, index) {
+      if (isOnTopOfPlatformCircle({
+        object: particle,
+        platform: platform
+      })) {
+        particle.velocity.y = -particle.velocity.y * 0.9;
+        if (particle.radius - 0.4 < 0) particles.splice(index, 1);else particle.radius -= 0.4;
+      }
+
+      if (particle.ttl < 0) particles.splice(index, 1);
+    });
     zombiez.forEach(function (zombie) {
       if (isOnTopOfPlatform({
         object: zombie,
@@ -750,8 +837,8 @@ function animate() {
 gameReset();
 animate(); // down key listener (asdw)
 
-addEventListener('keydown', function (_ref6) {
-  var keyCode = _ref6.keyCode;
+addEventListener('keydown', function (_ref8) {
+  var keyCode = _ref8.keyCode;
 
   switch (keyCode) {
     case 65:
@@ -777,8 +864,8 @@ addEventListener('keydown', function (_ref6) {
   }
 }); // up key listener (asdw)
 
-addEventListener('keyup', function (_ref7) {
-  var keyCode = _ref7.keyCode;
+addEventListener('keyup', function (_ref9) {
+  var keyCode = _ref9.keyCode;
 
   switch (keyCode) {
     case 65:

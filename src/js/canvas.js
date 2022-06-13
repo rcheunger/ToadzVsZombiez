@@ -163,6 +163,39 @@ class Zombie {
     }
 }
 
+class Particle {
+    constructor({position, velocity, radius}) {
+        this.position = {
+            x: position.x,
+            y: position.y
+        }
+        this.velocity = {
+            x: velocity.x,
+            y: velocity.y
+        }
+        this.radius = radius
+        this.ttl = 300
+    }
+
+    draw() {
+        c.beginPath()
+        c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, false)
+        c.fillStyle = 'green'
+        c.fill()
+        c.closePath()
+    }
+
+    update() {
+        this.ttl--
+        this.draw()
+        this.position.x += this.velocity.x
+        this.position.y+= this.velocity.y
+
+        if (this.position.y +this.radius + this.velocity.y <= canvas.height)
+        this.velocity.y += gravity * 0.5
+    }
+}
+
 
 //create image function
 function createImage(imageSrc) {
@@ -191,6 +224,7 @@ let player = new Player()
 let platforms = []
 let genericObjects = []
 let zombiez = []
+let particles = []
 
 let lastKey
 const keys = {
@@ -225,6 +259,17 @@ function collisionTop({ object1, object2 }) {
     )
 }
 
+function isOnTopOfPlatformCircle({ object, platform }) {
+    return (
+        object.position.y + object.radius <= 
+        platform.position.y + 41 && 
+        object.position.y + object.radius + object.velocity.y >= 
+        platform.position.y + 41 && 
+        object.position.x + object.radius >= 
+        platform.position.x && object.position.x <= platform.position.x + platform.width
+    )
+}
+
 async function gameReset() {
    platformImage = await createImageAsync(platform)
    tPlatformImage = await createImageAsync(tPlatform)
@@ -242,6 +287,7 @@ async function gameReset() {
             y: 0,
         }
     })]
+    particles = []
     platforms = [
         new Platform({
         x: platformImage.width *4 + 300 - 2 + platformImage.width - tPlatformImage.width, y: 325, image: createImage(tPlatform)
@@ -294,13 +340,29 @@ function animate() {
     zombiez.forEach((zombie, index) => {
         zombie.update()
 
+        //zombie squish 
         if (collisionTop({
             object1: player,
             object2: zombie
         })) {
+            //squished zombie particles
+            for (let i = 0; i < 50; i++) {
+                 particles.push(new Particle({
+                     position: {
+                         x: zombie.position.x + zombie.width / 2,
+                        y: zombie.position.y + zombie.height / 2
+                    },
+                    velocity: {
+                        x: (Math.random() - 0.5) * 5,
+                        y: (Math.random() - 0.5) * 10
+                    },
+                    radius: Math.random() * 2.5
+                }))
+                }
             player.velocity.y -=30
             setTimeout(() => {
                 zombiez.splice(index, 1)   
+                
             }, 0)
         } else if (
             player.position.x + player.width >= zombie.position.x
@@ -309,6 +371,10 @@ function animate() {
                 &&
             player.position.x <= zombie.position.x + zombie.width
         ) gameReset()
+    })
+
+    particles.forEach(particle => {
+        particle.update()
     })
     player.update()
 
@@ -336,6 +402,10 @@ function animate() {
              zombiez.forEach(zombie => {
                 zombie.position.x -= player.speed
              })
+
+             particles.forEach(particle => {
+                particle.position.x -= player.speed
+             })
             
         } else if (keys.left.pressed && scrollOffset > 0) {
             scrollOffset -= player.speed
@@ -348,6 +418,10 @@ function animate() {
 
             zombiez.forEach(zombie => {
                 zombie.position.x += player.speed
+             })
+
+             particles.forEach(particle => {
+                particle.position.x += player.speed
              })
         }
     }
@@ -362,6 +436,25 @@ function animate() {
         ) {
             player.velocity.y = 0
         } 
+
+        //particle bounce
+        particles.forEach((particle, index) => {
+                if (
+                    isOnTopOfPlatformCircle({
+                    object: particle,
+                    platform
+                })
+            ) {
+                particle.velocity.y = -particle.velocity.y * 0.9
+
+                if (particle.radius - 0.4 < 0) particles.splice(index, 1)
+                else particle.radius -= 0.4
+            } 
+
+                if ( particle.ttl < 0)
+                    particles.splice(index, 1)
+        })
+        
 
         zombiez.forEach(zombie => {
             if (isOnTopOfPlatform({
