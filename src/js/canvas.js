@@ -8,8 +8,11 @@ import toadRunLeft from '../img/toadRunLeft.png'
 
 import toadRightStand from '../img/toadRightStand.png'
 import toadLeftStand from '../img/toadLeftStand.png'
+import toadJumpRight from '../img/toadJumpRight.png'
+import toadJumpLeft from '../img/toadJumpLeft.png'
 
 import zombieSprite from '../img/zombieSprite.png'
+import zombieSpriteRight from '../img/zombieSpriteRight.png'
 
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
@@ -45,6 +48,10 @@ class Player {
             run: {
                 right: createImage(toadRunRight),
                 left: createImage(toadRunLeft),
+            },
+            jump: {
+                right: createImage(toadJumpRight),
+                left: createImage(toadJumpLeft)
             }
         }
 
@@ -71,6 +78,9 @@ class Player {
         if (this.frames > 28 && (this.currentSprite === this.sprites.stand.right || this.currentSprite === this.sprites.stand.left)) 
             this.frames = 0
         else if (this.frames > 59 && (this.currentSprite === this.sprites.run.right || this.currentSprite === this.sprites.run.left))
+            this.frames = 0
+        else if (this.currentSprite === this.sprites.jump.right ||
+                 this.currentSprite === this.sprites.jump.left)
             this.frames = 0
 
         this.draw()
@@ -115,7 +125,11 @@ class GenericObject {
 }
 
 class Zombie {
-    constructor({position, velocity}) {
+    constructor({position, velocity, distance = {
+        limitLeft: 75,
+        limitRight: -75,
+        traveled: 0
+    } }) {
         this.position = {
             x: position.x,
             y: position.y,
@@ -128,9 +142,18 @@ class Zombie {
 
         this.width = 120
         this.height = 150
-
-        this.image = createImage(zombieSprite)
+        
+        this.sprites = {
+            walk: {
+                right: createImage(zombieSpriteRight),
+                left: createImage(zombieSprite),
+            }
+        }
+        
+        this.currentSprite = this.sprites.walk.left
         this.frames= 0
+
+        this.distance = distance
     }
 
     draw() {
@@ -138,7 +161,7 @@ class Zombie {
         // c.fillRect(this.position.x, this.position.y, this.width, this.height)
     
         c.drawImage(
-            this.image,
+            this.currentSprite,
             300 * this.frames,
             0,
             300,
@@ -152,7 +175,8 @@ class Zombie {
 
     update() {
         this.frames++
-        if (this.frames >= 48) this.frames = 0
+        if (this.frames > 47 && (this.currentSprite === this.sprites.walk.left || this.currentSprite === this.sprites.walk.right)) 
+            this.frames = 0
         this.draw()
 
         this.position.x += this.velocity.x
@@ -160,6 +184,20 @@ class Zombie {
 
         if (this.position.y +this.height + this.velocity.y <= canvas.height)
             this.velocity.y += gravity
+
+        //walk the zombie backwards
+        this.distance.traveled -= this.velocity.x
+        
+        if (this.distance.traveled > this.distance.limitLeft) {
+            this.distance.traveled = 0
+            this.velocity.x = -this.velocity.x
+            this.currentSprite = this.sprites.walk.right
+        } else if (this.distance.traveled < this.distance.limitRight) {
+            this.distance.traveled = 0
+            this.velocity.x = -this.velocity.x
+            this.currentSprite = this.sprites.walk.left
+        }
+        console.log(this.distance.traveled)
     }
 }
 
@@ -280,17 +318,35 @@ async function gameReset() {
         new Zombie({
         position: {
             x: 800,
+            y: 100
+        },
+        velocity: {
+            x:-0.5,
+            y: 0
+        },
+        distance: {
+            limitLeft: 125,
+            limitRight: -125,
+            traveled: 0
+        }
+        }),
+        new Zombie({
+        position: {
+            x: 1500,
             y: 100,
         },
         velocity: {
             x:-0.5,
             y: 0,
-        }
-    })]
+        },
+       
+        }),
+    ]
+    
     particles = []
     platforms = [
         new Platform({
-        x: platformImage.width *4 + 300 - 2 + platformImage.width - tPlatformImage.width, y: 325, image: createImage(tPlatform)
+        x: platformImage.width *4 + 390 - 2 + platformImage.width - tPlatformImage.width, y: 325, image: createImage(tPlatform)
     }),
         new Platform({
         x: -1, 
@@ -299,13 +355,13 @@ async function gameReset() {
     }), new Platform({
         x: platformImage.width -3, y: 470, image: platformImage
     }), new Platform({
-        x: platformImage.width *2 + 100, y: 470, image: platformImage
+        x: platformImage.width *2 + 200, y: 470, image: platformImage
     }), new Platform({
-        x: platformImage.width *3 + 300, y: 470, image: platformImage
+        x: platformImage.width *3 + 400, y: 470, image: platformImage
     }), new Platform({
-        x: platformImage.width *4 + 300 - 2, y: 470, image: platformImage
+        x: platformImage.width *4 + 400 - 2, y: 470, image: platformImage
     }), new Platform({
-        x: platformImage.width *5 + 800 - 2, y: 470, image: platformImage
+        x: platformImage.width *5 + 1000 - 2, y: 470, image: platformImage
     })
 ]
     genericObjects = [
@@ -359,7 +415,7 @@ function animate() {
                     radius: Math.random() * 2.5
                 }))
                 }
-            player.velocity.y -=30
+            player.velocity.y -=`25`
             setTimeout(() => {
                 zombiez.splice(index, 1)   
                 
@@ -466,18 +522,19 @@ function animate() {
     })        
 
     //Sprite Switching
-    if (keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.run.right) {
-        player.frames = 1
-        player.currentSprite = player.sprites.run.right
-        player.currentSprite = player.sprites.run.right
-    } else if (keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.run.left) {
-        player.currentSprite = player.sprites.run.left
-    } else if (!keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.stand.left) {
-        player.currentSprite = player.sprites.stand.left
-    } else if (!keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.stand.right) {
-        player.currentSprite = player.sprites.stand.right
-    } 
-
+    if (player.velocity.y === 0) {
+        if (keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.run.right) {
+            player.frames = 1
+            player.currentSprite = player.sprites.run.right
+            player.currentSprite = player.sprites.run.right
+        } else if (keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.run.left) {
+            player.currentSprite = player.sprites.run.left
+        } else if (!keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.stand.left) {
+            player.currentSprite = player.sprites.stand.left
+        } else if (!keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.stand.right) {
+            player.currentSprite = player.sprites.stand.right
+        } 
+    }
     //win con
     if (platformImage && scrollOffset > platformImage.width *5 + 400 - 2) {
         console.log('you WIN!')
@@ -514,6 +571,11 @@ addEventListener('keydown', ({ keyCode }) => {
         case 87:
             console.log('up')
             player.velocity.y -= 15
+            
+            if (lastKey === 'right') 
+            player.currentSprite = player.sprites.jump.right
+            else
+            player.currentSprite = player.sprites.jump.left
             break
     }
 })
