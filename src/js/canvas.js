@@ -1,7 +1,20 @@
+import {
+    createImage, 
+    createImageAsync, 
+    isOnTopOfPlatform, 
+    collisionTop, 
+    isOnTopOfPlatformCircle,
+    hitTopOfPlatform,
+    hitBottomOfPlatform,
+    hitSideOfPlatform
+} from './utils.js'
+
 import platform from '../img/platform.png'
 import hills from '../img/hills.png'
 import background from '../img/background.png'
 import tPlatform from '../img/tPlatform.png'
+import block from '../img/block.png'
+import blockTri from '../img/blockTri.png'
 
 import toadRunRight from '../img/toadRunRight.png'
 import toadRunLeft from '../img/toadRunLeft.png'
@@ -93,18 +106,29 @@ class Player {
 }
 
 class Platform {
-    constructor({ x, y, image }) {
+    constructor({ x, y, image, block }) {
          this.position = {
              x,
              y
          }
+
+         this.velocity = {
+             x: 0
+         }
+
          this.image = image
          this.width = image.width
          this.height = image.height 
+         this.block = block
     }
 
     draw() {
         c.drawImage(this.image, this.position.x, this.position.y)
+    }
+
+    update() {
+        this.draw()
+        this.position.x += this.velocity.x
     }
 }
 
@@ -114,6 +138,11 @@ class GenericObject {
              x,
              y
          }
+
+         this.velocity = {
+            x: 0
+        }
+
          this.image = image
          this.width = image.width
          this.height = image.height
@@ -121,6 +150,11 @@ class GenericObject {
 
     draw() {
         c.drawImage(this.image, this.position.x, this.position.y)
+    }
+
+    update() {
+        this.draw()
+        this.position.x += this.velocity.x
     }
 }
 
@@ -197,7 +231,6 @@ class Zombie {
             this.velocity.x = -this.velocity.x
             this.currentSprite = this.sprites.walk.left
         }
-        console.log(this.distance.traveled)
     }
 }
 
@@ -234,29 +267,10 @@ class Particle {
     }
 }
 
-
-//create image function
-function createImage(imageSrc) {
-    const image = new Image()
-    image.src= imageSrc
-    return image
-}
-
-
-//create player after platforms loaded function
-function createImageAsync(imageSrc) {
-    return new Promise((resolve) => {
-    const image = new Image()
-    image.onload = () => {
-        resolve(image)
-    }
-    image.src = imageSrc
-    })
-}
-
 //defining platforms
 let platformImage
 let tPlatformImage
+let blockTriImage
 
 let player = new Player()
 let platforms = []
@@ -275,42 +289,11 @@ const keys = {
 }
 
 let scrollOffset = 0
-function isOnTopOfPlatform({ object, platform }) {
-    return (
-        object.position.y + object.height <= 
-        platform.position.y + 41 && 
-        object.position.y + object.height + object.velocity.y >= 
-        platform.position.y + 41 && 
-        object.position.x + object.width >= 
-        platform.position.x && object.position.x <= platform.position.x + platform.width
-    )
-}
-
-function collisionTop({ object1, object2 }) {
-    return (
-        object1.position.y + object1.height <= 
-        object2.position.y && 
-        object1.position.y + object1.height + object1.velocity.y >= 
-        object2.position.y && 
-        object1.position.x + object1.width >= 
-        object2.position.x && object1.position.x <= object2.position.x + object2.width
-    )
-}
-
-function isOnTopOfPlatformCircle({ object, platform }) {
-    return (
-        object.position.y + object.radius <= 
-        platform.position.y + 41 && 
-        object.position.y + object.radius + object.velocity.y >= 
-        platform.position.y + 41 && 
-        object.position.x + object.radius >= 
-        platform.position.x && object.position.x <= platform.position.x + platform.width
-    )
-}
 
 async function gameReset() {
    platformImage = await createImageAsync(platform)
    tPlatformImage = await createImageAsync(tPlatform)
+   blockTriImage = await createImageAsync(blockTri)
 
     //platform creation
     player = new Player()
@@ -362,6 +345,9 @@ async function gameReset() {
         x: platformImage.width *4 + 400 - 2, y: 470, image: platformImage
     }), new Platform({
         x: platformImage.width *5 + 1000 - 2, y: 470, image: platformImage
+    }), new Platform({
+        x: 500, y: 300, image: blockTriImage,
+        block: true
     })
 ]
     genericObjects = [
@@ -386,11 +372,13 @@ function animate() {
     c.fillRect(0, 0, canvas.width, canvas.height)
     
     genericObjects.forEach(genericObject => {
-        genericObject.draw()
+        genericObject.update()
+        genericObject.velocity.x = 0
     })
 
     platforms.forEach(platform => {
-       platform.draw() 
+       platform.update() 
+       platform.velocity.x = 0
     })
 
     zombiez.forEach((zombie, index) => {
@@ -434,6 +422,7 @@ function animate() {
     })
     player.update()
 
+    let hitSide = false
     //left and right movement 
     if (keys.right.pressed && player.position.x < 400) {
         player.velocity.x = player.speed
@@ -447,38 +436,75 @@ function animate() {
     
         //scrolling code
         if (keys.right.pressed) {
-            scrollOffset += player.speed
-            platforms.forEach(platform => {
-                platform.position.x -= player.speed
-             })
-             genericObjects.forEach((genericObject) => {
-                 genericObject.position.x -= player.speed * 0.66
-             })
+            for (let i = 0; i < platforms.length; i++) {
+                const platform = platforms[i]
+                platform.velocity.x = -player.speed
+        
+                if (
+                  platform.block &&
+                  hitSideOfPlatform({
+                    object: player,
+                    platform
+                  })
+                ) {
+                  platforms.forEach((platform) => {
+                    platform.velocity.x = 0
+                  })
 
-             zombiez.forEach(zombie => {
+                hitSide = true
+                break
+                }
+            }    
+
+        if (!hitSide) {
+        scrollOffset += player.speed
+
+        genericObjects.forEach((genericObject) => {
+          genericObject.velocity.x = -player.speed * 0.66
+        })
+
+            zombiez.forEach((zombie) => {
                 zombie.position.x -= player.speed
-             })
-
-             particles.forEach(particle => {
-                particle.position.x -= player.speed
-             })
-            
-        } else if (keys.left.pressed && scrollOffset > 0) {
-            scrollOffset -= player.speed
-            platforms.forEach(platform => {
-                platform.position.x += player.speed
-             })
-             genericObjects.forEach((genericObject) => {
-                genericObject.position.x += player.speed * 0.66
             })
 
-            zombiez.forEach(zombie => {
-                zombie.position.x += player.speed
-             })
+            particles.forEach((particle) => {
+                particle.position.x -= player.speed
+            })
+        }
+            
+        } else if (keys.left.pressed && scrollOffset > 0) {
+            for (let i = 0; i < platforms.length; i++) {
+                const platform = platforms[i]
+                platform.velocity.x = player.speed
+        
+                if (
+                  platform.block &&
+                  hitSideOfPlatform({
+                    object: player,
+                    platform
+                  })
+                ) {
+                  platforms.forEach((platform) => {
+                    platform.velocity.x = 0
+                  })
+                  hitSide = true
+                  break
+                }
+              }
+              if (!hitSide) {
+                scrollOffset -= player.speed
+                genericObjects.forEach((genericObject) => {
+                  genericObject.velocity.x = player.speed * 0.66
+                })
 
-             particles.forEach(particle => {
-                particle.position.x += player.speed
-             })
+                zombiez.forEach((zombie) => {
+                    zombie.position.x += player.speed
+                })
+
+                particles.forEach((particle) => {
+                   particle.position.x += player.speed
+                })
+            }
         }
     }
 
@@ -492,6 +518,27 @@ function animate() {
         ) {
             player.velocity.y = 0
         } 
+
+        if (platform.block && hitTopOfPlatform({
+            object: player,
+            platform
+        })) {
+            player.velocity.y = 0
+        }
+
+        if (platform.block && hitBottomOfPlatform({
+            object: player,
+            platform
+        })) {
+            player.velocity.y = -player.velocity.y
+        }
+
+        if (platform.block && hitSideOfPlatform({
+                object: player,
+                platform
+            })) {
+                player.velocity.x = 0
+            }
 
         //particle bounce
         particles.forEach((particle, index) => {
