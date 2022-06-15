@@ -6,7 +6,8 @@ import {
     isOnTopOfPlatformCircle,
     hitTopOfPlatform,
     hitBottomOfPlatform,
-    hitSideOfPlatform
+    hitSideOfPlatform,
+    objectsTouch
 } from './utils.js'
 
 import platform from '../img/platform.png'
@@ -18,14 +19,21 @@ import blockTri from '../img/blockTri.png'
 
 import toadRunRight from '../img/toadRunRight.png'
 import toadRunLeft from '../img/toadRunLeft.png'
-
 import toadRightStand from '../img/toadRightStand.png'
 import toadLeftStand from '../img/toadLeftStand.png'
 import toadJumpRight from '../img/toadJumpRight.png'
 import toadJumpLeft from '../img/toadJumpLeft.png'
 
+import cyclopsRunRight from '../img/cyclopsRunRight.png'
+import cyclopsRunLeft from '../img/cyclopsRunLeft.png'
+import cyclopsRightStand from '../img/cyclopsRightStand.png'
+import cyclopsLeftStand from '../img/cyclopsLeftStand.png'
+import cyclopsJumpRight from '../img/cyclopsJumpRight.png'
+import cyclopsJumpLeft from '../img/cyclopsJumpLeft.png'
+
 import zombieSprite from '../img/zombieSprite.png'
 import zombieSpriteRight from '../img/zombieSpriteRight.png'
+import potion from '../img/potion.png'
 
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
@@ -57,18 +65,34 @@ class Player {
             stand: {
                 right: createImage(toadRightStand),
                 left: createImage(toadLeftStand),
+                potion: {
+                    right: createImage(cyclopsRightStand),
+                    left: createImage(cyclopsLeftStand)
+                }
             },
             run: {
                 right: createImage(toadRunRight),
                 left: createImage(toadRunLeft),
+                potion: {
+                    right: createImage(cyclopsRunRight),
+                    left: createImage(cyclopsRunLeft)
+                }
             },
             jump: {
                 right: createImage(toadJumpRight),
-                left: createImage(toadJumpLeft)
-            }
+                left: createImage(toadJumpLeft),
+                left: createImage(toadRunLeft),
+                potion: {
+                    right: createImage(cyclopsJumpRight),
+                    left: createImage(cyclopsJumpLeft)
+                }
+            },
         }
 
         this.currentSprite = this.sprites.stand.right
+        this.powerUps = {
+            potion: false
+        }
     }
 
     draw() {
@@ -87,13 +111,18 @@ class Player {
     // gravity properties
     update() {
         this.frames++
+        const {currentSprite, sprites} = this
 
-        if (this.frames > 28 && (this.currentSprite === this.sprites.stand.right || this.currentSprite === this.sprites.stand.left)) 
+        if (this.frames > 28 && (currentSprite === sprites.stand.right || currentSprite === sprites.stand.left 
+            || currentSprite === sprites.stand.potion.left|| currentSprite === sprites.stand.potion.right)) 
             this.frames = 0
-        else if (this.frames > 59 && (this.currentSprite === this.sprites.run.right || this.currentSprite === this.sprites.run.left))
+        else if (this.frames > 59 && (currentSprite === sprites.run.right || currentSprite === sprites.run.left 
+            || currentSprite === sprites.run.potion.right || currentSprite === sprites.run.potion.left))
             this.frames = 0
-        else if (this.currentSprite === this.sprites.jump.right ||
-                 this.currentSprite === this.sprites.jump.left)
+        else if (currentSprite === sprites.jump.right ||
+                 currentSprite === sprites.jump.left ||
+                 currentSprite === sprites.jump.potion.right ||
+                 currentSprite === sprites.jump.potion.left)
             this.frames = 0
 
         this.draw()
@@ -234,6 +263,51 @@ class Zombie {
     }
 }
 
+class Potion {
+    constructor({position, velocity}) {
+        this.position = {
+            x: position.x,
+            y: position.y,
+        }
+
+        this.velocity = {
+            x: velocity.x,
+            y: velocity.y,
+        }
+
+        this.width = 40
+        this.height = 60
+    
+        this.image = createImage(potion)
+        this.frames= 0
+
+    }
+
+    draw() {
+        c.drawImage(
+            this.image,
+            40 * this.frames,
+            0,
+            40,
+            60,
+            this.position.x, 
+            this.position.y, 
+            this.width, 
+            this.height)
+    }
+
+    update() {
+        this.draw()
+
+        this.position.x += this.velocity.x
+        this.position.y += this.velocity.y
+
+        if (this.position.y +this.height + this.velocity.y <= canvas.height)
+            this.velocity.y += gravity
+    }
+}
+
+
 class Particle {
     constructor({position, velocity, radius}) {
         this.position = {
@@ -277,6 +351,7 @@ let platforms = []
 let genericObjects = []
 let zombiez = []
 let particles = []
+let potions = []
 
 let lastKey
 const keys = {
@@ -350,6 +425,17 @@ async function gameReset() {
         block: true
     })
 ]
+
+    potions = [new Potion({position: {
+        x: 400,
+        y: 100
+    },
+    velocity: {
+        x: 0,
+        y: 0
+    }
+    })]
+
     genericObjects = [
         new GenericObject({
             x: -1,
@@ -379,6 +465,20 @@ function animate() {
     platforms.forEach(platform => {
        platform.update() 
        platform.velocity.x = 0
+    })
+
+    //Toad potion powerup
+    potions.forEach((potion, i) => {
+        if (objectsTouch ({ 
+            object1: player,
+            object2: potion
+        })
+        ) {
+            player.powerUps.potion = true
+        setTimeout(() => {
+            potions.splice(i, 1)
+        }, 0)
+        } else potion.update()
     })
 
     zombiez.forEach((zombie, index) => {
@@ -467,6 +567,10 @@ function animate() {
                 zombie.position.x -= player.speed
             })
 
+            potions.forEach((potion) => {
+                potion.position.x -= player.speed
+            })
+
             particles.forEach((particle) => {
                 particle.position.x -= player.speed
             })
@@ -499,6 +603,10 @@ function animate() {
 
                 zombiez.forEach((zombie) => {
                     zombie.position.x += player.speed
+                })
+
+                potions.forEach((potion) => {
+                    potion.position.x += player.speed
                 })
 
                 particles.forEach((particle) => {
@@ -566,23 +674,17 @@ function animate() {
             })) 
             zombie.velocity.y = 0
         })
-    })        
 
-    //Sprite Switching
-    if (player.velocity.y === 0) {
-        if (keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.run.right) {
-            player.frames = 1
-            player.currentSprite = player.sprites.run.right
-            player.currentSprite = player.sprites.run.right
-        } else if (keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.run.left) {
-            player.currentSprite = player.sprites.run.left
-        } else if (!keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.stand.left) {
-            player.currentSprite = player.sprites.stand.left
-        } else if (!keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.stand.right) {
-            player.currentSprite = player.sprites.stand.right
-        } 
-    }
-    //win con
+        potions.forEach(potion => {
+            if (isOnTopOfPlatform({
+                object: potion,
+                platform
+            })) 
+            potion.velocity.y = 0
+        })
+    })       
+
+  //win con
     if (platformImage && scrollOffset > platformImage.width *5 + 400 - 2) {
         console.log('you WIN!')
     }
@@ -591,6 +693,32 @@ function animate() {
     if (player.position.y > canvas.height) {
         gameReset()
     }
+
+    //Sprite Switching
+    if (player.velocity.y !== 0) return
+
+    if (keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.run.right) {
+        player.currentSprite = player.sprites.run.right
+    } else if (keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.run.left) {
+        player.currentSprite = player.sprites.run.left
+    } else if (!keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.stand.left) {
+        player.currentSprite = player.sprites.stand.left
+    } else if (!keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.stand.right) {
+        player.currentSprite = player.sprites.stand.right
+    } 
+
+    //cyclops(potion) sprites
+    if (!player.powerUps.potion) return
+
+    if (keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.run.potion.right) {
+        player.currentSprite = player.sprites.run.potion.right
+    } else if (keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.run.potion.left) {
+        player.currentSprite = player.sprites.run.potion.left
+    } else if (!keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.stand.potion.left) {
+        player.currentSprite = player.sprites.stand.potion.left
+    } else if (!keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.stand.potion.right) {
+        player.currentSprite = player.sprites.stand.potion.right
+    } 
 }
 
 gameReset()
@@ -623,6 +751,14 @@ addEventListener('keydown', ({ keyCode }) => {
             player.currentSprite = player.sprites.jump.right
             else
             player.currentSprite = player.sprites.jump.left
+
+            if (!player.powerUps.potion) break
+
+            if (lastKey === 'right') 
+            player.currentSprite = player.sprites.jump.potion.right
+            else
+            player.currentSprite = player.sprites.jump.potion.left
+
             break
     }
 })
