@@ -81,7 +81,6 @@ class Player {
             jump: {
                 right: createImage(toadJumpRight),
                 left: createImage(toadJumpLeft),
-                left: createImage(toadRunLeft),
                 potion: {
                     right: createImage(cyclopsJumpRight),
                     left: createImage(cyclopsJumpLeft)
@@ -93,9 +92,13 @@ class Player {
         this.powerUps = {
             potion: false
         }
+        this.invincible = false
+        this.opacity = 1
     }
 
     draw() {
+        c.save()
+        c.globalAlpha = this.opacity
         c.drawImage(
             this.currentSprite,
             300 * this.frames,
@@ -105,7 +108,9 @@ class Player {
             this.position.x, 
             this.position.y, 
             this.width, 
-            this.height)
+            this.height
+        )
+        c.restore()
     }
 
     // gravity properties
@@ -131,6 +136,11 @@ class Player {
 
         if (this.position.y +this.height + this.velocity.y <= canvas.height)
             this.velocity.y += gravity
+
+        if (this.invincible) {
+            if (this.opacity === 1) this.opacity = 0
+                else this.opacity = 1
+        } else this.opacity = 1
     }
 }
 
@@ -309,7 +319,7 @@ class Potion {
 
 
 class Particle {
-    constructor({position, velocity, radius}) {
+    constructor({position, velocity, radius, color = 'green', laser = false}) {
         this.position = {
             x: position.x,
             y: position.y
@@ -320,12 +330,14 @@ class Particle {
         }
         this.radius = radius
         this.ttl = 300
+        this.color = color
+        this.laser = laser
     }
 
     draw() {
         c.beginPath()
         c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, false)
-        c.fillStyle = 'green'
+        c.fillStyle = this.color
         c.fill()
         c.closePath()
     }
@@ -484,6 +496,33 @@ function animate() {
     zombiez.forEach((zombie, index) => {
         zombie.update()
 
+        //remove zombie on laser beam
+        particles.filter(particle => particle.laser) .forEach((particle, particleIndex) => {
+            if (particle.position.x + particle.radius >= zombie.position.x
+                && particle.position.y + particle.radius >= zombie.position.y
+                && particle.position.x - particle.radius <= zombie.position.x + zombie.width
+                && particle.position.y - particle.radius <= zombie.position.y + zombie.height)
+            {
+            for (let i = 0; i < 50; i++) {
+                particles.push(new Particle({
+                    position: {
+                        x: zombie.position.x + zombie.width / 2,
+                        y: zombie.position.y + zombie.height / 2
+                    },
+                    velocity: {
+                        x: (Math.random() - 0.5) * 5,
+                        y: (Math.random() - 0.5) * 10
+                    },
+                    radius: Math.random() * 2.5
+                }))
+            }
+            setTimeout(() => {
+                zombiez.splice(index, 1)   
+                particles.splice(particleIndex, 1)
+            }, 0)
+            }
+        })
+
         //zombie squish 
         if (collisionTop({
             object1: player,
@@ -502,7 +541,7 @@ function animate() {
                     },
                     radius: Math.random() * 2.5
                 }))
-                }
+            }
             player.velocity.y -=`25`
             setTimeout(() => {
                 zombiez.splice(index, 1)   
@@ -514,11 +553,27 @@ function animate() {
             player.position.y + player.height >= zombie.position.y
                 &&
             player.position.x <= zombie.position.x + zombie.width
-        ) gameReset()
+        ) { 
+        //player hits zombie
+            if (player.powerUps.potion) {
+                player.invincible = true
+                player.powerUps.potion = false
+
+                setTimeout(() => {
+                    player.invincible = false}, 1000)
+            } else if (!player.invincible)gameReset()
+        }
+           
     })
 
-    particles.forEach(particle => {
+    particles.forEach((particle, i) => {
         particle.update()
+
+        if (particle.laser && (particle.position.x - particle.radius >= canvas.width 
+            || particle.position.x + particle.radius <= 0)) 
+        setTimeout(() => {
+            particles.splice(i, 1)
+        }, 0)
     })
     player.update()
 
@@ -726,6 +781,7 @@ animate()
 
 // down key listener (asdw)
 addEventListener('keydown', ({ keyCode }) => {
+    //console.log(keyCode)
     switch (keyCode) {
         case 65:
             console.log('left')
@@ -760,6 +816,28 @@ addEventListener('keydown', ({ keyCode }) => {
             player.currentSprite = player.sprites.jump.potion.left
 
             break
+
+        case 32:
+            console.log('space')
+
+            if (!player.powerUps.potion) return
+
+            let velocity = 60
+            if (lastKey === 'left') velocity = -60
+
+            particles.push(new Particle({
+                position: {
+                    x: player.position.x + player.width / 2,
+                    y: player.position.y + player.height / 2 -40
+                },
+                velocity: {
+                    x: velocity,
+                    y: 0
+                },
+                radius: 7,
+                color: 'red',
+                laser: true
+            }))
     }
 })
 
@@ -769,7 +847,6 @@ addEventListener('keyup', ({ keyCode }) => {
         case 65:
             console.log('left')
             keys.left.pressed = false
-            player.currentSprite = player.sprites.stand.left
             break
         
         case 83:

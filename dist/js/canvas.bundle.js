@@ -177,32 +177,6 @@ module.exports = _createClass;
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-module.exports = _defineProperty;
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/typeof.js":
 /*!*******************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
@@ -516,35 +490,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils.js */ "./src/js/utils.js");
-/* harmony import */ var _img_platform_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/platform.png */ "./src/img/platform.png");
-/* harmony import */ var _img_hills_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/hills.png */ "./src/img/hills.png");
-/* harmony import */ var _img_background_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/background.png */ "./src/img/background.png");
-/* harmony import */ var _img_tPlatform_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/tPlatform.png */ "./src/img/tPlatform.png");
-/* harmony import */ var _img_block_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/block.png */ "./src/img/block.png");
-/* harmony import */ var _img_blockTri_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/blockTri.png */ "./src/img/blockTri.png");
-/* harmony import */ var _img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/toadRunRight.png */ "./src/img/toadRunRight.png");
-/* harmony import */ var _img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/toadRunLeft.png */ "./src/img/toadRunLeft.png");
-/* harmony import */ var _img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/toadRightStand.png */ "./src/img/toadRightStand.png");
-/* harmony import */ var _img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/toadLeftStand.png */ "./src/img/toadLeftStand.png");
-/* harmony import */ var _img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/toadJumpRight.png */ "./src/img/toadJumpRight.png");
-/* harmony import */ var _img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/toadJumpLeft.png */ "./src/img/toadJumpLeft.png");
-/* harmony import */ var _img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/cyclopsRunRight.png */ "./src/img/cyclopsRunRight.png");
-/* harmony import */ var _img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/cyclopsRunLeft.png */ "./src/img/cyclopsRunLeft.png");
-/* harmony import */ var _img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../img/cyclopsRightStand.png */ "./src/img/cyclopsRightStand.png");
-/* harmony import */ var _img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../img/cyclopsLeftStand.png */ "./src/img/cyclopsLeftStand.png");
-/* harmony import */ var _img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../img/cyclopsJumpRight.png */ "./src/img/cyclopsJumpRight.png");
-/* harmony import */ var _img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../img/cyclopsJumpLeft.png */ "./src/img/cyclopsJumpLeft.png");
-/* harmony import */ var _img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../img/zombieSprite.png */ "./src/img/zombieSprite.png");
-/* harmony import */ var _img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../img/zombieSpriteRight.png */ "./src/img/zombieSpriteRight.png");
-/* harmony import */ var _img_potion_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../img/potion.png */ "./src/img/potion.png");
-
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils.js */ "./src/js/utils.js");
+/* harmony import */ var _img_platform_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/platform.png */ "./src/img/platform.png");
+/* harmony import */ var _img_hills_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/hills.png */ "./src/img/hills.png");
+/* harmony import */ var _img_background_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/background.png */ "./src/img/background.png");
+/* harmony import */ var _img_tPlatform_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/tPlatform.png */ "./src/img/tPlatform.png");
+/* harmony import */ var _img_block_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/block.png */ "./src/img/block.png");
+/* harmony import */ var _img_blockTri_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/blockTri.png */ "./src/img/blockTri.png");
+/* harmony import */ var _img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/toadRunRight.png */ "./src/img/toadRunRight.png");
+/* harmony import */ var _img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/toadRunLeft.png */ "./src/img/toadRunLeft.png");
+/* harmony import */ var _img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/toadRightStand.png */ "./src/img/toadRightStand.png");
+/* harmony import */ var _img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/toadLeftStand.png */ "./src/img/toadLeftStand.png");
+/* harmony import */ var _img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/toadJumpRight.png */ "./src/img/toadJumpRight.png");
+/* harmony import */ var _img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/toadJumpLeft.png */ "./src/img/toadJumpLeft.png");
+/* harmony import */ var _img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/cyclopsRunRight.png */ "./src/img/cyclopsRunRight.png");
+/* harmony import */ var _img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/cyclopsRunLeft.png */ "./src/img/cyclopsRunLeft.png");
+/* harmony import */ var _img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/cyclopsRightStand.png */ "./src/img/cyclopsRightStand.png");
+/* harmony import */ var _img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../img/cyclopsLeftStand.png */ "./src/img/cyclopsLeftStand.png");
+/* harmony import */ var _img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../img/cyclopsJumpRight.png */ "./src/img/cyclopsJumpRight.png");
+/* harmony import */ var _img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../img/cyclopsJumpLeft.png */ "./src/img/cyclopsJumpLeft.png");
+/* harmony import */ var _img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../img/zombieSprite.png */ "./src/img/zombieSprite.png");
+/* harmony import */ var _img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../img/zombieSpriteRight.png */ "./src/img/zombieSpriteRight.png");
+/* harmony import */ var _img_potion_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../img/potion.png */ "./src/img/potion.png");
 
 
 
@@ -583,9 +554,7 @@ var gravity = 0.5;
 
 var Player = /*#__PURE__*/function () {
   function Player() {
-    var _jump;
-
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3___default()(this, Player);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Player);
 
     this.speed = 10;
     this.position = {
@@ -602,39 +571,45 @@ var Player = /*#__PURE__*/function () {
     this.frames = 0;
     this.sprites = {
       stand: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_14__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_15__["default"]),
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_13__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_14__["default"]),
         potion: {
-          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_20__["default"]),
-          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_21__["default"])
+          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_19__["default"]),
+          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_20__["default"])
         }
       },
       run: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_12__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_13__["default"]),
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_11__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_12__["default"]),
         potion: {
-          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_18__["default"]),
-          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_19__["default"])
+          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_17__["default"]),
+          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_18__["default"])
         }
       },
-      jump: (_jump = {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_16__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_17__["default"])
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default()(_jump, "left", Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_13__["default"])), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default()(_jump, "potion", {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_22__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_23__["default"])
-      }), _jump)
+      jump: {
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_15__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_16__["default"]),
+        potion: {
+          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_21__["default"]),
+          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_22__["default"])
+        }
+      }
     };
     this.currentSprite = this.sprites.stand.right;
     this.powerUps = {
       potion: false
     };
+    this.invincible = false;
+    this.opacity = 1;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4___default()(Player, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Player, [{
     key: "draw",
     value: function draw() {
+      c.save();
+      c.globalAlpha = this.opacity;
       c.drawImage(this.currentSprite, 300 * this.frames, 0, 300, 400, this.position.x, this.position.y, this.width, this.height);
+      c.restore();
     } // gravity properties
 
   }, {
@@ -648,6 +623,10 @@ var Player = /*#__PURE__*/function () {
       this.position.y += this.velocity.y;
       this.position.x += this.velocity.x;
       if (this.position.y + this.height + this.velocity.y <= canvas.height) this.velocity.y += gravity;
+
+      if (this.invincible) {
+        if (this.opacity === 1) this.opacity = 0;else this.opacity = 1;
+      } else this.opacity = 1;
     }
   }]);
 
@@ -661,7 +640,7 @@ var Platform = /*#__PURE__*/function () {
         image = _ref.image,
         block = _ref.block;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3___default()(this, Platform);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Platform);
 
     this.position = {
       x: x,
@@ -676,7 +655,7 @@ var Platform = /*#__PURE__*/function () {
     this.block = block;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4___default()(Platform, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Platform, [{
     key: "draw",
     value: function draw() {
       c.drawImage(this.image, this.position.x, this.position.y);
@@ -698,7 +677,7 @@ var GenericObject = /*#__PURE__*/function () {
         y = _ref2.y,
         image = _ref2.image;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3___default()(this, GenericObject);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, GenericObject);
 
     this.position = {
       x: x,
@@ -712,7 +691,7 @@ var GenericObject = /*#__PURE__*/function () {
     this.height = image.height;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4___default()(GenericObject, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(GenericObject, [{
     key: "draw",
     value: function draw() {
       c.drawImage(this.image, this.position.x, this.position.y);
@@ -739,7 +718,7 @@ var Zombie = /*#__PURE__*/function () {
       traveled: 0
     } : _ref3$distance;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3___default()(this, Zombie);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Zombie);
 
     this.position = {
       x: position.x,
@@ -753,8 +732,8 @@ var Zombie = /*#__PURE__*/function () {
     this.height = 150;
     this.sprites = {
       walk: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_25__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_24__["default"])
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_24__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_23__["default"])
       }
     };
     this.currentSprite = this.sprites.walk.left;
@@ -762,7 +741,7 @@ var Zombie = /*#__PURE__*/function () {
     this.distance = distance;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4___default()(Zombie, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Zombie, [{
     key: "draw",
     value: function draw() {
       // c.fillStyle = 'red'
@@ -801,7 +780,7 @@ var Potion = /*#__PURE__*/function () {
     var position = _ref4.position,
         velocity = _ref4.velocity;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3___default()(this, Potion);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Potion);
 
     this.position = {
       x: position.x,
@@ -813,11 +792,11 @@ var Potion = /*#__PURE__*/function () {
     };
     this.width = 40;
     this.height = 60;
-    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_potion_png__WEBPACK_IMPORTED_MODULE_26__["default"]);
+    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_potion_png__WEBPACK_IMPORTED_MODULE_25__["default"]);
     this.frames = 0;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4___default()(Potion, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Potion, [{
     key: "draw",
     value: function draw() {
       c.drawImage(this.image, 40 * this.frames, 0, 40, 60, this.position.x, this.position.y, this.width, this.height);
@@ -839,9 +818,13 @@ var Particle = /*#__PURE__*/function () {
   function Particle(_ref5) {
     var position = _ref5.position,
         velocity = _ref5.velocity,
-        radius = _ref5.radius;
+        radius = _ref5.radius,
+        _ref5$color = _ref5.color,
+        color = _ref5$color === void 0 ? 'green' : _ref5$color,
+        _ref5$laser = _ref5.laser,
+        laser = _ref5$laser === void 0 ? false : _ref5$laser;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3___default()(this, Particle);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Particle);
 
     this.position = {
       x: position.x,
@@ -853,14 +836,16 @@ var Particle = /*#__PURE__*/function () {
     };
     this.radius = radius;
     this.ttl = 300;
+    this.color = color;
+    this.laser = laser;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4___default()(Particle, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Particle, [{
     key: "draw",
     value: function draw() {
       c.beginPath();
       c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, false);
-      c.fillStyle = 'green';
+      c.fillStyle = this.color;
       c.fill();
       c.closePath();
     }
@@ -910,17 +895,17 @@ function _gameReset() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImageAsync"])(_img_platform_png__WEBPACK_IMPORTED_MODULE_6__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_platform_png__WEBPACK_IMPORTED_MODULE_5__["default"]);
 
           case 2:
             platformImage = _context.sent;
             _context.next = 5;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImageAsync"])(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_9__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_8__["default"]);
 
           case 5:
             tPlatformImage = _context.sent;
             _context.next = 8;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_10__["default"]);
 
           case 8:
             blockTriImage = _context.sent;
@@ -954,7 +939,7 @@ function _gameReset() {
             platforms = [new Platform({
               x: platformImage.width * 4 + 390 - 2 + platformImage.width - tPlatformImage.width,
               y: 325,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_9__["default"])
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_8__["default"])
             }), new Platform({
               x: -1,
               y: 470,
@@ -998,11 +983,11 @@ function _gameReset() {
             genericObjects = [new GenericObject({
               x: -1,
               y: -1,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_background_png__WEBPACK_IMPORTED_MODULE_8__["default"])
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_background_png__WEBPACK_IMPORTED_MODULE_7__["default"])
             }), new GenericObject({
               x: -1,
               y: -1,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["createImage"])(_img_hills_png__WEBPACK_IMPORTED_MODULE_7__["default"])
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_hills_png__WEBPACK_IMPORTED_MODULE_6__["default"])
             })];
             scrollOffset = 0;
 
@@ -1030,7 +1015,7 @@ function animate() {
   }); //Toad potion powerup
 
   potions.forEach(function (potion, i) {
-    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["objectsTouch"])({
+    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["objectsTouch"])({
       object1: player,
       object2: potion
     })) {
@@ -1041,9 +1026,34 @@ function animate() {
     } else potion.update();
   });
   zombiez.forEach(function (zombie, index) {
-    zombie.update(); //zombie squish 
+    zombie.update(); //remove zombie on laser beam
 
-    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["collisionTop"])({
+    particles.filter(function (particle) {
+      return particle.laser;
+    }).forEach(function (particle, particleIndex) {
+      if (particle.position.x + particle.radius >= zombie.position.x && particle.position.y + particle.radius >= zombie.position.y && particle.position.x - particle.radius <= zombie.position.x + zombie.width && particle.position.y - particle.radius <= zombie.position.y + zombie.height) {
+        for (var i = 0; i < 50; i++) {
+          particles.push(new Particle({
+            position: {
+              x: zombie.position.x + zombie.width / 2,
+              y: zombie.position.y + zombie.height / 2
+            },
+            velocity: {
+              x: (Math.random() - 0.5) * 5,
+              y: (Math.random() - 0.5) * 10
+            },
+            radius: Math.random() * 2.5
+          }));
+        }
+
+        setTimeout(function () {
+          zombiez.splice(index, 1);
+          particles.splice(particleIndex, 1);
+        }, 0);
+      }
+    }); //zombie squish 
+
+    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["collisionTop"])({
       object1: player,
       object2: zombie
     })) {
@@ -1066,10 +1076,22 @@ function animate() {
       setTimeout(function () {
         zombiez.splice(index, 1);
       }, 0);
-    } else if (player.position.x + player.width >= zombie.position.x && player.position.y + player.height >= zombie.position.y && player.position.x <= zombie.position.x + zombie.width) gameReset();
+    } else if (player.position.x + player.width >= zombie.position.x && player.position.y + player.height >= zombie.position.y && player.position.x <= zombie.position.x + zombie.width) {
+      //player hits zombie
+      if (player.powerUps.potion) {
+        player.invincible = true;
+        player.powerUps.potion = false;
+        setTimeout(function () {
+          player.invincible = false;
+        }, 1000);
+      } else if (!player.invincible) gameReset();
+    }
   });
-  particles.forEach(function (particle) {
+  particles.forEach(function (particle, i) {
     particle.update();
+    if (particle.laser && (particle.position.x - particle.radius >= canvas.width || particle.position.x + particle.radius <= 0)) setTimeout(function () {
+      particles.splice(i, 1);
+    }, 0);
   });
   player.update();
   var hitSide = false; //left and right movement 
@@ -1086,7 +1108,7 @@ function animate() {
         var _platform = platforms[i];
         _platform.velocity.x = -player.speed;
 
-        if (_platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["hitSideOfPlatform"])({
+        if (_platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitSideOfPlatform"])({
           object: player,
           platform: _platform
         })) {
@@ -1118,7 +1140,7 @@ function animate() {
         var _platform2 = platforms[_i];
         _platform2.velocity.x = player.speed;
 
-        if (_platform2.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["hitSideOfPlatform"])({
+        if (_platform2.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitSideOfPlatform"])({
           object: player,
           platform: _platform2
         })) {
@@ -1150,28 +1172,28 @@ function animate() {
 
 
   platforms.forEach(function (platform) {
-    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["isOnTopOfPlatform"])({
+    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isOnTopOfPlatform"])({
       object: player,
       platform: platform
     })) {
       player.velocity.y = 0;
     }
 
-    if (platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["hitTopOfPlatform"])({
+    if (platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitTopOfPlatform"])({
       object: player,
       platform: platform
     })) {
       player.velocity.y = 0;
     }
 
-    if (platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["hitBottomOfPlatform"])({
+    if (platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
       object: player,
       platform: platform
     })) {
       player.velocity.y = -player.velocity.y;
     }
 
-    if (platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["hitSideOfPlatform"])({
+    if (platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitSideOfPlatform"])({
       object: player,
       platform: platform
     })) {
@@ -1180,7 +1202,7 @@ function animate() {
 
 
     particles.forEach(function (particle, index) {
-      if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["isOnTopOfPlatformCircle"])({
+      if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isOnTopOfPlatformCircle"])({
         object: particle,
         platform: platform
       })) {
@@ -1191,13 +1213,13 @@ function animate() {
       if (particle.ttl < 0) particles.splice(index, 1);
     });
     zombiez.forEach(function (zombie) {
-      if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["isOnTopOfPlatform"])({
+      if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isOnTopOfPlatform"])({
         object: zombie,
         platform: platform
       })) zombie.velocity.y = 0;
     });
     potions.forEach(function (potion) {
-      if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_5__["isOnTopOfPlatform"])({
+      if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isOnTopOfPlatform"])({
         object: potion,
         platform: platform
       })) potion.velocity.y = 0;
@@ -1246,6 +1268,7 @@ animate(); // down key listener (asdw)
 addEventListener('keydown', function (_ref6) {
   var keyCode = _ref6.keyCode;
 
+  //console.log(keyCode)
   switch (keyCode) {
     case 65:
       console.log('left');
@@ -1270,6 +1293,25 @@ addEventListener('keydown', function (_ref6) {
       if (!player.powerUps.potion) break;
       if (lastKey === 'right') player.currentSprite = player.sprites.jump.potion.right;else player.currentSprite = player.sprites.jump.potion.left;
       break;
+
+    case 32:
+      console.log('space');
+      if (!player.powerUps.potion) return;
+      var velocity = 60;
+      if (lastKey === 'left') velocity = -60;
+      particles.push(new Particle({
+        position: {
+          x: player.position.x + player.width / 2,
+          y: player.position.y + player.height / 2 - 40
+        },
+        velocity: {
+          x: velocity,
+          y: 0
+        },
+        radius: 7,
+        color: 'red',
+        laser: true
+      }));
   }
 }); // up key listener (asdw)
 
@@ -1280,7 +1322,6 @@ addEventListener('keyup', function (_ref7) {
     case 65:
       console.log('left');
       keys.left.pressed = false;
-      player.currentSprite = player.sprites.stand.left;
       break;
 
     case 83:
