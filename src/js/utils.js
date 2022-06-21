@@ -43,6 +43,7 @@ export function isOnTopOfPlatform({ object, platform }) {
   )
 }
 
+
 export function collisionTop({ object1, object2 }) {
   return (
       object1.position.y + object1.height <= 

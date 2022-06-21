@@ -11,9 +11,12 @@ import {
 } from './utils.js'
 
 import platform from '../img/platform.png'
+import tPlatform from '../img/tPlatform.png'
+import xtPlatform from '../img/xtPlatform.png'
+
 import hills from '../img/hills.png'
 import background from '../img/background.png'
-import tPlatform from '../img/tPlatform.png'
+
 import block from '../img/block.png'
 import blockTri from '../img/blockTri.png'
 
@@ -356,7 +359,10 @@ class Particle {
 //defining platforms
 let platformImage
 let tPlatformImage
+let xtPlatformImage
 let blockTriImage
+let blockImage
+
 
 let player = new Player()
 let platforms = []
@@ -380,67 +386,309 @@ let scrollOffset = 0
 async function gameReset() {
    platformImage = await createImageAsync(platform)
    tPlatformImage = await createImageAsync(tPlatform)
+   xtPlatformImage = await createImageAsync(xtPlatform)
    blockTriImage = await createImageAsync(blockTri)
+   blockImage = await createImageAsync(block)
 
-    //platform creation
+
     player = new Player()
     zombiez = [
         new Zombie({
         position: {
-            x: 800,
+            x: 2750,
             y: 100
         },
         velocity: {
             x:-0.5,
             y: 0
-        },
-        distance: {
-            limitLeft: 125,
-            limitRight: -125,
-            traveled: 0
         }
         }),
+
         new Zombie({
         position: {
-            x: 1500,
+            x: 6000,
             y: 100,
         },
         velocity: {
             x:-0.5,
             y: 0,
+        },        
+        distance: {
+        limitLeft: 250,
+        limitRight: -250,
+        traveled: 0
+        }
+        }),
+
+        new Zombie({
+        position: {
+            x: 6100,
+            y: 100,
         },
-       
+        velocity: {
+            x:-0.5,
+            y: 0,
+        },        
+        distance: {
+        limitLeft: 250,
+        limitRight: -250,
+        traveled: 0
+        }
+        }),
+
+        new Zombie({
+        position: {
+            x: 6200,
+            y: 100,
+        },
+        velocity: {
+            x:-0.5,
+            y: 0,
+        },        
+        distance: {
+        limitLeft: 250,
+        limitRight: -250,
+        traveled: 0
+        }
+        }),
+        
+        new Zombie({
+        position: {
+            x: 6300,
+            y: 100,
+        },
+        velocity: {
+            x:-0.5,
+            y: 0,
+        },        
+        distance: {
+        limitLeft: 250,
+        limitRight: -250,
+        traveled: 0
+        }
+        }),
+
+        new Zombie({
+        position: {
+            x: 8450,
+            y: 100
+        },
+        velocity: {
+            x:-0.5,
+            y: 0
+        }
+        }),
+        new Zombie({
+        position: {
+            x: 11600,
+            y: 100,
+        },
+        velocity: {
+            x:-0.5,
+            y: 0,
+        },        
+        distance: {
+        limitLeft: 150,
+        limitRight: -150,
+        traveled: 0
+        }
+        }),
+        new Zombie({
+        position: {
+            x: 11800,
+            y: 100,
+        },
+        velocity: {
+            x:-0.5,
+            y: 0,
+        },        
+        distance: {
+        limitLeft: 225,
+        limitRight: -225,
+        traveled: 0
+        }
+        }),
+        new Zombie({
+        position: {
+            x: 12000,
+            y: 100,
+        },
+        velocity: {
+            x:-0.5,
+            y: 0,
+        },        
+        distance: {
+        limitLeft: 200,
+        limitRight: -200,
+        traveled: 0
+        }
+        }),
+        new Zombie({
+        position: {
+            x: 12200,
+            y: 100,
+        },
+        velocity: {
+            x:-0.5,
+            y: 0,
+        },        
+        distance: {
+        limitLeft: 175,
+        limitRight: -175,
+        traveled: 0
+        }
+        }),
+        new Zombie({
+        position: {
+            x: 12400,
+            y: 100,
+        },
+        velocity: {
+            x:-0.5,
+            y: 0,
+        },        
+        distance: {
+        limitLeft: 150,
+        limitRight: -150,
+        traveled: 0
+        }
+        }),
+        new Zombie({
+        position: {
+            x: 12700,
+            y: 100,
+        },
+        velocity: {
+            x:-0.5,
+            y: 0,
+        },        
+        distance: {
+        limitLeft: 350,
+        limitRight: -100,
+        traveled: 0
+        }
         }),
     ]
     
     particles = []
     platforms = [
-        new Platform({
-        x: platformImage.width *4 + 390 - 2 + platformImage.width - tPlatformImage.width, y: 325, image: createImage(tPlatform)
-    }),
-        new Platform({
-        x: -1, 
-        y: 470,
-        image: platformImage
-    }), new Platform({
-        x: platformImage.width -3, y: 470, image: platformImage
-    }), new Platform({
-        x: platformImage.width *2 + 200, y: 470, image: platformImage
-    }), new Platform({
-        x: platformImage.width *3 + 400, y: 470, image: platformImage
-    }), new Platform({
-        x: platformImage.width *4 + 400 - 2, y: 470, image: platformImage
-    }), new Platform({
-        x: platformImage.width *5 + 1000 - 2, y: 470, image: platformImage
-    }), new Platform({
-        x: 500, y: 300, image: blockTriImage,
+    new Platform ({
+        x: 1700,
+        y: 290,
+        image: blockTriImage,
         block: true
-    })
-]
+    }),
+    new Platform ({
+        x: 2150,
+        y: 190,
+        image: xtPlatformImage,
+    }),
+    new Platform ({
+        x: 3750,
+        y: 290,
+        image: blockImage,
+        block: true
+    }),
+    new Platform ({
+        x: 4125,
+        y: 310,
+        image: tPlatformImage,
+    }),
+    new Platform ({
+        x: 6925,
+        y: 290,
+        image: blockTriImage,
+        block: true
+    }),
+    new Platform ({
+        x: 9325,
+        y: 400,
+        image: blockImage,
+        block: true
+    }),
+    new Platform ({
+        x: 9525,
+        y: 400,
+        image: blockImage,
+        block: true
+    }),
+    new Platform ({
+        x: 9725,
+        y: 400,
+        image: blockImage,
+        block: true
+    }),
+    new Platform ({
+        x: 9925,
+        y: 350,
+        image: blockImage,
+        block: true
+    }),
+    new Platform ({
+        x: 10125,
+        y: 300,
+        image: blockImage,
+        block: true
+    }),
+    new Platform ({
+        x: 10325,
+        y: 250,
+        image: blockImage,
+        block: true
+    }),
+    new Platform ({
+        x: 10525,
+        y: 200,
+        image: blockTriImage,
+        block: true
+    }),
+    new Platform ({
+        x: 10678,
+        y: 200,
+        image: blockTriImage,
+        block: true
+    }),
+    new Platform ({
+        x: 10831,
+        y: 200,
+        image: blockTriImage,
+        block: true
+    }),
+    new Platform ({
+        x: 10984,
+        y: 200,
+        image: blockTriImage,
+        block: true
+    }),
+    new Platform ({
+        x: 11437,
+        y: 150,
+        image: blockImage,
+        block: true
+    }),
+    new Platform ({
+        x: 11737,
+        y: 150,
+        image: blockImage,
+        block: true
+    }),
+    new Platform ({
+        x: 12037,
+        y: 150,
+        image: blockImage,
+        block: true
+    }),
+    new Platform ({
+        x: 12337,
+        y: 150,
+        image: blockImage,
+        block: true
+    }),
+    ]
 
     potions = [new Potion({position: {
-        x: 400,
-        y: 100
+        x: 2248,
+        y: -150
     },
     velocity: {
         x: 0,
@@ -451,17 +699,69 @@ async function gameReset() {
     genericObjects = [
         new GenericObject({
             x: -1,
-            y: -1,
+            y: 0,
             image: createImage(background)
         }),
         new GenericObject({
             x: -1,
-            y: -1,
+            y: 0,
             image: createImage(hills)
         })
     ]
 
     scrollOffset = 0
+
+    const platformsMap = ['plat', 'plat', 'plat', 'plat', 'plat', 'gap', 'plat', 'plat', 
+    'gap', 'gap', 'plat', 'plat', 'plat', 'gap', 'gap', 'tPlat', 'gap', 'xtPlat', 'gap', 
+    'xtPlat', 'gap', 'xtPlat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 
+    'plat', 'plat', 'plat', 'plat']
+
+    let platformDistance = 0
+
+    platformsMap.forEach(symbol => {
+        switch(symbol) {
+            case 'plat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height,
+                    image: platformImage,
+                }))
+
+            platformDistance += platformImage.width
+
+            break
+
+            case 'gap':
+                platformDistance += 300
+
+                break;
+            
+            case 'tPlat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - tPlatformImage.height,
+                    image: tPlatformImage,
+
+                }))
+
+            platformDistance += tPlatformImage.width
+
+            break
+
+            case 'xtPlat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - xtPlatformImage.height,
+                    image: xtPlatformImage,
+
+                }))
+
+            platformDistance += xtPlatformImage.width
+
+            break
+        }
+
+    })
 }
 
 function animate() {
@@ -740,7 +1040,7 @@ function animate() {
     })       
 
   //win con
-    if (platformImage && scrollOffset > platformImage.width *5 + 400 - 2) {
+    if (platformImage && scrollOffset + 400 + player.width > 13200) {
         console.log('you WIN!')
     }
 
