@@ -2,6 +2,7 @@ import {
     createImage, 
     createImageAsync, 
     isOnTopOfPlatform, 
+    isOnTopOfPad,
     collisionTop, 
     isOnTopOfPlatformCircle,
     hitTopOfPlatform,
@@ -17,8 +18,14 @@ import xtPlatform from '../img/xtPlatform.png'
 import hills from '../img/hills.png'
 import background from '../img/background.png'
 
+import abduction1 from '../img/abduction1.png'
+import abduction2 from '../img/abduction2.png'
+import abduction3 from '../img/abduction3.png'
+import abduction4 from '../img/abduction4.png'
+
 import block from '../img/block.png'
 import blockTri from '../img/blockTri.png'
+import pad from '../img/pad.png'
 
 import toadRunRight from '../img/toadRunRight.png'
 import toadRunLeft from '../img/toadRunLeft.png'
@@ -37,6 +44,7 @@ import cyclopsJumpLeft from '../img/cyclopsJumpLeft.png'
 import zombieSprite from '../img/zombieSprite.png'
 import zombieSpriteRight from '../img/zombieSpriteRight.png'
 import potion from '../img/potion.png'
+
 
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
@@ -162,6 +170,32 @@ class Platform {
          this.width = image.width
          this.height = image.height 
          this.block = block
+    }
+
+    draw() {
+        c.drawImage(this.image, this.position.x, this.position.y)
+    }
+
+    update() {
+        this.draw()
+        this.position.x += this.velocity.x
+    }
+}
+
+class Pad {
+    constructor({ x, y, image }) {
+         this.position = {
+             x,
+             y
+         }
+
+         this.velocity = {
+             x: 0
+         }
+
+         this.image = image
+         this.width = image.width
+         this.height = image.height 
     }
 
     draw() {
@@ -362,6 +396,7 @@ let tPlatformImage
 let xtPlatformImage
 let blockTriImage
 let blockImage
+let padImage
 
 
 let player = new Player()
@@ -370,6 +405,7 @@ let genericObjects = []
 let zombiez = []
 let particles = []
 let potions = []
+let pads = []
 
 let lastKey
 const keys = {
@@ -382,6 +418,7 @@ const keys = {
 }
 
 let scrollOffset = 0
+let game
 
 async function gameReset() {
    platformImage = await createImageAsync(platform)
@@ -389,6 +426,7 @@ async function gameReset() {
    xtPlatformImage = await createImageAsync(xtPlatform)
    blockTriImage = await createImageAsync(blockTri)
    blockImage = await createImageAsync(block)
+   padImage = await createImageAsync(pad)
 
 
     player = new Player()
@@ -686,6 +724,14 @@ async function gameReset() {
     }),
     ]
 
+    pads = [
+        new Pad ({
+            x: 300,
+            y: 420,
+            image: padImage,
+        })
+    ]
+
     potions = [new Potion({position: {
         x: 2248,
         y: -150
@@ -778,6 +824,11 @@ function animate() {
        platform.update() 
        platform.velocity.x = 0
     })
+
+    pads.forEach(pad => {
+        pad.update() 
+        pad.velocity.x = 0
+     })
 
     //Toad potion powerup
     potions.forEach((potion, i) => {
@@ -929,6 +980,10 @@ function animate() {
             particles.forEach((particle) => {
                 particle.position.x -= player.speed
             })
+
+            pads.forEach((pad) => {
+                pad.position.x -= player.speed
+             })
         }
             
         } else if (keys.left.pressed && scrollOffset > 0) {
@@ -967,6 +1022,10 @@ function animate() {
                 particles.forEach((particle) => {
                    particle.position.x += player.speed
                 })
+
+                pads.forEach((pad) => {
+                    pad.position.x += player.speed
+                 })
             }
         }
     }
@@ -1038,6 +1097,22 @@ function animate() {
             potion.velocity.y = 0
         })
     })       
+
+    //pad collision detection
+    pads.forEach(pad => {
+        if (
+            isOnTopOfPad({
+                object: player,
+                pad
+            })
+        ) {
+            player.velocity.y = 0
+            console.log('touch')
+            player.velocity.x = 0
+            player.height = 0
+            player.width = 0
+        } 
+    })
 
   //win con
     if (platformImage && scrollOffset + 400 + player.width > 13200) {

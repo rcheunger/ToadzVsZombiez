@@ -43,6 +43,17 @@ export function isOnTopOfPlatform({ object, platform }) {
   )
 }
 
+export function isOnTopOfPad({ object, pad }) {
+  return (
+      object.position.y + object.height <= 
+      pad.position.y + 15 && 
+      object.position.y + object.height + object.velocity.y >= 
+      pad.position.y + 15 && 
+      object.position.x + object.width >= 
+      pad.position.x && object.position.x <= pad.position.x + pad.width
+  )
+}
+
 
 export function collisionTop({ object1, object2 }) {
   return (
