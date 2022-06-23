@@ -204,55 +204,16 @@ module.exports = _typeof;
 
 /***/ }),
 
-/***/ "./src/img/abduction1.png":
-/*!********************************!*\
-  !*** ./src/img/abduction1.png ***!
-  \********************************/
+/***/ "./src/img/abduction.png":
+/*!*******************************!*\
+  !*** ./src/img/abduction.png ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "1e13ffb08b923b7d81180e1644cf82e9.png");
-
-/***/ }),
-
-/***/ "./src/img/abduction2.png":
-/*!********************************!*\
-  !*** ./src/img/abduction2.png ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "62cacafbf0f97bf167c99ab289087c3c.png");
-
-/***/ }),
-
-/***/ "./src/img/abduction3.png":
-/*!********************************!*\
-  !*** ./src/img/abduction3.png ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "7a04d334ec0e2a7b04ae15a995daf6b0.png");
-
-/***/ }),
-
-/***/ "./src/img/abduction4.png":
-/*!********************************!*\
-  !*** ./src/img/abduction4.png ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "52d7af9765f16e4bbae9d73235c09cb2.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "ac839b032c5f3f499fa17deebe726bf1.png");
 
 /***/ }),
 
@@ -578,37 +539,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_xtPlatform_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/xtPlatform.png */ "./src/img/xtPlatform.png");
 /* harmony import */ var _img_hills_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/hills.png */ "./src/img/hills.png");
 /* harmony import */ var _img_background_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/background.png */ "./src/img/background.png");
-/* harmony import */ var _img_abduction1_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/abduction1.png */ "./src/img/abduction1.png");
-/* harmony import */ var _img_abduction2_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/abduction2.png */ "./src/img/abduction2.png");
-/* harmony import */ var _img_abduction3_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/abduction3.png */ "./src/img/abduction3.png");
-/* harmony import */ var _img_abduction4_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/abduction4.png */ "./src/img/abduction4.png");
-/* harmony import */ var _img_block_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/block.png */ "./src/img/block.png");
-/* harmony import */ var _img_blockTri_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/blockTri.png */ "./src/img/blockTri.png");
-/* harmony import */ var _img_pad_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/pad.png */ "./src/img/pad.png");
-/* harmony import */ var _img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/toadRunRight.png */ "./src/img/toadRunRight.png");
-/* harmony import */ var _img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/toadRunLeft.png */ "./src/img/toadRunLeft.png");
-/* harmony import */ var _img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/toadRightStand.png */ "./src/img/toadRightStand.png");
-/* harmony import */ var _img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../img/toadLeftStand.png */ "./src/img/toadLeftStand.png");
-/* harmony import */ var _img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../img/toadJumpRight.png */ "./src/img/toadJumpRight.png");
-/* harmony import */ var _img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../img/toadJumpLeft.png */ "./src/img/toadJumpLeft.png");
-/* harmony import */ var _img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../img/cyclopsRunRight.png */ "./src/img/cyclopsRunRight.png");
-/* harmony import */ var _img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../img/cyclopsRunLeft.png */ "./src/img/cyclopsRunLeft.png");
-/* harmony import */ var _img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../img/cyclopsRightStand.png */ "./src/img/cyclopsRightStand.png");
-/* harmony import */ var _img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../img/cyclopsLeftStand.png */ "./src/img/cyclopsLeftStand.png");
-/* harmony import */ var _img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../img/cyclopsJumpRight.png */ "./src/img/cyclopsJumpRight.png");
-/* harmony import */ var _img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../img/cyclopsJumpLeft.png */ "./src/img/cyclopsJumpLeft.png");
-/* harmony import */ var _img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../img/zombieSprite.png */ "./src/img/zombieSprite.png");
-/* harmony import */ var _img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../img/zombieSpriteRight.png */ "./src/img/zombieSpriteRight.png");
-/* harmony import */ var _img_potion_png__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../img/potion.png */ "./src/img/potion.png");
+/* harmony import */ var _img_abduction_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/abduction.png */ "./src/img/abduction.png");
+/* harmony import */ var _img_block_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/block.png */ "./src/img/block.png");
+/* harmony import */ var _img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/blockTri.png */ "./src/img/blockTri.png");
+/* harmony import */ var _img_pad_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/pad.png */ "./src/img/pad.png");
+/* harmony import */ var _img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/toadRunRight.png */ "./src/img/toadRunRight.png");
+/* harmony import */ var _img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/toadRunLeft.png */ "./src/img/toadRunLeft.png");
+/* harmony import */ var _img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/toadRightStand.png */ "./src/img/toadRightStand.png");
+/* harmony import */ var _img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/toadLeftStand.png */ "./src/img/toadLeftStand.png");
+/* harmony import */ var _img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/toadJumpRight.png */ "./src/img/toadJumpRight.png");
+/* harmony import */ var _img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/toadJumpLeft.png */ "./src/img/toadJumpLeft.png");
+/* harmony import */ var _img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../img/cyclopsRunRight.png */ "./src/img/cyclopsRunRight.png");
+/* harmony import */ var _img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../img/cyclopsRunLeft.png */ "./src/img/cyclopsRunLeft.png");
+/* harmony import */ var _img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../img/cyclopsRightStand.png */ "./src/img/cyclopsRightStand.png");
+/* harmony import */ var _img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../img/cyclopsLeftStand.png */ "./src/img/cyclopsLeftStand.png");
+/* harmony import */ var _img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../img/cyclopsJumpRight.png */ "./src/img/cyclopsJumpRight.png");
+/* harmony import */ var _img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../img/cyclopsJumpLeft.png */ "./src/img/cyclopsJumpLeft.png");
+/* harmony import */ var _img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../img/zombieSprite.png */ "./src/img/zombieSprite.png");
+/* harmony import */ var _img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../img/zombieSpriteRight.png */ "./src/img/zombieSpriteRight.png");
+/* harmony import */ var _img_potion_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../img/potion.png */ "./src/img/potion.png");
 
 
 
 
 
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default()(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
-
-
-
 
 
 
@@ -661,27 +616,27 @@ var Player = /*#__PURE__*/function () {
     this.frames = 0;
     this.sprites = {
       stand: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_19__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_20__["default"]),
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_16__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_17__["default"]),
         potion: {
-          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_25__["default"]),
-          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_26__["default"])
+          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_22__["default"]),
+          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_23__["default"])
         }
       },
       run: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_17__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_18__["default"]),
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_14__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_15__["default"]),
         potion: {
-          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_23__["default"]),
-          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_24__["default"])
+          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_20__["default"]),
+          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_21__["default"])
         }
       },
       jump: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_21__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_22__["default"]),
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_18__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_19__["default"]),
         potion: {
-          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_27__["default"]),
-          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_28__["default"])
+          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_24__["default"]),
+          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_25__["default"])
         }
       }
     };
@@ -797,11 +752,49 @@ var Pad = /*#__PURE__*/function () {
   return Pad;
 }();
 
-var GenericObject = /*#__PURE__*/function () {
-  function GenericObject(_ref3) {
+var Abduction = /*#__PURE__*/function () {
+  function Abduction(_ref3) {
     var x = _ref3.x,
-        y = _ref3.y,
-        image = _ref3.image;
+        y = _ref3.y;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Abduction);
+
+    this.position = {
+      x: x,
+      y: y
+    };
+    this.width = 400;
+    this.height = 576;
+    this.frames = 0;
+    this.sprites = {
+      abduction: {
+        abduction: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_abduction_png__WEBPACK_IMPORTED_MODULE_10__["default"])
+      }
+    };
+    this.currentSprite = this.sprites.abduction.abduction;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Abduction, [{
+    key: "draw",
+    value: function draw() {
+      c.drawImage(this.currentSprite, 400 * this.frames, 0, 400, 576, this.position.x, this.position.y, this.width, this.height, this.position.x);
+    }
+  }, {
+    key: "update",
+    value: function update() {
+      this.frames++;
+      this.draw();
+    }
+  }]);
+
+  return Abduction;
+}();
+
+var GenericObject = /*#__PURE__*/function () {
+  function GenericObject(_ref4) {
+    var x = _ref4.x,
+        y = _ref4.y,
+        image = _ref4.image;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, GenericObject);
 
@@ -834,15 +827,15 @@ var GenericObject = /*#__PURE__*/function () {
 }();
 
 var Zombie = /*#__PURE__*/function () {
-  function Zombie(_ref4) {
-    var position = _ref4.position,
-        velocity = _ref4.velocity,
-        _ref4$distance = _ref4.distance,
-        distance = _ref4$distance === void 0 ? {
+  function Zombie(_ref5) {
+    var position = _ref5.position,
+        velocity = _ref5.velocity,
+        _ref5$distance = _ref5.distance,
+        distance = _ref5$distance === void 0 ? {
       limitLeft: 75,
       limitRight: -75,
       traveled: 0
-    } : _ref4$distance;
+    } : _ref5$distance;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Zombie);
 
@@ -858,8 +851,8 @@ var Zombie = /*#__PURE__*/function () {
     this.height = 150;
     this.sprites = {
       walk: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_30__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_29__["default"])
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_27__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_26__["default"])
       }
     };
     this.currentSprite = this.sprites.walk.left;
@@ -902,9 +895,9 @@ var Zombie = /*#__PURE__*/function () {
 }();
 
 var Potion = /*#__PURE__*/function () {
-  function Potion(_ref5) {
-    var position = _ref5.position,
-        velocity = _ref5.velocity;
+  function Potion(_ref6) {
+    var position = _ref6.position,
+        velocity = _ref6.velocity;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Potion);
 
@@ -918,7 +911,7 @@ var Potion = /*#__PURE__*/function () {
     };
     this.width = 40;
     this.height = 60;
-    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_potion_png__WEBPACK_IMPORTED_MODULE_31__["default"]);
+    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_potion_png__WEBPACK_IMPORTED_MODULE_28__["default"]);
     this.frames = 0;
   }
 
@@ -941,14 +934,14 @@ var Potion = /*#__PURE__*/function () {
 }();
 
 var Particle = /*#__PURE__*/function () {
-  function Particle(_ref6) {
-    var position = _ref6.position,
-        velocity = _ref6.velocity,
-        radius = _ref6.radius,
-        _ref6$color = _ref6.color,
-        color = _ref6$color === void 0 ? 'green' : _ref6$color,
-        _ref6$laser = _ref6.laser,
-        laser = _ref6$laser === void 0 ? false : _ref6$laser;
+  function Particle(_ref7) {
+    var position = _ref7.position,
+        velocity = _ref7.velocity,
+        radius = _ref7.radius,
+        _ref7$color = _ref7.color,
+        color = _ref7$color === void 0 ? 'green' : _ref7$color,
+        _ref7$laser = _ref7.laser,
+        laser = _ref7$laser === void 0 ? false : _ref7$laser;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Particle);
 
@@ -1003,6 +996,7 @@ var zombiez = [];
 var particles = [];
 var potions = [];
 var pads = [];
+var abductions = [];
 var lastKey;
 var keys = {
   right: {
@@ -1042,17 +1036,17 @@ function _gameReset() {
           case 8:
             xtPlatformImage = _context.sent;
             _context.next = 11;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_15__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
 
           case 11:
             blockTriImage = _context.sent;
             _context.next = 14;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_14__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
           case 14:
             blockImage = _context.sent;
             _context.next = 17;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_16__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_13__["default"]);
 
           case 17:
             padImage = _context.sent;
@@ -1312,9 +1306,13 @@ function _gameReset() {
               block: true
             })];
             pads = [new Pad({
-              x: 300,
+              x: 13200,
               y: 420,
               image: padImage
+            })];
+            abductions = [new Abduction({
+              x: 13075,
+              y: 0
             })];
             potions = [new Potion({
               position: {
@@ -1373,7 +1371,7 @@ function _gameReset() {
               }
             });
 
-          case 29:
+          case 30:
           case "end":
             return _context.stop();
         }
@@ -1398,6 +1396,18 @@ function animate() {
   pads.forEach(function (pad) {
     pad.update();
     pad.velocity.x = 0;
+
+    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isOnTopOfPad"])({
+      object: player,
+      pad: pad
+    })) {
+      abductions.forEach(function (abduction) {
+        abduction.update();
+      });
+      player.velocity.y = 0;
+      player.velocity.x = 0;
+      player.opacity = 0;
+    }
   }); //Toad potion powerup
 
   potions.forEach(function (potion, i) {
@@ -1523,6 +1533,9 @@ function animate() {
         pads.forEach(function (pad) {
           pad.position.x -= player.speed;
         });
+        abductions.forEach(function (abduction) {
+          abduction.position.x -= player.speed;
+        });
       }
     } else if (keys.left.pressed && scrollOffset > 0) {
       for (var _i = 0; _i < platforms.length; _i++) {
@@ -1557,6 +1570,9 @@ function animate() {
         });
         pads.forEach(function (pad) {
           pad.position.x += player.speed;
+        });
+        abductions.forEach(function (abduction) {
+          abduction.position.x += player.speed;
         });
       }
     }
@@ -1616,19 +1632,6 @@ function animate() {
         platform: platform
       })) potion.velocity.y = 0;
     });
-  }); //pad collision detection
-
-  pads.forEach(function (pad) {
-    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isOnTopOfPad"])({
-      object: player,
-      pad: pad
-    })) {
-      player.velocity.y = 0;
-      console.log('touch');
-      player.velocity.x = 0;
-      player.height = 0;
-      player.width = 0;
-    }
   }); //win con
 
   if (platformImage && scrollOffset + 400 + player.width > 13200) {
@@ -1670,8 +1673,8 @@ function animate() {
 gameReset();
 animate(); // down key listener (asdw)
 
-addEventListener('keydown', function (_ref7) {
-  var keyCode = _ref7.keyCode;
+addEventListener('keydown', function (_ref8) {
+  var keyCode = _ref8.keyCode;
 
   //console.log(keyCode)
   switch (keyCode) {
@@ -1720,8 +1723,8 @@ addEventListener('keydown', function (_ref7) {
   }
 }); // up key listener (asdw)
 
-addEventListener('keyup', function (_ref8) {
-  var keyCode = _ref8.keyCode;
+addEventListener('keyup', function (_ref9) {
+  var keyCode = _ref9.keyCode;
 
   switch (keyCode) {
     case 65:

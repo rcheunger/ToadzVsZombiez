@@ -18,10 +18,7 @@ import xtPlatform from '../img/xtPlatform.png'
 import hills from '../img/hills.png'
 import background from '../img/background.png'
 
-import abduction1 from '../img/abduction1.png'
-import abduction2 from '../img/abduction2.png'
-import abduction3 from '../img/abduction3.png'
-import abduction4 from '../img/abduction4.png'
+import abduction from '../img/abduction.png'
 
 import block from '../img/block.png'
 import blockTri from '../img/blockTri.png'
@@ -205,6 +202,45 @@ class Pad {
     update() {
         this.draw()
         this.position.x += this.velocity.x
+    }
+}
+
+class Abduction {
+    constructor({ x, y }) {
+        this.position = {
+            x,
+            y
+        }
+
+        this.width = 400
+        this.height = 576
+        this.frames= 0
+
+        this.sprites = {
+            abduction: {
+                abduction: createImage(abduction),
+            }
+        }
+        this.currentSprite = this.sprites.abduction.abduction
+    }
+
+    draw() {
+        c.drawImage(
+            this.currentSprite,
+            400 * this.frames,
+            0,
+            400,
+            576,
+            this.position.x, 
+            this.position.y, 
+            this.width, 
+            this.height,
+            this.position.x)
+    }
+
+    update() {
+        this.frames++
+        this.draw()
     }
 }
 
@@ -406,6 +442,7 @@ let zombiez = []
 let particles = []
 let potions = []
 let pads = []
+let abductions = []
 
 let lastKey
 const keys = {
@@ -726,9 +763,16 @@ async function gameReset() {
 
     pads = [
         new Pad ({
-            x: 300,
+            x: 13200,
             y: 420,
             image: padImage,
+        })
+    ]
+
+    abductions = [
+        new Abduction ({
+            x: 13075,
+            y: 0
         })
     ]
 
@@ -828,7 +872,20 @@ function animate() {
     pads.forEach(pad => {
         pad.update() 
         pad.velocity.x = 0
-     })
+        if (
+                isOnTopOfPad({
+                    object: player,
+                    pad
+                })
+            ) {
+                abductions.forEach(abduction => {
+                    abduction.update() 
+                 })
+                player.velocity.y = 0
+                player.velocity.x = 0
+                player.opacity = 0
+            } 
+        })
 
     //Toad potion powerup
     potions.forEach((potion, i) => {
@@ -984,6 +1041,10 @@ function animate() {
             pads.forEach((pad) => {
                 pad.position.x -= player.speed
              })
+            
+            abductions.forEach((abduction) => {
+                abduction.position.x -= player.speed
+             })
         }
             
         } else if (keys.left.pressed && scrollOffset > 0) {
@@ -1025,6 +1086,10 @@ function animate() {
 
                 pads.forEach((pad) => {
                     pad.position.x += player.speed
+                 })
+
+                abductions.forEach((abduction) => {
+                    abduction.position.x += player.speed
                  })
             }
         }
@@ -1098,21 +1163,6 @@ function animate() {
         })
     })       
 
-    //pad collision detection
-    pads.forEach(pad => {
-        if (
-            isOnTopOfPad({
-                object: player,
-                pad
-            })
-        ) {
-            player.velocity.y = 0
-            console.log('touch')
-            player.velocity.x = 0
-            player.height = 0
-            player.width = 0
-        } 
-    })
 
   //win con
     if (platformImage && scrollOffset + 400 + player.width > 13200) {
