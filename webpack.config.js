@@ -27,6 +27,17 @@ module.exports = {
             loader: 'file-loader'
           }
         ]
+      }, 
+      {
+        test: /\.(mp3|wav)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'audio'
+            }
+          }
+        ]
       }
     ]
   },
@@ -46,4 +57,5 @@ module.exports = {
   ],
   watch: true,
   devtool: 'source-map'
+  
 }

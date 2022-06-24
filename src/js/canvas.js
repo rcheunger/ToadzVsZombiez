@@ -41,7 +41,8 @@ import cyclopsJumpLeft from '../img/cyclopsJumpLeft.png'
 import zombieSprite from '../img/zombieSprite.png'
 import zombieSpriteRight from '../img/zombieSpriteRight.png'
 import potion from '../img/potion.png'
-
+import { audio } from './audio.js'
+audio.audioBackground.play()
 
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
@@ -458,6 +459,10 @@ let scrollOffset = 0
 let game
 
 async function gameReset() {
+    game = {
+        disableUserInput: false
+    }
+
    platformImage = await createImageAsync(platform)
    tPlatformImage = await createImageAsync(tPlatform)
    xtPlatformImage = await createImageAsync(xtPlatform)
@@ -758,7 +763,7 @@ async function gameReset() {
         y: 150,
         image: blockImage,
         block: true
-    }),
+    })
     ]
 
     pads = [
@@ -804,7 +809,7 @@ async function gameReset() {
     const platformsMap = ['plat', 'plat', 'plat', 'plat', 'plat', 'gap', 'plat', 'plat', 
     'gap', 'gap', 'plat', 'plat', 'plat', 'gap', 'gap', 'tPlat', 'gap', 'xtPlat', 'gap', 
     'xtPlat', 'gap', 'xtPlat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 
-    'plat', 'plat', 'plat', 'plat']
+    'plat', 'plat', 'plat', 'plat', 'plat']
 
     let platformDistance = 0
 
@@ -881,6 +886,8 @@ function animate() {
                 abductions.forEach(abduction => {
                     abduction.update() 
                  })
+                game.disableUserInput = true
+                audio.audioAbduction.play()
                 player.velocity.y = 0
                 player.velocity.x = 0
                 player.opacity = 0
@@ -925,6 +932,7 @@ function animate() {
                 }))
             }
             setTimeout(() => {
+                audio.audioZombieDeath.play()
                 zombiez.splice(index, 1)   
                 particles.splice(particleIndex, 1)
             }, 0)
@@ -950,6 +958,7 @@ function animate() {
                     radius: Math.random() * 2.5
                 }))
             }
+            audio.audioZombieDeath.play()
             player.velocity.y -=`25`
             setTimeout(() => {
                 zombiez.splice(index, 1)   
@@ -966,12 +975,15 @@ function animate() {
             if (player.powerUps.potion) {
                 player.invincible = true
                 player.powerUps.potion = false
+                audio.audioLosePowerUp.play()
 
                 setTimeout(() => {
                     player.invincible = false}, 1000)
-            } else if (!player.invincible)gameReset()
+            } else if (!player.invincible) {
+            audio.audioGameOver.play()
+            gameReset()
         }
-           
+        }
     })
 
     particles.forEach((particle, i) => {
@@ -985,20 +997,24 @@ function animate() {
     })
     player.update()
 
+    if (game.disableUserInput) return
+
+    //scrolling code start
     let hitSide = false
     //left and right movement 
     if (keys.right.pressed && player.position.x < 400) {
         player.velocity.x = player.speed
     } else if (
         (keys.left.pressed && player.position.x > 100) || 
-        (keys.left.pressed && scrollOffset === 0 && player.position.x > 0)  
+        (keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
+        (keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250)
     ) {
         player.velocity.x = -player.speed
     } else {
         player.velocity.x = 0
     
         //scrolling code
-        if (keys.right.pressed) {
+        if (keys.right.pressed && scrollOffset < 13250) {
             for (let i = 0; i < platforms.length; i++) {
                 const platform = platforms[i]
                 platform.velocity.x = -player.speed
@@ -1165,12 +1181,13 @@ function animate() {
 
 
   //win con
-    if (platformImage && scrollOffset + 400 + player.width > 13200) {
+    if (platformImage && scrollOffset + 400 + player.width > 13215) {
         console.log('you WIN!')
     }
 
     //lose con
     if (player.position.y > canvas.height) {
+        audio.audioGameOver.play()
         gameReset()
     }
 
@@ -1206,7 +1223,8 @@ animate()
 
 // down key listener (asdw)
 addEventListener('keydown', ({ keyCode }) => {
-    //console.log(keyCode)
+    if (game.disableUserInput) return
+
     switch (keyCode) {
         case 65:
             console.log('left')
@@ -1226,6 +1244,7 @@ addEventListener('keydown', ({ keyCode }) => {
 
         case 87:
             console.log('up')
+            audio.audioJump.play()
             player.velocity.y -= 15
             
             if (lastKey === 'right') 
@@ -1247,19 +1266,34 @@ addEventListener('keydown', ({ keyCode }) => {
 
             if (!player.powerUps.potion) return
 
+            audio.audioLaser.play()
+
             let velocity = 60
             if (lastKey === 'left') velocity = -60
 
             particles.push(new Particle({
                 position: {
                     x: player.position.x + player.width / 2,
-                    y: player.position.y + player.height / 2 -40
+                    y: player.position.y + player.height / 2 -43
                 },
                 velocity: {
                     x: velocity,
                     y: 0
                 },
-                radius: 7,
+                radius: 3,
+                color: 'red',
+                laser: true
+            }))
+            particles.push(new Particle({
+                position: {
+                    x: player.position.x + player.width / 2,
+                    y: player.position.y + player.height / 2 -35
+                },
+                velocity: {
+                    x: velocity,
+                    y: 0
+                },
+                radius: 3,
                 color: 'red',
                 laser: true
             }))
@@ -1268,6 +1302,8 @@ addEventListener('keydown', ({ keyCode }) => {
 
 // up key listener (asdw)
 addEventListener('keyup', ({ keyCode }) => {
+    if (game.disableUserInput) return
+    
     switch (keyCode) {
         case 65:
             console.log('left')
