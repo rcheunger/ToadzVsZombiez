@@ -3503,19 +3503,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/audio/audioBackground.mp3":
-/*!***************************************!*\
-  !*** ./src/audio/audioBackground.mp3 ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/3a31cf94c9ad5ff6234bc4b152e58d62.mp3");
-
-/***/ }),
-
 /***/ "./src/audio/audioGameOver.mp3":
 /*!*************************************!*\
   !*** ./src/audio/audioGameOver.mp3 ***!
@@ -3578,6 +3565,45 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/c345f3e01c2705526392303b2fc261c5.mp3");
+
+/***/ }),
+
+/***/ "./src/audio/level1Music.mp3":
+/*!***********************************!*\
+  !*** ./src/audio/level1Music.mp3 ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/3685e54c839d1f4348fba1ba8c887c71.mp3");
+
+/***/ }),
+
+/***/ "./src/audio/level2Music.mp3":
+/*!***********************************!*\
+  !*** ./src/audio/level2Music.mp3 ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/546b8ca7887b6d8e21a429362412e857.mp3");
+
+/***/ }),
+
+/***/ "./src/audio/level3Music.mp3":
+/*!***********************************!*\
+  !*** ./src/audio/level3Music.mp3 ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/41c286ed23d2c9c0122b4d9d981e5307.mp3");
 
 /***/ }),
 
@@ -3720,7 +3746,85 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "44d1de80e73c3efaa05239b1bb6f1f37.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "9635140862156c6def9efbdceb4c22f0.png");
+
+/***/ }),
+
+/***/ "./src/img/level2/background.png":
+/*!***************************************!*\
+  !*** ./src/img/level2/background.png ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "36fc18c20ae2a7573d6d75ba7643162a.png");
+
+/***/ }),
+
+/***/ "./src/img/level2/hills.png":
+/*!**********************************!*\
+  !*** ./src/img/level2/hills.png ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "cf0ffdb6eb5f477ddaba34b708eb3d3a.png");
+
+/***/ }),
+
+/***/ "./src/img/level2/platform.png":
+/*!*************************************!*\
+  !*** ./src/img/level2/platform.png ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "a484b20283869d7099ac2359b768c799.png");
+
+/***/ }),
+
+/***/ "./src/img/level2/tPlatform.png":
+/*!**************************************!*\
+  !*** ./src/img/level2/tPlatform.png ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "51f79942fd05353c59acbb4d1cbf43b3.png");
+
+/***/ }),
+
+/***/ "./src/img/level2/xtPlatform.png":
+/*!***************************************!*\
+  !*** ./src/img/level2/xtPlatform.png ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "80c1ecd728407a58d6ed8732006ce064.png");
+
+/***/ }),
+
+/***/ "./src/img/musicNote.png":
+/*!*******************************!*\
+  !*** ./src/img/musicNote.png ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "9998e80f92531212740de316d2f9bb92.png");
 
 /***/ }),
 
@@ -3746,7 +3850,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "512a4367ee4c8acd81a63d85caa5ba44.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "5ac895a222b44afa764095976c192fb4.png");
 
 /***/ }),
 
@@ -3772,7 +3876,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0c340f3e3f7ecb4dba443e24325a0f17.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "9952ca93fe24142d94a962812a1bbb52.png");
 
 /***/ }),
 
@@ -3863,7 +3967,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "40b9418a28d2882604ed25d4e6aab1e1.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "2647c1640b09e9444edfad03621913e8.png");
 
 /***/ }),
 
@@ -3905,13 +4009,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "audio", function() { return audio; });
 /* harmony import */ var howler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! howler */ "./node_modules/howler/dist/howler.js");
 /* harmony import */ var howler__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(howler__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _audio_audioBackground_mp3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../audio/audioBackground.mp3 */ "./src/audio/audioBackground.mp3");
-/* harmony import */ var _audio_audioAbduction_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../audio/audioAbduction.mp3 */ "./src/audio/audioAbduction.mp3");
-/* harmony import */ var _audio_audioGameOver_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../audio/audioGameOver.mp3 */ "./src/audio/audioGameOver.mp3");
-/* harmony import */ var _audio_audioJump_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../audio/audioJump.mp3 */ "./src/audio/audioJump.mp3");
-/* harmony import */ var _audio_audioLaser_mp3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../audio/audioLaser.mp3 */ "./src/audio/audioLaser.mp3");
-/* harmony import */ var _audio_audioLosePowerUp_mp3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../audio/audioLosePowerUp.mp3 */ "./src/audio/audioLosePowerUp.mp3");
-/* harmony import */ var _audio_audioZombieDeath_mp3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../audio/audioZombieDeath.mp3 */ "./src/audio/audioZombieDeath.mp3");
+/* harmony import */ var _audio_level1Music_mp3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../audio/level1Music.mp3 */ "./src/audio/level1Music.mp3");
+/* harmony import */ var _audio_level2Music_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../audio/level2Music.mp3 */ "./src/audio/level2Music.mp3");
+/* harmony import */ var _audio_level3Music_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../audio/level3Music.mp3 */ "./src/audio/level3Music.mp3");
+/* harmony import */ var _audio_audioAbduction_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../audio/audioAbduction.mp3 */ "./src/audio/audioAbduction.mp3");
+/* harmony import */ var _audio_audioGameOver_mp3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../audio/audioGameOver.mp3 */ "./src/audio/audioGameOver.mp3");
+/* harmony import */ var _audio_audioJump_mp3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../audio/audioJump.mp3 */ "./src/audio/audioJump.mp3");
+/* harmony import */ var _audio_audioLaser_mp3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../audio/audioLaser.mp3 */ "./src/audio/audioLaser.mp3");
+/* harmony import */ var _audio_audioLosePowerUp_mp3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../audio/audioLosePowerUp.mp3 */ "./src/audio/audioLosePowerUp.mp3");
+/* harmony import */ var _audio_audioZombieDeath_mp3__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../audio/audioZombieDeath.mp3 */ "./src/audio/audioZombieDeath.mp3");
+
+
 
 
 
@@ -3921,34 +4029,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var audio = {
-  audioBackground: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioBackground_mp3__WEBPACK_IMPORTED_MODULE_1__["default"]],
-    volume: 0.1,
-    loop: true,
-    autoplay: true
+  level1Music: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
+    src: [_audio_level1Music_mp3__WEBPACK_IMPORTED_MODULE_1__["default"]],
+    volume: 0.08,
+    loop: true
   }),
   audioAbduction: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioAbduction_mp3__WEBPACK_IMPORTED_MODULE_2__["default"]],
+    src: [_audio_audioAbduction_mp3__WEBPACK_IMPORTED_MODULE_4__["default"]],
     volume: 0.0
   }),
   audioGameOver: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioGameOver_mp3__WEBPACK_IMPORTED_MODULE_3__["default"]],
+    src: [_audio_audioGameOver_mp3__WEBPACK_IMPORTED_MODULE_5__["default"]],
     volume: 0.4
   }),
   audioJump: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioJump_mp3__WEBPACK_IMPORTED_MODULE_4__["default"]],
+    src: [_audio_audioJump_mp3__WEBPACK_IMPORTED_MODULE_6__["default"]],
     volume: 0.25
   }),
   audioLaser: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioLaser_mp3__WEBPACK_IMPORTED_MODULE_5__["default"]],
+    src: [_audio_audioLaser_mp3__WEBPACK_IMPORTED_MODULE_7__["default"]],
     volume: 0.4
   }),
   audioLosePowerUp: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioLosePowerUp_mp3__WEBPACK_IMPORTED_MODULE_6__["default"]],
+    src: [_audio_audioLosePowerUp_mp3__WEBPACK_IMPORTED_MODULE_8__["default"]],
     volume: 0.4
   }),
   audioZombieDeath: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioZombieDeath_mp3__WEBPACK_IMPORTED_MODULE_7__["default"]],
+    src: [_audio_audioZombieDeath_mp3__WEBPACK_IMPORTED_MODULE_9__["default"]],
     volume: 0.4
   })
 };
@@ -3997,7 +4104,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../img/zombieSprite.png */ "./src/img/zombieSprite.png");
 /* harmony import */ var _img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../img/zombieSpriteRight.png */ "./src/img/zombieSpriteRight.png");
 /* harmony import */ var _img_potion_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../img/potion.png */ "./src/img/potion.png");
-/* harmony import */ var _audio_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./audio.js */ "./src/js/audio.js");
+/* harmony import */ var _img_musicNote_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../img/musicNote.png */ "./src/img/musicNote.png");
+/* harmony import */ var _audio_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./audio.js */ "./src/js/audio.js");
+/* harmony import */ var _images_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./images.js */ "./src/js/images.js");
 
 
 
@@ -4031,7 +4140,8 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 
 
 
-_audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioBackground.play();
+
+
 var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
 canvas.width = 1024;
@@ -4375,15 +4485,47 @@ var Potion = /*#__PURE__*/function () {
   return Potion;
 }();
 
-var Particle = /*#__PURE__*/function () {
-  function Particle(_ref7) {
+var MusicNote = /*#__PURE__*/function () {
+  function MusicNote(_ref7) {
     var position = _ref7.position,
-        velocity = _ref7.velocity,
-        radius = _ref7.radius,
-        _ref7$color = _ref7.color,
-        color = _ref7$color === void 0 ? 'green' : _ref7$color,
-        _ref7$laser = _ref7.laser,
-        laser = _ref7$laser === void 0 ? false : _ref7$laser;
+        velocity = _ref7.velocity;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, MusicNote);
+
+    this.position = {
+      x: position.x,
+      y: position.y
+    };
+    this.width = 75;
+    this.height = 75;
+    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_musicNote_png__WEBPACK_IMPORTED_MODULE_29__["default"]);
+    this.frames = 0;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(MusicNote, [{
+    key: "draw",
+    value: function draw() {
+      c.drawImage(this.image, 750 * this.frames, 0, 750, 750, this.position.x, this.position.y, this.width, this.height);
+    }
+  }, {
+    key: "update",
+    value: function update() {
+      this.draw();
+    }
+  }]);
+
+  return MusicNote;
+}();
+
+var Particle = /*#__PURE__*/function () {
+  function Particle(_ref8) {
+    var position = _ref8.position,
+        velocity = _ref8.velocity,
+        radius = _ref8.radius,
+        _ref8$color = _ref8.color,
+        color = _ref8$color === void 0 ? 'green' : _ref8$color,
+        _ref8$laser = _ref8.laser,
+        laser = _ref8$laser === void 0 ? false : _ref8$laser;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Particle);
 
@@ -4437,19 +4579,26 @@ var genericObjects = [];
 var zombiez = [];
 var particles = [];
 var potions = [];
+var notes = [];
 var pads = [];
 var abductions = [];
 var lastKey;
-var keys = {
-  right: {
-    pressed: false
-  },
-  left: {
-    pressed: false
-  }
-};
-var scrollOffset = 0;
+var keys;
+var scrollOffset;
 var game;
+var currentLevel = 1;
+
+function selectLevel(currentLevel) {
+  switch (currentLevel) {
+    case 1:
+      gameReset();
+      break;
+
+    case 2:
+      gameResetLevel2();
+      break;
+  }
+}
 
 function gameReset() {
   return _gameReset.apply(this, arguments);
@@ -4462,38 +4611,48 @@ function _gameReset() {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
+            player = new Player();
+            keys = {
+              right: {
+                pressed: false
+              },
+              left: {
+                pressed: false
+              }
+            };
+            scrollOffset = 0;
             game = {
               disableUserInput: false
             };
-            _context.next = 3;
+            _context.next = 6;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_platform_png__WEBPACK_IMPORTED_MODULE_5__["default"]);
 
-          case 3:
+          case 6:
             platformImage = _context.sent;
-            _context.next = 6;
+            _context.next = 9;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_6__["default"]);
 
-          case 6:
+          case 9:
             tPlatformImage = _context.sent;
-            _context.next = 9;
+            _context.next = 12;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_xtPlatform_png__WEBPACK_IMPORTED_MODULE_7__["default"]);
 
-          case 9:
+          case 12:
             xtPlatformImage = _context.sent;
-            _context.next = 12;
+            _context.next = 15;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
 
-          case 12:
+          case 15:
             blockTriImage = _context.sent;
-            _context.next = 15;
+            _context.next = 18;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
-          case 15:
+          case 18:
             blockImage = _context.sent;
-            _context.next = 18;
+            _context.next = 21;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_13__["default"]);
 
-          case 18:
+          case 21:
             padImage = _context.sent;
             player = new Player();
             zombiez = [new Zombie({
@@ -4769,6 +4928,12 @@ function _gameReset() {
                 y: 0
               }
             })];
+            notes = [new MusicNote({
+              position: {
+                x: 900,
+                y: 170
+              }
+            })];
             genericObjects = [new GenericObject({
               x: -1,
               y: 0,
@@ -4816,7 +4981,7 @@ function _gameReset() {
               }
             });
 
-          case 31:
+          case 35:
           case "end":
             return _context.stop();
         }
@@ -4824,6 +4989,144 @@ function _gameReset() {
     }, _callee);
   }));
   return _gameReset.apply(this, arguments);
+}
+
+function gameResetLevel2() {
+  return _gameResetLevel.apply(this, arguments);
+}
+
+function _gameResetLevel() {
+  _gameResetLevel = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+    var platformsMap, platformDistance;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            player = new Player();
+            keys = {
+              right: {
+                pressed: false
+              },
+              left: {
+                pressed: false
+              }
+            };
+            scrollOffset = 0;
+            game = {
+              disableUserInput: false
+            };
+            _context2.next = 6;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].platform);
+
+          case 6:
+            platformImage = _context2.sent;
+            _context2.next = 9;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].tPlatform);
+
+          case 9:
+            tPlatformImage = _context2.sent;
+            _context2.next = 12;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].xtPlatform);
+
+          case 12:
+            xtPlatformImage = _context2.sent;
+            _context2.next = 15;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
+
+          case 15:
+            blockTriImage = _context2.sent;
+            _context2.next = 18;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
+
+          case 18:
+            blockImage = _context2.sent;
+            _context2.next = 21;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_13__["default"]);
+
+          case 21:
+            padImage = _context2.sent;
+            player = new Player();
+            particles = [];
+            pads = [new Pad({
+              x: 13200,
+              y: 420,
+              image: padImage
+            })];
+            abductions = [new Abduction({
+              x: 13075,
+              y: 0
+            })];
+            potions = [new Potion({
+              position: {
+                x: 2248,
+                y: -150
+              },
+              velocity: {
+                x: 0,
+                y: 0
+              }
+            })];
+            notes = [new MusicNote({
+              position: {
+                x: 900,
+                y: 170
+              }
+            })];
+            genericObjects = [new GenericObject({
+              x: -1,
+              y: 0,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].background)
+            }), new GenericObject({
+              x: -615,
+              y: 0,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].hills)
+            })];
+            scrollOffset = 0;
+            platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat'];
+            platformDistance = 0;
+            platformsMap.forEach(function (symbol) {
+              switch (symbol) {
+                case 'plat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height,
+                    image: platformImage
+                  }));
+                  platformDistance += platformImage.width;
+                  break;
+
+                case 'gap':
+                  platformDistance += 300;
+                  break;
+
+                case 'tPlat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - tPlatformImage.height,
+                    image: tPlatformImage
+                  }));
+                  platformDistance += tPlatformImage.width;
+                  break;
+
+                case 'xtPlat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - xtPlatformImage.height,
+                    image: xtPlatformImage
+                  }));
+                  platformDistance += xtPlatformImage.width;
+                  break;
+              }
+            });
+
+          case 33:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _gameResetLevel.apply(this, arguments);
 }
 
 function animate() {
@@ -4850,10 +5153,16 @@ function animate() {
         abduction.update();
       });
       game.disableUserInput = true;
-      _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioAbduction.play();
+      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioAbduction.play();
       player.velocity.y = 0;
       player.velocity.x = 0;
-      player.opacity = 0;
+      player.opacity = 0; //switch to next level
+
+      setTimeout(function () {
+        gravity = 0.5;
+        _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].level1Music.stop();
+        selectLevel(currentLevel + 1);
+      }, 6000);
     }
   }); //Toad potion powerup
 
@@ -4867,6 +5176,18 @@ function animate() {
         potions.splice(i, 1);
       }, 0);
     } else potion.update();
+  }); //collect music note
+
+  notes.forEach(function (note, i) {
+    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["objectsTouch"])({
+      object1: player,
+      object2: note
+    })) {
+      setTimeout(function () {
+        notes.splice(i, 1);
+        _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].level1Music.play();
+      }, 0);
+    } else note.update();
   });
   zombiez.forEach(function (zombie, index) {
     zombie.update(); //remove zombie on laser beam
@@ -4890,7 +5211,7 @@ function animate() {
         }
 
         setTimeout(function () {
-          _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioZombieDeath.play();
+          _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioZombieDeath.play();
           zombiez.splice(index, 1);
           particles.splice(particleIndex, 1);
         }, 0);
@@ -4916,7 +5237,7 @@ function animate() {
         }));
       }
 
-      _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioZombieDeath.play();
+      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioZombieDeath.play();
       player.velocity.y -= "25";
       setTimeout(function () {
         zombiez.splice(index, 1);
@@ -4926,13 +5247,14 @@ function animate() {
       if (player.powerUps.potion) {
         player.invincible = true;
         player.powerUps.potion = false;
-        _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioLosePowerUp.play();
+        _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioLosePowerUp.play();
         setTimeout(function () {
           player.invincible = false;
         }, 1000);
       } else if (!player.invincible) {
-        _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioGameOver.play();
-        gameReset();
+        _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioGameOver.play();
+        _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].level1Music.stop();
+        selectLevel(currentLevel);
       }
     }
   });
@@ -4982,6 +5304,9 @@ function animate() {
         potions.forEach(function (potion) {
           potion.position.x -= player.speed;
         });
+        notes.forEach(function (note) {
+          note.position.x -= player.speed;
+        });
         particles.forEach(function (particle) {
           particle.position.x -= player.speed;
         });
@@ -5019,6 +5344,9 @@ function animate() {
         });
         potions.forEach(function (potion) {
           potion.position.x += player.speed;
+        });
+        notes.forEach(function (note) {
+          note.position.x += player.speed;
         });
         particles.forEach(function (particle) {
           particle.position.x += player.speed;
@@ -5095,8 +5423,9 @@ function animate() {
 
 
   if (player.position.y > canvas.height) {
-    _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioGameOver.play();
-    gameReset();
+    _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioGameOver.play();
+    _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].level1Music.stop();
+    selectLevel(currentLevel);
   } //Sprite Switching
 
 
@@ -5126,11 +5455,13 @@ function animate() {
   }
 }
 
-gameReset();
+selectLevel(1); // gameReset()
+// gameResetLevel2()
+
 animate(); // down key listener (asdw)
 
-addEventListener('keydown', function (_ref8) {
-  var keyCode = _ref8.keyCode;
+addEventListener('keydown', function (_ref9) {
+  var keyCode = _ref9.keyCode;
   if (game.disableUserInput) return;
 
   switch (keyCode) {
@@ -5152,7 +5483,7 @@ addEventListener('keydown', function (_ref8) {
 
     case 87:
       console.log('up');
-      _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioJump.play();
+      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioJump.play();
       player.velocity.y -= 15;
       if (lastKey === 'right') player.currentSprite = player.sprites.jump.right;else player.currentSprite = player.sprites.jump.left;
       if (!player.powerUps.potion) break;
@@ -5162,7 +5493,7 @@ addEventListener('keydown', function (_ref8) {
     case 32:
       console.log('space');
       if (!player.powerUps.potion) return;
-      _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioLaser.play();
+      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioLaser.play();
       var velocity = 60;
       if (lastKey === 'left') velocity = -60;
       particles.push(new Particle({
@@ -5194,8 +5525,8 @@ addEventListener('keydown', function (_ref8) {
   }
 }); // up key listener (asdw)
 
-addEventListener('keyup', function (_ref9) {
-  var keyCode = _ref9.keyCode;
+addEventListener('keyup', function (_ref10) {
+  var keyCode = _ref10.keyCode;
   if (game.disableUserInput) return;
 
   switch (keyCode) {
@@ -5218,6 +5549,44 @@ addEventListener('keyup', function (_ref9) {
       break;
   }
 });
+
+/***/ }),
+
+/***/ "./src/js/images.js":
+/*!**************************!*\
+  !*** ./src/js/images.js ***!
+  \**************************/
+/*! exports provided: images */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "images", function() { return images; });
+/* harmony import */ var _img_level2_background_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/level2/background.png */ "./src/img/level2/background.png");
+/* harmony import */ var _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/level2/hills.png */ "./src/img/level2/hills.png");
+/* harmony import */ var _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/level2/platform.png */ "./src/img/level2/platform.png");
+/* harmony import */ var _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/level2/tPlatform.png */ "./src/img/level2/tPlatform.png");
+/* harmony import */ var _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/level2/xtPlatform.png */ "./src/img/level2/xtPlatform.png");
+
+
+
+
+
+var images = {
+  levels: {
+    1: {
+      background: ''
+    },
+    2: {
+      background: _img_level2_background_png__WEBPACK_IMPORTED_MODULE_0__["default"],
+      hills: _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_1__["default"],
+      platform: _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_2__["default"],
+      tPlatform: _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_3__["default"],
+      xtPlatform: _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_4__["default"]
+    }
+  }
+};
+images.background;
 
 /***/ }),
 

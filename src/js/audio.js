@@ -1,5 +1,7 @@
 import { Howl } from 'howler';
-import audioBackground from '../audio/audioBackground.mp3'
+import level1Music from '../audio/level1Music.mp3'
+import level2Music from '../audio/level2Music.mp3'
+import level3Music from '../audio/level3Music.mp3'
 import audioAbduction from '../audio/audioAbduction.mp3'
 import audioGameOver from '../audio/audioGameOver.mp3'
 import audioJump from '../audio/audioJump.mp3'
@@ -8,11 +10,10 @@ import audioLosePowerUp from '../audio/audioLosePowerUp.mp3'
 import audioZombieDeath from '../audio/audioZombieDeath.mp3'
 
 export const audio = {
-    audioBackground: new Howl({
-        src: [audioBackground],
-        volume: 0.1,
-        loop: true,
-        autoplay: true
+    level1Music: new Howl({
+        src: [level1Music],
+        volume: 0.08,
+        loop: true
     }),
     audioAbduction: new Howl({
         src: [audioAbduction],
@@ -37,5 +38,5 @@ export const audio = {
     audioZombieDeath: new Howl({
         src: [audioZombieDeath],
         volume: 0.4
-    })
+    }),
 }

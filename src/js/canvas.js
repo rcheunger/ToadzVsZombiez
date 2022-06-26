@@ -41,8 +41,9 @@ import cyclopsJumpLeft from '../img/cyclopsJumpLeft.png'
 import zombieSprite from '../img/zombieSprite.png'
 import zombieSpriteRight from '../img/zombieSpriteRight.png'
 import potion from '../img/potion.png'
+import musicNote from '../img/musicNote.png'
 import { audio } from './audio.js'
-audio.audioBackground.play()
+import { images } from './images.js'
 
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
@@ -51,7 +52,7 @@ canvas.width = 1024
 canvas.height = 576
 
 // gravity strength
-const gravity = 0.5
+let gravity = 0.5
 
 class Player {
     constructor() {
@@ -391,6 +392,39 @@ class Potion {
     }
 }
 
+class MusicNote {
+    constructor({position, velocity}) {
+        this.position = {
+            x: position.x,
+            y: position.y,
+        }
+
+        this.width = 75
+        this.height = 75
+    
+        this.image = createImage(musicNote)
+        this.frames= 0
+
+    }
+
+    draw() {
+        c.drawImage(
+            this.image,
+            750 * this.frames,
+            0,
+            750,
+            750,
+            this.position.x, 
+            this.position.y, 
+            this.width, 
+            this.height)
+    }
+
+    update() {
+        this.draw()
+    }
+}
+
 
 class Particle {
     constructor({position, velocity, radius, color = 'green', laser = false}) {
@@ -442,23 +476,42 @@ let genericObjects = []
 let zombiez = []
 let particles = []
 let potions = []
+let notes = []
 let pads = []
 let abductions = []
 
 let lastKey
-const keys = {
-    right: {
-        pressed: false
-    },
-    left: {
-        pressed: false
+let keys 
+
+let scrollOffset
+let game
+let currentLevel = 1
+
+function selectLevel(currentLevel) {
+    switch (currentLevel) {
+        case 1:
+        gameReset()
+        break
+        case 2: 
+        gameResetLevel2()
+        break
     }
 }
 
-let scrollOffset = 0
-let game
-
 async function gameReset() {
+    player = new Player()
+
+    keys = {
+        right: {
+            pressed: false
+        },
+        left: {
+            pressed: false
+        }
+    }
+
+    scrollOffset = 0
+
     game = {
         disableUserInput: false
     }
@@ -791,6 +844,12 @@ async function gameReset() {
     }
     })]
 
+    notes = [new MusicNote({position: {
+        x: 900,
+        y: 170
+    }
+    })]
+
     genericObjects = [
         new GenericObject({
             x: -1,
@@ -810,6 +869,134 @@ async function gameReset() {
     'gap', 'gap', 'plat', 'plat', 'plat', 'gap', 'gap', 'tPlat', 'gap', 'xtPlat', 'gap', 
     'xtPlat', 'gap', 'xtPlat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 
     'plat', 'plat', 'plat', 'plat', 'plat']
+
+    let platformDistance = 0
+
+    platformsMap.forEach(symbol => {
+        switch(symbol) {
+            case 'plat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height,
+                    image: platformImage,
+                }))
+
+            platformDistance += platformImage.width
+
+            break
+
+            case 'gap':
+                platformDistance += 300
+
+                break;
+            
+            case 'tPlat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - tPlatformImage.height,
+                    image: tPlatformImage,
+
+                }))
+
+            platformDistance += tPlatformImage.width
+
+            break
+
+            case 'xtPlat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - xtPlatformImage.height,
+                    image: xtPlatformImage,
+
+                }))
+
+            platformDistance += xtPlatformImage.width
+
+            break
+        }
+
+    })
+}
+
+async function gameResetLevel2() {
+    player = new Player()
+
+    keys = {
+        right: {
+            pressed: false
+        },
+        left: {
+            pressed: false
+        }
+    }
+
+    scrollOffset = 0
+
+    game = {
+        disableUserInput: false
+    }
+
+   platformImage = await createImageAsync(images.levels[2].platform)
+   tPlatformImage = await createImageAsync(images.levels[2].tPlatform)
+   xtPlatformImage = await createImageAsync(images.levels[2].xtPlatform)
+   blockTriImage = await createImageAsync(blockTri)
+   blockImage = await createImageAsync(block)
+   padImage = await createImageAsync(pad)
+
+
+    player = new Player()
+    
+    particles = []
+
+    pads = [
+        new Pad ({
+            x: 13200,
+            y: 420,
+            image: padImage,
+        })
+    ]
+
+    abductions = [
+        new Abduction ({
+            x: 13075,
+            y: 0
+        })
+    ]
+
+    potions = [new Potion({position: {
+        x: 2248,
+        y: -150
+    },
+    velocity: {
+        x: 0,
+        y: 0
+    }
+    })]
+
+    notes = [new MusicNote({position: {
+        x: 900,
+        y: 170
+    }
+    })]
+
+    genericObjects = [
+        new GenericObject({
+            x: -1,
+            y: 0,
+            image: createImage(images.levels[2].background)
+        }),
+        new GenericObject({
+            x: -615,
+            y: 0,
+            image: createImage(images.levels[2].hills)
+        })
+    ]
+
+    scrollOffset = 0
+
+    const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 
+    'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 
+    'plat', 'plat', 'plat', 'plat', 'plat', 'plat' ]
 
     let platformDistance = 0
 
@@ -888,10 +1075,20 @@ function animate() {
                  })
                 game.disableUserInput = true
                 audio.audioAbduction.play()
+                
                 player.velocity.y = 0
                 player.velocity.x = 0
                 player.opacity = 0
-            } 
+
+             //switch to next level
+
+                setTimeout(() => {
+                    gravity = 0.5
+                    audio.level1Music.stop()
+                    selectLevel(currentLevel + 1)  
+                  }, 6000)
+            }
+            
         })
 
     //Toad potion powerup
@@ -906,6 +1103,20 @@ function animate() {
             potions.splice(i, 1)
         }, 0)
         } else potion.update()
+    })
+
+    //collect music note
+    notes.forEach((note, i) => {
+        if (objectsTouch ({ 
+            object1: player,
+            object2: note
+        })
+        ) {
+        setTimeout(() => {
+            notes.splice(i, 1)
+            audio.level1Music.play()
+        }, 0)
+        } else note.update()
     })
 
     zombiez.forEach((zombie, index) => {
@@ -981,7 +1192,8 @@ function animate() {
                     player.invincible = false}, 1000)
             } else if (!player.invincible) {
             audio.audioGameOver.play()
-            gameReset()
+            audio.level1Music.stop()
+            selectLevel(currentLevel)
         }
         }
     })
@@ -1050,6 +1262,10 @@ function animate() {
                 potion.position.x -= player.speed
             })
 
+            notes.forEach((note) => {
+                note.position.x -= player.speed
+            })
+
             particles.forEach((particle) => {
                 particle.position.x -= player.speed
             })
@@ -1094,6 +1310,10 @@ function animate() {
 
                 potions.forEach((potion) => {
                     potion.position.x += player.speed
+                })
+
+                notes.forEach((note) => {
+                    note.position.x += player.speed
                 })
 
                 particles.forEach((particle) => {
@@ -1188,7 +1408,8 @@ function animate() {
     //lose con
     if (player.position.y > canvas.height) {
         audio.audioGameOver.play()
-        gameReset()
+        audio.level1Music.stop()
+        selectLevel(currentLevel)
     }
 
     //Sprite Switching
@@ -1218,7 +1439,9 @@ function animate() {
     } 
 }
 
-gameReset()
+selectLevel(1)
+// gameReset()
+// gameResetLevel2()
 animate()
 
 // down key listener (asdw)
