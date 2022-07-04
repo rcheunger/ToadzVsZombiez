@@ -485,20 +485,112 @@ let keys
 
 let scrollOffset
 let game
-let currentLevel = 1
+let currentLevel = 0
 
 function selectLevel(currentLevel) {
     switch (currentLevel) {
+        case 0:
+           gameResetLevel0()
+           break
         case 1:
-        gameReset()
-        break
+           gameResetLevel1()
+           break
         case 2: 
-        gameResetLevel2()
-        break
+           gameResetLevel2()
+           break
+        case 3: 
+           gameResetLevel3()
+           break
     }
 }
 
-async function gameReset() {
+
+async function gameResetLevel0() {
+    currentLevel = 0
+    player = new Player()
+
+    keys = {
+        right: {
+            pressed: false
+        },
+        left: {
+            pressed: false
+        }
+    }
+
+    scrollOffset = 0
+
+    game = {
+        disableUserInput: false
+    }
+
+    platformImage = await createImageAsync(images.levels[3].platform)
+    tPlatformImage = await createImageAsync(images.levels[3].tPlatform)
+    xtPlatformImage = await createImageAsync(images.levels[3].xtPlatform)
+
+
+    player = new Player()
+
+    genericObjects = [
+        new GenericObject({
+            x: -1,
+            y: 0,
+            image: createImage(images.levels[0].background)
+        }),
+    ]
+
+    const platformsMap = ['plat', 'plat', 'plat']
+
+    let platformDistance = 0
+
+    platformsMap.forEach(symbol => {
+        switch(symbol) {
+            case 'plat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height,
+                    image: platformImage,
+                }))
+
+            platformDistance += platformImage.width - 2
+
+            break
+
+            case 'gap':
+                platformDistance += 300
+
+                break;
+            
+            case 'tPlat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - tPlatformImage.height,
+                    image: tPlatformImage,
+
+                }))
+
+            platformDistance += tPlatformImage.width
+
+            break
+
+            case 'xtPlat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - xtPlatformImage.height,
+                    image: xtPlatformImage,
+
+                }))
+
+            platformDistance += xtPlatformImage.width
+
+            break
+        }
+
+    })
+}
+
+async function gameResetLevel1() {
+    currentLevel = 1
     player = new Player()
 
     keys = {
@@ -696,7 +788,7 @@ async function gameReset() {
             y: 0,
         },        
         distance: {
-        limitLeft: 350,
+        limitLeft: 100,
         limitRight: -100,
         traveled: 0
         }
@@ -821,7 +913,7 @@ async function gameReset() {
 
     pads = [
         new Pad ({
-            x: 13200,
+            x: 1000,//13200,
             y: 420,
             image: padImage,
         })
@@ -829,7 +921,7 @@ async function gameReset() {
 
     abductions = [
         new Abduction ({
-            x: 13075,
+            x: 1000, //13075,
             y: 0
         })
     ]
@@ -919,6 +1011,7 @@ async function gameReset() {
 }
 
 async function gameResetLevel2() {
+    currentLevel = 2
     player = new Player()
 
     keys = {
@@ -936,6 +1029,7 @@ async function gameResetLevel2() {
         disableUserInput: false
     }
 
+
    platformImage = await createImageAsync(images.levels[2].platform)
    tPlatformImage = await createImageAsync(images.levels[2].tPlatform)
    xtPlatformImage = await createImageAsync(images.levels[2].xtPlatform)
@@ -946,11 +1040,233 @@ async function gameResetLevel2() {
 
     player = new Player()
     
+    platforms = [
+        new Platform ({
+            x: 2075,
+            y: 350,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 2228,
+            y: 350,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 2600,
+            y: 350,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 3450,
+            y: 300,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 3700,
+            y: 220,
+            image: xtPlatformImage,
+        }),
+        new Platform ({
+            x: 4400,
+            y: 375,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 4800,
+            y: 275,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 5200,
+            y: 375,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 5600,
+            y: 275,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 6200,
+            y: 370,
+            image: platformImage
+        }),
+        new Platform ({
+            x: 7660,
+            y: 370,
+            image: platformImage
+        }),
+        new Platform ({
+            x: 7660,
+            y: 290,
+            image: platformImage
+        }),
+        new Platform ({
+            x: 7660,
+            y: 210,
+            image: platformImage
+        }),
+        new Platform ({
+            x: 8650,
+            y: 210,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 9050,
+            y: 160,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 9450,
+            y: 210,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 9850,
+            y: 160,
+            image: blockImage,
+            block: true
+        }),          
+        new Platform ({
+            x: 11285,
+            y: 290,
+            image: platformImage
+        }),
+        new Platform ({
+            x: 11000,
+            y: 370,
+            image: platformImage
+        }),
+        new Platform ({
+            x: 11575,
+            y: 370,
+            image: platformImage
+        })
+    ]
+    
+    zombiez = [
+        new Zombie({
+            position: {
+                x: 3800,
+                y: 250,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 75,
+            limitRight: -75,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 6200,
+                y: 300,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 175,
+            limitRight: -175,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 6600,
+                y: 0,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 275,
+            limitRight: -275,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 6900,
+                y: 300,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 175,
+            limitRight: -175,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 11700,
+                y: 100,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 285,
+            limitRight: -285,
+            traveled: 0
+            }
+            }),   
+        new Zombie({
+            position: {
+                x: 11600,
+                y: 250,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 285,
+            limitRight: -285,
+            traveled: 0
+            }
+            }),            
+        new Zombie({
+            position: {
+                x: 11500,
+                y: 300,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 285,
+            limitRight: -285,
+            traveled: 0
+            }
+            }),  
+    ]
     particles = []
 
     pads = [
         new Pad ({
-            x: 13200,
+            x: 1000, //13200,
             y: 420,
             image: padImage,
         })
@@ -964,7 +1280,7 @@ async function gameResetLevel2() {
     ]
 
     potions = [new Potion({position: {
-        x: 2248,
+        x: 3800,
         y: -150
     },
     velocity: {
@@ -995,7 +1311,7 @@ async function gameResetLevel2() {
     scrollOffset = 0
 
     const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 
-    'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 
+    'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap',  'gap', 'plat', 
     'plat', 'plat', 'plat', 'plat', 'plat', 'plat' ]
 
     let platformDistance = 0
@@ -1010,6 +1326,529 @@ async function gameResetLevel2() {
                 }))
 
             platformDistance += platformImage.width
+
+            break
+
+            case 'gap':
+                platformDistance += 300
+
+                break;
+            
+            case 'tPlat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - tPlatformImage.height,
+                    image: tPlatformImage,
+
+                }))
+
+            platformDistance += tPlatformImage.width
+
+            break
+
+            case 'xtPlat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - xtPlatformImage.height,
+                    image: xtPlatformImage,
+
+                }))
+
+            platformDistance += xtPlatformImage.width
+
+            break
+        }
+
+    })
+}
+
+async function gameResetLevel3() {
+    currentLevel = 3
+    player = new Player()
+
+    keys = {
+        right: {
+            pressed: false
+        },
+        left: {
+            pressed: false
+        }
+    }
+
+    scrollOffset = 0
+
+    game = {
+        disableUserInput: false
+    }
+
+
+   platformImage = await createImageAsync(images.levels[3].platform)
+   tPlatformImage = await createImageAsync(images.levels[3].tPlatform)
+   xtPlatformImage = await createImageAsync(images.levels[3].xtPlatform)
+   blockTriImage = await createImageAsync(blockTri)
+   blockImage = await createImageAsync(block)
+   padImage = await createImageAsync(pad)
+
+
+    player = new Player()
+    
+    platforms = [
+        new Platform ({
+            x: 1500,
+            y: 320,
+            image: tPlatformImage,
+        }),
+        new Platform ({
+            x: 2050,
+            y: 281,
+            image: xtPlatformImage,
+        }),
+        new Platform ({
+            x: 2634,
+            y: 368,
+            image: platformImage,
+        }),
+        new Platform ({
+            x: 3213,
+            y: 368,
+            image: platformImage,
+        }),
+        new Platform ({
+            x: 2634,
+            y: 285,
+            image: platformImage,
+        }),
+        new Platform ({
+            x: 5150,
+            y: 400,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 5350,
+            y: 300,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 5550,
+            y: 200,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 5850,
+            y: 281,
+            image: xtPlatformImage,
+        }),
+        new Platform ({
+            x: 6390,
+            y: 200,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 6750,
+            y: 281,
+            image: xtPlatformImage,
+        }),
+        new Platform ({
+            x: 7290,
+            y: 200,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 7650,
+            y: 281,
+            image: xtPlatformImage,
+        }),
+        new Platform ({
+            x: 8300,
+            y: 200,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 8700,
+            y: 400,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 9100,
+            y: 200,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 9500,
+            y: 400,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 9900,
+            y: 200,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 10300,
+            y: 400,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 11000,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 11151,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 11302,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 11453,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 11604,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 11755,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 11906,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 12057,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 12208,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 12359,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 12510,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+        new Platform ({
+            x: 12661,
+            y: 288,
+            image: blockTriImage,
+            block: true
+        }),
+    ]
+    
+    zombiez = [
+        new Zombie({
+            position: {
+                x: 4300,
+                y: 250,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 275,
+            limitRight: -275,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 4550,
+                y: 250,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 275,
+            limitRight: -275,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 4800,
+                y: 250,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 275,
+            limitRight: -275,
+            traveled: 0
+            }
+            }), 
+        new Zombie({
+            position: {
+                x: 5950,
+                y: 150,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 100,
+            limitRight: -100,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 6850,
+                y: 150,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 100,
+            limitRight: -100,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 7750,
+                y: 150,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 100,
+            limitRight: -100,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 11400,
+                y: 325,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 300,
+            limitRight: -300,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 11550,
+                y: 325,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 325,
+            limitRight: -325,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 11700,
+                y: 325,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 200,
+            limitRight: -200,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 11850,
+                y: 325,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 370,
+            limitRight: -370,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 12000,
+                y: 325,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 150,
+            limitRight: -150,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 12300,
+                y: 325,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 340,
+            limitRight: -340,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 12450,
+                y: 325,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 125,
+            limitRight: -125,
+            traveled: 0
+            }
+            }), 
+        new Zombie({
+            position: {
+                x: 12600,
+                y: 325,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 300,
+            limitRight: -300,
+            traveled: 0
+            }
+            }),          
+    ]
+    particles = []
+
+    pads = [
+        new Pad ({
+            x: 13200,
+            y: 420,
+            image: padImage,
+        })
+    ]
+
+    abductions = [
+        new Abduction ({
+            x: 13075,
+            y: 0
+        })
+    ]
+
+    potions = [new Potion({position: {
+        x: 2900,
+        y: 350
+    },
+    velocity: {
+        x: 0,
+        y: 0
+    }
+    })]
+
+    notes = [new MusicNote({position: {
+        x: 900,
+        y: 170
+    }
+    })]
+
+    genericObjects = [
+        new GenericObject({
+            x: -1,
+            y: 0,
+            image: createImage(images.levels[3].background)
+        }),
+        new GenericObject({
+            x: -615,
+            y: 0,
+            image: createImage(images.levels[3].hills)
+        })
+    ]
+
+    scrollOffset = 0
+
+    const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat','plat','gap',
+     'gap', 'gap','gap', 'gap', 'gap','gap', 'gap', 'gap', 'gap', 'gap','gap', 'gap', 'gap','gap', 'gap', 'gap', 
+     'gap', 'gap', 'plat','plat','plat','plat','plat','plat','plat']
+
+    let platformDistance = 0
+
+    platformsMap.forEach(symbol => {
+        switch(symbol) {
+            case 'plat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height,
+                    image: platformImage,
+                }))
+
+            platformDistance += platformImage.width - 2
 
             break
 
@@ -1063,32 +1902,32 @@ function animate() {
 
     pads.forEach(pad => {
         pad.update() 
-        pad.velocity.x = 0
-        if (
-                isOnTopOfPad({
+        pad.velocity.x = 0                
+
+        if (isOnTopOfPad({
                     object: player,
                     pad
                 })
-            ) {
-                abductions.forEach(abduction => {
-                    abduction.update() 
-                 })
-                game.disableUserInput = true
-                audio.audioAbduction.play()
-                
-                player.velocity.y = 0
-                player.velocity.x = 0
-                player.opacity = 0
-
-             //switch to next level
-
-                setTimeout(() => {
-                    gravity = 0.5
-                    audio.level1Music.stop()
-                    selectLevel(currentLevel + 1)  
-                  }, 6000)
-            }
+            )
+            {
+            abductions.forEach(abduction => {
+                abduction.update() 
+            })
+            game.disableUserInput = true
+            audio.audioAbduction.play()
+    
+            player.velocity.y = 0
+            player.velocity.x = 0
             
+            player.opacity = 0 
+            
+            gravity = 0.5
+            audio.level1Music.stop() 
+            // setTimeout (() => {
+                selectLevel(currentLevel + 1)
+            // }, 6000)
+
+            }                
         })
 
     //Toad potion powerup
@@ -1439,9 +2278,11 @@ function animate() {
     } 
 }
 
-selectLevel(1)
-// gameReset()
-// gameResetLevel2()
+selectLevel(currentLevel)
+//gameResetLevel0()
+//gameResetLevel1()
+//gameResetLevel2()
+//gameResetLevel3()
 animate()
 
 // down key listener (asdw)
@@ -1449,6 +2290,14 @@ addEventListener('keydown', ({ keyCode }) => {
     if (game.disableUserInput) return
 
     switch (keyCode) {
+        case 13:
+            console.log('enter')
+            audio.audioGameOver.play()
+            (selectLevel(currentLevel + 1))
+            currentLevel + 1
+            lastKey = 'enter'
+            break
+        
         case 65:
             console.log('left')
             keys.left.pressed = true

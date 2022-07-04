@@ -3750,6 +3750,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/img/level0/background.png":
+/*!***************************************!*\
+  !*** ./src/img/level0/background.png ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "687188e3638246afb0796d7e1b5fec34.png");
+
+/***/ }),
+
 /***/ "./src/img/level2/background.png":
 /*!***************************************!*\
   !*** ./src/img/level2/background.png ***!
@@ -3812,6 +3825,71 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "80c1ecd728407a58d6ed8732006ce064.png");
+
+/***/ }),
+
+/***/ "./src/img/level3/background.png":
+/*!***************************************!*\
+  !*** ./src/img/level3/background.png ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "982e293c97eb58627e9da5d47725db69.png");
+
+/***/ }),
+
+/***/ "./src/img/level3/hills.png":
+/*!**********************************!*\
+  !*** ./src/img/level3/hills.png ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "44d1de80e73c3efaa05239b1bb6f1f37.png");
+
+/***/ }),
+
+/***/ "./src/img/level3/platform.png":
+/*!*************************************!*\
+  !*** ./src/img/level3/platform.png ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "54f5fdf195d842dc7abe3c3d0b84e2ca.png");
+
+/***/ }),
+
+/***/ "./src/img/level3/tPlatform.png":
+/*!**************************************!*\
+  !*** ./src/img/level3/tPlatform.png ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "d199417e91c0c755380116455290de50.png");
+
+/***/ }),
+
+/***/ "./src/img/level3/xtPlatform.png":
+/*!***************************************!*\
+  !*** ./src/img/level3/xtPlatform.png ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "981df066be69887134787b8f66f92605.png");
 
 /***/ }),
 
@@ -4586,31 +4664,40 @@ var lastKey;
 var keys;
 var scrollOffset;
 var game;
-var currentLevel = 1;
+var currentLevel = 0;
 
 function selectLevel(currentLevel) {
   switch (currentLevel) {
+    case 0:
+      gameResetLevel0();
+      break;
+
     case 1:
-      gameReset();
+      gameResetLevel1();
       break;
 
     case 2:
       gameResetLevel2();
       break;
+
+    case 3:
+      gameResetLevel3();
+      break;
   }
 }
 
-function gameReset() {
-  return _gameReset.apply(this, arguments);
+function gameResetLevel0() {
+  return _gameResetLevel.apply(this, arguments);
 }
 
-function _gameReset() {
-  _gameReset = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+function _gameResetLevel() {
+  _gameResetLevel = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
     var platformsMap, platformDistance;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
+            currentLevel = 0;
             player = new Player();
             keys = {
               right: {
@@ -4624,36 +4711,129 @@ function _gameReset() {
             game = {
               disableUserInput: false
             };
-            _context.next = 6;
+            _context.next = 7;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].platform);
+
+          case 7:
+            platformImage = _context.sent;
+            _context.next = 10;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].tPlatform);
+
+          case 10:
+            tPlatformImage = _context.sent;
+            _context.next = 13;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].xtPlatform);
+
+          case 13:
+            xtPlatformImage = _context.sent;
+            player = new Player();
+            genericObjects = [new GenericObject({
+              x: -1,
+              y: 0,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[0].background)
+            })];
+            platformsMap = ['plat', 'plat', 'plat'];
+            platformDistance = 0;
+            platformsMap.forEach(function (symbol) {
+              switch (symbol) {
+                case 'plat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height,
+                    image: platformImage
+                  }));
+                  platformDistance += platformImage.width - 2;
+                  break;
+
+                case 'gap':
+                  platformDistance += 300;
+                  break;
+
+                case 'tPlat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - tPlatformImage.height,
+                    image: tPlatformImage
+                  }));
+                  platformDistance += tPlatformImage.width;
+                  break;
+
+                case 'xtPlat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - xtPlatformImage.height,
+                    image: xtPlatformImage
+                  }));
+                  platformDistance += xtPlatformImage.width;
+                  break;
+              }
+            });
+
+          case 19:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _gameResetLevel.apply(this, arguments);
+}
+
+function gameResetLevel1() {
+  return _gameResetLevel2.apply(this, arguments);
+}
+
+function _gameResetLevel2() {
+  _gameResetLevel2 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+    var platformsMap, platformDistance;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            currentLevel = 1;
+            player = new Player();
+            keys = {
+              right: {
+                pressed: false
+              },
+              left: {
+                pressed: false
+              }
+            };
+            scrollOffset = 0;
+            game = {
+              disableUserInput: false
+            };
+            _context2.next = 7;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_platform_png__WEBPACK_IMPORTED_MODULE_5__["default"]);
 
-          case 6:
-            platformImage = _context.sent;
-            _context.next = 9;
+          case 7:
+            platformImage = _context2.sent;
+            _context2.next = 10;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_6__["default"]);
 
-          case 9:
-            tPlatformImage = _context.sent;
-            _context.next = 12;
+          case 10:
+            tPlatformImage = _context2.sent;
+            _context2.next = 13;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_xtPlatform_png__WEBPACK_IMPORTED_MODULE_7__["default"]);
 
-          case 12:
-            xtPlatformImage = _context.sent;
-            _context.next = 15;
+          case 13:
+            xtPlatformImage = _context2.sent;
+            _context2.next = 16;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
 
-          case 15:
-            blockTriImage = _context.sent;
-            _context.next = 18;
+          case 16:
+            blockTriImage = _context2.sent;
+            _context2.next = 19;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
-          case 18:
-            blockImage = _context.sent;
-            _context.next = 21;
+          case 19:
+            blockImage = _context2.sent;
+            _context2.next = 22;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_13__["default"]);
 
-          case 21:
-            padImage = _context.sent;
+          case 22:
+            padImage = _context2.sent;
             player = new Player();
             zombiez = [new Zombie({
               position: {
@@ -4809,7 +4989,7 @@ function _gameReset() {
                 y: 0
               },
               distance: {
-                limitLeft: 350,
+                limitLeft: 100,
                 limitRight: -100,
                 traveled: 0
               }
@@ -4910,12 +5090,14 @@ function _gameReset() {
               block: true
             })];
             pads = [new Pad({
-              x: 13200,
+              x: 1000,
+              //13200,
               y: 420,
               image: padImage
             })];
             abductions = [new Abduction({
-              x: 13075,
+              x: 1000,
+              //13075,
               y: 0
             })];
             potions = [new Potion({
@@ -4981,27 +5163,28 @@ function _gameReset() {
               }
             });
 
-          case 35:
+          case 36:
           case "end":
-            return _context.stop();
+            return _context2.stop();
         }
       }
-    }, _callee);
+    }, _callee2);
   }));
-  return _gameReset.apply(this, arguments);
+  return _gameResetLevel2.apply(this, arguments);
 }
 
 function gameResetLevel2() {
-  return _gameResetLevel.apply(this, arguments);
+  return _gameResetLevel3.apply(this, arguments);
 }
 
-function _gameResetLevel() {
-  _gameResetLevel = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+function _gameResetLevel3() {
+  _gameResetLevel3 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
     var platformsMap, platformDistance;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
       while (1) {
-        switch (_context2.prev = _context2.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
+            currentLevel = 2;
             player = new Player();
             keys = {
               right: {
@@ -5015,40 +5198,233 @@ function _gameResetLevel() {
             game = {
               disableUserInput: false
             };
-            _context2.next = 6;
+            _context3.next = 7;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].platform);
 
-          case 6:
-            platformImage = _context2.sent;
-            _context2.next = 9;
+          case 7:
+            platformImage = _context3.sent;
+            _context3.next = 10;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].tPlatform);
 
-          case 9:
-            tPlatformImage = _context2.sent;
-            _context2.next = 12;
+          case 10:
+            tPlatformImage = _context3.sent;
+            _context3.next = 13;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].xtPlatform);
 
-          case 12:
-            xtPlatformImage = _context2.sent;
-            _context2.next = 15;
+          case 13:
+            xtPlatformImage = _context3.sent;
+            _context3.next = 16;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
 
-          case 15:
-            blockTriImage = _context2.sent;
-            _context2.next = 18;
+          case 16:
+            blockTriImage = _context3.sent;
+            _context3.next = 19;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
-          case 18:
-            blockImage = _context2.sent;
-            _context2.next = 21;
+          case 19:
+            blockImage = _context3.sent;
+            _context3.next = 22;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_13__["default"]);
 
-          case 21:
-            padImage = _context2.sent;
+          case 22:
+            padImage = _context3.sent;
             player = new Player();
+            platforms = [new Platform({
+              x: 2075,
+              y: 350,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 2228,
+              y: 350,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 2600,
+              y: 350,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 3450,
+              y: 300,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 3700,
+              y: 220,
+              image: xtPlatformImage
+            }), new Platform({
+              x: 4400,
+              y: 375,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 4800,
+              y: 275,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 5200,
+              y: 375,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 5600,
+              y: 275,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 6200,
+              y: 370,
+              image: platformImage
+            }), new Platform({
+              x: 7660,
+              y: 370,
+              image: platformImage
+            }), new Platform({
+              x: 7660,
+              y: 290,
+              image: platformImage
+            }), new Platform({
+              x: 7660,
+              y: 210,
+              image: platformImage
+            }), new Platform({
+              x: 8650,
+              y: 210,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 9050,
+              y: 160,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 9450,
+              y: 210,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 9850,
+              y: 160,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 11285,
+              y: 290,
+              image: platformImage
+            }), new Platform({
+              x: 11000,
+              y: 370,
+              image: platformImage
+            }), new Platform({
+              x: 11575,
+              y: 370,
+              image: platformImage
+            })];
+            zombiez = [new Zombie({
+              position: {
+                x: 3800,
+                y: 250
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 75,
+                limitRight: -75,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 6200,
+                y: 300
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 175,
+                limitRight: -175,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 6600,
+                y: 0
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 275,
+                limitRight: -275,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 6900,
+                y: 300
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 175,
+                limitRight: -175,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 11700,
+                y: 100
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 285,
+                limitRight: -285,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 11600,
+                y: 250
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 285,
+                limitRight: -285,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 11500,
+                y: 300
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 285,
+                limitRight: -285,
+                traveled: 0
+              }
+            })];
             particles = [];
             pads = [new Pad({
-              x: 13200,
+              x: 1000,
+              //13200,
               y: 420,
               image: padImage
             })];
@@ -5058,7 +5434,7 @@ function _gameResetLevel() {
             })];
             potions = [new Potion({
               position: {
-                x: 2248,
+                x: 3800,
                 y: -150
               },
               velocity: {
@@ -5082,7 +5458,7 @@ function _gameResetLevel() {
               image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].hills)
             })];
             scrollOffset = 0;
-            platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat'];
+            platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat'];
             platformDistance = 0;
             platformsMap.forEach(function (symbol) {
               switch (symbol) {
@@ -5119,14 +5495,498 @@ function _gameResetLevel() {
               }
             });
 
-          case 33:
+          case 36:
           case "end":
-            return _context2.stop();
+            return _context3.stop();
         }
       }
-    }, _callee2);
+    }, _callee3);
   }));
-  return _gameResetLevel.apply(this, arguments);
+  return _gameResetLevel3.apply(this, arguments);
+}
+
+function gameResetLevel3() {
+  return _gameResetLevel4.apply(this, arguments);
+}
+
+function _gameResetLevel4() {
+  _gameResetLevel4 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+    var platformsMap, platformDistance;
+    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            currentLevel = 3;
+            player = new Player();
+            keys = {
+              right: {
+                pressed: false
+              },
+              left: {
+                pressed: false
+              }
+            };
+            scrollOffset = 0;
+            game = {
+              disableUserInput: false
+            };
+            _context4.next = 7;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].platform);
+
+          case 7:
+            platformImage = _context4.sent;
+            _context4.next = 10;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].tPlatform);
+
+          case 10:
+            tPlatformImage = _context4.sent;
+            _context4.next = 13;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].xtPlatform);
+
+          case 13:
+            xtPlatformImage = _context4.sent;
+            _context4.next = 16;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
+
+          case 16:
+            blockTriImage = _context4.sent;
+            _context4.next = 19;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
+
+          case 19:
+            blockImage = _context4.sent;
+            _context4.next = 22;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_13__["default"]);
+
+          case 22:
+            padImage = _context4.sent;
+            player = new Player();
+            platforms = [new Platform({
+              x: 1500,
+              y: 320,
+              image: tPlatformImage
+            }), new Platform({
+              x: 2050,
+              y: 281,
+              image: xtPlatformImage
+            }), new Platform({
+              x: 2634,
+              y: 368,
+              image: platformImage
+            }), new Platform({
+              x: 3213,
+              y: 368,
+              image: platformImage
+            }), new Platform({
+              x: 2634,
+              y: 285,
+              image: platformImage
+            }), new Platform({
+              x: 5150,
+              y: 400,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 5350,
+              y: 300,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 5550,
+              y: 200,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 5850,
+              y: 281,
+              image: xtPlatformImage
+            }), new Platform({
+              x: 6390,
+              y: 200,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 6750,
+              y: 281,
+              image: xtPlatformImage
+            }), new Platform({
+              x: 7290,
+              y: 200,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 7650,
+              y: 281,
+              image: xtPlatformImage
+            }), new Platform({
+              x: 8300,
+              y: 200,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 8700,
+              y: 400,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 9100,
+              y: 200,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 9500,
+              y: 400,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 9900,
+              y: 200,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 10300,
+              y: 400,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 11000,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 11151,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 11302,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 11453,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 11604,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 11755,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 11906,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 12057,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 12208,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 12359,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 12510,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            }), new Platform({
+              x: 12661,
+              y: 288,
+              image: blockTriImage,
+              block: true
+            })];
+            zombiez = [new Zombie({
+              position: {
+                x: 4300,
+                y: 250
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 275,
+                limitRight: -275,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 4550,
+                y: 250
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 275,
+                limitRight: -275,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 4800,
+                y: 250
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 275,
+                limitRight: -275,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 5950,
+                y: 150
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 100,
+                limitRight: -100,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 6850,
+                y: 150
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 100,
+                limitRight: -100,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 7750,
+                y: 150
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 100,
+                limitRight: -100,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 11400,
+                y: 325
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 300,
+                limitRight: -300,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 11550,
+                y: 325
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 325,
+                limitRight: -325,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 11700,
+                y: 325
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 200,
+                limitRight: -200,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 11850,
+                y: 325
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 370,
+                limitRight: -370,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 12000,
+                y: 325
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 150,
+                limitRight: -150,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 12300,
+                y: 325
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 340,
+                limitRight: -340,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 12450,
+                y: 325
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 125,
+                limitRight: -125,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 12600,
+                y: 325
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 300,
+                limitRight: -300,
+                traveled: 0
+              }
+            })];
+            particles = [];
+            pads = [new Pad({
+              x: 13200,
+              y: 420,
+              image: padImage
+            })];
+            abductions = [new Abduction({
+              x: 13075,
+              y: 0
+            })];
+            potions = [new Potion({
+              position: {
+                x: 2900,
+                y: 350
+              },
+              velocity: {
+                x: 0,
+                y: 0
+              }
+            })];
+            notes = [new MusicNote({
+              position: {
+                x: 900,
+                y: 170
+              }
+            })];
+            genericObjects = [new GenericObject({
+              x: -1,
+              y: 0,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].background)
+            }), new GenericObject({
+              x: -615,
+              y: 0,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].hills)
+            })];
+            scrollOffset = 0;
+            platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat'];
+            platformDistance = 0;
+            platformsMap.forEach(function (symbol) {
+              switch (symbol) {
+                case 'plat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height,
+                    image: platformImage
+                  }));
+                  platformDistance += platformImage.width - 2;
+                  break;
+
+                case 'gap':
+                  platformDistance += 300;
+                  break;
+
+                case 'tPlat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - tPlatformImage.height,
+                    image: tPlatformImage
+                  }));
+                  platformDistance += tPlatformImage.width;
+                  break;
+
+                case 'xtPlat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - xtPlatformImage.height,
+                    image: xtPlatformImage
+                  }));
+                  platformDistance += xtPlatformImage.width;
+                  break;
+              }
+            });
+
+          case 36:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _gameResetLevel4.apply(this, arguments);
 }
 
 function animate() {
@@ -5156,13 +6016,11 @@ function animate() {
       _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioAbduction.play();
       player.velocity.y = 0;
       player.velocity.x = 0;
-      player.opacity = 0; //switch to next level
+      player.opacity = 0;
+      gravity = 0.5;
+      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].level1Music.stop(); // setTimeout (() => {
 
-      setTimeout(function () {
-        gravity = 0.5;
-        _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].level1Music.stop();
-        selectLevel(currentLevel + 1);
-      }, 6000);
+      selectLevel(currentLevel + 1); // }, 6000)
     }
   }); //Toad potion powerup
 
@@ -5455,8 +6313,10 @@ function animate() {
   }
 }
 
-selectLevel(1); // gameReset()
-// gameResetLevel2()
+selectLevel(currentLevel); //gameResetLevel0()
+//gameResetLevel1()
+//gameResetLevel2()
+//gameResetLevel3()
 
 animate(); // down key listener (asdw)
 
@@ -5465,6 +6325,13 @@ addEventListener('keydown', function (_ref9) {
   if (game.disableUserInput) return;
 
   switch (keyCode) {
+    case 13:
+      console.log('enter');
+      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioGameOver.play()(selectLevel(currentLevel + 1));
+      currentLevel + 1;
+      lastKey = 'enter';
+      break;
+
     case 65:
       console.log('left');
       keys.left.pressed = true;
@@ -5562,11 +6429,23 @@ addEventListener('keyup', function (_ref10) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "images", function() { return images; });
-/* harmony import */ var _img_level2_background_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/level2/background.png */ "./src/img/level2/background.png");
-/* harmony import */ var _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/level2/hills.png */ "./src/img/level2/hills.png");
-/* harmony import */ var _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/level2/platform.png */ "./src/img/level2/platform.png");
-/* harmony import */ var _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/level2/tPlatform.png */ "./src/img/level2/tPlatform.png");
-/* harmony import */ var _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/level2/xtPlatform.png */ "./src/img/level2/xtPlatform.png");
+/* harmony import */ var _img_level0_background_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/level0/background.png */ "./src/img/level0/background.png");
+/* harmony import */ var _img_level2_background_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/level2/background.png */ "./src/img/level2/background.png");
+/* harmony import */ var _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/level2/hills.png */ "./src/img/level2/hills.png");
+/* harmony import */ var _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/level2/platform.png */ "./src/img/level2/platform.png");
+/* harmony import */ var _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/level2/tPlatform.png */ "./src/img/level2/tPlatform.png");
+/* harmony import */ var _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/level2/xtPlatform.png */ "./src/img/level2/xtPlatform.png");
+/* harmony import */ var _img_level3_background_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/level3/background.png */ "./src/img/level3/background.png");
+/* harmony import */ var _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/level3/hills.png */ "./src/img/level3/hills.png");
+/* harmony import */ var _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/level3/platform.png */ "./src/img/level3/platform.png");
+/* harmony import */ var _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/level3/tPlatform.png */ "./src/img/level3/tPlatform.png");
+/* harmony import */ var _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/level3/xtPlatform.png */ "./src/img/level3/xtPlatform.png");
+
+
+
+
+
+
 
 
 
@@ -5574,15 +6453,25 @@ __webpack_require__.r(__webpack_exports__);
 
 var images = {
   levels: {
+    0: {
+      background: _img_level0_background_png__WEBPACK_IMPORTED_MODULE_0__["default"]
+    },
     1: {
       background: ''
     },
     2: {
-      background: _img_level2_background_png__WEBPACK_IMPORTED_MODULE_0__["default"],
-      hills: _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_1__["default"],
-      platform: _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_2__["default"],
-      tPlatform: _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_3__["default"],
-      xtPlatform: _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_4__["default"]
+      background: _img_level2_background_png__WEBPACK_IMPORTED_MODULE_1__["default"],
+      hills: _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_2__["default"],
+      platform: _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_3__["default"],
+      tPlatform: _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_4__["default"],
+      xtPlatform: _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_5__["default"]
+    },
+    3: {
+      background: _img_level3_background_png__WEBPACK_IMPORTED_MODULE_6__["default"],
+      hills: _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_7__["default"],
+      platform: _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_8__["default"],
+      tPlatform: _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_9__["default"],
+      xtPlatform: _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_10__["default"]
     }
   }
 };
