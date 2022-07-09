@@ -3568,6 +3568,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/audio/coinCollect.mp3":
+/*!***********************************!*\
+  !*** ./src/audio/coinCollect.mp3 ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/3644f0c3e2c2face4b67fad3b18b26f1.mp3");
+
+/***/ }),
+
+/***/ "./src/audio/endGame.mp3":
+/*!*******************************!*\
+  !*** ./src/audio/endGame.mp3 ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/1d9607bbcd7c3170917265a653e959af.mp3");
+
+/***/ }),
+
 /***/ "./src/audio/level1Music.mp3":
 /*!***********************************!*\
   !*** ./src/audio/level1Music.mp3 ***!
@@ -3607,16 +3633,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/img/abduction.png":
+/***/ "./src/audio/powerUp.mp3":
 /*!*******************************!*\
-  !*** ./src/img/abduction.png ***!
+  !*** ./src/audio/powerUp.mp3 ***!
   \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "ac839b032c5f3f499fa17deebe726bf1.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/6eae44ecd30484123f52c6b31cdb887e.mp3");
 
 /***/ }),
 
@@ -3656,6 +3682,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "96e6ccbe7847040d5563121a15ff2f75.png");
+
+/***/ }),
+
+/***/ "./src/img/coin.png":
+/*!**************************!*\
+  !*** ./src/img/coin.png ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "d38329d0157be564b5bfc68cb889e88c.png");
 
 /***/ }),
 
@@ -3759,7 +3798,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "687188e3638246afb0796d7e1b5fec34.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "3c15c3e80dc2f66d7e78b1e693cf02ce.png");
 
 /***/ }),
 
@@ -3890,19 +3929,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "981df066be69887134787b8f66f92605.png");
-
-/***/ }),
-
-/***/ "./src/img/musicNote.png":
-/*!*******************************!*\
-  !*** ./src/img/musicNote.png ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "9998e80f92531212740de316d2f9bb92.png");
 
 /***/ }),
 
@@ -4096,6 +4122,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _audio_audioLaser_mp3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../audio/audioLaser.mp3 */ "./src/audio/audioLaser.mp3");
 /* harmony import */ var _audio_audioLosePowerUp_mp3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../audio/audioLosePowerUp.mp3 */ "./src/audio/audioLosePowerUp.mp3");
 /* harmony import */ var _audio_audioZombieDeath_mp3__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../audio/audioZombieDeath.mp3 */ "./src/audio/audioZombieDeath.mp3");
+/* harmony import */ var _audio_powerUp_mp3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../audio/powerUp.mp3 */ "./src/audio/powerUp.mp3");
+/* harmony import */ var _audio_endGame_mp3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../audio/endGame.mp3 */ "./src/audio/endGame.mp3");
+/* harmony import */ var _audio_coinCollect_mp3__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../audio/coinCollect.mp3 */ "./src/audio/coinCollect.mp3");
+
+
+
 
 
 
@@ -4107,11 +4139,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var audio = {
-  level1Music: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_level1Music_mp3__WEBPACK_IMPORTED_MODULE_1__["default"]],
-    volume: 0.08,
-    loop: true
-  }),
+  // level1Music: new Howl({
+  //     src: [level1Music],
+  //     volume: 0.08,
+  //     loop: true
+  // }),
+  // level2Music: new Howl({
+  //     src: [level2Music],
+  //     volume: 0.08,
+  //     loop: true
+  // }),
+  // level3Music: new Howl({
+  //     src: [level3Music],
+  //     volume: 0.08,
+  //     loop: true
+  // }),
   audioAbduction: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
     src: [_audio_audioAbduction_mp3__WEBPACK_IMPORTED_MODULE_4__["default"]],
     volume: 0.0
@@ -4134,6 +4176,18 @@ var audio = {
   }),
   audioZombieDeath: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
     src: [_audio_audioZombieDeath_mp3__WEBPACK_IMPORTED_MODULE_9__["default"]],
+    volume: 0.4
+  }),
+  powerUp: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
+    src: [_audio_powerUp_mp3__WEBPACK_IMPORTED_MODULE_10__["default"]],
+    volume: 0.4
+  }),
+  endGame: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
+    src: [_audio_endGame_mp3__WEBPACK_IMPORTED_MODULE_11__["default"]],
+    volume: 0.4
+  }),
+  coinCollect: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
+    src: [_audio_coinCollect_mp3__WEBPACK_IMPORTED_MODULE_12__["default"]],
     volume: 0.4
   })
 };
@@ -4163,35 +4217,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_xtPlatform_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/xtPlatform.png */ "./src/img/xtPlatform.png");
 /* harmony import */ var _img_hills_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/hills.png */ "./src/img/hills.png");
 /* harmony import */ var _img_background_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/background.png */ "./src/img/background.png");
-/* harmony import */ var _img_abduction_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/abduction.png */ "./src/img/abduction.png");
-/* harmony import */ var _img_block_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/block.png */ "./src/img/block.png");
-/* harmony import */ var _img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/blockTri.png */ "./src/img/blockTri.png");
-/* harmony import */ var _img_pad_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/pad.png */ "./src/img/pad.png");
-/* harmony import */ var _img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/toadRunRight.png */ "./src/img/toadRunRight.png");
-/* harmony import */ var _img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/toadRunLeft.png */ "./src/img/toadRunLeft.png");
-/* harmony import */ var _img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/toadRightStand.png */ "./src/img/toadRightStand.png");
-/* harmony import */ var _img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/toadLeftStand.png */ "./src/img/toadLeftStand.png");
-/* harmony import */ var _img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/toadJumpRight.png */ "./src/img/toadJumpRight.png");
-/* harmony import */ var _img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/toadJumpLeft.png */ "./src/img/toadJumpLeft.png");
-/* harmony import */ var _img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../img/cyclopsRunRight.png */ "./src/img/cyclopsRunRight.png");
-/* harmony import */ var _img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../img/cyclopsRunLeft.png */ "./src/img/cyclopsRunLeft.png");
-/* harmony import */ var _img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../img/cyclopsRightStand.png */ "./src/img/cyclopsRightStand.png");
-/* harmony import */ var _img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../img/cyclopsLeftStand.png */ "./src/img/cyclopsLeftStand.png");
-/* harmony import */ var _img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../img/cyclopsJumpRight.png */ "./src/img/cyclopsJumpRight.png");
-/* harmony import */ var _img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../img/cyclopsJumpLeft.png */ "./src/img/cyclopsJumpLeft.png");
-/* harmony import */ var _img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../img/zombieSprite.png */ "./src/img/zombieSprite.png");
-/* harmony import */ var _img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../img/zombieSpriteRight.png */ "./src/img/zombieSpriteRight.png");
-/* harmony import */ var _img_potion_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../img/potion.png */ "./src/img/potion.png");
-/* harmony import */ var _img_musicNote_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../img/musicNote.png */ "./src/img/musicNote.png");
-/* harmony import */ var _audio_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./audio.js */ "./src/js/audio.js");
-/* harmony import */ var _images_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./images.js */ "./src/js/images.js");
+/* harmony import */ var _img_block_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/block.png */ "./src/img/block.png");
+/* harmony import */ var _img_blockTri_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/blockTri.png */ "./src/img/blockTri.png");
+/* harmony import */ var _img_pad_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/pad.png */ "./src/img/pad.png");
+/* harmony import */ var _img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/toadRunRight.png */ "./src/img/toadRunRight.png");
+/* harmony import */ var _img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/toadRunLeft.png */ "./src/img/toadRunLeft.png");
+/* harmony import */ var _img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/toadRightStand.png */ "./src/img/toadRightStand.png");
+/* harmony import */ var _img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/toadLeftStand.png */ "./src/img/toadLeftStand.png");
+/* harmony import */ var _img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/toadJumpRight.png */ "./src/img/toadJumpRight.png");
+/* harmony import */ var _img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/toadJumpLeft.png */ "./src/img/toadJumpLeft.png");
+/* harmony import */ var _img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/cyclopsRunRight.png */ "./src/img/cyclopsRunRight.png");
+/* harmony import */ var _img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../img/cyclopsRunLeft.png */ "./src/img/cyclopsRunLeft.png");
+/* harmony import */ var _img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../img/cyclopsRightStand.png */ "./src/img/cyclopsRightStand.png");
+/* harmony import */ var _img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../img/cyclopsLeftStand.png */ "./src/img/cyclopsLeftStand.png");
+/* harmony import */ var _img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../img/cyclopsJumpRight.png */ "./src/img/cyclopsJumpRight.png");
+/* harmony import */ var _img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../img/cyclopsJumpLeft.png */ "./src/img/cyclopsJumpLeft.png");
+/* harmony import */ var _img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../img/zombieSprite.png */ "./src/img/zombieSprite.png");
+/* harmony import */ var _img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../img/zombieSpriteRight.png */ "./src/img/zombieSpriteRight.png");
+/* harmony import */ var _img_potion_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../img/potion.png */ "./src/img/potion.png");
+/* harmony import */ var _img_coin_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../img/coin.png */ "./src/img/coin.png");
+/* harmony import */ var _audio_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./audio.js */ "./src/js/audio.js");
+/* harmony import */ var _images_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./images.js */ "./src/js/images.js");
 
 
 
 
 
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default()(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
-
 
 
 
@@ -4246,27 +4298,27 @@ var Player = /*#__PURE__*/function () {
     this.frames = 0;
     this.sprites = {
       stand: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_16__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_17__["default"]),
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRightStand_png__WEBPACK_IMPORTED_MODULE_15__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadLeftStand_png__WEBPACK_IMPORTED_MODULE_16__["default"]),
         potion: {
-          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_22__["default"]),
-          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_23__["default"])
+          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRightStand_png__WEBPACK_IMPORTED_MODULE_21__["default"]),
+          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsLeftStand_png__WEBPACK_IMPORTED_MODULE_22__["default"])
         }
       },
       run: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_14__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_15__["default"]),
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRunRight_png__WEBPACK_IMPORTED_MODULE_13__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadRunLeft_png__WEBPACK_IMPORTED_MODULE_14__["default"]),
         potion: {
-          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_20__["default"]),
-          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_21__["default"])
+          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRunRight_png__WEBPACK_IMPORTED_MODULE_19__["default"]),
+          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsRunLeft_png__WEBPACK_IMPORTED_MODULE_20__["default"])
         }
       },
       jump: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_18__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_19__["default"]),
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadJumpRight_png__WEBPACK_IMPORTED_MODULE_17__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_toadJumpLeft_png__WEBPACK_IMPORTED_MODULE_18__["default"]),
         potion: {
-          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_24__["default"]),
-          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_25__["default"])
+          right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsJumpRight_png__WEBPACK_IMPORTED_MODULE_23__["default"]),
+          left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_cyclopsJumpLeft_png__WEBPACK_IMPORTED_MODULE_24__["default"])
         }
       }
     };
@@ -4382,49 +4434,11 @@ var Pad = /*#__PURE__*/function () {
   return Pad;
 }();
 
-var Abduction = /*#__PURE__*/function () {
-  function Abduction(_ref3) {
-    var x = _ref3.x,
-        y = _ref3.y;
-
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Abduction);
-
-    this.position = {
-      x: x,
-      y: y
-    };
-    this.width = 400;
-    this.height = 576;
-    this.frames = 0;
-    this.sprites = {
-      abduction: {
-        abduction: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_abduction_png__WEBPACK_IMPORTED_MODULE_10__["default"])
-      }
-    };
-    this.currentSprite = this.sprites.abduction.abduction;
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Abduction, [{
-    key: "draw",
-    value: function draw() {
-      c.drawImage(this.currentSprite, 400 * this.frames, 0, 400, 576, this.position.x, this.position.y, this.width, this.height, this.position.x);
-    }
-  }, {
-    key: "update",
-    value: function update() {
-      this.frames++;
-      this.draw();
-    }
-  }]);
-
-  return Abduction;
-}();
-
 var GenericObject = /*#__PURE__*/function () {
-  function GenericObject(_ref4) {
-    var x = _ref4.x,
-        y = _ref4.y,
-        image = _ref4.image;
+  function GenericObject(_ref3) {
+    var x = _ref3.x,
+        y = _ref3.y,
+        image = _ref3.image;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, GenericObject);
 
@@ -4457,15 +4471,15 @@ var GenericObject = /*#__PURE__*/function () {
 }();
 
 var Zombie = /*#__PURE__*/function () {
-  function Zombie(_ref5) {
-    var position = _ref5.position,
-        velocity = _ref5.velocity,
-        _ref5$distance = _ref5.distance,
-        distance = _ref5$distance === void 0 ? {
+  function Zombie(_ref4) {
+    var position = _ref4.position,
+        velocity = _ref4.velocity,
+        _ref4$distance = _ref4.distance,
+        distance = _ref4$distance === void 0 ? {
       limitLeft: 75,
       limitRight: -75,
       traveled: 0
-    } : _ref5$distance;
+    } : _ref4$distance;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Zombie);
 
@@ -4481,8 +4495,8 @@ var Zombie = /*#__PURE__*/function () {
     this.height = 150;
     this.sprites = {
       walk: {
-        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_27__["default"]),
-        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_26__["default"])
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_zombieSpriteRight_png__WEBPACK_IMPORTED_MODULE_26__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_zombieSprite_png__WEBPACK_IMPORTED_MODULE_25__["default"])
       }
     };
     this.currentSprite = this.sprites.walk.left;
@@ -4525,9 +4539,9 @@ var Zombie = /*#__PURE__*/function () {
 }();
 
 var Potion = /*#__PURE__*/function () {
-  function Potion(_ref6) {
-    var position = _ref6.position,
-        velocity = _ref6.velocity;
+  function Potion(_ref5) {
+    var position = _ref5.position,
+        velocity = _ref5.velocity;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Potion);
 
@@ -4541,7 +4555,7 @@ var Potion = /*#__PURE__*/function () {
     };
     this.width = 40;
     this.height = 60;
-    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_potion_png__WEBPACK_IMPORTED_MODULE_28__["default"]);
+    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_potion_png__WEBPACK_IMPORTED_MODULE_27__["default"]);
     this.frames = 0;
   }
 
@@ -4563,27 +4577,27 @@ var Potion = /*#__PURE__*/function () {
   return Potion;
 }();
 
-var MusicNote = /*#__PURE__*/function () {
-  function MusicNote(_ref7) {
-    var position = _ref7.position,
-        velocity = _ref7.velocity;
+var Coin = /*#__PURE__*/function () {
+  function Coin(_ref6) {
+    var position = _ref6.position,
+        velocity = _ref6.velocity;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, MusicNote);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Coin);
 
     this.position = {
       x: position.x,
       y: position.y
     };
-    this.width = 75;
-    this.height = 75;
-    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_musicNote_png__WEBPACK_IMPORTED_MODULE_29__["default"]);
+    this.width = 50;
+    this.height = 50;
+    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_coin_png__WEBPACK_IMPORTED_MODULE_28__["default"]);
     this.frames = 0;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(MusicNote, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Coin, [{
     key: "draw",
     value: function draw() {
-      c.drawImage(this.image, 750 * this.frames, 0, 750, 750, this.position.x, this.position.y, this.width, this.height);
+      c.drawImage(this.image, 512 * this.frames, 0, 512, 512, this.position.x, this.position.y, this.width, this.height);
     }
   }, {
     key: "update",
@@ -4592,18 +4606,18 @@ var MusicNote = /*#__PURE__*/function () {
     }
   }]);
 
-  return MusicNote;
+  return Coin;
 }();
 
 var Particle = /*#__PURE__*/function () {
-  function Particle(_ref8) {
-    var position = _ref8.position,
-        velocity = _ref8.velocity,
-        radius = _ref8.radius,
-        _ref8$color = _ref8.color,
-        color = _ref8$color === void 0 ? 'green' : _ref8$color,
-        _ref8$laser = _ref8.laser,
-        laser = _ref8$laser === void 0 ? false : _ref8$laser;
+  function Particle(_ref7) {
+    var position = _ref7.position,
+        velocity = _ref7.velocity,
+        radius = _ref7.radius,
+        _ref7$color = _ref7.color,
+        color = _ref7$color === void 0 ? 'green' : _ref7$color,
+        _ref7$laser = _ref7.laser,
+        laser = _ref7$laser === void 0 ? false : _ref7$laser;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Particle);
 
@@ -4657,19 +4671,18 @@ var genericObjects = [];
 var zombiez = [];
 var particles = [];
 var potions = [];
-var notes = [];
+var coins = [];
 var pads = [];
-var abductions = [];
 var lastKey;
 var keys;
 var scrollOffset;
 var game;
-var currentLevel = 0;
+var currentLevel = 4;
 
 function selectLevel(currentLevel) {
   switch (currentLevel) {
-    case 0:
-      gameResetLevel0();
+    case 4:
+      gameResetLevel4();
       break;
 
     case 1:
@@ -4686,19 +4699,17 @@ function selectLevel(currentLevel) {
   }
 }
 
-function gameResetLevel0() {
+function gameResetLevel4() {
   return _gameResetLevel.apply(this, arguments);
 }
 
 function _gameResetLevel() {
   _gameResetLevel = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var platformsMap, platformDistance;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            currentLevel = 0;
-            player = new Player();
+            currentLevel = 4;
             keys = {
               right: {
                 pressed: false
@@ -4711,65 +4722,13 @@ function _gameResetLevel() {
             game = {
               disableUserInput: false
             };
-            _context.next = 7;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].platform);
-
-          case 7:
-            platformImage = _context.sent;
-            _context.next = 10;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].tPlatform);
-
-          case 10:
-            tPlatformImage = _context.sent;
-            _context.next = 13;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].xtPlatform);
-
-          case 13:
-            xtPlatformImage = _context.sent;
-            player = new Player();
             genericObjects = [new GenericObject({
               x: -1,
               y: 0,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[0].background)
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].background)
             })];
-            platformsMap = ['plat', 'plat', 'plat'];
-            platformDistance = 0;
-            platformsMap.forEach(function (symbol) {
-              switch (symbol) {
-                case 'plat':
-                  platforms.push(new Platform({
-                    x: platformDistance,
-                    y: canvas.height - platformImage.height,
-                    image: platformImage
-                  }));
-                  platformDistance += platformImage.width - 2;
-                  break;
 
-                case 'gap':
-                  platformDistance += 300;
-                  break;
-
-                case 'tPlat':
-                  platforms.push(new Platform({
-                    x: platformDistance,
-                    y: canvas.height - tPlatformImage.height,
-                    image: tPlatformImage
-                  }));
-                  platformDistance += tPlatformImage.width;
-                  break;
-
-                case 'xtPlat':
-                  platforms.push(new Platform({
-                    x: platformDistance,
-                    y: canvas.height - xtPlatformImage.height,
-                    image: xtPlatformImage
-                  }));
-                  platformDistance += xtPlatformImage.width;
-                  break;
-              }
-            });
-
-          case 19:
+          case 5:
           case "end":
             return _context.stop();
         }
@@ -4820,17 +4779,17 @@ function _gameResetLevel2() {
           case 13:
             xtPlatformImage = _context2.sent;
             _context2.next = 16;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
           case 16:
             blockTriImage = _context2.sent;
             _context2.next = 19;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_10__["default"]);
 
           case 19:
             blockImage = _context2.sent;
             _context2.next = 22;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_13__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
 
           case 22:
             padImage = _context2.sent;
@@ -5090,15 +5049,9 @@ function _gameResetLevel2() {
               block: true
             })];
             pads = [new Pad({
-              x: 1000,
-              //13200,
+              x: 13200,
               y: 420,
               image: padImage
-            })];
-            abductions = [new Abduction({
-              x: 1000,
-              //13075,
-              y: 0
             })];
             potions = [new Potion({
               position: {
@@ -5110,10 +5063,35 @@ function _gameResetLevel2() {
                 y: 0
               }
             })];
-            notes = [new MusicNote({
+            coins = [new Coin({
               position: {
-                x: 900,
-                y: 170
+                x: 1750,
+                y: 225
+              }
+            }), new Coin({
+              position: {
+                x: 3750,
+                y: 225
+              }
+            }), new Coin({
+              position: {
+                x: 6100,
+                y: 160
+              }
+            }), new Coin({
+              position: {
+                x: 8975,
+                y: 200
+              }
+            }), new Coin({
+              position: {
+                x: 9730,
+                y: 315
+              }
+            }), new Coin({
+              position: {
+                x: 12037,
+                y: 240
               }
             })];
             genericObjects = [new GenericObject({
@@ -5163,7 +5141,7 @@ function _gameResetLevel2() {
               }
             });
 
-          case 36:
+          case 35:
           case "end":
             return _context2.stop();
         }
@@ -5199,32 +5177,32 @@ function _gameResetLevel3() {
               disableUserInput: false
             };
             _context3.next = 7;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].platform);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].platform);
 
           case 7:
             platformImage = _context3.sent;
             _context3.next = 10;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].tPlatform);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].tPlatform);
 
           case 10:
             tPlatformImage = _context3.sent;
             _context3.next = 13;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].xtPlatform);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].xtPlatform);
 
           case 13:
             xtPlatformImage = _context3.sent;
             _context3.next = 16;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
           case 16:
             blockTriImage = _context3.sent;
             _context3.next = 19;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_10__["default"]);
 
           case 19:
             blockImage = _context3.sent;
             _context3.next = 22;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_13__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
 
           case 22:
             padImage = _context3.sent;
@@ -5423,14 +5401,9 @@ function _gameResetLevel3() {
             })];
             particles = [];
             pads = [new Pad({
-              x: 1000,
-              //13200,
+              x: 13200,
               y: 420,
               image: padImage
-            })];
-            abductions = [new Abduction({
-              x: 13075,
-              y: 0
             })];
             potions = [new Potion({
               position: {
@@ -5442,20 +5415,45 @@ function _gameResetLevel3() {
                 y: 0
               }
             })];
-            notes = [new MusicNote({
+            coins = [new Coin({
               position: {
-                x: 900,
-                y: 170
+                x: 2600,
+                y: 275
+              }
+            }), new Coin({
+              position: {
+                x: 4000,
+                y: 340
+              }
+            }), new Coin({
+              position: {
+                x: 6120,
+                y: 160
+              }
+            }), new Coin({
+              position: {
+                x: 7925,
+                y: 425
+              }
+            }), new Coin({
+              position: {
+                x: 9850,
+                y: 90
+              }
+            }), new Coin({
+              position: {
+                x: 11550,
+                y: 250
               }
             })];
             genericObjects = [new GenericObject({
               x: -1,
               y: 0,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].background)
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].background)
             }), new GenericObject({
               x: -615,
               y: 0,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[2].hills)
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].hills)
             })];
             scrollOffset = 0;
             platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat'];
@@ -5495,7 +5493,7 @@ function _gameResetLevel3() {
               }
             });
 
-          case 36:
+          case 35:
           case "end":
             return _context3.stop();
         }
@@ -5531,32 +5529,32 @@ function _gameResetLevel4() {
               disableUserInput: false
             };
             _context4.next = 7;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].platform);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].platform);
 
           case 7:
             platformImage = _context4.sent;
             _context4.next = 10;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].tPlatform);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].tPlatform);
 
           case 10:
             tPlatformImage = _context4.sent;
             _context4.next = 13;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].xtPlatform);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].xtPlatform);
 
           case 13:
             xtPlatformImage = _context4.sent;
             _context4.next = 16;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
           case 16:
             blockTriImage = _context4.sent;
             _context4.next = 19;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_10__["default"]);
 
           case 19:
             blockImage = _context4.sent;
             _context4.next = 22;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_13__["default"]);
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
 
           case 22:
             padImage = _context4.sent;
@@ -5912,10 +5910,6 @@ function _gameResetLevel4() {
               y: 420,
               image: padImage
             })];
-            abductions = [new Abduction({
-              x: 13075,
-              y: 0
-            })];
             potions = [new Potion({
               position: {
                 x: 2900,
@@ -5926,20 +5920,45 @@ function _gameResetLevel4() {
                 y: 0
               }
             })];
-            notes = [new MusicNote({
+            coins = [new Coin({
               position: {
-                x: 900,
-                y: 170
+                x: 2140,
+                y: 225
+              }
+            }), new Coin({
+              position: {
+                x: 4350,
+                y: 350
+              }
+            }), new Coin({
+              position: {
+                x: 5925,
+                y: 210
+              }
+            }), new Coin({
+              position: {
+                x: 9100,
+                y: 125
+              }
+            }), new Coin({
+              position: {
+                x: 9900,
+                y: 125
+              }
+            }), new Coin({
+              position: {
+                x: 11750,
+                y: 350
               }
             })];
             genericObjects = [new GenericObject({
               x: -1,
               y: 0,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].background)
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].background)
             }), new GenericObject({
               x: -615,
               y: 0,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_31__["images"].levels[3].hills)
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].hills)
             })];
             scrollOffset = 0;
             platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat'];
@@ -5979,7 +5998,7 @@ function _gameResetLevel4() {
               }
             });
 
-          case 36:
+          case 35:
           case "end":
             return _context4.stop();
         }
@@ -6009,16 +6028,12 @@ function animate() {
       object: player,
       pad: pad
     })) {
-      abductions.forEach(function (abduction) {
-        abduction.update();
-      });
       game.disableUserInput = true;
-      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioAbduction.play();
+      _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].endGame.play();
       player.velocity.y = 0;
       player.velocity.x = 0;
       player.opacity = 0;
-      gravity = 0.5;
-      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].level1Music.stop(); // setTimeout (() => {
+      gravity = 0.5; // setTimeout (() => {
 
       selectLevel(currentLevel + 1); // }, 6000)
     }
@@ -6032,20 +6047,21 @@ function animate() {
       player.powerUps.potion = true;
       setTimeout(function () {
         potions.splice(i, 1);
+        _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].powerUp.play();
       }, 0);
     } else potion.update();
-  }); //collect music note
+  }); //collect coins
 
-  notes.forEach(function (note, i) {
+  coins.forEach(function (coin, i) {
     if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["objectsTouch"])({
       object1: player,
-      object2: note
+      object2: coin
     })) {
       setTimeout(function () {
-        notes.splice(i, 1);
-        _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].level1Music.play();
+        coins.splice(i, 1);
+        _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].coinCollect.play();
       }, 0);
-    } else note.update();
+    } else coin.update();
   });
   zombiez.forEach(function (zombie, index) {
     zombie.update(); //remove zombie on laser beam
@@ -6069,7 +6085,7 @@ function animate() {
         }
 
         setTimeout(function () {
-          _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioZombieDeath.play();
+          _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioZombieDeath.play();
           zombiez.splice(index, 1);
           particles.splice(particleIndex, 1);
         }, 0);
@@ -6095,7 +6111,7 @@ function animate() {
         }));
       }
 
-      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioZombieDeath.play();
+      _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioZombieDeath.play();
       player.velocity.y -= "25";
       setTimeout(function () {
         zombiez.splice(index, 1);
@@ -6105,13 +6121,13 @@ function animate() {
       if (player.powerUps.potion) {
         player.invincible = true;
         player.powerUps.potion = false;
-        _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioLosePowerUp.play();
+        _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioLosePowerUp.play();
         setTimeout(function () {
           player.invincible = false;
         }, 1000);
       } else if (!player.invincible) {
-        _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioGameOver.play();
-        _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].level1Music.stop();
+        _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioGameOver.play();
+        _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].level1Music.stop();
         selectLevel(currentLevel);
       }
     }
@@ -6162,17 +6178,14 @@ function animate() {
         potions.forEach(function (potion) {
           potion.position.x -= player.speed;
         });
-        notes.forEach(function (note) {
-          note.position.x -= player.speed;
+        coins.forEach(function (coin) {
+          coin.position.x -= player.speed;
         });
         particles.forEach(function (particle) {
           particle.position.x -= player.speed;
         });
         pads.forEach(function (pad) {
           pad.position.x -= player.speed;
-        });
-        abductions.forEach(function (abduction) {
-          abduction.position.x -= player.speed;
         });
       }
     } else if (keys.left.pressed && scrollOffset > 0) {
@@ -6203,17 +6216,14 @@ function animate() {
         potions.forEach(function (potion) {
           potion.position.x += player.speed;
         });
-        notes.forEach(function (note) {
-          note.position.x += player.speed;
+        coins.forEach(function (coin) {
+          coin.position.x += player.speed;
         });
         particles.forEach(function (particle) {
           particle.position.x += player.speed;
         });
         pads.forEach(function (pad) {
           pad.position.x += player.speed;
-        });
-        abductions.forEach(function (abduction) {
-          abduction.position.x += player.speed;
         });
       }
     }
@@ -6275,14 +6285,11 @@ function animate() {
     });
   }); //win con
 
-  if (platformImage && scrollOffset + 400 + player.width > 13215) {
-    console.log('you WIN!');
-  } //lose con
+  if (platformImage && scrollOffset + 400 + player.width > 13215) {} //lose con
 
 
   if (player.position.y > canvas.height) {
-    _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioGameOver.play();
-    _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].level1Music.stop();
+    _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioGameOver.play();
     selectLevel(currentLevel);
   } //Sprite Switching
 
@@ -6320,47 +6327,40 @@ selectLevel(currentLevel); //gameResetLevel0()
 
 animate(); // down key listener (asdw)
 
-addEventListener('keydown', function (_ref9) {
-  var keyCode = _ref9.keyCode;
+addEventListener('keydown', function (_ref8) {
+  var keyCode = _ref8.keyCode;
   if (game.disableUserInput) return;
 
   switch (keyCode) {
     case 13:
-      console.log('enter');
-      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioGameOver.play()(selectLevel(currentLevel + 1));
-      currentLevel + 1;
+      selectLevel(currentLevel - 3);
       lastKey = 'enter';
       break;
 
     case 65:
-      console.log('left');
       keys.left.pressed = true;
       lastKey = 'left';
       break;
 
     case 83:
-      console.log('down');
       break;
 
     case 68:
-      console.log('right');
       keys.right.pressed = true;
       lastKey = 'right';
       break;
 
     case 87:
-      console.log('up');
-      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioJump.play();
-      player.velocity.y -= 15;
+      _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioJump.play();
+      setInterval(player.velocity.y -= 15, 2000);
       if (lastKey === 'right') player.currentSprite = player.sprites.jump.right;else player.currentSprite = player.sprites.jump.left;
       if (!player.powerUps.potion) break;
       if (lastKey === 'right') player.currentSprite = player.sprites.jump.potion.right;else player.currentSprite = player.sprites.jump.potion.left;
       break;
 
     case 32:
-      console.log('space');
       if (!player.powerUps.potion) return;
-      _audio_js__WEBPACK_IMPORTED_MODULE_30__["audio"].audioLaser.play();
+      _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioLaser.play();
       var velocity = 60;
       if (lastKey === 'left') velocity = -60;
       particles.push(new Particle({
@@ -6392,27 +6392,23 @@ addEventListener('keydown', function (_ref9) {
   }
 }); // up key listener (asdw)
 
-addEventListener('keyup', function (_ref10) {
-  var keyCode = _ref10.keyCode;
+addEventListener('keyup', function (_ref9) {
+  var keyCode = _ref9.keyCode;
   if (game.disableUserInput) return;
 
   switch (keyCode) {
     case 65:
-      console.log('left');
       keys.left.pressed = false;
       break;
 
     case 83:
-      console.log('down');
       break;
 
     case 68:
-      console.log('right');
       keys.right.pressed = false;
       break;
 
     case 87:
-      console.log('up');
       break;
   }
 });

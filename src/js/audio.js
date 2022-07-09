@@ -8,13 +8,26 @@ import audioJump from '../audio/audioJump.mp3'
 import audioLaser from '../audio/audioLaser.mp3'
 import audioLosePowerUp from '../audio/audioLosePowerUp.mp3'
 import audioZombieDeath from '../audio/audioZombieDeath.mp3'
+import powerUp from '../audio/powerUp.mp3'
+import endGame from '../audio/endGame.mp3'
+import coinCollect from '../audio/coinCollect.mp3'
 
 export const audio = {
-    level1Music: new Howl({
-        src: [level1Music],
-        volume: 0.08,
-        loop: true
-    }),
+    // level1Music: new Howl({
+    //     src: [level1Music],
+    //     volume: 0.08,
+    //     loop: true
+    // }),
+    // level2Music: new Howl({
+    //     src: [level2Music],
+    //     volume: 0.08,
+    //     loop: true
+    // }),
+    // level3Music: new Howl({
+    //     src: [level3Music],
+    //     volume: 0.08,
+    //     loop: true
+    // }),
     audioAbduction: new Howl({
         src: [audioAbduction],
         volume: 0.0
@@ -37,6 +50,18 @@ export const audio = {
     }),
     audioZombieDeath: new Howl({
         src: [audioZombieDeath],
+        volume: 0.4
+    }),
+    powerUp: new Howl({
+        src: [powerUp],
+        volume: 0.4
+    }),
+    endGame: new Howl({
+        src: [endGame],
+        volume: 0.4
+    }),
+    coinCollect: new Howl({
+        src: [coinCollect],
         volume: 0.4
     }),
 }

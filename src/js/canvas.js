@@ -18,8 +18,6 @@ import xtPlatform from '../img/xtPlatform.png'
 import hills from '../img/hills.png'
 import background from '../img/background.png'
 
-import abduction from '../img/abduction.png'
-
 import block from '../img/block.png'
 import blockTri from '../img/blockTri.png'
 import pad from '../img/pad.png'
@@ -41,7 +39,7 @@ import cyclopsJumpLeft from '../img/cyclopsJumpLeft.png'
 import zombieSprite from '../img/zombieSprite.png'
 import zombieSpriteRight from '../img/zombieSpriteRight.png'
 import potion from '../img/potion.png'
-import musicNote from '../img/musicNote.png'
+import coin from '../img/coin.png'
 import { audio } from './audio.js'
 import { images } from './images.js'
 
@@ -207,44 +205,6 @@ class Pad {
     }
 }
 
-class Abduction {
-    constructor({ x, y }) {
-        this.position = {
-            x,
-            y
-        }
-
-        this.width = 400
-        this.height = 576
-        this.frames= 0
-
-        this.sprites = {
-            abduction: {
-                abduction: createImage(abduction),
-            }
-        }
-        this.currentSprite = this.sprites.abduction.abduction
-    }
-
-    draw() {
-        c.drawImage(
-            this.currentSprite,
-            400 * this.frames,
-            0,
-            400,
-            576,
-            this.position.x, 
-            this.position.y, 
-            this.width, 
-            this.height,
-            this.position.x)
-    }
-
-    update() {
-        this.frames++
-        this.draw()
-    }
-}
 
 class GenericObject {
     constructor({ x, y, image }) {
@@ -392,17 +352,17 @@ class Potion {
     }
 }
 
-class MusicNote {
+class Coin {
     constructor({position, velocity}) {
         this.position = {
             x: position.x,
             y: position.y,
         }
 
-        this.width = 75
-        this.height = 75
+        this.width = 50
+        this.height = 50
     
-        this.image = createImage(musicNote)
+        this.image = createImage(coin)
         this.frames= 0
 
     }
@@ -410,10 +370,10 @@ class MusicNote {
     draw() {
         c.drawImage(
             this.image,
-            750 * this.frames,
+            512 * this.frames,
             0,
-            750,
-            750,
+            512,
+            512,
             this.position.x, 
             this.position.y, 
             this.width, 
@@ -476,21 +436,20 @@ let genericObjects = []
 let zombiez = []
 let particles = []
 let potions = []
-let notes = []
+let coins = []
 let pads = []
-let abductions = []
 
 let lastKey
 let keys 
 
 let scrollOffset
 let game
-let currentLevel = 0
+let currentLevel = 4
 
 function selectLevel(currentLevel) {
     switch (currentLevel) {
-        case 0:
-           gameResetLevel0()
+        case 4:
+           gameResetLevel4()
            break
         case 1:
            gameResetLevel1()
@@ -505,9 +464,9 @@ function selectLevel(currentLevel) {
 }
 
 
-async function gameResetLevel0() {
-    currentLevel = 0
-    player = new Player()
+async function gameResetLevel4() {
+    currentLevel = 4
+    
 
     keys = {
         right: {
@@ -524,12 +483,6 @@ async function gameResetLevel0() {
         disableUserInput: false
     }
 
-    platformImage = await createImageAsync(images.levels[3].platform)
-    tPlatformImage = await createImageAsync(images.levels[3].tPlatform)
-    xtPlatformImage = await createImageAsync(images.levels[3].xtPlatform)
-
-
-    player = new Player()
 
     genericObjects = [
         new GenericObject({
@@ -539,54 +492,6 @@ async function gameResetLevel0() {
         }),
     ]
 
-    const platformsMap = ['plat', 'plat', 'plat']
-
-    let platformDistance = 0
-
-    platformsMap.forEach(symbol => {
-        switch(symbol) {
-            case 'plat':
-                platforms.push(new Platform({
-                    x: platformDistance,
-                    y: canvas.height - platformImage.height,
-                    image: platformImage,
-                }))
-
-            platformDistance += platformImage.width - 2
-
-            break
-
-            case 'gap':
-                platformDistance += 300
-
-                break;
-            
-            case 'tPlat':
-                platforms.push(new Platform({
-                    x: platformDistance,
-                    y: canvas.height - tPlatformImage.height,
-                    image: tPlatformImage,
-
-                }))
-
-            platformDistance += tPlatformImage.width
-
-            break
-
-            case 'xtPlat':
-                platforms.push(new Platform({
-                    x: platformDistance,
-                    y: canvas.height - xtPlatformImage.height,
-                    image: xtPlatformImage,
-
-                }))
-
-            platformDistance += xtPlatformImage.width
-
-            break
-        }
-
-    })
 }
 
 async function gameResetLevel1() {
@@ -913,18 +818,12 @@ async function gameResetLevel1() {
 
     pads = [
         new Pad ({
-            x: 1000,//13200,
+            x: 13200,
             y: 420,
             image: padImage,
         })
     ]
 
-    abductions = [
-        new Abduction ({
-            x: 1000, //13075,
-            y: 0
-        })
-    ]
 
     potions = [new Potion({position: {
         x: 2248,
@@ -936,11 +835,33 @@ async function gameResetLevel1() {
     }
     })]
 
-    notes = [new MusicNote({position: {
-        x: 900,
-        y: 170
-    }
-    })]
+
+    coins = [
+        new Coin({position: {
+        x: 1750,
+        y: 225
+        }}),
+        new Coin({position: {
+        x: 3750,
+        y: 225
+        }}),
+        new Coin({position: {
+        x: 6100,
+        y: 160
+        }}),
+        new Coin({position: {
+        x: 8975,
+        y: 200
+        }}),
+        new Coin({position: {
+        x: 9730,
+        y: 315
+        }}),
+        new Coin({position: {
+        x: 12037,
+        y: 240
+        }}), 
+    ]
 
     genericObjects = [
         new GenericObject({
@@ -1266,16 +1187,9 @@ async function gameResetLevel2() {
 
     pads = [
         new Pad ({
-            x: 1000, //13200,
+            x: 13200,
             y: 420,
             image: padImage,
-        })
-    ]
-
-    abductions = [
-        new Abduction ({
-            x: 13075,
-            y: 0
         })
     ]
 
@@ -1289,11 +1203,32 @@ async function gameResetLevel2() {
     }
     })]
 
-    notes = [new MusicNote({position: {
-        x: 900,
-        y: 170
-    }
-    })]
+    coins = [
+        new Coin({position: {
+        x: 2600,
+        y: 275
+        }}),
+        new Coin({position: {
+        x: 4000,
+        y: 340
+        }}),
+        new Coin({position: {
+        x: 6120,
+        y: 160
+        }}),
+        new Coin({position: {
+        x: 7925,
+        y: 425
+        }}),
+        new Coin({position: {
+        x: 9850,
+        y: 90
+        }}),
+        new Coin({position: {
+        x: 11550,
+        y: 250
+        }}), 
+    ]
 
     genericObjects = [
         new GenericObject({
@@ -1795,12 +1730,6 @@ async function gameResetLevel3() {
         })
     ]
 
-    abductions = [
-        new Abduction ({
-            x: 13075,
-            y: 0
-        })
-    ]
 
     potions = [new Potion({position: {
         x: 2900,
@@ -1812,11 +1741,33 @@ async function gameResetLevel3() {
     }
     })]
 
-    notes = [new MusicNote({position: {
-        x: 900,
-        y: 170
-    }
-    })]
+    coins = [
+        new Coin({position: {
+        x: 2140,
+        y: 225
+        }}),
+        new Coin({position: {
+        x: 4350,
+        y: 350
+        }}),
+        new Coin({position: {
+        x: 5925,
+        y: 210
+        }}),
+        new Coin({position: {
+        x: 9100,
+        y: 125
+        }}),
+        new Coin({position: {
+        x: 9900,
+        y: 125
+        }}),
+        new Coin({position: {
+        x: 11750,
+        y: 350
+        }}), 
+    ]
+
 
     genericObjects = [
         new GenericObject({
@@ -1910,11 +1861,8 @@ function animate() {
                 })
             )
             {
-            abductions.forEach(abduction => {
-                abduction.update() 
-            })
             game.disableUserInput = true
-            audio.audioAbduction.play()
+            audio.endGame.play()
     
             player.velocity.y = 0
             player.velocity.x = 0
@@ -1922,7 +1870,6 @@ function animate() {
             player.opacity = 0 
             
             gravity = 0.5
-            audio.level1Music.stop() 
             // setTimeout (() => {
                 selectLevel(currentLevel + 1)
             // }, 6000)
@@ -1940,22 +1887,23 @@ function animate() {
             player.powerUps.potion = true
         setTimeout(() => {
             potions.splice(i, 1)
+            audio.powerUp.play()
         }, 0)
         } else potion.update()
     })
 
-    //collect music note
-    notes.forEach((note, i) => {
+    //collect coins
+    coins.forEach((coin, i) => {
         if (objectsTouch ({ 
             object1: player,
-            object2: note
+            object2: coin
         })
         ) {
         setTimeout(() => {
-            notes.splice(i, 1)
-            audio.level1Music.play()
+            coins.splice(i, 1)
+            audio.coinCollect.play()
         }, 0)
-        } else note.update()
+        } else coin.update()
     })
 
     zombiez.forEach((zombie, index) => {
@@ -2101,8 +2049,8 @@ function animate() {
                 potion.position.x -= player.speed
             })
 
-            notes.forEach((note) => {
-                note.position.x -= player.speed
+            coins.forEach((coin) => {
+                coin.position.x -= player.speed
             })
 
             particles.forEach((particle) => {
@@ -2113,9 +2061,6 @@ function animate() {
                 pad.position.x -= player.speed
              })
             
-            abductions.forEach((abduction) => {
-                abduction.position.x -= player.speed
-             })
         }
             
         } else if (keys.left.pressed && scrollOffset > 0) {
@@ -2151,8 +2096,8 @@ function animate() {
                     potion.position.x += player.speed
                 })
 
-                notes.forEach((note) => {
-                    note.position.x += player.speed
+                coins.forEach((coin) => {
+                    coin.position.x += player.speed
                 })
 
                 particles.forEach((particle) => {
@@ -2163,9 +2108,6 @@ function animate() {
                     pad.position.x += player.speed
                  })
 
-                abductions.forEach((abduction) => {
-                    abduction.position.x += player.speed
-                 })
             }
         }
     }
@@ -2241,13 +2183,11 @@ function animate() {
 
   //win con
     if (platformImage && scrollOffset + 400 + player.width > 13215) {
-        console.log('you WIN!')
     }
 
     //lose con
     if (player.position.y > canvas.height) {
         audio.audioGameOver.play()
-        audio.level1Music.stop()
         selectLevel(currentLevel)
     }
 
@@ -2284,40 +2224,34 @@ selectLevel(currentLevel)
 //gameResetLevel2()
 //gameResetLevel3()
 animate()
-
 // down key listener (asdw)
 addEventListener('keydown', ({ keyCode }) => {
     if (game.disableUserInput) return
 
     switch (keyCode) {
         case 13:
-            console.log('enter')
-            audio.audioGameOver.play()
-            (selectLevel(currentLevel + 1))
-            currentLevel + 1
+            (selectLevel(currentLevel - 3))
             lastKey = 'enter'
             break
         
         case 65:
-            console.log('left')
             keys.left.pressed = true
             lastKey = 'left'
             break
         
         case 83:
-            console.log('down')
             break
             
         case 68:
-            console.log('right')
             keys.right.pressed = true
             lastKey = 'right'
             break
 
         case 87:
-            console.log('up')
             audio.audioJump.play()
-            player.velocity.y -= 15
+
+            setInterval(player.velocity.y -= 15, 2000)
+            
             
             if (lastKey === 'right') 
             player.currentSprite = player.sprites.jump.right
@@ -2334,7 +2268,6 @@ addEventListener('keydown', ({ keyCode }) => {
             break
 
         case 32:
-            console.log('space')
 
             if (!player.powerUps.potion) return
 
@@ -2378,21 +2311,17 @@ addEventListener('keyup', ({ keyCode }) => {
     
     switch (keyCode) {
         case 65:
-            console.log('left')
             keys.left.pressed = false
             break
         
         case 83:
-            console.log('down')
             break
             
         case 68:
-            console.log('right')
             keys.right.pressed = false
             break
 
         case 87:
-            console.log('up')
             break
     }
 })
