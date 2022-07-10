@@ -153,7 +153,7 @@ class Player {
 }
 
 class Platform {
-    constructor({ x, y, image, block }) {
+    constructor({ x, y, image, block, help, shop, play }) {
          this.position = {
              x,
              y
@@ -167,6 +167,9 @@ class Platform {
          this.width = image.width
          this.height = image.height 
          this.block = block
+         this.help = help
+         this.shop = shop
+         this.play = play
     }
 
     draw() {
@@ -466,7 +469,7 @@ function selectLevel(currentLevel) {
 
 async function gameResetLevel4() {
     currentLevel = 4
-    
+    player = new Player()
 
     keys = {
         right: {
@@ -483,6 +486,33 @@ async function gameResetLevel4() {
         disableUserInput: false
     }
 
+    platformImage = await createImageAsync(platform)
+
+    player = new Player()
+
+    platforms = [ 
+        new Platform ({
+        x: 385,
+        y: 300,
+        image: createImage(images.levels[0].help),
+        help: true,
+        block: true
+        }),
+         new Platform ({
+        x: 485,
+        y: 300,
+        image: createImage(images.levels[0].shop),
+        shop: true,
+        block: true
+        }),
+         new Platform ({
+        x: 585,
+        y: 300,
+        image: createImage(images.levels[0].play),
+        play: true,
+        block: true
+        }),
+    ]
 
     genericObjects = [
         new GenericObject({
@@ -491,6 +521,25 @@ async function gameResetLevel4() {
             image: createImage(images.levels[0].background)
         }),
     ]
+    
+
+    const platformsMap = ['plat', 'plat', 'plat']
+
+    let platformDistance = 0
+
+    platformsMap.forEach(symbol => {
+        switch(symbol) {
+            case 'plat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height + 35,
+                    image: platformImage,
+                }))
+
+            platformDistance += platformImage.width
+            break
+        }
+    })
 
 }
 
@@ -1852,8 +1901,12 @@ function animate() {
     })
 
     pads.forEach(pad => {
-        pad.update() 
-        pad.velocity.x = 0                
+        if 
+        (currentLevel == 1 || currentLevel == 2 || currentLevel == 3)
+        {
+            pad.update() 
+            pad.velocity.x = 0   
+        }             
 
         if (isOnTopOfPad({
                     object: player,
@@ -1866,14 +1919,9 @@ function animate() {
     
             player.velocity.y = 0
             player.velocity.x = 0
-            
             player.opacity = 0 
-            
             gravity = 0.5
-            // setTimeout (() => {
-                selectLevel(currentLevel + 1)
-            // }, 6000)
-
+            selectLevel(currentLevel + 1)
             }                
         })
 
@@ -1979,7 +2027,6 @@ function animate() {
                     player.invincible = false}, 1000)
             } else if (!player.invincible) {
             audio.audioGameOver.play()
-            audio.level1Music.stop()
             selectLevel(currentLevel)
         }
         }
@@ -2001,19 +2048,26 @@ function animate() {
     //scrolling code start
     let hitSide = false
     //left and right movement 
-    if (keys.right.pressed && player.position.x < 400) {
+    if (
+        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && player.position.x < 400) ||
+        ((currentLevel == 4) && keys.right.pressed && player.position.x < 935) 
+    ) {
         player.velocity.x = player.speed
     } else if (
-        (keys.left.pressed && player.position.x > 100) || 
-        (keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
-        (keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250)
+        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && player.position.x > 100) || 
+        ((currentLevel == 4) && keys.left.pressed && player.position.x > 0) ||
+        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
+        ((currentLevel == 4) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
+        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250) ||
+        ((currentLevel == 4) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
     ) {
         player.velocity.x = -player.speed
     } else {
         player.velocity.x = 0
     
         //scrolling code
-        if (keys.right.pressed && scrollOffset < 13250) {
+        if (keys.right.pressed && scrollOffset < 13250)  
+        {
             for (let i = 0; i < platforms.length; i++) {
                 const platform = platforms[i]
                 platform.velocity.x = -player.speed
@@ -2130,7 +2184,8 @@ function animate() {
             player.velocity.y = 0
         }
 
-        if (platform.block && hitBottomOfPlatform({
+        if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) &&
+            platform.block && hitBottomOfPlatform({
             object: player,
             platform
         })) {
@@ -2142,6 +2197,31 @@ function animate() {
                 platform
             })) {
                 player.velocity.x = 0
+            }
+    
+        if ((currentLevel == 4) && platform.play && hitBottomOfPlatform({
+                object: player,
+                platform
+            })) {
+                audio.endGame.play()
+                player.velocity.y = -player.velocity.y
+                selectLevel(currentLevel - 3)
+
+            }
+        if ((currentLevel == 4) && platform.shop && hitBottomOfPlatform({
+                object: player,
+                platform
+            })) {
+                player.velocity.y = -player.velocity.y
+                shop()
+
+            }
+        if ((currentLevel == 4) && platform.help && hitBottomOfPlatform({
+                object: player,
+                platform
+            })) {
+                player.velocity.y = -player.velocity.y
+                help()
             }
 
         //particle bounce
@@ -2248,11 +2328,9 @@ addEventListener('keydown', ({ keyCode }) => {
             break
 
         case 87:
+            player.velocity.y -= 15
             audio.audioJump.play()
 
-            setInterval(player.velocity.y -= 15, 2000)
-            
-            
             if (lastKey === 'right') 
             player.currentSprite = player.sprites.jump.right
             else

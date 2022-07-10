@@ -1,4 +1,7 @@
-import backgroundLevel0 from '../img/level0/background.png'
+import backgroundLevel4 from '../img/level0/background.png'
+import help from '../img/level0/help.png'
+import shop from '../img/level0/shop.png'
+import play from '../img/level0/play.png'
 
 import backgroundLevel2 from '../img/level2/background.png'
 import hillsLevel2 from '../img/level2/hills.png'
@@ -16,7 +19,10 @@ import xtPlatformLevel3 from '../img/level3/xtPlatform.png'
 export const images = {
     levels: {
         0: {
-            background: backgroundLevel0,
+            background: backgroundLevel4,
+            help,
+            shop,
+            play
         },
         1: {
             background: ''
