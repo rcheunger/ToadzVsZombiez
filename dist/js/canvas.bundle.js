@@ -4311,6 +4311,7 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 
 
 
+var scoreData = document.querySelector("[data-score]");
 var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
 canvas.width = 1024;
@@ -4718,6 +4719,7 @@ var particles = [];
 var potions = [];
 var coins = [];
 var pads = [];
+var score = 0;
 var lastKey;
 var keys;
 var scrollOffset;
@@ -6144,12 +6146,14 @@ function animate() {
       object1: player,
       object2: coin
     })) {
+      score++;
       setTimeout(function () {
         coins.splice(i, 1);
         _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].coinCollect.play();
       }, 0);
     } else coin.update();
   });
+  console.log('score');
   zombiez.forEach(function (zombie, index) {
     zombie.update(); //remove zombie on laser beam
 
@@ -6349,7 +6353,7 @@ function animate() {
       object: player,
       platform: platform
     })) {
-      _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].endGame.play();
+      _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioGameOver.play();
       player.velocity.y = -player.velocity.y;
       selectLevel(currentLevel - 3);
     }

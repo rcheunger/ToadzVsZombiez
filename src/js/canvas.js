@@ -43,6 +43,7 @@ import coin from '../img/coin.png'
 import { audio } from './audio.js'
 import { images } from './images.js'
 
+const scoreData = document.querySelector("[data-score]")
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
@@ -441,6 +442,7 @@ let particles = []
 let potions = []
 let coins = []
 let pads = []
+let score = 0
 
 let lastKey
 let keys 
@@ -1947,12 +1949,14 @@ function animate() {
             object2: coin
         })
         ) {
+        score ++
         setTimeout(() => {
             coins.splice(i, 1)
             audio.coinCollect.play()
         }, 0)
         } else coin.update()
     })
+    console.log('score')
 
     zombiez.forEach((zombie, index) => {
         zombie.update()
@@ -2203,7 +2207,7 @@ function animate() {
                 object: player,
                 platform
             })) {
-                audio.endGame.play()
+                audio.audioGameOver.play()
                 player.velocity.y = -player.velocity.y
                 selectLevel(currentLevel - 3)
 
