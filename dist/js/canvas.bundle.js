@@ -4254,7 +4254,8 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
 canvas.width = 1024;
-canvas.height = 576; // gravity strength
+canvas.height = 576;
+var coinsCollectedElem = document.querySelector("[data-coins]"); // gravity strength
 
 var gravity = 0.5;
 
@@ -4657,8 +4658,8 @@ var zombiez = [];
 var particles = [];
 var potions = [];
 var coins = [];
-var pads = []; //let score = 0
-
+var pads = [];
+var coinsCollected = 0;
 var lastKey;
 var keys;
 var scrollOffset;
@@ -6085,7 +6086,8 @@ function animate() {
       object1: player,
       object2: coin
     })) {
-      //score++
+      coinsCollected++;
+      coinsCollectedElem.textContent = "Coins Collected: ".concat(coinsCollected);
       setTimeout(function () {
         coins.splice(i, 1);
         _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].coinCollect.play();

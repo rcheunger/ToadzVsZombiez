@@ -50,6 +50,8 @@ const c = canvas.getContext('2d')
 canvas.width = 1024
 canvas.height = 576
 
+const coinsCollectedElem = document.querySelector("[data-coins]")
+
 // gravity strength
 let gravity = 0.5
 
@@ -442,7 +444,7 @@ let particles = []
 let potions = []
 let coins = []
 let pads = []
-//let score = 0
+let coinsCollected = 0
 
 let lastKey
 let keys 
@@ -1949,7 +1951,8 @@ function animate() {
             object2: coin
         })
         ) {
-        //score++
+        coinsCollected ++
+        coinsCollectedElem.textContent = `Coins Collected: ${coinsCollected}`
         setTimeout(() => {
             coins.splice(i, 1)
             audio.coinCollect.play()
