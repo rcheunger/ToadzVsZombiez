@@ -3594,45 +3594,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/audio/level1Music.mp3":
-/*!***********************************!*\
-  !*** ./src/audio/level1Music.mp3 ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/3685e54c839d1f4348fba1ba8c887c71.mp3");
-
-/***/ }),
-
-/***/ "./src/audio/level2Music.mp3":
-/*!***********************************!*\
-  !*** ./src/audio/level2Music.mp3 ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/546b8ca7887b6d8e21a429362412e857.mp3");
-
-/***/ }),
-
-/***/ "./src/audio/level3Music.mp3":
-/*!***********************************!*\
-  !*** ./src/audio/level3Music.mp3 ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "audio/41c286ed23d2c9c0122b4d9d981e5307.mp3");
-
-/***/ }),
-
 /***/ "./src/audio/powerUp.mp3":
 /*!*******************************!*\
   !*** ./src/audio/powerUp.mp3 ***!
@@ -4152,21 +4113,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "audio", function() { return audio; });
 /* harmony import */ var howler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! howler */ "./node_modules/howler/dist/howler.js");
 /* harmony import */ var howler__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(howler__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _audio_level1Music_mp3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../audio/level1Music.mp3 */ "./src/audio/level1Music.mp3");
-/* harmony import */ var _audio_level2Music_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../audio/level2Music.mp3 */ "./src/audio/level2Music.mp3");
-/* harmony import */ var _audio_level3Music_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../audio/level3Music.mp3 */ "./src/audio/level3Music.mp3");
-/* harmony import */ var _audio_audioAbduction_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../audio/audioAbduction.mp3 */ "./src/audio/audioAbduction.mp3");
-/* harmony import */ var _audio_audioGameOver_mp3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../audio/audioGameOver.mp3 */ "./src/audio/audioGameOver.mp3");
-/* harmony import */ var _audio_audioJump_mp3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../audio/audioJump.mp3 */ "./src/audio/audioJump.mp3");
-/* harmony import */ var _audio_audioLaser_mp3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../audio/audioLaser.mp3 */ "./src/audio/audioLaser.mp3");
-/* harmony import */ var _audio_audioLosePowerUp_mp3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../audio/audioLosePowerUp.mp3 */ "./src/audio/audioLosePowerUp.mp3");
-/* harmony import */ var _audio_audioZombieDeath_mp3__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../audio/audioZombieDeath.mp3 */ "./src/audio/audioZombieDeath.mp3");
-/* harmony import */ var _audio_powerUp_mp3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../audio/powerUp.mp3 */ "./src/audio/powerUp.mp3");
-/* harmony import */ var _audio_endGame_mp3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../audio/endGame.mp3 */ "./src/audio/endGame.mp3");
-/* harmony import */ var _audio_coinCollect_mp3__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../audio/coinCollect.mp3 */ "./src/audio/coinCollect.mp3");
-
-
-
+/* harmony import */ var _audio_audioAbduction_mp3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../audio/audioAbduction.mp3 */ "./src/audio/audioAbduction.mp3");
+/* harmony import */ var _audio_audioGameOver_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../audio/audioGameOver.mp3 */ "./src/audio/audioGameOver.mp3");
+/* harmony import */ var _audio_audioJump_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../audio/audioJump.mp3 */ "./src/audio/audioJump.mp3");
+/* harmony import */ var _audio_audioLaser_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../audio/audioLaser.mp3 */ "./src/audio/audioLaser.mp3");
+/* harmony import */ var _audio_audioLosePowerUp_mp3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../audio/audioLosePowerUp.mp3 */ "./src/audio/audioLosePowerUp.mp3");
+/* harmony import */ var _audio_audioZombieDeath_mp3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../audio/audioZombieDeath.mp3 */ "./src/audio/audioZombieDeath.mp3");
+/* harmony import */ var _audio_powerUp_mp3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../audio/powerUp.mp3 */ "./src/audio/powerUp.mp3");
+/* harmony import */ var _audio_endGame_mp3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../audio/endGame.mp3 */ "./src/audio/endGame.mp3");
+/* harmony import */ var _audio_coinCollect_mp3__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../audio/coinCollect.mp3 */ "./src/audio/coinCollect.mp3");
 
 
 
@@ -4178,55 +4133,40 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var audio = {
-  // level1Music: new Howl({
-  //     src: [level1Music],
-  //     volume: 0.08,
-  //     loop: true
-  // }),
-  // level2Music: new Howl({
-  //     src: [level2Music],
-  //     volume: 0.08,
-  //     loop: true
-  // }),
-  // level3Music: new Howl({
-  //     src: [level3Music],
-  //     volume: 0.08,
-  //     loop: true
-  // }),
   audioAbduction: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioAbduction_mp3__WEBPACK_IMPORTED_MODULE_4__["default"]],
+    src: [_audio_audioAbduction_mp3__WEBPACK_IMPORTED_MODULE_1__["default"]],
     volume: 0.0
   }),
   audioGameOver: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioGameOver_mp3__WEBPACK_IMPORTED_MODULE_5__["default"]],
+    src: [_audio_audioGameOver_mp3__WEBPACK_IMPORTED_MODULE_2__["default"]],
     volume: 0.4
   }),
   audioJump: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioJump_mp3__WEBPACK_IMPORTED_MODULE_6__["default"]],
+    src: [_audio_audioJump_mp3__WEBPACK_IMPORTED_MODULE_3__["default"]],
     volume: 0.25
   }),
   audioLaser: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioLaser_mp3__WEBPACK_IMPORTED_MODULE_7__["default"]],
+    src: [_audio_audioLaser_mp3__WEBPACK_IMPORTED_MODULE_4__["default"]],
     volume: 0.4
   }),
   audioLosePowerUp: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioLosePowerUp_mp3__WEBPACK_IMPORTED_MODULE_8__["default"]],
+    src: [_audio_audioLosePowerUp_mp3__WEBPACK_IMPORTED_MODULE_5__["default"]],
     volume: 0.4
   }),
   audioZombieDeath: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_audioZombieDeath_mp3__WEBPACK_IMPORTED_MODULE_9__["default"]],
+    src: [_audio_audioZombieDeath_mp3__WEBPACK_IMPORTED_MODULE_6__["default"]],
     volume: 0.4
   }),
   powerUp: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_powerUp_mp3__WEBPACK_IMPORTED_MODULE_10__["default"]],
+    src: [_audio_powerUp_mp3__WEBPACK_IMPORTED_MODULE_7__["default"]],
     volume: 0.4
   }),
   endGame: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_endGame_mp3__WEBPACK_IMPORTED_MODULE_11__["default"]],
+    src: [_audio_endGame_mp3__WEBPACK_IMPORTED_MODULE_8__["default"]],
     volume: 0.4
   }),
   coinCollect: new howler__WEBPACK_IMPORTED_MODULE_0__["Howl"]({
-    src: [_audio_coinCollect_mp3__WEBPACK_IMPORTED_MODULE_12__["default"]],
+    src: [_audio_coinCollect_mp3__WEBPACK_IMPORTED_MODULE_9__["default"]],
     volume: 0.4
   })
 };
@@ -4311,7 +4251,6 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 
 
 
-var scoreData = document.querySelector("[data-score]");
 var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
 canvas.width = 1024;
@@ -4718,8 +4657,8 @@ var zombiez = [];
 var particles = [];
 var potions = [];
 var coins = [];
-var pads = [];
-var score = 0;
+var pads = []; //let score = 0
+
 var lastKey;
 var keys;
 var scrollOffset;
@@ -6146,14 +6085,13 @@ function animate() {
       object1: player,
       object2: coin
     })) {
-      score++;
+      //score++
       setTimeout(function () {
         coins.splice(i, 1);
         _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].coinCollect.play();
       }, 0);
     } else coin.update();
   });
-  console.log('score');
   zombiez.forEach(function (zombie, index) {
     zombie.update(); //remove zombie on laser beam
 

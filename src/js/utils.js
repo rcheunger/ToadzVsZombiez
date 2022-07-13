@@ -110,3 +110,4 @@ export function objectsTouch({ object1, object2 }) {
     object1.position.y <= object2.position.y + object2.height
   )
 }
+

@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  button {
+    position: fixed;
+    margin-top: 1px;
+  }
+
+  .button1 {
+    position: absolute;
+    font-size: 3vmin;
+    left: 1vmin;
+    top: 1vmin;
+  }
+
+  .button2 {
+    position: absolute;
+    font-size: 3vmin;
+    left: 1vmin;
+    top: 6vmin;
+  }
+
+  .button3 {
+    position: absolute;
+    font-size: 3vmin;
+    left: 1vmin;
+    top: 11vmin;
+  } 
+
+  span {
+    position: absolute;
+    font-size: 3vmin;
+    left: 1vmin;
+    top: 16vmin;
+    color: white;
+  } 
