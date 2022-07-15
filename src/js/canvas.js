@@ -445,6 +445,7 @@ let potions = []
 let coins = []
 let pads = []
 let coinsCollected = 0
+window.totalCoinsCollected = 0
 
 let lastKey
 let keys 
@@ -1939,10 +1940,12 @@ function animate() {
             player.powerUps.potion = true
         setTimeout(() => {
             potions.splice(i, 1)
-            audio.powerUp.play()
         }, 0)
         } else potion.update()
     })
+
+
+    window.totalCoinsCollected = 0
 
     //collect coins
     coins.forEach((coin, i) => {
@@ -1952,6 +1955,7 @@ function animate() {
         })
         ) {
         coinsCollected ++
+        window.totalCoinsCollected += coinsCollected
         coinsCollectedElem.textContent = `Coins Collected: ${coinsCollected}`
         setTimeout(() => {
             coins.splice(i, 1)

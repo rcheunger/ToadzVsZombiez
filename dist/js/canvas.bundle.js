@@ -4660,6 +4660,7 @@ var potions = [];
 var coins = [];
 var pads = [];
 var coinsCollected = 0;
+window.totalCoinsCollected = 0;
 var lastKey;
 var keys;
 var scrollOffset;
@@ -6076,10 +6077,10 @@ function animate() {
       player.powerUps.potion = true;
       setTimeout(function () {
         potions.splice(i, 1);
-        _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].powerUp.play();
       }, 0);
     } else potion.update();
-  }); //collect coins
+  });
+  window.totalCoinsCollected = 0; //collect coins
 
   coins.forEach(function (coin, i) {
     if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["objectsTouch"])({
@@ -6087,6 +6088,7 @@ function animate() {
       object2: coin
     })) {
       coinsCollected++;
+      window.totalCoinsCollected += coinsCollected;
       coinsCollectedElem.textContent = "Coins Collected: ".concat(coinsCollected);
       setTimeout(function () {
         coins.splice(i, 1);
