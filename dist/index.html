@@ -6,14 +6,12 @@
     <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico"></head>
   <body>
-    <header src="img/nav/TopNav.png">
-      <img class="home" onclick="gameResetLevel4()" src="img/nav/homebutton.png">
-      <img class="help" onclick="gameResetLevel4()" src="img/nav/helpbutton.png">
-      <img class="mm" onclick="connectMetamask()" src="img/nav/MM.png">
-      <img class="coinBase" onclick="claimTokens()" src="img/nav/homebutton.png">
-      <img class="account" src="img/nav/account.png">
-    </header>
-    <span class="coinsCollected" data-coins>0</span>
+    <div class="header">
+      <button class="button1" onclick="">Home</button>
+      <button class="button2" onclick=>Claim coins</button>
+      <button class="button3" onclick="connectMetamask()">Connect metamask</button>
+    </div>
+    <span class="coinsCollected" data-coins>Coins Collected: 0</span>
     
     <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" 
     type="application/javascript"></script> 
