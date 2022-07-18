@@ -6080,7 +6080,7 @@ function animate() {
       }, 0);
     } else potion.update();
   });
-  window.totalCoinsCollected = 0; //collect coins
+  window.totalCoinsCollected = coinsCollected; //collect coins
 
   coins.forEach(function (coin, i) {
     if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["objectsTouch"])({
@@ -6088,7 +6088,6 @@ function animate() {
       object2: coin
     })) {
       coinsCollected++;
-      window.totalCoinsCollected += coinsCollected;
       coinsCollectedElem.textContent = "Coins Collected: ".concat(coinsCollected);
       setTimeout(function () {
         coins.splice(i, 1);

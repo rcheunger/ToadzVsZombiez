@@ -7,16 +7,24 @@
   <link rel="icon" href="favicon.ico"></head>
   <body>
     <div class="header">
-      <button class="button1" onclick="">Home</button>
-      <button class="button2" onclick=>Claim coins</button>
-      <button class="button3" onclick="connectMetamask()">Connect metamask</button>
+      <img class="headerimg" src="img/nav/TopNav.png">
+      <img class="home" src="img/nav/homebutton.png" onclick="selectLevel(currentLevel)">
+      <img class="help" src="img/nav/helpbutton.png" onclick="">
+      <img class="MM" src="img/nav/MM.png" onclick="connectMetamask()">
+      <img class="claim" src="img/nav/coin.png" onclick="claimCoins()">
+        <span class="coinsCollected" data-coins>0</span>
+      <img class="account" src="img/nav/account.png" onclick="">
+      </img>
     </div>
-    <span class="coinsCollected" data-coins>Coins Collected: 0</span>
-    
+
     <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" 
     type="application/javascript"></script> 
-
     <script src="js/blockchain.js"></script>
     <canvas></canvas>
+    <div class="footer">
+      <img class="footerimg" src="img/nav/BotNav.png">
+      <img class="twitter" src="img/nav/twitter.png" onclick="">
+      <img class="email" src="img/nav/email.png" onclick="">
+    </div>
   <script src="./js/canvas.bundle.js"></script></body>
 </html>

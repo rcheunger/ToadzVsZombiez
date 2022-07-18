@@ -1945,7 +1945,7 @@ function animate() {
     })
 
 
-    window.totalCoinsCollected = 0
+    window.totalCoinsCollected = coinsCollected
 
     //collect coins
     coins.forEach((coin, i) => {
@@ -1955,7 +1955,6 @@ function animate() {
         })
         ) {
         coinsCollected ++
-        window.totalCoinsCollected += coinsCollected
         coinsCollectedElem.textContent = `Coins Collected: ${coinsCollected}`
         setTimeout(() => {
             coins.splice(i, 1)
