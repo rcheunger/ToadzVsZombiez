@@ -8,12 +8,14 @@
   <body>
     <div class="header">
       <img class="headerimg" src="img/nav/TopNav.png">
-      <img class="home" src="img/nav/homebutton.png" onclick="selectLevel(currentLevel)">
-      <img class="help" src="img/nav/helpbutton.png" onclick="">
-      <img class="MM" src="img/nav/MM.png" onclick="connectMetamask()">
-      <img class="claim" src="img/nav/coin.png" onclick="claimCoins()">
+      <img class="home" src="img/nav/homebutton.png">
+      <img class="help" src="img/nav/helpbutton.png">
+      <img class="coinz" src="img/nav/coinCollect.png">
         <span class="coinsCollected" data-coins>0</span>
-      <img class="account" src="img/nav/account.png" onclick="">
+      <img class="claim" src="img/nav/claim.png" onclick="claimCoins()">
+        <span class="claimCoinz" onclick="claimCoins()">Claim Coins</span>
+      <img class="account" src="img/nav/account.png" onclick="connectMetamask()">
+        <h4 onclick="connectMetamask()"> Connect Wallet</h4>
       </img>
     </div>
 
@@ -23,8 +25,8 @@
     <canvas></canvas>
     <div class="footer">
       <img class="footerimg" src="img/nav/BotNav.png">
-      <img class="twitter" src="img/nav/twitter.png" onclick="">
-      <img class="email" src="img/nav/email.png" onclick="">
+      <img class="twitter" src="img/nav/twitter.png" onclick= "window.open('https://twitter.com/rcheunger')">
+      <img class="email" src="img/nav/email.png" onclick= "window.open('mailto:rowancheung@gmail.com')">
     </div>
   <script src="./js/canvas.bundle.js"></script></body>
 </html>

@@ -4255,7 +4255,11 @@ var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
 canvas.width = 1024;
 canvas.height = 576;
-var coinsCollectedElem = document.querySelector("[data-coins]"); // gravity strength
+var coinsCollectedElem = document.querySelector("[data-coins]");
+var homeElem = document.querySelector('.home');
+var helpElem = document.querySelector('.help');
+homeElem.onclick = gameResetLevel4; // helpElem.onclick = helpPage
+// gravity strength
 
 var gravity = 0.5;
 
@@ -4717,7 +4721,6 @@ function _gameResetLevel() {
 
           case 7:
             platformImage = _context.sent;
-            player = new Player();
             platforms = [new Platform({
               x: 385,
               y: 300,
@@ -4757,7 +4760,7 @@ function _gameResetLevel() {
               }
             });
 
-          case 14:
+          case 13:
           case "end":
             return _context.stop();
         }
@@ -6088,7 +6091,7 @@ function animate() {
       object2: coin
     })) {
       coinsCollected++;
-      coinsCollectedElem.textContent = "Coins Collected: ".concat(coinsCollected);
+      coinsCollectedElem.textContent = "".concat(coinsCollected);
       setTimeout(function () {
         coins.splice(i, 1);
         _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].coinCollect.play();

@@ -51,6 +51,12 @@ canvas.width = 1024
 canvas.height = 576
 
 const coinsCollectedElem = document.querySelector("[data-coins]")
+const homeElem = document.querySelector('.home')
+const helpElem = document.querySelector('.help')
+
+homeElem.onclick = gameResetLevel4
+// helpElem.onclick = helpPage
+
 
 // gravity strength
 let gravity = 0.5
@@ -493,7 +499,6 @@ async function gameResetLevel4() {
 
     platformImage = await createImageAsync(platform)
 
-    player = new Player()
 
     platforms = [ 
         new Platform ({
@@ -1955,7 +1960,7 @@ function animate() {
         })
         ) {
         coinsCollected ++
-        coinsCollectedElem.textContent = `Coins Collected: ${coinsCollected}`
+        coinsCollectedElem.textContent = `${coinsCollected}`
         setTimeout(() => {
             coins.splice(i, 1)
             audio.coinCollect.play()
