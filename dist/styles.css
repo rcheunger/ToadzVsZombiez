@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
 body {
   margin: 25px;
   background-color: black;
@@ -47,6 +49,7 @@ span {
   font-weight: bolder;
   font-family: Arial, Helvetica, sans-serif;
   color: #ffe9c7;
+
 } 
 
 .claim {
@@ -58,11 +61,12 @@ span {
 .claimCoinz {
   position: absolute;
   top: 55px;
-  left: 755px;
+  left: 782px;
   font-size: larger;
   font-weight: bolder;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Concert One', cursive;
   color: #ffe9c7;
+  text-shadow: -2px 2px black;
 } 
 
 .account {
@@ -74,11 +78,13 @@ span {
 
 h4 {
   position: absolute;
-  top: 37px;
-  left: 905px;
+  top: 29px;
+  left: 920px;
+  font-size: larger;
   font-weight: bolder;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Concert One', cursive;
   color: #ffe9c7;
+  text-shadow: -2px 2px black;
 }
 
 .twitter {

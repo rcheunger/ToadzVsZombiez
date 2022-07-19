@@ -51,11 +51,6 @@ canvas.width = 1024
 canvas.height = 576
 
 const coinsCollectedElem = document.querySelector("[data-coins]")
-const homeElem = document.querySelector('.home')
-const helpElem = document.querySelector('.help')
-
-homeElem.onclick = gameResetLevel4
-// helpElem.onclick = helpPage
 
 
 // gravity strength
@@ -191,33 +186,6 @@ class Platform {
     }
 }
 
-class Pad {
-    constructor({ x, y, image }) {
-         this.position = {
-             x,
-             y
-         }
-
-         this.velocity = {
-             x: 0
-         }
-
-         this.image = image
-         this.width = image.width
-         this.height = image.height 
-    }
-
-    draw() {
-        c.drawImage(this.image, this.position.x, this.position.y)
-    }
-
-    update() {
-        this.draw()
-        this.position.x += this.velocity.x
-    }
-}
-
-
 class GenericObject {
     constructor({ x, y, image }) {
          this.position = {
@@ -320,80 +288,82 @@ class Zombie {
     }
 }
 
-class Potion {
-    constructor({position, velocity}) {
-        this.position = {
-            x: position.x,
-            y: position.y,
-        }
+class Pad {
+    constructor({ x, y, image }) {
+         this.position = {
+             x,
+             y
+         }
 
-        this.velocity = {
-            x: velocity.x,
-            y: velocity.y,
-        }
+         this.velocity = {
+             x: 0
+         }
 
-        this.width = 40
-        this.height = 60
-    
-        this.image = createImage(potion)
-        this.frames= 0
-
+         this.image = image
+         this.width = image.width
+         this.height = image.height 
     }
 
     draw() {
-        c.drawImage(
-            this.image,
-            40 * this.frames,
-            0,
-            40,
-            60,
-            this.position.x, 
-            this.position.y, 
-            this.width, 
-            this.height)
+        c.drawImage(this.image, this.position.x, this.position.y)
     }
 
     update() {
         this.draw()
-
         this.position.x += this.velocity.x
-        this.position.y += this.velocity.y
+    }
+}
 
-        if (this.position.y +this.height + this.velocity.y <= canvas.height)
-            this.velocity.y += gravity
+    
+class Potion {
+    constructor({ x, y, image }) {
+         this.position = {
+             x,
+             y
+         }
+
+         this.velocity = {
+             x: 0
+         }
+
+        this.image = image
+        this.width = 40
+        this.height = 60
+    }
+
+    draw() {
+        c.drawImage(this.image, this.position.x, this.position.y, this.width, this.height)
+    }
+
+    update() {
+        this.draw()
+        this.position.x += this.velocity.x
     }
 }
 
 class Coin {
-    constructor({position, velocity}) {
-        this.position = {
-            x: position.x,
-            y: position.y,
-        }
+    constructor({ x, y, image }) {
+         this.position = {
+             x,
+             y
+         }
 
+         this.velocity = {
+             x: 0
+         }
+
+        this.image = image
         this.width = 50
         this.height = 50
-    
-        this.image = createImage(coin)
-        this.frames= 0
-
     }
 
     draw() {
-        c.drawImage(
-            this.image,
-            512 * this.frames,
-            0,
-            512,
-            512,
-            this.position.x, 
-            this.position.y, 
-            this.width, 
-            this.height)
+        c.drawImage(this.image, this.position.x, this.position.y, this.width, this.height)
     }
 
     update() {
         this.draw()
+        this.position.x += this.velocity.x
     }
 }
 
@@ -440,6 +410,9 @@ let xtPlatformImage
 let blockTriImage
 let blockImage
 let padImage
+let potionImage
+let coinImage
+
 
 
 let player = new Player()
@@ -463,8 +436,11 @@ let currentLevel = 4
 function selectLevel(currentLevel) {
     switch (currentLevel) {
         case 4:
-           gameResetLevel4()
+           goHome()
            break
+        case 11:
+            goHelp()
+            break
         case 1:
            gameResetLevel1()
            break
@@ -477,8 +453,59 @@ function selectLevel(currentLevel) {
     }
 }
 
+async function goHelp() {
+    currentLevel = 11
+    player = new Player()
 
-async function gameResetLevel4() {
+    keys = {
+        right: {
+            pressed: false
+        },
+        left: {
+            pressed: false
+        }
+    }
+
+    scrollOffset = 0
+
+    game = {
+        disableUserInput: false
+    }
+
+    platformImage = await createImageAsync(images.levels[3].platform)
+    
+
+
+    genericObjects = [
+        new GenericObject({
+            x: -1,
+            y: 0,
+            image: createImage(images.levels[11].background)
+        }),
+    ]
+    
+
+    const platformsMap = ['plat', 'plat', 'plat']
+
+    let platformDistance = 0
+
+    platformsMap.forEach(symbol => {
+        switch(symbol) {
+            case 'plat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height + 35,
+                    image: platformImage,
+                }))
+
+            platformDistance += platformImage.width
+            break
+        }
+    })
+
+}
+
+async function goHome() {
     currentLevel = 4
     player = new Player()
 
@@ -578,6 +605,9 @@ async function gameResetLevel1() {
    blockTriImage = await createImageAsync(blockTri)
    blockImage = await createImageAsync(block)
    padImage = await createImageAsync(pad)
+   potionImage = await createImageAsync(potion)
+   coinImage = await createImageAsync(coin)
+   
 
 
     player = new Player()
@@ -884,42 +914,45 @@ async function gameResetLevel1() {
     ]
 
 
-    potions = [new Potion({position: {
+    potions = [
+        new Potion ({ 
         x: 2248,
-        y: -150
-    },
-    velocity: {
-        x: 0,
-        y: 0
-    }
-    })]
-
+        y: 170,
+        image: potionImage
+    })
+    ]
 
     coins = [
-        new Coin({position: {
+        new Coin({
         x: 1750,
-        y: 225
-        }}),
-        new Coin({position: {
+        y: 225,
+        image: coinImage
+        }),
+        new Coin({
         x: 3750,
-        y: 225
-        }}),
-        new Coin({position: {
+        y: 225,
+        image: coinImage
+        }),
+        new Coin({
         x: 6100,
-        y: 160
-        }}),
-        new Coin({position: {
+        y: 160,
+        image: coinImage
+        }),
+        new Coin({
         x: 8975,
-        y: 200
-        }}),
-        new Coin({position: {
+        y: 200,
+        image: coinImage
+        }),
+        new Coin({
         x: 9730,
-        y: 315
-        }}),
-        new Coin({position: {
+        y: 315,
+        image: coinImage
+        }),
+        new Coin({
         x: 12037,
-        y: 240
-        }}), 
+        y: 240,
+        image: coinImage
+        }), 
     ]
 
     genericObjects = [
@@ -1016,6 +1049,8 @@ async function gameResetLevel2() {
    blockTriImage = await createImageAsync(blockTri)
    blockImage = await createImageAsync(block)
    padImage = await createImageAsync(pad)
+   potionImage = await createImageAsync(potion)
+   coinImage = await createImageAsync(coin)
 
 
     player = new Player()
@@ -1252,41 +1287,44 @@ async function gameResetLevel2() {
         })
     ]
 
-    potions = [new Potion({position: {
+    potions = [new Potion({
         x: 3800,
-        y: -150
-    },
-    velocity: {
-        x: 0,
-        y: 0
+        y: 201,
+        image: potionImage
     }
-    })]
+    )]
 
     coins = [
-        new Coin({position: {
+        new Coin({
         x: 2600,
-        y: 275
-        }}),
-        new Coin({position: {
+        y: 275,
+        image: coinImage
+        }),
+        new Coin({
         x: 4000,
-        y: 340
-        }}),
-        new Coin({position: {
+        y: 340,
+        image: coinImage
+        }),
+        new Coin({
         x: 6120,
-        y: 160
-        }}),
-        new Coin({position: {
+        y: 160,
+        image: coinImage
+        }),
+        new Coin({
         x: 7925,
-        y: 425
-        }}),
-        new Coin({position: {
+        y: 425,
+        image: coinImage
+        }),
+        new Coin({
         x: 9850,
-        y: 90
-        }}),
-        new Coin({position: {
+        y: 90,
+        image: coinImage
+        }),
+        new Coin({
         x: 11550,
-        y: 250
-        }}), 
+        y: 250,
+        image: coinImage
+        })
     ]
 
     genericObjects = [
@@ -1382,9 +1420,9 @@ async function gameResetLevel3() {
    blockTriImage = await createImageAsync(blockTri)
    blockImage = await createImageAsync(block)
    padImage = await createImageAsync(pad)
+   potionImage = await createImageAsync(potion)
+   coinImage = await createImageAsync(coin)
 
-
-    player = new Player()
     
     platforms = [
         new Platform ({
@@ -1789,42 +1827,44 @@ async function gameResetLevel3() {
         })
     ]
 
-
-    potions = [new Potion({position: {
+    potions = [new Potion({
         x: 2900,
-        y: 350
-    },
-    velocity: {
-        x: 0,
-        y: 0
+        y: 432,
+        image: potionImage
     }
-    })]
+    )]
 
     coins = [
-        new Coin({position: {
+        new Coin({
         x: 2140,
-        y: 225
-        }}),
-        new Coin({position: {
+        y: 225,
+        image: coinImage
+        }),
+        new Coin({
         x: 4350,
-        y: 350
-        }}),
-        new Coin({position: {
+        y: 350,
+        image: coinImage
+        }),
+        new Coin({
         x: 5925,
-        y: 210
-        }}),
-        new Coin({position: {
+        y: 210,
+        image: coinImage
+        }),
+        new Coin({
         x: 9100,
-        y: 125
-        }}),
-        new Coin({position: {
+        y: 125,
+        image: coinImage
+        }),
+        new Coin({
         x: 9900,
-        y: 125
-        }}),
-        new Coin({position: {
+        y: 125,
+        image: coinImage
+        }),
+        new Coin({
         x: 11750,
-        y: 350
-        }}), 
+        y: 350,
+        image: coinImage
+        }), 
     ]
 
 
@@ -1899,6 +1939,12 @@ function animate() {
     requestAnimationFrame(animate)
     c.fillStyle= 'white'
     c.fillRect(0, 0, canvas.width, canvas.height)
+
+    const homeElem = document.querySelector('.home')
+    const helpElem = document.querySelector('.help')
+
+    homeElem.onclick = goHome
+    helpElem.onclick = goHelp
     
     genericObjects.forEach(genericObject => {
         genericObject.update()
@@ -1925,7 +1971,7 @@ function animate() {
             )
             {
             game.disableUserInput = true
-            audio.endGame.play()
+            audio.audioGameOver.play()
     
             player.velocity.y = 0
             player.velocity.x = 0
@@ -1945,11 +1991,10 @@ function animate() {
             player.powerUps.potion = true
         setTimeout(() => {
             potions.splice(i, 1)
+            audio.audioLaser.play()
         }, 0)
         } else potion.update()
     })
-
-
     window.totalCoinsCollected = coinsCollected
 
     //collect coins
@@ -2236,7 +2281,7 @@ function animate() {
                 platform
             })) {
                 player.velocity.y = -player.velocity.y
-                help()
+                goHelp()
             }
 
         //particle bounce

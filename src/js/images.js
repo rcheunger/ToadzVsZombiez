@@ -1,4 +1,5 @@
 import backgroundLevel4 from '../img/level0/background.png'
+import helpBackground from '../img/helpPage/helpPage.png'
 import help from '../img/level0/help.png'
 import shop from '../img/level0/shop.png'
 import play from '../img/level0/play.png'
@@ -16,8 +17,13 @@ import tPlatformLevel3 from '../img/level3/tPlatform.png'
 import xtPlatformLevel3 from '../img/level3/xtPlatform.png'
 
 
+
+
 export const images = {
     levels: {
+        11: {
+            background: helpBackground
+        },
         0: {
             background: backgroundLevel4,
             help,

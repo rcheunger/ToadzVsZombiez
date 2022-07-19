@@ -5,7 +5,7 @@ async function connectMetamask() {
     await provider.send("eth_requestAccounts", []);
     signer = await provider.getSigner();
     let header = document.querySelector("h4")
-    header.innerHTML = (await signer.getAddress()).slice(0, 6) + '...' + (await signer.getAddress()).slice(37,42)
+    header.innerHTML = (await signer.getAddress()).slice(0, 5) + '...' + (await signer.getAddress()).slice(38,42)
     console.log("Account address:", await signer.getAddress());
 
     const balance = await signer.getBalance()
