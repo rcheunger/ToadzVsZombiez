@@ -438,7 +438,7 @@ function selectLevel(currentLevel) {
         case 4:
            goHome()
            break
-        case 11:
+        case 5:
             goHelp()
             break
         case 1:
@@ -453,132 +453,7 @@ function selectLevel(currentLevel) {
     }
 }
 
-async function goHelp() {
-    currentLevel = 11
-    player = new Player()
 
-    keys = {
-        right: {
-            pressed: false
-        },
-        left: {
-            pressed: false
-        }
-    }
-
-    scrollOffset = 0
-
-    game = {
-        disableUserInput: false
-    }
-
-    platformImage = await createImageAsync(images.levels[3].platform)
-    
-
-
-    genericObjects = [
-        new GenericObject({
-            x: -1,
-            y: 0,
-            image: createImage(images.levels[11].background)
-        }),
-    ]
-    
-
-    const platformsMap = ['plat', 'plat', 'plat']
-
-    let platformDistance = 0
-
-    platformsMap.forEach(symbol => {
-        switch(symbol) {
-            case 'plat':
-                platforms.push(new Platform({
-                    x: platformDistance,
-                    y: canvas.height - platformImage.height + 35,
-                    image: platformImage,
-                }))
-
-            platformDistance += platformImage.width
-            break
-        }
-    })
-
-}
-
-async function goHome() {
-    currentLevel = 4
-    player = new Player()
-
-    keys = {
-        right: {
-            pressed: false
-        },
-        left: {
-            pressed: false
-        }
-    }
-
-    scrollOffset = 0
-
-    game = {
-        disableUserInput: false
-    }
-
-    platformImage = await createImageAsync(platform)
-
-
-    platforms = [ 
-        new Platform ({
-        x: 385,
-        y: 300,
-        image: createImage(images.levels[0].help),
-        help: true,
-        block: true
-        }),
-         new Platform ({
-        x: 485,
-        y: 300,
-        image: createImage(images.levels[0].shop),
-        shop: true,
-        block: true
-        }),
-         new Platform ({
-        x: 585,
-        y: 300,
-        image: createImage(images.levels[0].play),
-        play: true,
-        block: true
-        }),
-    ]
-
-    genericObjects = [
-        new GenericObject({
-            x: -1,
-            y: 0,
-            image: createImage(images.levels[0].background)
-        }),
-    ]
-    
-
-    const platformsMap = ['plat', 'plat', 'plat']
-
-    let platformDistance = 0
-
-    platformsMap.forEach(symbol => {
-        switch(symbol) {
-            case 'plat':
-                platforms.push(new Platform({
-                    x: platformDistance,
-                    y: canvas.height - platformImage.height + 35,
-                    image: platformImage,
-                }))
-
-            platformDistance += platformImage.width
-            break
-        }
-    })
-
-}
 
 async function gameResetLevel1() {
     currentLevel = 1
@@ -608,9 +483,6 @@ async function gameResetLevel1() {
    potionImage = await createImageAsync(potion)
    coinImage = await createImageAsync(coin)
    
-
-
-    player = new Player()
     zombiez = [
         new Zombie({
         position: {
@@ -1051,9 +923,6 @@ async function gameResetLevel2() {
    padImage = await createImageAsync(pad)
    potionImage = await createImageAsync(potion)
    coinImage = await createImageAsync(coin)
-
-
-    player = new Player()
     
     platforms = [
         new Platform ({
@@ -1339,8 +1208,6 @@ async function gameResetLevel2() {
             image: createImage(images.levels[2].hills)
         })
     ]
-
-    scrollOffset = 0
 
     const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 
     'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap',  'gap', 'plat', 
@@ -1880,9 +1747,6 @@ async function gameResetLevel3() {
             image: createImage(images.levels[3].hills)
         })
     ]
-
-    scrollOffset = 0
-
     const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat','plat','gap',
      'gap', 'gap','gap', 'gap', 'gap','gap', 'gap', 'gap', 'gap', 'gap','gap', 'gap', 'gap','gap', 'gap', 'gap', 
      'gap', 'gap', 'plat','plat','plat','plat','plat','plat','plat']
@@ -1932,6 +1796,142 @@ async function gameResetLevel3() {
             break
         }
 
+    })
+}
+
+async function goHome() {
+    currentLevel = 4
+    player = new Player()
+
+    keys = {
+        right: {
+            pressed: false
+        },
+        left: {
+            pressed: false
+        }
+    }
+
+    scrollOffset = 0
+
+    game = {
+        disableUserInput: false
+    }
+
+    platformImage = await createImageAsync(platform)
+
+    zombiez = []
+    particles = []
+
+    platforms = [ 
+        new Platform ({
+        x: 385,
+        y: 300,
+        image: createImage(images.levels[0].help),
+        help: true,
+        block: true
+        }),
+         new Platform ({
+        x: 485,
+        y: 300,
+        image: createImage(images.levels[0].shop),
+        shop: true,
+        block: true
+        }),
+         new Platform ({
+        x: 585,
+        y: 300,
+        image: createImage(images.levels[0].play),
+        play: true,
+        block: true
+        }),
+    ]
+
+    potions = []
+    coins = []
+    pads = []
+
+    genericObjects = [
+        new GenericObject({
+            x: 0,
+            y: 0,
+            image: createImage(images.levels[0].background)
+        }),
+    ]
+    
+
+    const platformsMap = ['plat', 'plat', 'plat']
+
+    let platformDistance = 0
+
+    platformsMap.forEach(symbol => {
+        switch(symbol) {
+            case 'plat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height + 35,
+                    image: platformImage,
+                }))
+
+            platformDistance += platformImage.width
+            break
+        }
+    })
+}
+
+async function goHelp() {
+    currentLevel = 5
+    player = new Player()
+
+    keys = {
+        right: {
+            pressed: false
+        },
+        left: {
+            pressed: false
+        }
+    }
+
+    scrollOffset = 0
+
+    game = {
+        disableUserInput: false
+    }
+
+    platformImage = await createImageAsync(images.levels[3].platform)
+
+    zombiez = []
+    particles = []
+    platforms = []
+    potions = []
+    coins = []
+    pads = []
+
+    genericObjects = [
+        new GenericObject({
+            x: 0,
+            y: 0,
+            image: createImage(images.levels[11].background)
+        }),
+    ]
+    
+
+    const platformsMap = ['plat', 'plat', 'plat']
+
+    let platformDistance = 0
+
+    platformsMap.forEach(symbol => {
+        switch(symbol) {
+            case 'plat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height + 35,
+                    image: platformImage,
+                }))
+
+            platformDistance += platformImage.width
+            break
+        }
     })
 }
 
@@ -2110,16 +2110,16 @@ function animate() {
     //left and right movement 
     if (
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && player.position.x < 400) ||
-        ((currentLevel == 4) && keys.right.pressed && player.position.x < 935) 
+        ((currentLevel == 4 || currentLevel == 5) && keys.right.pressed && player.position.x < 935) 
     ) {
         player.velocity.x = player.speed
     } else if (
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && player.position.x > 100) || 
-        ((currentLevel == 4) && keys.left.pressed && player.position.x > 0) ||
+        ((currentLevel == 4 || currentLevel == 5) && keys.left.pressed && player.position.x > 0) ||
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
-        ((currentLevel == 4) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
+        ((currentLevel == 4 || currentLevel == 5) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250) ||
-        ((currentLevel == 4) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
+        ((currentLevel == 4 || currentLevel == 5) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
     ) {
         player.velocity.x = -player.speed
     } else {
@@ -2281,7 +2281,7 @@ function animate() {
                 platform
             })) {
                 player.velocity.y = -player.velocity.y
-                goHelp()
+                selectLevel(currentLevel + 1)
             }
 
         //particle bounce
@@ -2370,7 +2370,7 @@ addEventListener('keydown', ({ keyCode }) => {
 
     switch (keyCode) {
         case 13:
-            (selectLevel(currentLevel - 3))
+            //(selectLevel(currentLevel - 3))
             lastKey = 'enter'
             break
         

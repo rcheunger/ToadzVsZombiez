@@ -3707,7 +3707,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "f47625febb962b944013bdf60e9a9250.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "ac8910520205755f1e872391e316e446.png");
 
 /***/ }),
 
@@ -4632,7 +4632,7 @@ function selectLevel(currentLevel) {
       goHome();
       break;
 
-    case 11:
+    case 5:
       goHelp();
       break;
 
@@ -4650,155 +4650,16 @@ function selectLevel(currentLevel) {
   }
 }
 
-function goHelp() {
-  return _goHelp.apply(this, arguments);
-}
-
-function _goHelp() {
-  _goHelp = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var platformsMap, platformDistance;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            currentLevel = 11;
-            player = new Player();
-            keys = {
-              right: {
-                pressed: false
-              },
-              left: {
-                pressed: false
-              }
-            };
-            scrollOffset = 0;
-            game = {
-              disableUserInput: false
-            };
-            _context.next = 7;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].platform);
-
-          case 7:
-            platformImage = _context.sent;
-            genericObjects = [new GenericObject({
-              x: -1,
-              y: 0,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[11].background)
-            })];
-            platformsMap = ['plat', 'plat', 'plat'];
-            platformDistance = 0;
-            platformsMap.forEach(function (symbol) {
-              switch (symbol) {
-                case 'plat':
-                  platforms.push(new Platform({
-                    x: platformDistance,
-                    y: canvas.height - platformImage.height + 35,
-                    image: platformImage
-                  }));
-                  platformDistance += platformImage.width;
-                  break;
-              }
-            });
-
-          case 12:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _goHelp.apply(this, arguments);
-}
-
-function goHome() {
-  return _goHome.apply(this, arguments);
-}
-
-function _goHome() {
-  _goHome = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-    var platformsMap, platformDistance;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            currentLevel = 4;
-            player = new Player();
-            keys = {
-              right: {
-                pressed: false
-              },
-              left: {
-                pressed: false
-              }
-            };
-            scrollOffset = 0;
-            game = {
-              disableUserInput: false
-            };
-            _context2.next = 7;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_platform_png__WEBPACK_IMPORTED_MODULE_5__["default"]);
-
-          case 7:
-            platformImage = _context2.sent;
-            platforms = [new Platform({
-              x: 385,
-              y: 300,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].help),
-              help: true,
-              block: true
-            }), new Platform({
-              x: 485,
-              y: 300,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].shop),
-              shop: true,
-              block: true
-            }), new Platform({
-              x: 585,
-              y: 300,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].play),
-              play: true,
-              block: true
-            })];
-            genericObjects = [new GenericObject({
-              x: -1,
-              y: 0,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].background)
-            })];
-            platformsMap = ['plat', 'plat', 'plat'];
-            platformDistance = 0;
-            platformsMap.forEach(function (symbol) {
-              switch (symbol) {
-                case 'plat':
-                  platforms.push(new Platform({
-                    x: platformDistance,
-                    y: canvas.height - platformImage.height + 35,
-                    image: platformImage
-                  }));
-                  platformDistance += platformImage.width;
-                  break;
-              }
-            });
-
-          case 13:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    }, _callee2);
-  }));
-  return _goHome.apply(this, arguments);
-}
-
 function gameResetLevel1() {
   return _gameResetLevel.apply(this, arguments);
 }
 
 function _gameResetLevel() {
-  _gameResetLevel = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+  _gameResetLevel = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
     var platformsMap, platformDistance;
-    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
-        switch (_context3.prev = _context3.next) {
+        switch (_context.prev = _context.next) {
           case 0:
             currentLevel = 1;
             player = new Player();
@@ -4814,47 +4675,46 @@ function _gameResetLevel() {
             game = {
               disableUserInput: false
             };
-            _context3.next = 7;
+            _context.next = 7;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_platform_png__WEBPACK_IMPORTED_MODULE_5__["default"]);
 
           case 7:
-            platformImage = _context3.sent;
-            _context3.next = 10;
+            platformImage = _context.sent;
+            _context.next = 10;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_6__["default"]);
 
           case 10:
-            tPlatformImage = _context3.sent;
-            _context3.next = 13;
+            tPlatformImage = _context.sent;
+            _context.next = 13;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_xtPlatform_png__WEBPACK_IMPORTED_MODULE_7__["default"]);
 
           case 13:
-            xtPlatformImage = _context3.sent;
-            _context3.next = 16;
+            xtPlatformImage = _context.sent;
+            _context.next = 16;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
           case 16:
-            blockTriImage = _context3.sent;
-            _context3.next = 19;
+            blockTriImage = _context.sent;
+            _context.next = 19;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_10__["default"]);
 
           case 19:
-            blockImage = _context3.sent;
-            _context3.next = 22;
+            blockImage = _context.sent;
+            _context.next = 22;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
 
           case 22:
-            padImage = _context3.sent;
-            _context3.next = 25;
+            padImage = _context.sent;
+            _context.next = 25;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_potion_png__WEBPACK_IMPORTED_MODULE_27__["default"]);
 
           case 25:
-            potionImage = _context3.sent;
-            _context3.next = 28;
+            potionImage = _context.sent;
+            _context.next = 28;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_coin_png__WEBPACK_IMPORTED_MODULE_28__["default"]);
 
           case 28:
-            coinImage = _context3.sent;
-            player = new Player();
+            coinImage = _context.sent;
             zombiez = [new Zombie({
               position: {
                 x: 2750,
@@ -5191,12 +5051,12 @@ function _gameResetLevel() {
               }
             });
 
-          case 41:
+          case 40:
           case "end":
-            return _context3.stop();
+            return _context.stop();
         }
       }
-    }, _callee3);
+    }, _callee);
   }));
   return _gameResetLevel.apply(this, arguments);
 }
@@ -5206,11 +5066,11 @@ function gameResetLevel2() {
 }
 
 function _gameResetLevel2() {
-  _gameResetLevel2 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+  _gameResetLevel2 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
     var platformsMap, platformDistance;
-    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) {
-        switch (_context4.prev = _context4.next) {
+        switch (_context2.prev = _context2.next) {
           case 0:
             currentLevel = 2;
             player = new Player();
@@ -5226,47 +5086,46 @@ function _gameResetLevel2() {
             game = {
               disableUserInput: false
             };
-            _context4.next = 7;
+            _context2.next = 7;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].platform);
 
           case 7:
-            platformImage = _context4.sent;
-            _context4.next = 10;
+            platformImage = _context2.sent;
+            _context2.next = 10;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].tPlatform);
 
           case 10:
-            tPlatformImage = _context4.sent;
-            _context4.next = 13;
+            tPlatformImage = _context2.sent;
+            _context2.next = 13;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].xtPlatform);
 
           case 13:
-            xtPlatformImage = _context4.sent;
-            _context4.next = 16;
+            xtPlatformImage = _context2.sent;
+            _context2.next = 16;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
           case 16:
-            blockTriImage = _context4.sent;
-            _context4.next = 19;
+            blockTriImage = _context2.sent;
+            _context2.next = 19;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_10__["default"]);
 
           case 19:
-            blockImage = _context4.sent;
-            _context4.next = 22;
+            blockImage = _context2.sent;
+            _context2.next = 22;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
 
           case 22:
-            padImage = _context4.sent;
-            _context4.next = 25;
+            padImage = _context2.sent;
+            _context2.next = 25;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_potion_png__WEBPACK_IMPORTED_MODULE_27__["default"]);
 
           case 25:
-            potionImage = _context4.sent;
-            _context4.next = 28;
+            potionImage = _context2.sent;
+            _context2.next = 28;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_coin_png__WEBPACK_IMPORTED_MODULE_28__["default"]);
 
           case 28:
-            coinImage = _context4.sent;
-            player = new Player();
+            coinImage = _context2.sent;
             platforms = [new Platform({
               x: 2075,
               y: 350,
@@ -5504,7 +5363,6 @@ function _gameResetLevel2() {
               y: 0,
               image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].hills)
             })];
-            scrollOffset = 0;
             platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat'];
             platformDistance = 0;
             platformsMap.forEach(function (symbol) {
@@ -5542,12 +5400,12 @@ function _gameResetLevel2() {
               }
             });
 
-          case 41:
+          case 39:
           case "end":
-            return _context4.stop();
+            return _context2.stop();
         }
       }
-    }, _callee4);
+    }, _callee2);
   }));
   return _gameResetLevel2.apply(this, arguments);
 }
@@ -5557,11 +5415,11 @@ function gameResetLevel3() {
 }
 
 function _gameResetLevel3() {
-  _gameResetLevel3 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+  _gameResetLevel3 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
     var platformsMap, platformDistance;
-    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
       while (1) {
-        switch (_context5.prev = _context5.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
             currentLevel = 3;
             player = new Player();
@@ -5577,46 +5435,46 @@ function _gameResetLevel3() {
             game = {
               disableUserInput: false
             };
-            _context5.next = 7;
+            _context3.next = 7;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].platform);
 
           case 7:
-            platformImage = _context5.sent;
-            _context5.next = 10;
+            platformImage = _context3.sent;
+            _context3.next = 10;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].tPlatform);
 
           case 10:
-            tPlatformImage = _context5.sent;
-            _context5.next = 13;
+            tPlatformImage = _context3.sent;
+            _context3.next = 13;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].xtPlatform);
 
           case 13:
-            xtPlatformImage = _context5.sent;
-            _context5.next = 16;
+            xtPlatformImage = _context3.sent;
+            _context3.next = 16;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
           case 16:
-            blockTriImage = _context5.sent;
-            _context5.next = 19;
+            blockTriImage = _context3.sent;
+            _context3.next = 19;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_10__["default"]);
 
           case 19:
-            blockImage = _context5.sent;
-            _context5.next = 22;
+            blockImage = _context3.sent;
+            _context3.next = 22;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
 
           case 22:
-            padImage = _context5.sent;
-            _context5.next = 25;
+            padImage = _context3.sent;
+            _context3.next = 25;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_potion_png__WEBPACK_IMPORTED_MODULE_27__["default"]);
 
           case 25:
-            potionImage = _context5.sent;
-            _context5.next = 28;
+            potionImage = _context3.sent;
+            _context3.next = 28;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_coin_png__WEBPACK_IMPORTED_MODULE_28__["default"]);
 
           case 28:
-            coinImage = _context5.sent;
+            coinImage = _context3.sent;
             platforms = [new Platform({
               x: 1500,
               y: 320,
@@ -6007,7 +5865,6 @@ function _gameResetLevel3() {
               y: 0,
               image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].hills)
             })];
-            scrollOffset = 0;
             platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat'];
             platformDistance = 0;
             platformsMap.forEach(function (symbol) {
@@ -6045,14 +5902,164 @@ function _gameResetLevel3() {
               }
             });
 
-          case 40:
+          case 39:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _gameResetLevel3.apply(this, arguments);
+}
+
+function goHome() {
+  return _goHome.apply(this, arguments);
+}
+
+function _goHome() {
+  _goHome = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+    var platformsMap, platformDistance;
+    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            currentLevel = 4;
+            player = new Player();
+            keys = {
+              right: {
+                pressed: false
+              },
+              left: {
+                pressed: false
+              }
+            };
+            scrollOffset = 0;
+            game = {
+              disableUserInput: false
+            };
+            _context4.next = 7;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_platform_png__WEBPACK_IMPORTED_MODULE_5__["default"]);
+
+          case 7:
+            platformImage = _context4.sent;
+            zombiez = [];
+            particles = [];
+            platforms = [new Platform({
+              x: 385,
+              y: 300,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].help),
+              help: true,
+              block: true
+            }), new Platform({
+              x: 485,
+              y: 300,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].shop),
+              shop: true,
+              block: true
+            }), new Platform({
+              x: 585,
+              y: 300,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].play),
+              play: true,
+              block: true
+            })];
+            potions = [];
+            coins = [];
+            pads = [];
+            genericObjects = [new GenericObject({
+              x: 0,
+              y: 0,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].background)
+            })];
+            platformsMap = ['plat', 'plat', 'plat'];
+            platformDistance = 0;
+            platformsMap.forEach(function (symbol) {
+              switch (symbol) {
+                case 'plat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height + 35,
+                    image: platformImage
+                  }));
+                  platformDistance += platformImage.width;
+                  break;
+              }
+            });
+
+          case 18:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _goHome.apply(this, arguments);
+}
+
+function goHelp() {
+  return _goHelp.apply(this, arguments);
+}
+
+function _goHelp() {
+  _goHelp = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+    var platformsMap, platformDistance;
+    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            currentLevel = 5;
+            player = new Player();
+            keys = {
+              right: {
+                pressed: false
+              },
+              left: {
+                pressed: false
+              }
+            };
+            scrollOffset = 0;
+            game = {
+              disableUserInput: false
+            };
+            _context5.next = 7;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].platform);
+
+          case 7:
+            platformImage = _context5.sent;
+            zombiez = [];
+            particles = [];
+            platforms = [];
+            potions = [];
+            coins = [];
+            pads = [];
+            genericObjects = [new GenericObject({
+              x: 0,
+              y: 0,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[11].background)
+            })];
+            platformsMap = ['plat', 'plat', 'plat'];
+            platformDistance = 0;
+            platformsMap.forEach(function (symbol) {
+              switch (symbol) {
+                case 'plat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height + 35,
+                    image: platformImage
+                  }));
+                  platformDistance += platformImage.width;
+                  break;
+              }
+            });
+
+          case 18:
           case "end":
             return _context5.stop();
         }
       }
     }, _callee5);
   }));
-  return _gameResetLevel3.apply(this, arguments);
+  return _goHelp.apply(this, arguments);
 }
 
 function animate() {
@@ -6197,9 +6204,9 @@ function animate() {
 
   var hitSide = false; //left and right movement 
 
-  if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && player.position.x < 400 || currentLevel == 4 && keys.right.pressed && player.position.x < 935) {
+  if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && player.position.x < 400 || (currentLevel == 4 || currentLevel == 5) && keys.right.pressed && player.position.x < 935) {
     player.velocity.x = player.speed;
-  } else if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && player.position.x > 100 || currentLevel == 4 && keys.left.pressed && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || currentLevel == 4 && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250 || currentLevel == 4 && keys.right.pressed && scrollOffset === 0 && player.position.x > 934) {
+  } else if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && player.position.x > 100 || (currentLevel == 4 || currentLevel == 5) && keys.left.pressed && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 4 || currentLevel == 5) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250 || (currentLevel == 4 || currentLevel == 5) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934) {
     player.velocity.x = -player.speed;
   } else {
     player.velocity.x = 0; //scrolling code
@@ -6335,7 +6342,7 @@ function animate() {
       platform: platform
     })) {
       player.velocity.y = -player.velocity.y;
-      goHelp();
+      selectLevel(currentLevel + 1);
     } //particle bounce
 
 
@@ -6412,7 +6419,7 @@ addEventListener('keydown', function (_ref8) {
 
   switch (keyCode) {
     case 13:
-      selectLevel(currentLevel - 3);
+      //(selectLevel(currentLevel - 3))
       lastKey = 'enter';
       break;
 
