@@ -3698,6 +3698,110 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/img/helpPage/b1.png":
+/*!*********************************!*\
+  !*** ./src/img/helpPage/b1.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "507a3a3a3e70dc153787b8620454eb1c.png");
+
+/***/ }),
+
+/***/ "./src/img/helpPage/b2.png":
+/*!*********************************!*\
+  !*** ./src/img/helpPage/b2.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "3e56198b20f72b8ac5747b7bdd5f338b.png");
+
+/***/ }),
+
+/***/ "./src/img/helpPage/b3.png":
+/*!*********************************!*\
+  !*** ./src/img/helpPage/b3.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "664cd869dd7e388396b16b41b9555424.png");
+
+/***/ }),
+
+/***/ "./src/img/helpPage/b4.png":
+/*!*********************************!*\
+  !*** ./src/img/helpPage/b4.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0318e320b8a13975fe095dae09a2335d.png");
+
+/***/ }),
+
+/***/ "./src/img/helpPage/b5.png":
+/*!*********************************!*\
+  !*** ./src/img/helpPage/b5.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "81f7456f52a72402fd50142b0c3a9cd7.png");
+
+/***/ }),
+
+/***/ "./src/img/helpPage/b6.png":
+/*!*********************************!*\
+  !*** ./src/img/helpPage/b6.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "8c4a198bbc49747250cf44fe3c2ff7e6.png");
+
+/***/ }),
+
+/***/ "./src/img/helpPage/b7.png":
+/*!*********************************!*\
+  !*** ./src/img/helpPage/b7.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "105cac41fe282841a5a634dd626b673d.png");
+
+/***/ }),
+
+/***/ "./src/img/helpPage/b8.png":
+/*!*********************************!*\
+  !*** ./src/img/helpPage/b8.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "13d24667bf01120f676f744a6e3306cd.png");
+
+/***/ }),
+
 /***/ "./src/img/helpPage/helpPage.png":
 /*!***************************************!*\
   !*** ./src/img/helpPage/helpPage.png ***!
@@ -3707,7 +3811,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "ac8910520205755f1e872391e316e446.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "7a9783d148f2094527b0403cc43af0ba.png");
 
 /***/ }),
 
@@ -3724,10 +3828,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/img/level0/background.png":
-/*!***************************************!*\
-  !*** ./src/img/level0/background.png ***!
-  \***************************************/
+/***/ "./src/img/homePage/background.png":
+/*!*****************************************!*\
+  !*** ./src/img/homePage/background.png ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3737,10 +3841,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/img/level0/help.png":
-/*!*********************************!*\
-  !*** ./src/img/level0/help.png ***!
-  \*********************************/
+/***/ "./src/img/homePage/help.png":
+/*!***********************************!*\
+  !*** ./src/img/homePage/help.png ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3750,10 +3854,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/img/level0/play.png":
-/*!*********************************!*\
-  !*** ./src/img/level0/play.png ***!
-  \*********************************/
+/***/ "./src/img/homePage/play.png":
+/*!***********************************!*\
+  !*** ./src/img/homePage/play.png ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3763,10 +3867,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/img/level0/shop.png":
-/*!*********************************!*\
-  !*** ./src/img/level0/shop.png ***!
-  \*********************************/
+/***/ "./src/img/homePage/shop.png":
+/*!***********************************!*\
+  !*** ./src/img/homePage/shop.png ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3942,6 +4046,45 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "dcccd20cbfaa6ed2c1eb44faec7a4e35.png");
+
+/***/ }),
+
+/***/ "./src/img/shopPage/b10.png":
+/*!**********************************!*\
+  !*** ./src/img/shopPage/b10.png ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "26825e9ffa195150f71fd1f845dd3cd3.png");
+
+/***/ }),
+
+/***/ "./src/img/shopPage/b9.png":
+/*!*********************************!*\
+  !*** ./src/img/shopPage/b9.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "73f2b8968222e6076ee88f081fe454c5.png");
+
+/***/ }),
+
+/***/ "./src/img/shopPage/shopPage.png":
+/*!***************************************!*\
+  !*** ./src/img/shopPage/shopPage.png ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "d34cebc4ab06fb9ecfb9265f6b81e6d5.png");
 
 /***/ }),
 
@@ -4211,7 +4354,8 @@ var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
 canvas.width = 1024;
 canvas.height = 576;
-var coinsCollectedElem = document.querySelector("[data-coins]"); // gravity strength
+var coinsCollectedElem = document.querySelector("[data-coins]");
+var helpBtns = document.querySelector('helpBtns'); // gravity strength
 
 var gravity = 0.5;
 
@@ -4340,11 +4484,63 @@ var Platform = /*#__PURE__*/function () {
   return Platform;
 }();
 
-var GenericObject = /*#__PURE__*/function () {
-  function GenericObject(_ref2) {
+var Button = /*#__PURE__*/function () {
+  function Button(_ref2) {
     var x = _ref2.x,
         y = _ref2.y,
-        image = _ref2.image;
+        image = _ref2.image,
+        b1 = _ref2.b1,
+        b2 = _ref2.b2,
+        b3 = _ref2.b3,
+        b4 = _ref2.b4,
+        b5 = _ref2.b5,
+        b6 = _ref2.b6,
+        b7 = _ref2.b7,
+        b8 = _ref2.b8;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Button);
+
+    this.position = {
+      x: x,
+      y: y
+    };
+    this.velocity = {
+      x: 0
+    };
+    this.image = image;
+    this.width = image.width;
+    this.height = image.height;
+    this.b1 = b1;
+    this.b2 = b2;
+    this.b3 = b3;
+    this.b4 = b4;
+    this.b5 = b5;
+    this.b6 = b6;
+    this.b7 = b7;
+    this.b8 = b8;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Button, [{
+    key: "draw",
+    value: function draw() {
+      c.drawImage(this.image, this.position.x, this.position.y);
+    }
+  }, {
+    key: "update",
+    value: function update() {
+      this.draw();
+      this.position.x += this.velocity.x;
+    }
+  }]);
+
+  return Button;
+}();
+
+var GenericObject = /*#__PURE__*/function () {
+  function GenericObject(_ref3) {
+    var x = _ref3.x,
+        y = _ref3.y,
+        image = _ref3.image;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, GenericObject);
 
@@ -4377,15 +4573,15 @@ var GenericObject = /*#__PURE__*/function () {
 }();
 
 var Zombie = /*#__PURE__*/function () {
-  function Zombie(_ref3) {
-    var position = _ref3.position,
-        velocity = _ref3.velocity,
-        _ref3$distance = _ref3.distance,
-        distance = _ref3$distance === void 0 ? {
+  function Zombie(_ref4) {
+    var position = _ref4.position,
+        velocity = _ref4.velocity,
+        _ref4$distance = _ref4.distance,
+        distance = _ref4$distance === void 0 ? {
       limitLeft: 75,
       limitRight: -75,
       traveled: 0
-    } : _ref3$distance;
+    } : _ref4$distance;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Zombie);
 
@@ -4445,10 +4641,10 @@ var Zombie = /*#__PURE__*/function () {
 }();
 
 var Pad = /*#__PURE__*/function () {
-  function Pad(_ref4) {
-    var x = _ref4.x,
-        y = _ref4.y,
-        image = _ref4.image;
+  function Pad(_ref5) {
+    var x = _ref5.x,
+        y = _ref5.y,
+        image = _ref5.image;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Pad);
 
@@ -4481,10 +4677,10 @@ var Pad = /*#__PURE__*/function () {
 }();
 
 var Potion = /*#__PURE__*/function () {
-  function Potion(_ref5) {
-    var x = _ref5.x,
-        y = _ref5.y,
-        image = _ref5.image;
+  function Potion(_ref6) {
+    var x = _ref6.x,
+        y = _ref6.y,
+        image = _ref6.image;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Potion);
 
@@ -4517,10 +4713,10 @@ var Potion = /*#__PURE__*/function () {
 }();
 
 var Coin = /*#__PURE__*/function () {
-  function Coin(_ref6) {
-    var x = _ref6.x,
-        y = _ref6.y,
-        image = _ref6.image;
+  function Coin(_ref7) {
+    var x = _ref7.x,
+        y = _ref7.y,
+        image = _ref7.image;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Coin);
 
@@ -4553,14 +4749,14 @@ var Coin = /*#__PURE__*/function () {
 }();
 
 var Particle = /*#__PURE__*/function () {
-  function Particle(_ref7) {
-    var position = _ref7.position,
-        velocity = _ref7.velocity,
-        radius = _ref7.radius,
-        _ref7$color = _ref7.color,
-        color = _ref7$color === void 0 ? 'green' : _ref7$color,
-        _ref7$laser = _ref7.laser,
-        laser = _ref7$laser === void 0 ? false : _ref7$laser;
+  function Particle(_ref8) {
+    var position = _ref8.position,
+        velocity = _ref8.velocity,
+        radius = _ref8.radius,
+        _ref8$color = _ref8.color,
+        color = _ref8$color === void 0 ? 'green' : _ref8$color,
+        _ref8$laser = _ref8.laser,
+        laser = _ref8$laser === void 0 ? false : _ref8$laser;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Particle);
 
@@ -4613,6 +4809,7 @@ var coinImage;
 var player = new Player();
 var platforms = [];
 var genericObjects = [];
+var buttons = [];
 var zombiez = [];
 var particles = [];
 var potions = [];
@@ -4626,16 +4823,14 @@ var scrollOffset;
 var game;
 var currentLevel = 4;
 
+function copyToClipboard(text) {
+  window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+}
+
+function none() {}
+
 function selectLevel(currentLevel) {
   switch (currentLevel) {
-    case 4:
-      goHome();
-      break;
-
-    case 5:
-      goHelp();
-      break;
-
     case 1:
       gameResetLevel1();
       break;
@@ -4646,6 +4841,18 @@ function selectLevel(currentLevel) {
 
     case 3:
       gameResetLevel3();
+      break;
+
+    case 4:
+      goHome();
+      break;
+
+    case 5:
+      goHelp();
+      break;
+
+    case 6:
+      goShop();
       break;
   }
 }
@@ -5004,6 +5211,7 @@ function _gameResetLevel() {
               y: 240,
               image: coinImage
             })];
+            buttons = [];
             genericObjects = [new GenericObject({
               x: -1,
               y: 0,
@@ -5051,7 +5259,7 @@ function _gameResetLevel() {
               }
             });
 
-          case 40:
+          case 41:
           case "end":
             return _context.stop();
         }
@@ -5354,6 +5562,7 @@ function _gameResetLevel2() {
               y: 250,
               image: coinImage
             })];
+            buttons = [];
             genericObjects = [new GenericObject({
               x: -1,
               y: 0,
@@ -5400,7 +5609,7 @@ function _gameResetLevel2() {
               }
             });
 
-          case 39:
+          case 40:
           case "end":
             return _context2.stop();
         }
@@ -5856,6 +6065,7 @@ function _gameResetLevel3() {
               y: 350,
               image: coinImage
             })];
+            buttons = [];
             genericObjects = [new GenericObject({
               x: -1,
               y: 0,
@@ -5902,7 +6112,7 @@ function _gameResetLevel3() {
               }
             });
 
-          case 39:
+          case 40:
           case "end":
             return _context3.stop();
         }
@@ -5947,29 +6157,30 @@ function _goHome() {
             platforms = [new Platform({
               x: 385,
               y: 300,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].help),
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[4].help),
               help: true,
               block: true
             }), new Platform({
               x: 485,
               y: 300,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].shop),
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[4].shop),
               shop: true,
               block: true
             }), new Platform({
               x: 585,
               y: 300,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].play),
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[4].play),
               play: true,
               block: true
             })];
             potions = [];
             coins = [];
             pads = [];
+            buttons = [];
             genericObjects = [new GenericObject({
               x: 0,
               y: 0,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[0].background)
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[4].background)
             })];
             platformsMap = ['plat', 'plat', 'plat'];
             platformDistance = 0;
@@ -5986,7 +6197,7 @@ function _goHome() {
               }
             });
 
-          case 18:
+          case 19:
           case "end":
             return _context4.stop();
         }
@@ -6032,10 +6243,51 @@ function _goHelp() {
             potions = [];
             coins = [];
             pads = [];
+            buttons = [new Button({
+              x: 40,
+              y: 228,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b1),
+              b1: true
+            }), new Button({
+              x: 40,
+              y: 285,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b2),
+              b2: true
+            }), new Button({
+              x: 40,
+              y: 342,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b3),
+              b3: true
+            }), new Button({
+              x: 40,
+              y: 399,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b4),
+              b4: true
+            }), new Button({
+              x: 360,
+              y: 212,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b5),
+              b5: true
+            }), new Button({
+              x: 730,
+              y: 228,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b6),
+              b6: true
+            }), new Button({
+              x: 730,
+              y: 285,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b7),
+              b7: true
+            }), new Button({
+              x: 730,
+              y: 342,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b8),
+              b8: true
+            })];
             genericObjects = [new GenericObject({
               x: 0,
               y: 0,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[11].background)
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].background)
             })];
             platformsMap = ['plat', 'plat', 'plat'];
             platformDistance = 0;
@@ -6052,7 +6304,7 @@ function _goHelp() {
               }
             });
 
-          case 18:
+          case 19:
           case "end":
             return _context5.stop();
         }
@@ -6062,14 +6314,93 @@ function _goHelp() {
   return _goHelp.apply(this, arguments);
 }
 
+function goShop() {
+  return _goShop.apply(this, arguments);
+}
+
+function _goShop() {
+  _goShop = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
+    var platformsMap, platformDistance;
+    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            currentLevel = 6;
+            player = new Player();
+            keys = {
+              right: {
+                pressed: false
+              },
+              left: {
+                pressed: false
+              }
+            };
+            scrollOffset = 0;
+            game = {
+              disableUserInput: false
+            };
+            _context6.next = 7;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].platform);
+
+          case 7:
+            platformImage = _context6.sent;
+            zombiez = [];
+            particles = [];
+            platforms = [];
+            potions = [];
+            coins = [];
+            pads = [];
+            buttons = [new Button({
+              x: 40,
+              y: 228,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[6].b9),
+              b9: true
+            }), new Button({
+              x: 40,
+              y: 285,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[6].b10),
+              b10: true
+            })];
+            genericObjects = [new GenericObject({
+              x: 0,
+              y: 0,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[6].background)
+            })];
+            platformsMap = ['plat', 'plat', 'plat'];
+            platformDistance = 0;
+            platformsMap.forEach(function (symbol) {
+              switch (symbol) {
+                case 'plat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height + 35,
+                    image: platformImage
+                  }));
+                  platformDistance += platformImage.width;
+                  break;
+              }
+            });
+
+          case 19:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    }, _callee6);
+  }));
+  return _goShop.apply(this, arguments);
+}
+
 function animate() {
   requestAnimationFrame(animate);
   c.fillStyle = 'white';
   c.fillRect(0, 0, canvas.width, canvas.height);
   var homeElem = document.querySelector('.home');
   var helpElem = document.querySelector('.help');
+  var shopElem = document.querySelector('.shop');
   homeElem.onclick = goHome;
   helpElem.onclick = goHelp;
+  shopElem.onclick = goShop;
   genericObjects.forEach(function (genericObject) {
     genericObject.update();
     genericObject.velocity.x = 0;
@@ -6077,6 +6408,59 @@ function animate() {
   platforms.forEach(function (platform) {
     platform.update();
     platform.velocity.x = 0;
+  });
+  buttons.forEach(function (button) {
+    button.update();
+    button.velocity.x = 0;
+
+    if (currentLevel == 5 && button.b1) {
+      addEventListener("click", function () {
+        copyToClipboard('Polygon Testnet');
+      });
+    }
+
+    if (currentLevel == 5 && button.b2) {
+      addEventListener("click", function () {
+        copyToClipboard('https://matic-mumbai.chainstacklabs.com');
+      });
+    }
+
+    if (currentLevel == 5 && button.b3) {
+      addEventListener("click", function () {
+        copyToClipboard('8001');
+      });
+    }
+
+    if (currentLevel == 5 && button.b4) {
+      addEventListener("click", function () {
+        copyToClipboard('MATIC');
+      });
+    }
+
+    if (currentLevel == 5 && button.b5) {
+      addEventListener("click", function () {
+        copyToClipboard('https://faucet.polygon.technology');
+      });
+    }
+
+    if (currentLevel == 5 && button.b6) {
+      addEventListener("click", function () {
+        copyToClipboard('0x04269fd82c29D81602372fBf9a18440e74AD7bbd');
+      });
+    }
+
+    if (currentLevel == 5 && button.b7) {
+      addEventListener("click", function () {
+        copyToClipboard('Coin');
+      });
+    }
+
+    if (currentLevel == 5 && button.b8) {
+      addEventListener("click", function () {
+        copyToClipboard('18');
+        copyToClipboard = none;
+      });
+    }
   });
   pads.forEach(function (pad) {
     if (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) {
@@ -6204,9 +6588,9 @@ function animate() {
 
   var hitSide = false; //left and right movement 
 
-  if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && player.position.x < 400 || (currentLevel == 4 || currentLevel == 5) && keys.right.pressed && player.position.x < 935) {
+  if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && player.position.x < 400 || (currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.right.pressed && player.position.x < 935) {
     player.velocity.x = player.speed;
-  } else if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && player.position.x > 100 || (currentLevel == 4 || currentLevel == 5) && keys.left.pressed && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 4 || currentLevel == 5) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250 || (currentLevel == 4 || currentLevel == 5) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934) {
+  } else if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && player.position.x > 100 || (currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.left.pressed && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250 || (currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934) {
     player.velocity.x = -player.speed;
   } else {
     player.velocity.x = 0; //scrolling code
@@ -6248,6 +6632,9 @@ function animate() {
         pads.forEach(function (pad) {
           pad.position.x -= player.speed;
         });
+        buttons.forEach(function (button) {
+          button.position.x -= player.speed;
+        });
       }
     } else if (keys.left.pressed && scrollOffset > 0) {
       for (var _i = 0; _i < platforms.length; _i++) {
@@ -6285,6 +6672,9 @@ function animate() {
         });
         pads.forEach(function (pad) {
           pad.position.x += player.speed;
+        });
+        buttons.forEach(function (button) {
+          button.position.x += player.speed;
         });
       }
     }
@@ -6326,7 +6716,7 @@ function animate() {
     })) {
       _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioGameOver.play();
       player.velocity.y = -player.velocity.y;
-      selectLevel(currentLevel - 3);
+      selectLevel(currentLevel = 1);
     }
 
     if (currentLevel == 4 && platform.shop && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
@@ -6334,7 +6724,7 @@ function animate() {
       platform: platform
     })) {
       player.velocity.y = -player.velocity.y;
-      shop();
+      selectLevel(currentLevel = 6);
     }
 
     if (currentLevel == 4 && platform.help && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
@@ -6342,7 +6732,7 @@ function animate() {
       platform: platform
     })) {
       player.velocity.y = -player.velocity.y;
-      selectLevel(currentLevel + 1);
+      selectLevel(currentLevel = 5);
     } //particle bounce
 
 
@@ -6413,8 +6803,8 @@ selectLevel(currentLevel); //gameResetLevel0()
 
 animate(); // down key listener (asdw)
 
-addEventListener('keydown', function (_ref8) {
-  var keyCode = _ref8.keyCode;
+addEventListener('keydown', function (_ref9) {
+  var keyCode = _ref9.keyCode;
   if (game.disableUserInput) return;
 
   switch (keyCode) {
@@ -6478,8 +6868,8 @@ addEventListener('keydown', function (_ref8) {
   }
 }); // up key listener (asdw)
 
-addEventListener('keyup', function (_ref9) {
-  var keyCode = _ref9.keyCode;
+addEventListener('keyup', function (_ref10) {
+  var keyCode = _ref10.keyCode;
   if (game.disableUserInput) return;
 
   switch (keyCode) {
@@ -6511,21 +6901,43 @@ addEventListener('keyup', function (_ref9) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "images", function() { return images; });
-/* harmony import */ var _img_level0_background_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/level0/background.png */ "./src/img/level0/background.png");
-/* harmony import */ var _img_helpPage_helpPage_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/helpPage/helpPage.png */ "./src/img/helpPage/helpPage.png");
-/* harmony import */ var _img_level0_help_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/level0/help.png */ "./src/img/level0/help.png");
-/* harmony import */ var _img_level0_shop_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/level0/shop.png */ "./src/img/level0/shop.png");
-/* harmony import */ var _img_level0_play_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/level0/play.png */ "./src/img/level0/play.png");
-/* harmony import */ var _img_level2_background_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/level2/background.png */ "./src/img/level2/background.png");
-/* harmony import */ var _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/level2/hills.png */ "./src/img/level2/hills.png");
-/* harmony import */ var _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/level2/platform.png */ "./src/img/level2/platform.png");
-/* harmony import */ var _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/level2/tPlatform.png */ "./src/img/level2/tPlatform.png");
-/* harmony import */ var _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/level2/xtPlatform.png */ "./src/img/level2/xtPlatform.png");
-/* harmony import */ var _img_level3_background_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/level3/background.png */ "./src/img/level3/background.png");
-/* harmony import */ var _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/level3/hills.png */ "./src/img/level3/hills.png");
-/* harmony import */ var _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/level3/platform.png */ "./src/img/level3/platform.png");
-/* harmony import */ var _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/level3/tPlatform.png */ "./src/img/level3/tPlatform.png");
-/* harmony import */ var _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/level3/xtPlatform.png */ "./src/img/level3/xtPlatform.png");
+/* harmony import */ var _img_homePage_background_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/homePage/background.png */ "./src/img/homePage/background.png");
+/* harmony import */ var _img_homePage_help_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/homePage/help.png */ "./src/img/homePage/help.png");
+/* harmony import */ var _img_homePage_shop_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/homePage/shop.png */ "./src/img/homePage/shop.png");
+/* harmony import */ var _img_homePage_play_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/homePage/play.png */ "./src/img/homePage/play.png");
+/* harmony import */ var _img_helpPage_helpPage_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/helpPage/helpPage.png */ "./src/img/helpPage/helpPage.png");
+/* harmony import */ var _img_helpPage_b1_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/helpPage/b1.png */ "./src/img/helpPage/b1.png");
+/* harmony import */ var _img_helpPage_b2_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/helpPage/b2.png */ "./src/img/helpPage/b2.png");
+/* harmony import */ var _img_helpPage_b3_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/helpPage/b3.png */ "./src/img/helpPage/b3.png");
+/* harmony import */ var _img_helpPage_b4_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/helpPage/b4.png */ "./src/img/helpPage/b4.png");
+/* harmony import */ var _img_helpPage_b5_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/helpPage/b5.png */ "./src/img/helpPage/b5.png");
+/* harmony import */ var _img_helpPage_b6_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/helpPage/b6.png */ "./src/img/helpPage/b6.png");
+/* harmony import */ var _img_helpPage_b7_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/helpPage/b7.png */ "./src/img/helpPage/b7.png");
+/* harmony import */ var _img_helpPage_b8_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/helpPage/b8.png */ "./src/img/helpPage/b8.png");
+/* harmony import */ var _img_shopPage_shopPage_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/shopPage/shopPage.png */ "./src/img/shopPage/shopPage.png");
+/* harmony import */ var _img_shopPage_b9_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/shopPage/b9.png */ "./src/img/shopPage/b9.png");
+/* harmony import */ var _img_shopPage_b10_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/shopPage/b10.png */ "./src/img/shopPage/b10.png");
+/* harmony import */ var _img_level2_background_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/level2/background.png */ "./src/img/level2/background.png");
+/* harmony import */ var _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/level2/hills.png */ "./src/img/level2/hills.png");
+/* harmony import */ var _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/level2/platform.png */ "./src/img/level2/platform.png");
+/* harmony import */ var _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/level2/tPlatform.png */ "./src/img/level2/tPlatform.png");
+/* harmony import */ var _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../img/level2/xtPlatform.png */ "./src/img/level2/xtPlatform.png");
+/* harmony import */ var _img_level3_background_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../img/level3/background.png */ "./src/img/level3/background.png");
+/* harmony import */ var _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../img/level3/hills.png */ "./src/img/level3/hills.png");
+/* harmony import */ var _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../img/level3/platform.png */ "./src/img/level3/platform.png");
+/* harmony import */ var _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../img/level3/tPlatform.png */ "./src/img/level3/tPlatform.png");
+/* harmony import */ var _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../img/level3/xtPlatform.png */ "./src/img/level3/xtPlatform.png");
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6543,31 +6955,44 @@ __webpack_require__.r(__webpack_exports__);
 
 var images = {
   levels: {
-    11: {
-      background: _img_helpPage_helpPage_png__WEBPACK_IMPORTED_MODULE_1__["default"]
-    },
-    0: {
-      background: _img_level0_background_png__WEBPACK_IMPORTED_MODULE_0__["default"],
-      help: _img_level0_help_png__WEBPACK_IMPORTED_MODULE_2__["default"],
-      shop: _img_level0_shop_png__WEBPACK_IMPORTED_MODULE_3__["default"],
-      play: _img_level0_play_png__WEBPACK_IMPORTED_MODULE_4__["default"]
-    },
     1: {
       background: ''
     },
     2: {
-      background: _img_level2_background_png__WEBPACK_IMPORTED_MODULE_5__["default"],
-      hills: _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_6__["default"],
-      platform: _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_7__["default"],
-      tPlatform: _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_8__["default"],
-      xtPlatform: _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_9__["default"]
+      background: _img_level2_background_png__WEBPACK_IMPORTED_MODULE_16__["default"],
+      hills: _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_17__["default"],
+      platform: _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_18__["default"],
+      tPlatform: _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_19__["default"],
+      xtPlatform: _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_20__["default"]
     },
     3: {
-      background: _img_level3_background_png__WEBPACK_IMPORTED_MODULE_10__["default"],
-      hills: _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_11__["default"],
-      platform: _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_12__["default"],
-      tPlatform: _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_13__["default"],
-      xtPlatform: _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_14__["default"]
+      background: _img_level3_background_png__WEBPACK_IMPORTED_MODULE_21__["default"],
+      hills: _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_22__["default"],
+      platform: _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_23__["default"],
+      tPlatform: _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_24__["default"],
+      xtPlatform: _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_25__["default"]
+    },
+    4: {
+      background: _img_homePage_background_png__WEBPACK_IMPORTED_MODULE_0__["default"],
+      help: _img_homePage_help_png__WEBPACK_IMPORTED_MODULE_1__["default"],
+      shop: _img_homePage_shop_png__WEBPACK_IMPORTED_MODULE_2__["default"],
+      play: _img_homePage_play_png__WEBPACK_IMPORTED_MODULE_3__["default"]
+    },
+    5: {
+      background: _img_helpPage_helpPage_png__WEBPACK_IMPORTED_MODULE_4__["default"],
+      b1: _img_helpPage_b1_png__WEBPACK_IMPORTED_MODULE_5__["default"],
+      b2: _img_helpPage_b2_png__WEBPACK_IMPORTED_MODULE_6__["default"],
+      b3: _img_helpPage_b3_png__WEBPACK_IMPORTED_MODULE_7__["default"],
+      b4: _img_helpPage_b4_png__WEBPACK_IMPORTED_MODULE_8__["default"],
+      b5: _img_helpPage_b5_png__WEBPACK_IMPORTED_MODULE_9__["default"],
+      b6: _img_helpPage_b6_png__WEBPACK_IMPORTED_MODULE_10__["default"],
+      b7: _img_helpPage_b7_png__WEBPACK_IMPORTED_MODULE_11__["default"],
+      b8: _img_helpPage_b8_png__WEBPACK_IMPORTED_MODULE_12__["default"]
+    },
+    6: {
+      background: _img_shopPage_shopPage_png__WEBPACK_IMPORTED_MODULE_13__["default"],
+      b9: _img_shopPage_b9_png__WEBPACK_IMPORTED_MODULE_14__["default"],
+      b10: _img_shopPage_b10_png__WEBPACK_IMPORTED_MODULE_15__["default"]
     }
   }
 };

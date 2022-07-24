@@ -51,7 +51,7 @@ canvas.width = 1024
 canvas.height = 576
 
 const coinsCollectedElem = document.querySelector("[data-coins]")
-
+let helpBtns = document.querySelector('helpBtns')
 
 // gravity strength
 let gravity = 0.5
@@ -174,6 +174,41 @@ class Platform {
          this.help = help
          this.shop = shop
          this.play = play
+    }
+
+    draw() {
+        c.drawImage(this.image, this.position.x, this.position.y)
+    }
+
+    update() {
+        this.draw()
+        this.position.x += this.velocity.x
+    }
+}
+
+class Button {
+    constructor({ x, y, image, b1, b2, b3, b4, b5, b6, b7, b8 }) {
+         this.position = {
+             x,
+             y
+         }
+
+         this.velocity = {
+             x: 0
+         }
+
+         this.image = image
+         this.width = image.width
+         this.height = image.height 
+         this.b1 = b1
+         this.b2 = b2
+         this.b3 = b3
+         this.b4 = b4
+         this.b5 = b5
+         this.b6 = b6
+         this.b7 = b7
+         this.b8 = b8
+         
     }
 
     draw() {
@@ -413,11 +448,10 @@ let padImage
 let potionImage
 let coinImage
 
-
-
 let player = new Player()
 let platforms = []
 let genericObjects = []
+let buttons = []
 let zombiez = []
 let particles = []
 let potions = []
@@ -433,14 +467,14 @@ let scrollOffset
 let game
 let currentLevel = 4
 
+function copyToClipboard(text) {
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", text)
+}
+
+function none() {}
+
 function selectLevel(currentLevel) {
     switch (currentLevel) {
-        case 4:
-           goHome()
-           break
-        case 5:
-            goHelp()
-            break
         case 1:
            gameResetLevel1()
            break
@@ -449,11 +483,18 @@ function selectLevel(currentLevel) {
            break
         case 3: 
            gameResetLevel3()
+           break        
+        case 4:
+           goHome()
            break
+        case 5:
+            goHelp()
+            break
+        case 6: 
+            goShop()
+            break
     }
 }
-
-
 
 async function gameResetLevel1() {
     currentLevel = 1
@@ -827,6 +868,8 @@ async function gameResetLevel1() {
         }), 
     ]
 
+    buttons = []
+
     genericObjects = [
         new GenericObject({
             x: -1,
@@ -1195,6 +1238,9 @@ async function gameResetLevel2() {
         image: coinImage
         })
     ]
+
+    buttons = []
+
 
     genericObjects = [
         new GenericObject({
@@ -1734,6 +1780,7 @@ async function gameResetLevel3() {
         }), 
     ]
 
+    buttons = []
 
     genericObjects = [
         new GenericObject({
@@ -1827,21 +1874,21 @@ async function goHome() {
         new Platform ({
         x: 385,
         y: 300,
-        image: createImage(images.levels[0].help),
+        image: createImage(images.levels[4].help),
         help: true,
         block: true
         }),
          new Platform ({
         x: 485,
         y: 300,
-        image: createImage(images.levels[0].shop),
+        image: createImage(images.levels[4].shop),
         shop: true,
         block: true
         }),
          new Platform ({
         x: 585,
         y: 300,
-        image: createImage(images.levels[0].play),
+        image: createImage(images.levels[4].play),
         play: true,
         block: true
         }),
@@ -1850,12 +1897,13 @@ async function goHome() {
     potions = []
     coins = []
     pads = []
+    buttons = []
 
     genericObjects = [
         new GenericObject({
             x: 0,
             y: 0,
-            image: createImage(images.levels[0].background)
+            image: createImage(images.levels[4].background)
         }),
     ]
     
@@ -1882,7 +1930,6 @@ async function goHome() {
 async function goHelp() {
     currentLevel = 5
     player = new Player()
-
     keys = {
         right: {
             pressed: false
@@ -1907,11 +1954,132 @@ async function goHelp() {
     coins = []
     pads = []
 
+    buttons = [
+        new Button ({
+            x: 40,
+            y: 228,
+        image: createImage(images.levels[5].b1),
+        b1: true,
+        }),
+        new Button ({
+            x: 40,
+            y: 285,
+        image: createImage(images.levels[5].b2),
+        b2: true,
+        }),
+        new Button ({
+            x: 40,
+            y: 342,
+        image: createImage(images.levels[5].b3),
+        b3: true,
+        }),
+        new Button ({
+            x: 40,
+            y: 399,
+        image: createImage(images.levels[5].b4),
+        b4: true,
+        }),
+        new Button ({
+            x: 360,
+            y: 212,
+        image: createImage(images.levels[5].b5),
+        b5: true,
+        }),
+        new Button ({
+            x: 730,
+            y: 228,
+        image: createImage(images.levels[5].b6),
+        b6: true,
+        }),
+        new Button ({
+            x: 730,
+            y: 285,
+        image: createImage(images.levels[5].b7),
+        b7: true,
+        }),
+        new Button ({
+            x: 730,
+            y: 342,
+        image: createImage(images.levels[5].b8),
+        b8: true,
+        }),
+    ]
+
     genericObjects = [
         new GenericObject({
             x: 0,
             y: 0,
-            image: createImage(images.levels[11].background)
+            image: createImage(images.levels[5].background)
+        }),
+    ]
+    
+
+    const platformsMap = ['plat', 'plat', 'plat']
+
+    let platformDistance = 0
+
+    platformsMap.forEach(symbol => {
+        switch(symbol) {
+            case 'plat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height + 35,
+                    image: platformImage,
+                }))
+
+            platformDistance += platformImage.width
+            break
+        }
+    })
+}
+
+async function goShop() {
+    currentLevel = 6
+    player = new Player()
+
+    keys = {
+        right: {
+            pressed: false
+        },
+        left: {
+            pressed: false
+        }
+    }
+
+    scrollOffset = 0
+
+    game = {
+        disableUserInput: false
+    }
+
+    platformImage = await createImageAsync(images.levels[2].platform)
+
+    zombiez = []
+    particles = []
+    platforms = []
+    potions = []
+    coins = []
+    pads = []
+    buttons = [
+        new Button ({
+            x: 40,
+            y: 228,
+        image: createImage(images.levels[6].b9),
+        b9: true,
+        }),
+        new Button ({
+            x: 40,
+            y: 285,
+        image: createImage(images.levels[6].b10),
+        b10: true,
+        }),
+    ]
+
+    genericObjects = [
+        new GenericObject({
+            x: 0,
+            y: 0,
+            image: createImage(images.levels[6].background)
         }),
     ]
     
@@ -1942,10 +2110,12 @@ function animate() {
 
     const homeElem = document.querySelector('.home')
     const helpElem = document.querySelector('.help')
-
+    const shopElem = document.querySelector('.shop')
+    
     homeElem.onclick = goHome
     helpElem.onclick = goHelp
-    
+    shopElem.onclick = goShop
+
     genericObjects.forEach(genericObject => {
         genericObject.update()
         genericObject.velocity.x = 0
@@ -1954,6 +2124,70 @@ function animate() {
     platforms.forEach(platform => {
        platform.update() 
        platform.velocity.x = 0
+    })
+
+
+    buttons.forEach(button => {
+        button.update()
+        button.velocity.x = 0
+
+
+        if ((currentLevel == 5) && button.b1) 
+        {
+            addEventListener("click", () => {
+                copyToClipboard('Polygon Testnet')
+        })
+        } 
+        
+        if ((currentLevel == 5) && button.b2) 
+        {
+            addEventListener("click", () => {
+                copyToClipboard('https://matic-mumbai.chainstacklabs.com')
+        })
+        }
+
+        if ((currentLevel == 5) && button.b3) 
+        {
+            addEventListener("click", () => {
+                copyToClipboard('8001')
+        })
+        }
+
+        if ((currentLevel == 5) && button.b4) 
+        {
+            addEventListener("click", () => {
+                copyToClipboard('MATIC')
+        })
+        }
+
+        if ((currentLevel == 5) && button.b5) 
+        {
+            addEventListener("click", () => {
+                copyToClipboard('https://faucet.polygon.technology')
+        })
+        }
+
+        if ((currentLevel == 5) && button.b6) 
+        {
+            addEventListener("click", () => {
+                copyToClipboard('0x04269fd82c29D81602372fBf9a18440e74AD7bbd')
+        })
+        }
+
+        if ((currentLevel == 5) && button.b7) 
+        {
+            addEventListener("click", () => {
+                copyToClipboard('Coin')
+        })
+        }
+
+        if ((currentLevel == 5) && button.b8) 
+        {
+            addEventListener("click", () => {
+                copyToClipboard('18')
+                copyToClipboard = none
+        })
+        }
     })
 
     pads.forEach(pad => {
@@ -2110,16 +2344,16 @@ function animate() {
     //left and right movement 
     if (
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && player.position.x < 400) ||
-        ((currentLevel == 4 || currentLevel == 5) && keys.right.pressed && player.position.x < 935) 
+        ((currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.right.pressed && player.position.x < 935) 
     ) {
         player.velocity.x = player.speed
     } else if (
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && player.position.x > 100) || 
-        ((currentLevel == 4 || currentLevel == 5) && keys.left.pressed && player.position.x > 0) ||
+        ((currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.left.pressed && player.position.x > 0) ||
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
-        ((currentLevel == 4 || currentLevel == 5) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
+        ((currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250) ||
-        ((currentLevel == 4 || currentLevel == 5) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
+        ((currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
     ) {
         player.velocity.x = -player.speed
     } else {
@@ -2174,6 +2408,10 @@ function animate() {
             pads.forEach((pad) => {
                 pad.position.x -= player.speed
              })
+
+            buttons.forEach((button) => {
+                button.position.x -= player.speed
+             })
             
         }
             
@@ -2221,6 +2459,10 @@ function animate() {
                 pads.forEach((pad) => {
                     pad.position.x += player.speed
                  })
+                
+                buttons.forEach((button) => {
+                    button.position.x += player.speed
+                 })
 
             }
         }
@@ -2265,7 +2507,7 @@ function animate() {
             })) {
                 audio.audioGameOver.play()
                 player.velocity.y = -player.velocity.y
-                selectLevel(currentLevel - 3)
+                selectLevel(currentLevel = 1)
 
             }
         if ((currentLevel == 4) && platform.shop && hitBottomOfPlatform({
@@ -2273,7 +2515,7 @@ function animate() {
                 platform
             })) {
                 player.velocity.y = -player.velocity.y
-                shop()
+                selectLevel(currentLevel = 6)
 
             }
         if ((currentLevel == 4) && platform.help && hitBottomOfPlatform({
@@ -2281,7 +2523,7 @@ function animate() {
                 platform
             })) {
                 player.velocity.y = -player.velocity.y
-                selectLevel(currentLevel + 1)
+                selectLevel(currentLevel = 5)
             }
 
         //particle bounce

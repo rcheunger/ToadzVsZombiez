@@ -27,24 +27,33 @@ canvas{
   position: absolute;
   top: 45px;
   left: 45px;
+  cursor: pointer
 }
 
 .help {
   position: absolute;
   top: 45px;
   left: 95px;
+  cursor: pointer
+}
+
+.shop {
+  position: absolute;
+  top: 45px;
+  left: 145px;
+  cursor: pointer
 }
 
 .coinz {
   position: absolute;
   top: 45px;
-  left: 145px;
+  left: 195px;
 }
 
 span {
   position: absolute;
   top: 56px;
-  left: 164px;
+  left: 213px;
   font-size: larger;
   font-weight: bolder;
   font-family: Arial, Helvetica, sans-serif;
@@ -55,6 +64,7 @@ span {
   position: absolute;
   top: 50px;
   left: 740px;
+  cursor: pointer
 }
 
 .claimCoinz {
@@ -66,14 +76,15 @@ span {
   font-family: 'Concert One', cursive;
   color: #ffe9c7;
   text-shadow: -2px 2px black;
+  cursor: pointer
 } 
 
 .account {
   position: absolute;
   top: 50px;
   left: 890px;
+  cursor: pointer
 }
-
 
 h4 {
   position: absolute;
@@ -84,16 +95,19 @@ h4 {
   font-family: 'Concert One', cursive;
   color: #ffe9c7;
   text-shadow: -2px 2px black;
+  cursor: pointer
 }
 
 .twitter {
   position: absolute;
   top: 685px;
   left: 950px;
+  cursor: pointer
 }
 
 .email {
   position: absolute;
   top: 686px;
   left: 990px;
+  cursor: pointer
 }  
