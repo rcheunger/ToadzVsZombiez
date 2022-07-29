@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.10.0",
-    "howler": "^2.2.3"
+    "howler": "^2.2.3",
+    "web3": "^1.7.4"
   },
   "devDependencies": {
     "@babel/core": "^7.10.0",

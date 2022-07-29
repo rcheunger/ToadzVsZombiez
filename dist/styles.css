@@ -11,6 +11,8 @@ canvas{
   font-size: 0;
 }
 
+/* --header-- */
+
 .headerimg {
   display: block;
 }
@@ -97,6 +99,115 @@ h4 {
   text-shadow: -2px 2px black;
   cursor: pointer
 }
+
+/* --helpbuttons-- */
+.b1 {
+  position: absolute;
+  top: 327px;
+  left: 65px;
+}
+
+.b1txt {
+  position: absolute;
+  top: 332px;
+  left: 75px;
+  font-size: 13px;
+}
+
+.b2 {
+  position: absolute;
+  top: 385px;
+  left: 65px;
+}
+
+.b2txt {
+  position: absolute;
+  top: 390px;
+  left: 75px;
+  font-size: 13px;
+}
+
+.b3 {
+  position: absolute;
+  top: 440px;
+  left: 65px;
+}
+
+.b3txt {
+  position: absolute;
+  top: 445px;
+  left: 75px;
+  font-size: 13px;
+}
+
+.b4 {
+  position: absolute;
+  top: 498px;
+  left: 65px;
+}
+
+.b4txt {
+  position: absolute;
+  top: 503px;
+  left: 75px;
+  font-size: 13px;
+}
+
+.b5 {
+  position: absolute;
+  top: 308px;
+  left: 386px;
+  cursor: pointer;
+}
+
+.b6 {
+  position: absolute;
+  top: 327px;
+  left: 756px;
+}
+
+.b6txt {
+  position: absolute;
+  top: 333px;
+  left: 762px;
+  font-size: 12px;
+}
+
+.b7 {
+  position: absolute;
+  top: 385px;
+  left: 756px;
+}
+
+.b7txt {
+  position: absolute;
+  top: 391px;
+  left: 766px;
+  font-size: 13px;
+}
+
+.b8 {
+  position: absolute;
+  top: 440px;
+  left: 756px;
+}
+
+.b8txt {
+  position: absolute;
+  top: 446px;
+  left: 766px;
+  font-size: 13px;
+}
+
+/* --shopbuttons-- */
+.b9 {
+  position: absolute;
+  top: 125px;
+  left: 765px;
+  cursor: pointer
+}
+
+/* --footer-- */
 
 .twitter {
   position: absolute;

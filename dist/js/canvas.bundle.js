@@ -3698,110 +3698,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/img/helpPage/b1.png":
-/*!*********************************!*\
-  !*** ./src/img/helpPage/b1.png ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "507a3a3a3e70dc153787b8620454eb1c.png");
-
-/***/ }),
-
-/***/ "./src/img/helpPage/b2.png":
-/*!*********************************!*\
-  !*** ./src/img/helpPage/b2.png ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "3e56198b20f72b8ac5747b7bdd5f338b.png");
-
-/***/ }),
-
-/***/ "./src/img/helpPage/b3.png":
-/*!*********************************!*\
-  !*** ./src/img/helpPage/b3.png ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "664cd869dd7e388396b16b41b9555424.png");
-
-/***/ }),
-
-/***/ "./src/img/helpPage/b4.png":
-/*!*********************************!*\
-  !*** ./src/img/helpPage/b4.png ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0318e320b8a13975fe095dae09a2335d.png");
-
-/***/ }),
-
-/***/ "./src/img/helpPage/b5.png":
-/*!*********************************!*\
-  !*** ./src/img/helpPage/b5.png ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "81f7456f52a72402fd50142b0c3a9cd7.png");
-
-/***/ }),
-
-/***/ "./src/img/helpPage/b6.png":
-/*!*********************************!*\
-  !*** ./src/img/helpPage/b6.png ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "8c4a198bbc49747250cf44fe3c2ff7e6.png");
-
-/***/ }),
-
-/***/ "./src/img/helpPage/b7.png":
-/*!*********************************!*\
-  !*** ./src/img/helpPage/b7.png ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "105cac41fe282841a5a634dd626b673d.png");
-
-/***/ }),
-
-/***/ "./src/img/helpPage/b8.png":
-/*!*********************************!*\
-  !*** ./src/img/helpPage/b8.png ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "13d24667bf01120f676f744a6e3306cd.png");
-
-/***/ }),
-
 /***/ "./src/img/helpPage/helpPage.png":
 /*!***************************************!*\
   !*** ./src/img/helpPage/helpPage.png ***!
@@ -4007,6 +3903,32 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "981df066be69887134787b8f66f92605.png");
+
+/***/ }),
+
+/***/ "./src/img/level4/background.png":
+/*!***************************************!*\
+  !*** ./src/img/level4/background.png ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "217e6ac383e6e18dc8dc617696b9add5.png");
+
+/***/ }),
+
+/***/ "./src/img/level4/hills.png":
+/*!**********************************!*\
+  !*** ./src/img/level4/hills.png ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "48d620f6953c0946b2c2d7c0536abe63.png");
 
 /***/ }),
 
@@ -4351,11 +4273,12 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 
 
 var canvas = document.querySelector('canvas');
+var helpBtns = document.getElementById('helpBtns');
+var shopBtns = document.getElementById('shopBtns');
 var c = canvas.getContext('2d');
 canvas.width = 1024;
 canvas.height = 576;
-var coinsCollectedElem = document.querySelector("[data-coins]");
-var helpBtns = document.querySelector('helpBtns'); // gravity strength
+var coinsCollectedElem = document.querySelector("[data-coins]"); // gravity strength
 
 var gravity = 0.5;
 
@@ -4484,63 +4407,11 @@ var Platform = /*#__PURE__*/function () {
   return Platform;
 }();
 
-var Button = /*#__PURE__*/function () {
-  function Button(_ref2) {
+var GenericObject = /*#__PURE__*/function () {
+  function GenericObject(_ref2) {
     var x = _ref2.x,
         y = _ref2.y,
-        image = _ref2.image,
-        b1 = _ref2.b1,
-        b2 = _ref2.b2,
-        b3 = _ref2.b3,
-        b4 = _ref2.b4,
-        b5 = _ref2.b5,
-        b6 = _ref2.b6,
-        b7 = _ref2.b7,
-        b8 = _ref2.b8;
-
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Button);
-
-    this.position = {
-      x: x,
-      y: y
-    };
-    this.velocity = {
-      x: 0
-    };
-    this.image = image;
-    this.width = image.width;
-    this.height = image.height;
-    this.b1 = b1;
-    this.b2 = b2;
-    this.b3 = b3;
-    this.b4 = b4;
-    this.b5 = b5;
-    this.b6 = b6;
-    this.b7 = b7;
-    this.b8 = b8;
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Button, [{
-    key: "draw",
-    value: function draw() {
-      c.drawImage(this.image, this.position.x, this.position.y);
-    }
-  }, {
-    key: "update",
-    value: function update() {
-      this.draw();
-      this.position.x += this.velocity.x;
-    }
-  }]);
-
-  return Button;
-}();
-
-var GenericObject = /*#__PURE__*/function () {
-  function GenericObject(_ref3) {
-    var x = _ref3.x,
-        y = _ref3.y,
-        image = _ref3.image;
+        image = _ref2.image;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, GenericObject);
 
@@ -4573,15 +4444,15 @@ var GenericObject = /*#__PURE__*/function () {
 }();
 
 var Zombie = /*#__PURE__*/function () {
-  function Zombie(_ref4) {
-    var position = _ref4.position,
-        velocity = _ref4.velocity,
-        _ref4$distance = _ref4.distance,
-        distance = _ref4$distance === void 0 ? {
+  function Zombie(_ref3) {
+    var position = _ref3.position,
+        velocity = _ref3.velocity,
+        _ref3$distance = _ref3.distance,
+        distance = _ref3$distance === void 0 ? {
       limitLeft: 75,
       limitRight: -75,
       traveled: 0
-    } : _ref4$distance;
+    } : _ref3$distance;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Zombie);
 
@@ -4641,10 +4512,10 @@ var Zombie = /*#__PURE__*/function () {
 }();
 
 var Pad = /*#__PURE__*/function () {
-  function Pad(_ref5) {
-    var x = _ref5.x,
-        y = _ref5.y,
-        image = _ref5.image;
+  function Pad(_ref4) {
+    var x = _ref4.x,
+        y = _ref4.y,
+        image = _ref4.image;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Pad);
 
@@ -4677,10 +4548,10 @@ var Pad = /*#__PURE__*/function () {
 }();
 
 var Potion = /*#__PURE__*/function () {
-  function Potion(_ref6) {
-    var x = _ref6.x,
-        y = _ref6.y,
-        image = _ref6.image;
+  function Potion(_ref5) {
+    var x = _ref5.x,
+        y = _ref5.y,
+        image = _ref5.image;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Potion);
 
@@ -4713,10 +4584,10 @@ var Potion = /*#__PURE__*/function () {
 }();
 
 var Coin = /*#__PURE__*/function () {
-  function Coin(_ref7) {
-    var x = _ref7.x,
-        y = _ref7.y,
-        image = _ref7.image;
+  function Coin(_ref6) {
+    var x = _ref6.x,
+        y = _ref6.y,
+        image = _ref6.image;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Coin);
 
@@ -4749,14 +4620,14 @@ var Coin = /*#__PURE__*/function () {
 }();
 
 var Particle = /*#__PURE__*/function () {
-  function Particle(_ref8) {
-    var position = _ref8.position,
-        velocity = _ref8.velocity,
-        radius = _ref8.radius,
-        _ref8$color = _ref8.color,
-        color = _ref8$color === void 0 ? 'green' : _ref8$color,
-        _ref8$laser = _ref8.laser,
-        laser = _ref8$laser === void 0 ? false : _ref8$laser;
+  function Particle(_ref7) {
+    var position = _ref7.position,
+        velocity = _ref7.velocity,
+        radius = _ref7.radius,
+        _ref7$color = _ref7.color,
+        color = _ref7$color === void 0 ? 'green' : _ref7$color,
+        _ref7$laser = _ref7.laser,
+        laser = _ref7$laser === void 0 ? false : _ref7$laser;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Particle);
 
@@ -4821,13 +4692,7 @@ var lastKey;
 var keys;
 var scrollOffset;
 var game;
-var currentLevel = 4;
-
-function copyToClipboard(text) {
-  window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
-}
-
-function none() {}
+var currentLevel = 5;
 
 function selectLevel(currentLevel) {
   switch (currentLevel) {
@@ -4844,14 +4709,18 @@ function selectLevel(currentLevel) {
       break;
 
     case 4:
-      goHome();
+      gameResetLevel4();
       break;
 
     case 5:
-      goHelp();
+      goHome();
       break;
 
     case 6:
+      goHelp();
+      break;
+
+    case 7:
       goShop();
       break;
   }
@@ -5211,7 +5080,6 @@ function _gameResetLevel() {
               y: 240,
               image: coinImage
             })];
-            buttons = [];
             genericObjects = [new GenericObject({
               x: -1,
               y: 0,
@@ -5259,7 +5127,7 @@ function _gameResetLevel() {
               }
             });
 
-          case 41:
+          case 40:
           case "end":
             return _context.stop();
         }
@@ -5562,7 +5430,6 @@ function _gameResetLevel2() {
               y: 250,
               image: coinImage
             })];
-            buttons = [];
             genericObjects = [new GenericObject({
               x: -1,
               y: 0,
@@ -5609,7 +5476,7 @@ function _gameResetLevel2() {
               }
             });
 
-          case 40:
+          case 39:
           case "end":
             return _context2.stop();
         }
@@ -6065,7 +5932,6 @@ function _gameResetLevel3() {
               y: 350,
               image: coinImage
             })];
-            buttons = [];
             genericObjects = [new GenericObject({
               x: -1,
               y: 0,
@@ -6112,7 +5978,7 @@ function _gameResetLevel3() {
               }
             });
 
-          case 40:
+          case 39:
           case "end":
             return _context3.stop();
         }
@@ -6122,12 +5988,12 @@ function _gameResetLevel3() {
   return _gameResetLevel3.apply(this, arguments);
 }
 
-function goHome() {
-  return _goHome.apply(this, arguments);
+function gameResetLevel4() {
+  return _gameResetLevel4.apply(this, arguments);
 }
 
-function _goHome() {
-  _goHome = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+function _gameResetLevel4() {
+  _gameResetLevel4 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
     var platformsMap, platformDistance;
     return _regeneratorRuntime().wrap(function _callee4$(_context4) {
       while (1) {
@@ -6152,74 +6018,280 @@ function _goHome() {
 
           case 7:
             platformImage = _context4.sent;
-            zombiez = [];
-            particles = [];
+            _context4.next = 10;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_tPlatform_png__WEBPACK_IMPORTED_MODULE_6__["default"]);
+
+          case 10:
+            tPlatformImage = _context4.sent;
+            _context4.next = 13;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_xtPlatform_png__WEBPACK_IMPORTED_MODULE_7__["default"]);
+
+          case 13:
+            xtPlatformImage = _context4.sent;
+            _context4.next = 16;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
+
+          case 16:
+            blockTriImage = _context4.sent;
+            _context4.next = 19;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_block_png__WEBPACK_IMPORTED_MODULE_10__["default"]);
+
+          case 19:
+            blockImage = _context4.sent;
+            _context4.next = 22;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_pad_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
+
+          case 22:
+            padImage = _context4.sent;
+            _context4.next = 25;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_potion_png__WEBPACK_IMPORTED_MODULE_27__["default"]);
+
+          case 25:
+            potionImage = _context4.sent;
+            _context4.next = 28;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_coin_png__WEBPACK_IMPORTED_MODULE_28__["default"]);
+
+          case 28:
+            coinImage = _context4.sent;
             platforms = [new Platform({
-              x: 385,
-              y: 300,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[4].help),
-              help: true,
+              x: 1970,
+              y: 370,
+              image: blockImage,
               block: true
             }), new Platform({
-              x: 485,
-              y: 300,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[4].shop),
-              shop: true,
+              x: 2240,
+              y: 281,
+              image: xtPlatformImage
+            }), new Platform({
+              x: 2642,
+              y: 370,
+              image: blockImage,
               block: true
             }), new Platform({
-              x: 585,
-              y: 300,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[4].play),
-              play: true,
+              x: 2850,
+              y: 281,
+              image: xtPlatformImage
+            }), new Platform({
+              x: 3290,
+              y: 370,
+              image: blockImage,
               block: true
+            }), new Platform({
+              x: 4000,
+              y: 358,
+              image: platformImage
+            }), new Platform({
+              x: 4550,
+              y: 275,
+              image: platformImage
+            }), new Platform({
+              x: 4550,
+              y: 358,
+              image: platformImage
+            }), new Platform({
+              x: 5100,
+              y: 358,
+              image: platformImage
+            }), new Platform({
+              x: 7400,
+              y: 465,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 7900,
+              y: 465,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 8400,
+              y: 465,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 8900,
+              y: 465,
+              image: blockImage,
+              block: true
+            }), new Platform({
+              x: 10300,
+              y: 281,
+              image: xtPlatformImage
             })];
-            potions = [];
-            coins = [];
-            pads = [];
-            buttons = [];
+            zombiez = [new Zombie({
+              position: {
+                x: 4500,
+                y: 250
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 275,
+                limitRight: -275,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 4800,
+                y: 100
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 175,
+                limitRight: -175,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 5200,
+                y: 200
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 255,
+                limitRight: -255,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 6150,
+                y: 150
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 100,
+                limitRight: -100,
+                traveled: 0
+              }
+            }), new Zombie({
+              position: {
+                x: 10400,
+                y: 250
+              },
+              velocity: {
+                x: -0.5,
+                y: 0
+              },
+              distance: {
+                limitLeft: 75,
+                limitRight: -75,
+                traveled: 0
+              }
+            })];
+            particles = [];
+            pads = [new Pad({
+              x: 13200,
+              y: 420,
+              image: padImage
+            })];
+            potions = [new Potion({
+              x: 2942,
+              y: 255,
+              image: potionImage
+            })];
+            coins = [new Coin({
+              x: 2320,
+              y: 80,
+              image: coinImage
+            }), new Coin({
+              x: 4830,
+              y: 325,
+              image: coinImage
+            }), new Coin({
+              x: 6270,
+              y: 180,
+              image: coinImage
+            }), new Coin({
+              x: 9170,
+              y: 135,
+              image: coinImage
+            }), new Coin({
+              x: 10384,
+              y: 385,
+              image: coinImage
+            })];
             genericObjects = [new GenericObject({
-              x: 0,
+              x: -1,
               y: 0,
               image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[4].background)
+            }), new GenericObject({
+              x: -615,
+              y: 0,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[4].hills)
             })];
-            platformsMap = ['plat', 'plat', 'plat'];
+            platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'plat', 'plat', 'plat', 'plat'];
             platformDistance = 0;
             platformsMap.forEach(function (symbol) {
               switch (symbol) {
                 case 'plat':
                   platforms.push(new Platform({
                     x: platformDistance,
-                    y: canvas.height - platformImage.height + 35,
+                    y: canvas.height - platformImage.height,
                     image: platformImage
                   }));
-                  platformDistance += platformImage.width;
+                  platformDistance += platformImage.width - 2;
+                  break;
+
+                case 'gap':
+                  platformDistance += 300;
+                  break;
+
+                case 'tPlat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - tPlatformImage.height,
+                    image: tPlatformImage
+                  }));
+                  platformDistance += tPlatformImage.width;
+                  break;
+
+                case 'xtPlat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - xtPlatformImage.height,
+                    image: xtPlatformImage
+                  }));
+                  platformDistance += xtPlatformImage.width;
                   break;
               }
             });
 
-          case 19:
+          case 39:
           case "end":
             return _context4.stop();
         }
       }
     }, _callee4);
   }));
+  return _gameResetLevel4.apply(this, arguments);
+}
+
+function goHome() {
   return _goHome.apply(this, arguments);
 }
 
-function goHelp() {
-  return _goHelp.apply(this, arguments);
-}
-
-function _goHelp() {
-  _goHelp = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+function _goHome() {
+  _goHome = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
     var platformsMap, platformDistance;
     return _regeneratorRuntime().wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
             currentLevel = 5;
+            _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioGameOver.play();
             player = new Player();
+            helpBtns.style.display = "none";
+            shopBtns.style.display = "none";
             keys = {
               right: {
                 pressed: false
@@ -6232,58 +6304,35 @@ function _goHelp() {
             game = {
               disableUserInput: false
             };
-            _context5.next = 7;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].platform);
+            _context5.next = 10;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_platform_png__WEBPACK_IMPORTED_MODULE_5__["default"]);
 
-          case 7:
+          case 10:
             platformImage = _context5.sent;
             zombiez = [];
             particles = [];
-            platforms = [];
+            platforms = [new Platform({
+              x: 385,
+              y: 300,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].help),
+              help: true,
+              block: true
+            }), new Platform({
+              x: 485,
+              y: 300,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].shop),
+              shop: true,
+              block: true
+            }), new Platform({
+              x: 585,
+              y: 300,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].play),
+              play: true,
+              block: true
+            })];
             potions = [];
             coins = [];
             pads = [];
-            buttons = [new Button({
-              x: 40,
-              y: 228,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b1),
-              b1: true
-            }), new Button({
-              x: 40,
-              y: 285,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b2),
-              b2: true
-            }), new Button({
-              x: 40,
-              y: 342,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b3),
-              b3: true
-            }), new Button({
-              x: 40,
-              y: 399,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b4),
-              b4: true
-            }), new Button({
-              x: 360,
-              y: 212,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b5),
-              b5: true
-            }), new Button({
-              x: 730,
-              y: 228,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b6),
-              b6: true
-            }), new Button({
-              x: 730,
-              y: 285,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b7),
-              b7: true
-            }), new Button({
-              x: 730,
-              y: 342,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[5].b8),
-              b8: true
-            })];
             genericObjects = [new GenericObject({
               x: 0,
               y: 0,
@@ -6304,29 +6353,28 @@ function _goHelp() {
               }
             });
 
-          case 19:
+          case 21:
           case "end":
             return _context5.stop();
         }
       }
     }, _callee5);
   }));
+  return _goHome.apply(this, arguments);
+}
+
+function goHelp() {
   return _goHelp.apply(this, arguments);
 }
 
-function goShop() {
-  return _goShop.apply(this, arguments);
-}
-
-function _goShop() {
-  _goShop = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
+function _goHelp() {
+  _goHelp = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
     var platformsMap, platformDistance;
     return _regeneratorRuntime().wrap(function _callee6$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
             currentLevel = 6;
-            player = new Player();
             keys = {
               right: {
                 pressed: false
@@ -6335,14 +6383,16 @@ function _goShop() {
                 pressed: false
               }
             };
+            helpBtns.style.display = "block";
+            shopBtns.style.display = "none";
             scrollOffset = 0;
             game = {
               disableUserInput: false
             };
-            _context6.next = 7;
-            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].platform);
+            _context6.next = 8;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[3].platform);
 
-          case 7:
+          case 8:
             platformImage = _context6.sent;
             zombiez = [];
             particles = [];
@@ -6350,17 +6400,6 @@ function _goShop() {
             potions = [];
             coins = [];
             pads = [];
-            buttons = [new Button({
-              x: 40,
-              y: 228,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[6].b9),
-              b9: true
-            }), new Button({
-              x: 40,
-              y: 285,
-              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[6].b10),
-              b10: true
-            })];
             genericObjects = [new GenericObject({
               x: 0,
               y: 0,
@@ -6388,6 +6427,73 @@ function _goShop() {
       }
     }, _callee6);
   }));
+  return _goHelp.apply(this, arguments);
+}
+
+function goShop() {
+  return _goShop.apply(this, arguments);
+}
+
+function _goShop() {
+  _goShop = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7() {
+    var platformsMap, platformDistance;
+    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            currentLevel = 7;
+            keys = {
+              right: {
+                pressed: false
+              },
+              left: {
+                pressed: false
+              }
+            };
+            helpBtns.style.display = "none";
+            shopBtns.style.display = "block";
+            scrollOffset = 0;
+            game = {
+              disableUserInput: false
+            };
+            _context7.next = 8;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[2].platform);
+
+          case 8:
+            platformImage = _context7.sent;
+            zombiez = [];
+            particles = [];
+            platforms = [];
+            potions = [];
+            coins = [];
+            pads = [];
+            genericObjects = [new GenericObject({
+              x: 0,
+              y: 0,
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_images_js__WEBPACK_IMPORTED_MODULE_30__["images"].levels[7].background)
+            })];
+            platformsMap = ['plat', 'plat', 'plat'];
+            platformDistance = 0;
+            platformsMap.forEach(function (symbol) {
+              switch (symbol) {
+                case 'plat':
+                  platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height + 35,
+                    image: platformImage
+                  }));
+                  platformDistance += platformImage.width;
+                  break;
+              }
+            });
+
+          case 19:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee7);
+  }));
   return _goShop.apply(this, arguments);
 }
 
@@ -6409,61 +6515,8 @@ function animate() {
     platform.update();
     platform.velocity.x = 0;
   });
-  buttons.forEach(function (button) {
-    button.update();
-    button.velocity.x = 0;
-
-    if (currentLevel == 5 && button.b1) {
-      addEventListener("click", function () {
-        copyToClipboard('Polygon Testnet');
-      });
-    }
-
-    if (currentLevel == 5 && button.b2) {
-      addEventListener("click", function () {
-        copyToClipboard('https://matic-mumbai.chainstacklabs.com');
-      });
-    }
-
-    if (currentLevel == 5 && button.b3) {
-      addEventListener("click", function () {
-        copyToClipboard('8001');
-      });
-    }
-
-    if (currentLevel == 5 && button.b4) {
-      addEventListener("click", function () {
-        copyToClipboard('MATIC');
-      });
-    }
-
-    if (currentLevel == 5 && button.b5) {
-      addEventListener("click", function () {
-        copyToClipboard('https://faucet.polygon.technology');
-      });
-    }
-
-    if (currentLevel == 5 && button.b6) {
-      addEventListener("click", function () {
-        copyToClipboard('0x04269fd82c29D81602372fBf9a18440e74AD7bbd');
-      });
-    }
-
-    if (currentLevel == 5 && button.b7) {
-      addEventListener("click", function () {
-        copyToClipboard('Coin');
-      });
-    }
-
-    if (currentLevel == 5 && button.b8) {
-      addEventListener("click", function () {
-        copyToClipboard('18');
-        copyToClipboard = none;
-      });
-    }
-  });
   pads.forEach(function (pad) {
-    if (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) {
+    if (currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) {
       pad.update();
       pad.velocity.x = 0;
     }
@@ -6583,14 +6636,18 @@ function animate() {
       particles.splice(i, 1);
     }, 0);
   });
-  player.update();
+
+  if (currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4 || currentLevel == 5) {
+    player.update();
+  }
+
   if (game.disableUserInput) return; //scrolling code start
 
   var hitSide = false; //left and right movement 
 
-  if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && player.position.x < 400 || (currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.right.pressed && player.position.x < 935) {
+  if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.right.pressed && player.position.x < 400 || (currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.right.pressed && player.position.x < 935) {
     player.velocity.x = player.speed;
-  } else if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && player.position.x > 100 || (currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.left.pressed && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250 || (currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934) {
+  } else if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.left.pressed && player.position.x > 100 || (currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.left.pressed && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0 || (currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250 || (currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934) {
     player.velocity.x = -player.speed;
   } else {
     player.velocity.x = 0; //scrolling code
@@ -6632,9 +6689,6 @@ function animate() {
         pads.forEach(function (pad) {
           pad.position.x -= player.speed;
         });
-        buttons.forEach(function (button) {
-          button.position.x -= player.speed;
-        });
       }
     } else if (keys.left.pressed && scrollOffset > 0) {
       for (var _i = 0; _i < platforms.length; _i++) {
@@ -6673,9 +6727,6 @@ function animate() {
         pads.forEach(function (pad) {
           pad.position.x += player.speed;
         });
-        buttons.forEach(function (button) {
-          button.position.x += player.speed;
-        });
       }
     }
   } // platform collision detection
@@ -6696,7 +6747,7 @@ function animate() {
       player.velocity.y = 0;
     }
 
-    if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
+    if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
       object: player,
       platform: platform
     })) {
@@ -6710,7 +6761,7 @@ function animate() {
       player.velocity.x = 0;
     }
 
-    if (currentLevel == 4 && platform.play && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
+    if (currentLevel == 5 && platform.play && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
       object: player,
       platform: platform
     })) {
@@ -6719,20 +6770,20 @@ function animate() {
       selectLevel(currentLevel = 1);
     }
 
-    if (currentLevel == 4 && platform.shop && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
+    if (currentLevel == 5 && platform.shop && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
+      object: player,
+      platform: platform
+    })) {
+      player.velocity.y = -player.velocity.y;
+      selectLevel(currentLevel = 7);
+    }
+
+    if (currentLevel == 5 && platform.help && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
       object: player,
       platform: platform
     })) {
       player.velocity.y = -player.velocity.y;
       selectLevel(currentLevel = 6);
-    }
-
-    if (currentLevel == 4 && platform.help && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
-      object: player,
-      platform: platform
-    })) {
-      player.velocity.y = -player.velocity.y;
-      selectLevel(currentLevel = 5);
     } //particle bounce
 
 
@@ -6800,11 +6851,12 @@ selectLevel(currentLevel); //gameResetLevel0()
 //gameResetLevel1()
 //gameResetLevel2()
 //gameResetLevel3()
+//gameResetLevel4()
 
 animate(); // down key listener (asdw)
 
-addEventListener('keydown', function (_ref9) {
-  var keyCode = _ref9.keyCode;
+addEventListener('keydown', function (_ref8) {
+  var keyCode = _ref8.keyCode;
   if (game.disableUserInput) return;
 
   switch (keyCode) {
@@ -6868,8 +6920,8 @@ addEventListener('keydown', function (_ref9) {
   }
 }); // up key listener (asdw)
 
-addEventListener('keyup', function (_ref10) {
-  var keyCode = _ref10.keyCode;
+addEventListener('keyup', function (_ref9) {
+  var keyCode = _ref9.keyCode;
   if (game.disableUserInput) return;
 
   switch (keyCode) {
@@ -6906,33 +6958,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_homePage_shop_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/homePage/shop.png */ "./src/img/homePage/shop.png");
 /* harmony import */ var _img_homePage_play_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/homePage/play.png */ "./src/img/homePage/play.png");
 /* harmony import */ var _img_helpPage_helpPage_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/helpPage/helpPage.png */ "./src/img/helpPage/helpPage.png");
-/* harmony import */ var _img_helpPage_b1_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/helpPage/b1.png */ "./src/img/helpPage/b1.png");
-/* harmony import */ var _img_helpPage_b2_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/helpPage/b2.png */ "./src/img/helpPage/b2.png");
-/* harmony import */ var _img_helpPage_b3_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/helpPage/b3.png */ "./src/img/helpPage/b3.png");
-/* harmony import */ var _img_helpPage_b4_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/helpPage/b4.png */ "./src/img/helpPage/b4.png");
-/* harmony import */ var _img_helpPage_b5_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/helpPage/b5.png */ "./src/img/helpPage/b5.png");
-/* harmony import */ var _img_helpPage_b6_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/helpPage/b6.png */ "./src/img/helpPage/b6.png");
-/* harmony import */ var _img_helpPage_b7_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/helpPage/b7.png */ "./src/img/helpPage/b7.png");
-/* harmony import */ var _img_helpPage_b8_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/helpPage/b8.png */ "./src/img/helpPage/b8.png");
-/* harmony import */ var _img_shopPage_shopPage_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/shopPage/shopPage.png */ "./src/img/shopPage/shopPage.png");
-/* harmony import */ var _img_shopPage_b9_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/shopPage/b9.png */ "./src/img/shopPage/b9.png");
-/* harmony import */ var _img_shopPage_b10_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/shopPage/b10.png */ "./src/img/shopPage/b10.png");
-/* harmony import */ var _img_level2_background_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/level2/background.png */ "./src/img/level2/background.png");
-/* harmony import */ var _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/level2/hills.png */ "./src/img/level2/hills.png");
-/* harmony import */ var _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/level2/platform.png */ "./src/img/level2/platform.png");
-/* harmony import */ var _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/level2/tPlatform.png */ "./src/img/level2/tPlatform.png");
-/* harmony import */ var _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../img/level2/xtPlatform.png */ "./src/img/level2/xtPlatform.png");
-/* harmony import */ var _img_level3_background_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../img/level3/background.png */ "./src/img/level3/background.png");
-/* harmony import */ var _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../img/level3/hills.png */ "./src/img/level3/hills.png");
-/* harmony import */ var _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../img/level3/platform.png */ "./src/img/level3/platform.png");
-/* harmony import */ var _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../img/level3/tPlatform.png */ "./src/img/level3/tPlatform.png");
-/* harmony import */ var _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../img/level3/xtPlatform.png */ "./src/img/level3/xtPlatform.png");
-
-
-
-
-
-
+/* harmony import */ var _img_shopPage_shopPage_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/shopPage/shopPage.png */ "./src/img/shopPage/shopPage.png");
+/* harmony import */ var _img_shopPage_b9_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/shopPage/b9.png */ "./src/img/shopPage/b9.png");
+/* harmony import */ var _img_shopPage_b10_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/shopPage/b10.png */ "./src/img/shopPage/b10.png");
+/* harmony import */ var _img_level2_background_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/level2/background.png */ "./src/img/level2/background.png");
+/* harmony import */ var _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/level2/hills.png */ "./src/img/level2/hills.png");
+/* harmony import */ var _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/level2/platform.png */ "./src/img/level2/platform.png");
+/* harmony import */ var _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/level2/tPlatform.png */ "./src/img/level2/tPlatform.png");
+/* harmony import */ var _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/level2/xtPlatform.png */ "./src/img/level2/xtPlatform.png");
+/* harmony import */ var _img_level3_background_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/level3/background.png */ "./src/img/level3/background.png");
+/* harmony import */ var _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/level3/hills.png */ "./src/img/level3/hills.png");
+/* harmony import */ var _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/level3/platform.png */ "./src/img/level3/platform.png");
+/* harmony import */ var _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/level3/tPlatform.png */ "./src/img/level3/tPlatform.png");
+/* harmony import */ var _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/level3/xtPlatform.png */ "./src/img/level3/xtPlatform.png");
+/* harmony import */ var _img_level4_background_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/level4/background.png */ "./src/img/level4/background.png");
+/* harmony import */ var _img_level4_hills_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/level4/hills.png */ "./src/img/level4/hills.png");
 
 
 
@@ -6959,40 +6999,36 @@ var images = {
       background: ''
     },
     2: {
-      background: _img_level2_background_png__WEBPACK_IMPORTED_MODULE_16__["default"],
-      hills: _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_17__["default"],
-      platform: _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_18__["default"],
-      tPlatform: _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_19__["default"],
-      xtPlatform: _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_20__["default"]
+      background: _img_level2_background_png__WEBPACK_IMPORTED_MODULE_8__["default"],
+      hills: _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_9__["default"],
+      platform: _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_10__["default"],
+      tPlatform: _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_11__["default"],
+      xtPlatform: _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_12__["default"]
     },
     3: {
-      background: _img_level3_background_png__WEBPACK_IMPORTED_MODULE_21__["default"],
-      hills: _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_22__["default"],
-      platform: _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_23__["default"],
-      tPlatform: _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_24__["default"],
-      xtPlatform: _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_25__["default"]
+      background: _img_level3_background_png__WEBPACK_IMPORTED_MODULE_13__["default"],
+      hills: _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_14__["default"],
+      platform: _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_15__["default"],
+      tPlatform: _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_16__["default"],
+      xtPlatform: _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_17__["default"]
     },
     4: {
+      background: _img_level4_background_png__WEBPACK_IMPORTED_MODULE_18__["default"],
+      hills: _img_level4_hills_png__WEBPACK_IMPORTED_MODULE_19__["default"]
+    },
+    5: {
       background: _img_homePage_background_png__WEBPACK_IMPORTED_MODULE_0__["default"],
       help: _img_homePage_help_png__WEBPACK_IMPORTED_MODULE_1__["default"],
       shop: _img_homePage_shop_png__WEBPACK_IMPORTED_MODULE_2__["default"],
       play: _img_homePage_play_png__WEBPACK_IMPORTED_MODULE_3__["default"]
     },
-    5: {
-      background: _img_helpPage_helpPage_png__WEBPACK_IMPORTED_MODULE_4__["default"],
-      b1: _img_helpPage_b1_png__WEBPACK_IMPORTED_MODULE_5__["default"],
-      b2: _img_helpPage_b2_png__WEBPACK_IMPORTED_MODULE_6__["default"],
-      b3: _img_helpPage_b3_png__WEBPACK_IMPORTED_MODULE_7__["default"],
-      b4: _img_helpPage_b4_png__WEBPACK_IMPORTED_MODULE_8__["default"],
-      b5: _img_helpPage_b5_png__WEBPACK_IMPORTED_MODULE_9__["default"],
-      b6: _img_helpPage_b6_png__WEBPACK_IMPORTED_MODULE_10__["default"],
-      b7: _img_helpPage_b7_png__WEBPACK_IMPORTED_MODULE_11__["default"],
-      b8: _img_helpPage_b8_png__WEBPACK_IMPORTED_MODULE_12__["default"]
-    },
     6: {
-      background: _img_shopPage_shopPage_png__WEBPACK_IMPORTED_MODULE_13__["default"],
-      b9: _img_shopPage_b9_png__WEBPACK_IMPORTED_MODULE_14__["default"],
-      b10: _img_shopPage_b10_png__WEBPACK_IMPORTED_MODULE_15__["default"]
+      background: _img_helpPage_helpPage_png__WEBPACK_IMPORTED_MODULE_4__["default"]
+    },
+    7: {
+      background: _img_shopPage_shopPage_png__WEBPACK_IMPORTED_MODULE_5__["default"],
+      b9: _img_shopPage_b9_png__WEBPACK_IMPORTED_MODULE_6__["default"],
+      b10: _img_shopPage_b10_png__WEBPACK_IMPORTED_MODULE_7__["default"]
     }
   }
 };

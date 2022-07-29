@@ -4,15 +4,6 @@ import shop from '../img/homePage/shop.png'
 import play from '../img/homePage/play.png'
 
 import helpBackground from '../img/helpPage/helpPage.png'
-import b1 from '../img/helpPage/b1.png'
-import b2 from '../img/helpPage/b2.png'
-import b3 from '../img/helpPage/b3.png'
-import b4 from '../img/helpPage/b4.png'
-import b5 from '../img/helpPage/b5.png'
-import b6 from '../img/helpPage/b6.png'
-import b7 from '../img/helpPage/b7.png'
-import b8 from '../img/helpPage/b8.png'
-
 import shopBackground from '../img/shopPage/shopPage.png'
 import b9 from '../img/shopPage/b9.png'
 import b10 from '../img/shopPage/b10.png'
@@ -28,6 +19,9 @@ import hillsLevel3 from '../img/level3/hills.png'
 import platformLevel3 from '../img/level3/platform.png'
 import tPlatformLevel3 from '../img/level3/tPlatform.png'
 import xtPlatformLevel3 from '../img/level3/xtPlatform.png'
+
+import backgroundLevel4 from '../img/level4/background.png'
+import hillsLevel4 from '../img/level4/hills.png'
 
 
 
@@ -52,23 +46,19 @@ export const images = {
             xtPlatform: xtPlatformLevel3
         }, 
         4: {
+            background: backgroundLevel4,
+            hills: hillsLevel4,
+        }, 
+        5: {
             background: homeBackground,
             help,
             shop,
             play
         },
-        5: {
-            background: helpBackground,
-            b1,
-            b2,
-            b3,
-            b4,
-            b5,
-            b6,
-            b7,
-            b8
-        },
         6: {
+            background: helpBackground,
+        },
+        7: {
             background: shopBackground,
             b9,
             b10

@@ -43,15 +43,15 @@ import coin from '../img/coin.png'
 import { audio } from './audio.js'
 import { images } from './images.js'
 
-
 const canvas = document.querySelector('canvas')
+const helpBtns = document.getElementById('helpBtns')
+const shopBtns = document.getElementById('shopBtns')
 const c = canvas.getContext('2d')
 
 canvas.width = 1024
 canvas.height = 576
 
 const coinsCollectedElem = document.querySelector("[data-coins]")
-let helpBtns = document.querySelector('helpBtns')
 
 // gravity strength
 let gravity = 0.5
@@ -174,41 +174,6 @@ class Platform {
          this.help = help
          this.shop = shop
          this.play = play
-    }
-
-    draw() {
-        c.drawImage(this.image, this.position.x, this.position.y)
-    }
-
-    update() {
-        this.draw()
-        this.position.x += this.velocity.x
-    }
-}
-
-class Button {
-    constructor({ x, y, image, b1, b2, b3, b4, b5, b6, b7, b8 }) {
-         this.position = {
-             x,
-             y
-         }
-
-         this.velocity = {
-             x: 0
-         }
-
-         this.image = image
-         this.width = image.width
-         this.height = image.height 
-         this.b1 = b1
-         this.b2 = b2
-         this.b3 = b3
-         this.b4 = b4
-         this.b5 = b5
-         this.b6 = b6
-         this.b7 = b7
-         this.b8 = b8
-         
     }
 
     draw() {
@@ -460,18 +425,14 @@ let pads = []
 let coinsCollected = 0
 window.totalCoinsCollected = 0
 
+
 let lastKey
 let keys 
 
 let scrollOffset
 let game
-let currentLevel = 4
+let currentLevel = 5
 
-function copyToClipboard(text) {
-    window.prompt("Copy to clipboard: Ctrl+C, Enter", text)
-}
-
-function none() {}
 
 function selectLevel(currentLevel) {
     switch (currentLevel) {
@@ -483,14 +444,17 @@ function selectLevel(currentLevel) {
            break
         case 3: 
            gameResetLevel3()
-           break        
-        case 4:
+           break  
+        case 4: 
+            gameResetLevel4()
+            break      
+        case 5:
            goHome()
            break
-        case 5:
+        case 6:
             goHelp()
             break
-        case 6: 
+        case 7: 
             goShop()
             break
     }
@@ -868,8 +832,6 @@ async function gameResetLevel1() {
         }), 
     ]
 
-    buttons = []
-
     genericObjects = [
         new GenericObject({
             x: -1,
@@ -1238,9 +1200,6 @@ async function gameResetLevel2() {
         image: coinImage
         })
     ]
-
-    buttons = []
-
 
     genericObjects = [
         new GenericObject({
@@ -1780,8 +1739,6 @@ async function gameResetLevel3() {
         }), 
     ]
 
-    buttons = []
-
     genericObjects = [
         new GenericObject({
             x: -1,
@@ -1846,7 +1803,7 @@ async function gameResetLevel3() {
     })
 }
 
-async function goHome() {
+async function gameResetLevel4() {
     currentLevel = 4
     player = new Player()
 
@@ -1865,50 +1822,236 @@ async function goHome() {
         disableUserInput: false
     }
 
-    platformImage = await createImageAsync(platform)
 
-    zombiez = []
-    particles = []
+   platformImage = await createImageAsync(platform)
+   tPlatformImage = await createImageAsync(tPlatform)
+   xtPlatformImage = await createImageAsync(xtPlatform)
+   blockTriImage = await createImageAsync(blockTri)
+   blockImage = await createImageAsync(block)
+   padImage = await createImageAsync(pad)
+   potionImage = await createImageAsync(potion)
+   coinImage = await createImageAsync(coin)
 
+    
     platforms = [ 
         new Platform ({
-        x: 385,
-        y: 300,
-        image: createImage(images.levels[4].help),
-        help: true,
-        block: true
+            x: 1970,
+            y: 370,
+            image: blockImage,
+            block: true
         }),
-         new Platform ({
-        x: 485,
-        y: 300,
-        image: createImage(images.levels[4].shop),
-        shop: true,
-        block: true
+        new Platform ({
+            x: 2240,
+            y: 281,
+            image: xtPlatformImage,
         }),
-         new Platform ({
-        x: 585,
-        y: 300,
-        image: createImage(images.levels[4].play),
-        play: true,
-        block: true
+        new Platform ({
+            x: 2642,
+            y: 370,
+            image: blockImage,
+            block: true
         }),
+        new Platform ({
+            x: 2850,
+            y: 281,
+            image: xtPlatformImage,
+        }),
+        new Platform ({
+            x: 3290,
+            y: 370,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 4000,
+            y: 358,
+            image: platformImage,
+        }),     
+        new Platform ({
+            x: 4550,
+            y: 275,
+            image: platformImage,
+        }),
+        new Platform ({
+            x: 4550,
+            y: 358,
+            image: platformImage,
+        }),
+        new Platform ({
+            x: 5100,
+            y: 358,
+            image: platformImage,
+        }),
+        new Platform ({
+            x: 7400,
+            y: 465,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 7900,
+            y: 465,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 8400,
+            y: 465,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 8900,
+            y: 465,
+            image: blockImage,
+            block: true
+        }),
+        new Platform ({
+            x: 10300,
+            y: 281,
+            image: xtPlatformImage,
+        }),
+
+    ]
+    
+    zombiez = [
+        new Zombie({
+            position: {
+                x: 4500,
+                y: 250,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 275,
+            limitRight: -275,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 4800,
+                y: 100,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 175,
+            limitRight: -175,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 5200,
+                y: 200,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 255,
+            limitRight: -255,
+            traveled: 0
+            }
+            }), 
+        new Zombie({
+            position: {
+                x: 6150,
+                y: 150,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 100,
+            limitRight: -100,
+            traveled: 0
+            }
+            }),
+        new Zombie({
+            position: {
+                x: 10400,
+                y: 250,
+            },
+            velocity: {
+                x:-0.5,
+                y: 0,
+            },        
+            distance: {
+            limitLeft: 75,
+            limitRight: -75,
+            traveled: 0
+            }
+            }),
+             
+    ]
+    particles = []
+
+    pads = [
+        new Pad ({
+            x: 13200,
+            y: 420,
+            image: padImage,
+        })
     ]
 
-    potions = []
-    coins = []
-    pads = []
-    buttons = []
+    potions = [new Potion({
+        x: 2942,
+        y: 255,
+        image: potionImage
+    }
+    )]
+
+    coins = [
+        new Coin({
+        x: 2320,
+        y: 80,
+        image: coinImage
+        }),
+        new Coin({
+        x: 4830,
+        y: 325,
+        image: coinImage
+        }),
+        new Coin({
+        x: 6270,
+        y: 180,
+        image: coinImage
+        }),
+        new Coin({
+        x: 9170,
+        y: 135,
+        image: coinImage
+        }),
+        new Coin({
+        x: 10384,
+        y: 385,
+        image: coinImage
+        }),
+    ]
 
     genericObjects = [
         new GenericObject({
-            x: 0,
+            x: -1,
             y: 0,
             image: createImage(images.levels[4].background)
         }),
+        new GenericObject({
+            x: -615,
+            y: 0,
+            image: createImage(images.levels[4].hills)
+        })
     ]
-    
-
-    const platformsMap = ['plat', 'plat', 'plat']
+    const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap','plat','plat', 
+    'plat', 'plat','plat','plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap','gap', 'gap',
+     'plat', 'plat', 'gap', 'gap','plat', 'plat', 'plat','plat','plat',]
 
     let platformDistance = 0
 
@@ -1917,19 +2060,55 @@ async function goHome() {
             case 'plat':
                 platforms.push(new Platform({
                     x: platformDistance,
-                    y: canvas.height - platformImage.height + 35,
+                    y: canvas.height - platformImage.height,
                     image: platformImage,
                 }))
 
-            platformDistance += platformImage.width
+            platformDistance += platformImage.width - 2
+
+            break
+
+            case 'gap':
+                platformDistance += 300
+
+                break;
+            
+            case 'tPlat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - tPlatformImage.height,
+                    image: tPlatformImage,
+
+                }))
+
+            platformDistance += tPlatformImage.width
+
+            break
+
+            case 'xtPlat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - xtPlatformImage.height,
+                    image: xtPlatformImage,
+
+                }))
+
+            platformDistance += xtPlatformImage.width
+
             break
         }
+
     })
 }
 
-async function goHelp() {
+async function goHome() {
     currentLevel = 5
+    audio.audioGameOver.play()
     player = new Player()
+    
+    helpBtns.style.display = "none"
+    shopBtns.style.display = "none"
+
     keys = {
         right: {
             pressed: false
@@ -1944,66 +2123,39 @@ async function goHelp() {
     game = {
         disableUserInput: false
     }
-
-    platformImage = await createImageAsync(images.levels[3].platform)
+    
+    platformImage = await createImageAsync(platform)
 
     zombiez = []
     particles = []
-    platforms = []
+
+    platforms = [ 
+        new Platform ({
+        x: 385,
+        y: 300,
+        image: createImage(images.levels[5].help),
+        help: true,
+        block: true
+        }),
+         new Platform ({
+        x: 485,
+        y: 300,
+        image: createImage(images.levels[5].shop),
+        shop: true,
+        block: true
+        }),
+         new Platform ({
+        x: 585,
+        y: 300,
+        image: createImage(images.levels[5].play),
+        play: true,
+        block: true
+        }),
+    ]
+
     potions = []
     coins = []
     pads = []
-
-    buttons = [
-        new Button ({
-            x: 40,
-            y: 228,
-        image: createImage(images.levels[5].b1),
-        b1: true,
-        }),
-        new Button ({
-            x: 40,
-            y: 285,
-        image: createImage(images.levels[5].b2),
-        b2: true,
-        }),
-        new Button ({
-            x: 40,
-            y: 342,
-        image: createImage(images.levels[5].b3),
-        b3: true,
-        }),
-        new Button ({
-            x: 40,
-            y: 399,
-        image: createImage(images.levels[5].b4),
-        b4: true,
-        }),
-        new Button ({
-            x: 360,
-            y: 212,
-        image: createImage(images.levels[5].b5),
-        b5: true,
-        }),
-        new Button ({
-            x: 730,
-            y: 228,
-        image: createImage(images.levels[5].b6),
-        b6: true,
-        }),
-        new Button ({
-            x: 730,
-            y: 285,
-        image: createImage(images.levels[5].b7),
-        b7: true,
-        }),
-        new Button ({
-            x: 730,
-            y: 342,
-        image: createImage(images.levels[5].b8),
-        b8: true,
-        }),
-    ]
 
     genericObjects = [
         new GenericObject({
@@ -2033,10 +2185,8 @@ async function goHelp() {
     })
 }
 
-async function goShop() {
+async function goHelp() {
     currentLevel = 6
-    player = new Player()
-
     keys = {
         right: {
             pressed: false
@@ -2046,13 +2196,16 @@ async function goShop() {
         }
     }
 
+    helpBtns.style.display = "block"
+    shopBtns.style.display = "none"
+
     scrollOffset = 0
 
     game = {
         disableUserInput: false
     }
 
-    platformImage = await createImageAsync(images.levels[2].platform)
+    platformImage = await createImageAsync(images.levels[3].platform)
 
     zombiez = []
     particles = []
@@ -2060,20 +2213,6 @@ async function goShop() {
     potions = []
     coins = []
     pads = []
-    buttons = [
-        new Button ({
-            x: 40,
-            y: 228,
-        image: createImage(images.levels[6].b9),
-        b9: true,
-        }),
-        new Button ({
-            x: 40,
-            y: 285,
-        image: createImage(images.levels[6].b10),
-        b10: true,
-        }),
-    ]
 
     genericObjects = [
         new GenericObject({
@@ -2099,8 +2238,68 @@ async function goShop() {
 
             platformDistance += platformImage.width
             break
+        }   
+         
+    })
+}
+
+async function goShop() {
+    currentLevel = 7
+
+    keys = {
+        right: {
+            pressed: false
+        },
+        left: {
+            pressed: false
+        }
+    }
+
+    helpBtns.style.display = "none"
+    shopBtns.style.display = "block"
+
+    scrollOffset = 0
+
+    game = {
+        disableUserInput: false
+    }
+
+    platformImage = await createImageAsync(images.levels[2].platform)
+
+    zombiez = []
+    particles = []
+    platforms = []
+    potions = []
+    coins = []
+    pads = []
+
+    genericObjects = [
+        new GenericObject({
+            x: 0,
+            y: 0,
+            image: createImage(images.levels[7].background)
+        }),
+    ]
+    
+
+    const platformsMap = ['plat', 'plat', 'plat']
+
+    let platformDistance = 0
+
+    platformsMap.forEach(symbol => {
+        switch(symbol) {
+            case 'plat':
+                platforms.push(new Platform({
+                    x: platformDistance,
+                    y: canvas.height - platformImage.height + 35,
+                    image: platformImage,
+                }))
+
+            platformDistance += platformImage.width
+            break
         }
     })
+
 }
 
 function animate() {
@@ -2126,73 +2325,9 @@ function animate() {
        platform.velocity.x = 0
     })
 
-
-    buttons.forEach(button => {
-        button.update()
-        button.velocity.x = 0
-
-
-        if ((currentLevel == 5) && button.b1) 
-        {
-            addEventListener("click", () => {
-                copyToClipboard('Polygon Testnet')
-        })
-        } 
-        
-        if ((currentLevel == 5) && button.b2) 
-        {
-            addEventListener("click", () => {
-                copyToClipboard('https://matic-mumbai.chainstacklabs.com')
-        })
-        }
-
-        if ((currentLevel == 5) && button.b3) 
-        {
-            addEventListener("click", () => {
-                copyToClipboard('8001')
-        })
-        }
-
-        if ((currentLevel == 5) && button.b4) 
-        {
-            addEventListener("click", () => {
-                copyToClipboard('MATIC')
-        })
-        }
-
-        if ((currentLevel == 5) && button.b5) 
-        {
-            addEventListener("click", () => {
-                copyToClipboard('https://faucet.polygon.technology')
-        })
-        }
-
-        if ((currentLevel == 5) && button.b6) 
-        {
-            addEventListener("click", () => {
-                copyToClipboard('0x04269fd82c29D81602372fBf9a18440e74AD7bbd')
-        })
-        }
-
-        if ((currentLevel == 5) && button.b7) 
-        {
-            addEventListener("click", () => {
-                copyToClipboard('Coin')
-        })
-        }
-
-        if ((currentLevel == 5) && button.b8) 
-        {
-            addEventListener("click", () => {
-                copyToClipboard('18')
-                copyToClipboard = none
-        })
-        }
-    })
-
     pads.forEach(pad => {
         if 
-        (currentLevel == 1 || currentLevel == 2 || currentLevel == 3)
+        (currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4)
         {
             pad.update() 
             pad.velocity.x = 0   
@@ -2229,6 +2364,7 @@ function animate() {
         }, 0)
         } else potion.update()
     })
+
     window.totalCoinsCollected = coinsCollected
 
     //collect coins
@@ -2335,7 +2471,11 @@ function animate() {
             particles.splice(i, 1)
         }, 0)
     })
-    player.update()
+
+    if (currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4 || currentLevel == 5)
+    {
+        player.update()
+    }
 
     if (game.disableUserInput) return
 
@@ -2343,17 +2483,17 @@ function animate() {
     let hitSide = false
     //left and right movement 
     if (
-        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && player.position.x < 400) ||
-        ((currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.right.pressed && player.position.x < 935) 
+        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.right.pressed && player.position.x < 400) ||
+        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.right.pressed && player.position.x < 935) 
     ) {
         player.velocity.x = player.speed
     } else if (
-        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && player.position.x > 100) || 
-        ((currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.left.pressed && player.position.x > 0) ||
-        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
-        ((currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
-        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250) ||
-        ((currentLevel == 4 || currentLevel == 5 || currentLevel == 6) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
+        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.left.pressed && player.position.x > 100) || 
+        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.left.pressed && player.position.x > 0) ||
+        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
+        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
+        ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250) ||
+        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
     ) {
         player.velocity.x = -player.speed
     } else {
@@ -2408,11 +2548,6 @@ function animate() {
             pads.forEach((pad) => {
                 pad.position.x -= player.speed
              })
-
-            buttons.forEach((button) => {
-                button.position.x -= player.speed
-             })
-            
         }
             
         } else if (keys.left.pressed && scrollOffset > 0) {
@@ -2459,11 +2594,6 @@ function animate() {
                 pads.forEach((pad) => {
                     pad.position.x += player.speed
                  })
-                
-                buttons.forEach((button) => {
-                    button.position.x += player.speed
-                 })
-
             }
         }
     }
@@ -2486,7 +2616,7 @@ function animate() {
             player.velocity.y = 0
         }
 
-        if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3) &&
+        if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) &&
             platform.block && hitBottomOfPlatform({
             object: player,
             platform
@@ -2501,7 +2631,7 @@ function animate() {
                 player.velocity.x = 0
             }
     
-        if ((currentLevel == 4) && platform.play && hitBottomOfPlatform({
+        if ((currentLevel == 5) && platform.play && hitBottomOfPlatform({
                 object: player,
                 platform
             })) {
@@ -2510,20 +2640,19 @@ function animate() {
                 selectLevel(currentLevel = 1)
 
             }
-        if ((currentLevel == 4) && platform.shop && hitBottomOfPlatform({
+        if ((currentLevel == 5) && platform.shop && hitBottomOfPlatform({
+                object: player,
+                platform
+            })) {
+                player.velocity.y = -player.velocity.y
+                selectLevel(currentLevel = 7)
+            }
+        if ((currentLevel == 5) && platform.help && hitBottomOfPlatform({
                 object: player,
                 platform
             })) {
                 player.velocity.y = -player.velocity.y
                 selectLevel(currentLevel = 6)
-
-            }
-        if ((currentLevel == 4) && platform.help && hitBottomOfPlatform({
-                object: player,
-                platform
-            })) {
-                player.velocity.y = -player.velocity.y
-                selectLevel(currentLevel = 5)
             }
 
         //particle bounce
@@ -2605,6 +2734,7 @@ selectLevel(currentLevel)
 //gameResetLevel1()
 //gameResetLevel2()
 //gameResetLevel3()
+//gameResetLevel4()
 animate()
 // down key listener (asdw)
 addEventListener('keydown', ({ keyCode }) => {
