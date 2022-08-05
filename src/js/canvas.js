@@ -46,6 +46,7 @@ import { images } from './images.js'
 const canvas = document.querySelector('canvas')
 const helpBtns = document.getElementById('helpBtns')
 const shopBtns = document.getElementById('shopBtns')
+const loader = document.getElementById('loader-wrapper')
 const c = canvas.getContext('2d')
 
 canvas.width = 1024
@@ -416,15 +417,13 @@ let coinImage
 let player = new Player()
 let platforms = []
 let genericObjects = []
-let buttons = []
 let zombiez = []
 let particles = []
 let potions = []
 let coins = []
 let pads = []
 let coinsCollected = 0
-window.totalCoinsCollected = 0
-
+//window.totalCoinsCollected = 0
 
 let lastKey
 let keys 
@@ -432,7 +431,6 @@ let keys
 let scrollOffset
 let game
 let currentLevel = 5
-
 
 function selectLevel(currentLevel) {
     switch (currentLevel) {
@@ -458,6 +456,27 @@ function selectLevel(currentLevel) {
             goShop()
             break
     }
+}
+
+//loading bar move function
+
+function move() {
+let i = 0;
+  if (i == 0) {
+    i = 1;
+    let elem = document.getElementById("myBar");
+    let width = 1;
+    let id = setInterval(frame, 50);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
 }
 
 async function gameResetLevel1() {
@@ -2101,11 +2120,21 @@ async function gameResetLevel4() {
     })
 }
 
-async function goHome() {
+async function goHome() { 
     currentLevel = 5
-    audio.audioGameOver.play()
-    player = new Player()
-    
+
+    move()
+    loader.style.display = "block"
+    setTimeout(function(){
+        loader.style.display = "none"
+    }, 6000)
+
+    setTimeout(function(){
+            audio.audioGameOver.play()
+            player = new Player()
+    }, 5900)
+
+
     helpBtns.style.display = "none"
     shopBtns.style.display = "none"
 
@@ -2365,7 +2394,7 @@ function animate() {
         } else potion.update()
     })
 
-    window.totalCoinsCollected = coinsCollected
+//window.totalCoinsCollected = coinsCollected
 
     //collect coins
     coins.forEach((coin, i) => {
@@ -2717,7 +2746,6 @@ function animate() {
 
     //cyclops(potion) sprites
     if (!player.powerUps.potion) return
-
     if (keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.run.potion.right) {
         player.currentSprite = player.sprites.run.potion.right
     } else if (keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.run.potion.left) {
@@ -2743,7 +2771,7 @@ addEventListener('keydown', ({ keyCode }) => {
     switch (keyCode) {
         case 13:
             //(selectLevel(currentLevel - 3))
-            lastKey = 'enter'
+            // lastKey = 'enter'
             break
         
         case 65:

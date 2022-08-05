@@ -1,12 +1,11 @@
 import homeBackground from '../img/homePage/background.png'
+
 import help from '../img/homePage/help.png'
 import shop from '../img/homePage/shop.png'
 import play from '../img/homePage/play.png'
 
 import helpBackground from '../img/helpPage/helpPage.png'
 import shopBackground from '../img/shopPage/shopPage.png'
-import b9 from '../img/shopPage/b9.png'
-import b10 from '../img/shopPage/b10.png'
 
 import backgroundLevel2 from '../img/level2/background.png'
 import hillsLevel2 from '../img/level2/hills.png'
@@ -22,9 +21,6 @@ import xtPlatformLevel3 from '../img/level3/xtPlatform.png'
 
 import backgroundLevel4 from '../img/level4/background.png'
 import hillsLevel4 from '../img/level4/hills.png'
-
-
-
 
 export const images = {
     levels: {
@@ -60,8 +56,6 @@ export const images = {
         },
         7: {
             background: shopBackground,
-            b9,
-            b10
         },
     }
 }

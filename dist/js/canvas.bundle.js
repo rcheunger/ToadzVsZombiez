@@ -3971,32 +3971,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/img/shopPage/b10.png":
-/*!**********************************!*\
-  !*** ./src/img/shopPage/b10.png ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "26825e9ffa195150f71fd1f845dd3cd3.png");
-
-/***/ }),
-
-/***/ "./src/img/shopPage/b9.png":
-/*!*********************************!*\
-  !*** ./src/img/shopPage/b9.png ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "73f2b8968222e6076ee88f081fe454c5.png");
-
-/***/ }),
-
 /***/ "./src/img/shopPage/shopPage.png":
 /*!***************************************!*\
   !*** ./src/img/shopPage/shopPage.png ***!
@@ -4275,6 +4249,7 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 var canvas = document.querySelector('canvas');
 var helpBtns = document.getElementById('helpBtns');
 var shopBtns = document.getElementById('shopBtns');
+var loader = document.getElementById('loader-wrapper');
 var c = canvas.getContext('2d');
 canvas.width = 1024;
 canvas.height = 576;
@@ -4680,14 +4655,13 @@ var coinImage;
 var player = new Player();
 var platforms = [];
 var genericObjects = [];
-var buttons = [];
 var zombiez = [];
 var particles = [];
 var potions = [];
 var coins = [];
 var pads = [];
-var coinsCollected = 0;
-window.totalCoinsCollected = 0;
+var coinsCollected = 0; //window.totalCoinsCollected = 0
+
 var lastKey;
 var keys;
 var scrollOffset;
@@ -4723,6 +4697,28 @@ function selectLevel(currentLevel) {
     case 7:
       goShop();
       break;
+  }
+} //loading bar move function
+
+
+function move() {
+  var i = 0;
+
+  if (i == 0) {
+    var frame = function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    };
+
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 50);
   }
 }
 
@@ -6288,8 +6284,15 @@ function _goHome() {
         switch (_context5.prev = _context5.next) {
           case 0:
             currentLevel = 5;
-            _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioGameOver.play();
-            player = new Player();
+            move();
+            loader.style.display = "block";
+            setTimeout(function () {
+              loader.style.display = "none";
+            }, 6000);
+            setTimeout(function () {
+              _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioGameOver.play();
+              player = new Player();
+            }, 5900);
             helpBtns.style.display = "none";
             shopBtns.style.display = "none";
             keys = {
@@ -6304,10 +6307,10 @@ function _goHome() {
             game = {
               disableUserInput: false
             };
-            _context5.next = 10;
+            _context5.next = 12;
             return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_platform_png__WEBPACK_IMPORTED_MODULE_5__["default"]);
 
-          case 10:
+          case 12:
             platformImage = _context5.sent;
             zombiez = [];
             particles = [];
@@ -6353,7 +6356,7 @@ function _goHome() {
               }
             });
 
-          case 21:
+          case 23:
           case "end":
             return _context5.stop();
         }
@@ -6546,8 +6549,8 @@ function animate() {
         _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioLaser.play();
       }, 0);
     } else potion.update();
-  });
-  window.totalCoinsCollected = coinsCollected; //collect coins
+  }); //window.totalCoinsCollected = coinsCollected
+  //collect coins
 
   coins.forEach(function (coin, i) {
     if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["objectsTouch"])({
@@ -6862,7 +6865,7 @@ addEventListener('keydown', function (_ref8) {
   switch (keyCode) {
     case 13:
       //(selectLevel(currentLevel - 3))
-      lastKey = 'enter';
+      // lastKey = 'enter'
       break;
 
     case 65:
@@ -6959,22 +6962,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_homePage_play_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/homePage/play.png */ "./src/img/homePage/play.png");
 /* harmony import */ var _img_helpPage_helpPage_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/helpPage/helpPage.png */ "./src/img/helpPage/helpPage.png");
 /* harmony import */ var _img_shopPage_shopPage_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/shopPage/shopPage.png */ "./src/img/shopPage/shopPage.png");
-/* harmony import */ var _img_shopPage_b9_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/shopPage/b9.png */ "./src/img/shopPage/b9.png");
-/* harmony import */ var _img_shopPage_b10_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/shopPage/b10.png */ "./src/img/shopPage/b10.png");
-/* harmony import */ var _img_level2_background_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/level2/background.png */ "./src/img/level2/background.png");
-/* harmony import */ var _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/level2/hills.png */ "./src/img/level2/hills.png");
-/* harmony import */ var _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/level2/platform.png */ "./src/img/level2/platform.png");
-/* harmony import */ var _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/level2/tPlatform.png */ "./src/img/level2/tPlatform.png");
-/* harmony import */ var _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/level2/xtPlatform.png */ "./src/img/level2/xtPlatform.png");
-/* harmony import */ var _img_level3_background_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/level3/background.png */ "./src/img/level3/background.png");
-/* harmony import */ var _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/level3/hills.png */ "./src/img/level3/hills.png");
-/* harmony import */ var _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/level3/platform.png */ "./src/img/level3/platform.png");
-/* harmony import */ var _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/level3/tPlatform.png */ "./src/img/level3/tPlatform.png");
-/* harmony import */ var _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/level3/xtPlatform.png */ "./src/img/level3/xtPlatform.png");
-/* harmony import */ var _img_level4_background_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/level4/background.png */ "./src/img/level4/background.png");
-/* harmony import */ var _img_level4_hills_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/level4/hills.png */ "./src/img/level4/hills.png");
-
-
+/* harmony import */ var _img_level2_background_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/level2/background.png */ "./src/img/level2/background.png");
+/* harmony import */ var _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/level2/hills.png */ "./src/img/level2/hills.png");
+/* harmony import */ var _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/level2/platform.png */ "./src/img/level2/platform.png");
+/* harmony import */ var _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/level2/tPlatform.png */ "./src/img/level2/tPlatform.png");
+/* harmony import */ var _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/level2/xtPlatform.png */ "./src/img/level2/xtPlatform.png");
+/* harmony import */ var _img_level3_background_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/level3/background.png */ "./src/img/level3/background.png");
+/* harmony import */ var _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/level3/hills.png */ "./src/img/level3/hills.png");
+/* harmony import */ var _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/level3/platform.png */ "./src/img/level3/platform.png");
+/* harmony import */ var _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/level3/tPlatform.png */ "./src/img/level3/tPlatform.png");
+/* harmony import */ var _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/level3/xtPlatform.png */ "./src/img/level3/xtPlatform.png");
+/* harmony import */ var _img_level4_background_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/level4/background.png */ "./src/img/level4/background.png");
+/* harmony import */ var _img_level4_hills_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/level4/hills.png */ "./src/img/level4/hills.png");
 
 
 
@@ -6999,22 +6998,22 @@ var images = {
       background: ''
     },
     2: {
-      background: _img_level2_background_png__WEBPACK_IMPORTED_MODULE_8__["default"],
-      hills: _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_9__["default"],
-      platform: _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_10__["default"],
-      tPlatform: _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_11__["default"],
-      xtPlatform: _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_12__["default"]
+      background: _img_level2_background_png__WEBPACK_IMPORTED_MODULE_6__["default"],
+      hills: _img_level2_hills_png__WEBPACK_IMPORTED_MODULE_7__["default"],
+      platform: _img_level2_platform_png__WEBPACK_IMPORTED_MODULE_8__["default"],
+      tPlatform: _img_level2_tPlatform_png__WEBPACK_IMPORTED_MODULE_9__["default"],
+      xtPlatform: _img_level2_xtPlatform_png__WEBPACK_IMPORTED_MODULE_10__["default"]
     },
     3: {
-      background: _img_level3_background_png__WEBPACK_IMPORTED_MODULE_13__["default"],
-      hills: _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_14__["default"],
-      platform: _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_15__["default"],
-      tPlatform: _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_16__["default"],
-      xtPlatform: _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_17__["default"]
+      background: _img_level3_background_png__WEBPACK_IMPORTED_MODULE_11__["default"],
+      hills: _img_level3_hills_png__WEBPACK_IMPORTED_MODULE_12__["default"],
+      platform: _img_level3_platform_png__WEBPACK_IMPORTED_MODULE_13__["default"],
+      tPlatform: _img_level3_tPlatform_png__WEBPACK_IMPORTED_MODULE_14__["default"],
+      xtPlatform: _img_level3_xtPlatform_png__WEBPACK_IMPORTED_MODULE_15__["default"]
     },
     4: {
-      background: _img_level4_background_png__WEBPACK_IMPORTED_MODULE_18__["default"],
-      hills: _img_level4_hills_png__WEBPACK_IMPORTED_MODULE_19__["default"]
+      background: _img_level4_background_png__WEBPACK_IMPORTED_MODULE_16__["default"],
+      hills: _img_level4_hills_png__WEBPACK_IMPORTED_MODULE_17__["default"]
     },
     5: {
       background: _img_homePage_background_png__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -7026,9 +7025,7 @@ var images = {
       background: _img_helpPage_helpPage_png__WEBPACK_IMPORTED_MODULE_4__["default"]
     },
     7: {
-      background: _img_shopPage_shopPage_png__WEBPACK_IMPORTED_MODULE_5__["default"],
-      b9: _img_shopPage_b9_png__WEBPACK_IMPORTED_MODULE_6__["default"],
-      b10: _img_shopPage_b10_png__WEBPACK_IMPORTED_MODULE_7__["default"]
+      background: _img_shopPage_shopPage_png__WEBPACK_IMPORTED_MODULE_5__["default"]
     }
   }
 };
@@ -7040,7 +7037,7 @@ images.background;
 /*!*************************!*\
   !*** ./src/js/utils.js ***!
   \*************************/
-/*! exports provided: createImage, createImageAsync, isOnTopOfPlatform, isOnTopOfPad, collisionTop, isOnTopOfPlatformCircle, hitTopOfPlatform, hitBottomOfPlatform, hitSideOfPlatform, objectsTouch */
+/*! exports provided: createImage, createImageAsync, isOnTopOfPlatform, isOnTopOfPad, collisionTop, isOnTopOfPlatformCircle, hitTopOfPlatform, hitBottomOfPlatform, hitSideOfPlatform, objectsTouch, playerOnTopOfPlatform */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7055,6 +7052,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hitBottomOfPlatform", function() { return hitBottomOfPlatform; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hitSideOfPlatform", function() { return hitSideOfPlatform; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "objectsTouch", function() { return objectsTouch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "playerOnTopOfPlatform", function() { return playerOnTopOfPlatform; });
 function randomIntFromRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -7126,6 +7124,11 @@ function objectsTouch(_ref8) {
   var object1 = _ref8.object1,
       object2 = _ref8.object2;
   return object1.position.x + object1.width >= object2.position.x && object1.position.x <= object2.position.x + object2.width && object1.position.y + object1.height >= object2.position.y && object1.position.y <= object2.position.y + object2.height;
+}
+function playerOnTopOfPlatform(_ref9) {
+  var player = _ref9.player,
+      platform = _ref9.platform;
+  return player.position + player.height <= platform.position && player.position + player.height + player.velocity >= platform.position && player.position + player.width >= platform.position && player.position <= platform.position + platform.width;
 }
 
 /***/ })

@@ -15,6 +15,7 @@ Languages:
 Development Tools used:
 -node.js
 -Ethers
+-remix
 -hardhat
 -ipfs (pinata & infura)
 -polygon mumbai network

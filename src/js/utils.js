@@ -111,3 +111,14 @@ export function objectsTouch({ object1, object2 }) {
   )
 }
 
+export function playerOnTopOfPlatform({ player, platform }) {
+  return (
+      player.position + player.height <= 
+      platform.position && 
+      player.position + player.height + player.velocity>= 
+      platform.position && 
+      player.position + player.width >= 
+      platform.position && player.position <= platform.position + platform.width
+  )
+}
+
