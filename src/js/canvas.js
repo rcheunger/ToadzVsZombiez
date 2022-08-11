@@ -1,59 +1,12 @@
-import {
-    createImage, 
-    createImageAsync, 
-    isOnTopOfPlatform, 
-    isOnTopOfPad,
-    collisionTop, 
-    isOnTopOfPlatformCircle,
-    hitTopOfPlatform,
-    hitBottomOfPlatform,
-    hitSideOfPlatform,
-    objectsTouch
-} from './utils.js'
-
-import platform from '../img/platform.png'
-import tPlatform from '../img/tPlatform.png'
-import xtPlatform from '../img/xtPlatform.png'
-
-import hills from '../img/hills.png'
-import background from '../img/background.png'
-
-import block from '../img/block.png'
-import blockTri from '../img/blockTri.png'
-import pad from '../img/pad.png'
-
-import toadRunRight from '../img/toadRunRight.png'
-import toadRunLeft from '../img/toadRunLeft.png'
-import toadRightStand from '../img/toadRightStand.png'
-import toadLeftStand from '../img/toadLeftStand.png'
-import toadJumpRight from '../img/toadJumpRight.png'
-import toadJumpLeft from '../img/toadJumpLeft.png'
-
-import cyclopsRunRight from '../img/cyclopsRunRight.png'
-import cyclopsRunLeft from '../img/cyclopsRunLeft.png'
-import cyclopsRightStand from '../img/cyclopsRightStand.png'
-import cyclopsLeftStand from '../img/cyclopsLeftStand.png'
-import cyclopsJumpRight from '../img/cyclopsJumpRight.png'
-import cyclopsJumpLeft from '../img/cyclopsJumpLeft.png'
-
-import zombieSprite from '../img/zombieSprite.png'
-import zombieSpriteRight from '../img/zombieSpriteRight.png'
-import potion from '../img/potion.png'
-import coin from '../img/coin.png'
-import { audio } from './audio.js'
-import { images } from './images.js'
-
 const canvas = document.querySelector('canvas')
 const helpBtns = document.getElementById('helpBtns')
 const shopBtns = document.getElementById('shopBtns')
-const claimBtn = document.getElementsByClassName('claim')
 const loader = document.getElementById('loader-wrapper')
 const c = canvas.getContext('2d')
+let coinsCollectedElem = document.querySelector("[data-coins]")
 
 canvas.width = 1024
 canvas.height = 576
-
-const coinsCollectedElem = document.querySelector("[data-coins]")
 
 // gravity strength
 let gravity = 0.5
@@ -423,8 +376,8 @@ let particles = []
 let potions = []
 let coins = []
 let pads = []
+
 let coinsCollected = 0
-//window.totalCoinsCollected = 0
 
 let lastKey
 let keys 
@@ -457,27 +410,6 @@ function selectLevel(currentLevel) {
             goShop()
             break
     }
-}
-
-//loading bar move function
-
-function move() {
-let i = 0;
-  if (i == 0) {
-    i = 1;
-    let elem = document.getElementById("myBar");
-    let width = 1;
-    let id = setInterval(frame, 50);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        i = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-      }
-    }
-  }
 }
 
 async function gameResetLevel1() {
@@ -940,9 +872,9 @@ async function gameResetLevel2() {
     }
 
 
-   platformImage = await createImageAsync(images.levels[2].platform)
-   tPlatformImage = await createImageAsync(images.levels[2].tPlatform)
-   xtPlatformImage = await createImageAsync(images.levels[2].xtPlatform)
+   platformImage = await createImageAsync(platformLevel2)
+   tPlatformImage = await createImageAsync(tPlatformLevel2)
+   xtPlatformImage = await createImageAsync(xtPlatformLevel2)
    blockTriImage = await createImageAsync(blockTri)
    blockImage = await createImageAsync(block)
    padImage = await createImageAsync(pad)
@@ -1225,12 +1157,12 @@ async function gameResetLevel2() {
         new GenericObject({
             x: -1,
             y: 0,
-            image: createImage(images.levels[2].background)
+            image: createImage(backgroundLevel2)
         }),
         new GenericObject({
             x: -615,
             y: 0,
-            image: createImage(images.levels[2].hills)
+            image: createImage(hillsLevel2)
         })
     ]
 
@@ -1306,9 +1238,9 @@ async function gameResetLevel3() {
     }
 
 
-   platformImage = await createImageAsync(images.levels[3].platform)
-   tPlatformImage = await createImageAsync(images.levels[3].tPlatform)
-   xtPlatformImage = await createImageAsync(images.levels[3].xtPlatform)
+   platformImage = await createImageAsync(platformLevel3)
+   tPlatformImage = await createImageAsync(tPlatformLevel3)
+   xtPlatformImage = await createImageAsync(xtPlatformLevel3)
    blockTriImage = await createImageAsync(blockTri)
    blockImage = await createImageAsync(block)
    padImage = await createImageAsync(pad)
@@ -1763,12 +1695,12 @@ async function gameResetLevel3() {
         new GenericObject({
             x: -1,
             y: 0,
-            image: createImage(images.levels[3].background)
+            image: createImage(backgroundLevel3)
         }),
         new GenericObject({
             x: -615,
             y: 0,
-            image: createImage(images.levels[3].hills)
+            image: createImage(hillsLevel3)
         })
     ]
     const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat','plat','gap',
@@ -2061,12 +1993,12 @@ async function gameResetLevel4() {
         new GenericObject({
             x: -1,
             y: 0,
-            image: createImage(images.levels[4].background)
+            image: createImage(backgroundLevel4)
         }),
         new GenericObject({
             x: -615,
             y: 0,
-            image: createImage(images.levels[4].hills)
+            image: createImage(hillsLevel4)
         })
     ]
     const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap','plat','plat', 
@@ -2131,7 +2063,7 @@ async function goHome() {
     }, 6000)
 
     setTimeout(function(){
-            audio.audioGameOver.play()
+            audioGameOver.audio.play()
             player = new Player()
     }, 5900)
 
@@ -2163,21 +2095,21 @@ async function goHome() {
         new Platform ({
         x: 385,
         y: 300,
-        image: createImage(images.levels[5].help),
+        image: createImage(help),
         help: true,
         block: true
         }),
          new Platform ({
         x: 485,
         y: 300,
-        image: createImage(images.levels[5].shop),
+        image: createImage(shop),
         shop: true,
         block: true
         }),
          new Platform ({
         x: 585,
         y: 300,
-        image: createImage(images.levels[5].play),
+        image: createImage(play),
         play: true,
         block: true
         }),
@@ -2191,7 +2123,7 @@ async function goHome() {
         new GenericObject({
             x: 0,
             y: 0,
-            image: createImage(images.levels[5].background)
+            image: createImage(homeBackground)
         }),
     ]
     
@@ -2235,7 +2167,7 @@ async function goHelp() {
         disableUserInput: false
     }
 
-    platformImage = await createImageAsync(images.levels[3].platform)
+    platformImage = await createImageAsync(platformLevel3)
 
     zombiez = []
     particles = []
@@ -2248,7 +2180,7 @@ async function goHelp() {
         new GenericObject({
             x: 0,
             y: 0,
-            image: createImage(images.levels[6].background)
+            image: createImage(helpBackground)
         }),
     ]
     
@@ -2294,7 +2226,7 @@ async function goShop() {
         disableUserInput: false
     }
 
-    platformImage = await createImageAsync(images.levels[2].platform)
+    platformImage = await createImageAsync(platformLevel2)
 
     zombiez = []
     particles = []
@@ -2307,7 +2239,7 @@ async function goShop() {
         new GenericObject({
             x: 0,
             y: 0,
-            image: createImage(images.levels[7].background)
+            image: createImage(shopBackground)
         }),
     ]
     
@@ -2369,7 +2301,7 @@ function animate() {
             )
             {
             game.disableUserInput = true
-            audio.audioGameOver.play()
+            audioGameOver.audio.play()
     
             player.velocity.y = 0
             player.velocity.x = 0
@@ -2389,12 +2321,11 @@ function animate() {
             player.powerUps.potion = true
         setTimeout(() => {
             potions.splice(i, 1)
-            audio.audioLaser.play()
+            audioLaser.audio.play()
         }, 0)
         } else potion.update()
     })
 
-window.totalCoinsCollected = coinsCollected
 coinsCollectedElem.textContent = `${coinsCollected}`
 
     //collect coins
@@ -2407,7 +2338,7 @@ coinsCollectedElem.textContent = `${coinsCollected}`
         coinsCollected ++
         setTimeout(() => {
             coins.splice(i, 1)
-            audio.coinCollect.play()
+            coinCollect.audio.play()
         }, 0)
         } else coin.update()
     })
@@ -2436,7 +2367,7 @@ coinsCollectedElem.textContent = `${coinsCollected}`
                 }))
             }
             setTimeout(() => {
-                audio.audioZombieDeath.play()
+                audioZombieDeath.audio.play()
                 zombiez.splice(index, 1)   
                 particles.splice(particleIndex, 1)
             }, 0)
@@ -2462,7 +2393,7 @@ coinsCollectedElem.textContent = `${coinsCollected}`
                     radius: Math.random() * 2.5
                 }))
             }
-            audio.audioZombieDeath.play()
+            audioZombieDeath.audio.play()
             player.velocity.y -=`25`
             setTimeout(() => {
                 zombiez.splice(index, 1)   
@@ -2479,12 +2410,12 @@ coinsCollectedElem.textContent = `${coinsCollected}`
             if (player.powerUps.potion) {
                 player.invincible = true
                 player.powerUps.potion = false
-                audio.audioLosePowerUp.play()
+                audioLosePowerUp.audio.play()
 
                 setTimeout(() => {
                     player.invincible = false}, 1000)
             } else if (!player.invincible) {
-            audio.audioGameOver.play()
+            audioGameOver.audio.play()
             selectLevel(currentLevel)
         }
         }
@@ -2663,7 +2594,7 @@ coinsCollectedElem.textContent = `${coinsCollected}`
                 object: player,
                 platform
             })) {
-                audio.audioGameOver.play()
+                audioGameOver.audio.play()
                 player.velocity.y = -player.velocity.y
                 selectLevel(currentLevel = 1)
 
@@ -2726,7 +2657,7 @@ coinsCollectedElem.textContent = `${coinsCollected}`
 
     //lose con
     if (player.position.y > canvas.height) {
-        audio.audioGameOver.play()
+        audioGameOver.audio.play()
         selectLevel(currentLevel)
     }
 
@@ -2789,7 +2720,7 @@ addEventListener('keydown', ({ keyCode }) => {
 
         case 87:
             player.velocity.y -= 15
-            audio.audioJump.play()
+            audioJump.audio.play()
 
             if (lastKey === 'right') 
             player.currentSprite = player.sprites.jump.right
@@ -2808,7 +2739,7 @@ addEventListener('keydown', ({ keyCode }) => {
         case 32:
             if (!player.powerUps.potion) return
 
-            audio.audioLaser.play()
+            audioLaser.audio.play()
 
             let velocity = 60
             if (lastKey === 'left') velocity = -60
@@ -2862,3 +2793,4 @@ addEventListener('keyup', ({ keyCode }) => {
             break
     }
 })
+

@@ -14,7 +14,7 @@ function distance(x1, y1, x2, y2) {
 }
 
 //create image function
-export function createImage(imageSrc) {
+function createImage(imageSrc) {
   const image = new Image()
   image.src= imageSrc
   return image
@@ -22,7 +22,7 @@ export function createImage(imageSrc) {
 
 
 //create player after platforms loaded function
-export function createImageAsync(imageSrc) {
+function createImageAsync(imageSrc) {
   return new Promise((resolve) => {
   const image = new Image()
   image.onload = () => {
@@ -32,7 +32,7 @@ export function createImageAsync(imageSrc) {
   })
 }
 
-export function isOnTopOfPlatform({ object, platform }) {
+function isOnTopOfPlatform({ object, platform }) {
   return (
       object.position.y + object.height <= 
       platform.position.y + 41 && 
@@ -43,7 +43,7 @@ export function isOnTopOfPlatform({ object, platform }) {
   )
 }
 
-export function isOnTopOfPad({ object, pad }) {
+function isOnTopOfPad({ object, pad }) {
   return (
       object.position.y + object.height <= 
       pad.position.y + 15 && 
@@ -55,7 +55,7 @@ export function isOnTopOfPad({ object, pad }) {
 }
 
 
-export function collisionTop({ object1, object2 }) {
+function collisionTop({ object1, object2 }) {
   return (
       object1.position.y + object1.height <= 
       object2.position.y && 
@@ -66,7 +66,7 @@ export function collisionTop({ object1, object2 }) {
   )
 }
 
-export function isOnTopOfPlatformCircle({ object, platform }) {
+function isOnTopOfPlatformCircle({ object, platform }) {
   return (
       object.position.y + object.radius <= 
       platform.position.y + 41 && 
@@ -77,7 +77,7 @@ export function isOnTopOfPlatformCircle({ object, platform }) {
   )
 }
 
-export function hitTopOfPlatform({object, platform}) {
+function hitTopOfPlatform({object, platform}) {
   return object.position.y + object.height <= 
   platform.position.y && 
   object.position.y + object.height + object.velocity.y >= 
@@ -86,14 +86,14 @@ export function hitTopOfPlatform({object, platform}) {
   platform.position.x && object.position.x <= platform.position.x + platform.width
 }
 
-export function hitBottomOfPlatform({object, platform}) {
+function hitBottomOfPlatform({object, platform}) {
   return object.position.y <= platform.position.y + platform.height && 
   object.position.y - object.velocity.y >= platform.position.y + platform.height &&
   object.position.x + object.width >= platform.position.x &&
   object.position.x <= platform.position.x + platform.width
 }
 
-export function hitSideOfPlatform({ object, platform }) {
+function hitSideOfPlatform({ object, platform }) {
   return (
     object.position.x + object.width + object.velocity.x - platform.velocity.x >= platform.position.x &&
     object.position.x + object.velocity.x <= platform.position.x + platform.width &&
@@ -102,7 +102,7 @@ export function hitSideOfPlatform({ object, platform }) {
   )
 }
 
-export function objectsTouch({ object1, object2 }) {
+function objectsTouch({ object1, object2 }) {
   return (
     object1.position.x+ object1.width >= object2.position.x &&
     object1.position.x <= object2.position.x + object2.width &&
@@ -111,7 +111,7 @@ export function objectsTouch({ object1, object2 }) {
   )
 }
 
-export function playerOnTopOfPlatform({ player, platform }) {
+function playerOnTopOfPlatform({ player, platform }) {
   return (
       player.position + player.height <= 
       platform.position && 
@@ -122,3 +122,24 @@ export function playerOnTopOfPlatform({ player, platform }) {
   )
 }
 
+
+//loading bar move function
+
+function move() {
+  let i = 0;
+    if (i == 0) {
+      i = 1;
+      let elem = document.getElementById("myBar");
+      let width = 1;
+      let id = setInterval(frame, 50);
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+          i = 0;
+        } else {
+          width++;
+          elem.style.width = width + "%";
+        }
+      }
+    }
+  }

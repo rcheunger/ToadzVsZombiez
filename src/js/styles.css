@@ -19,7 +19,7 @@ canvas{
   display:flex;
   justify-content: center;
   align-items: center;
-  background-image: url('img/nav/homePage/LOADING.png');
+  background-image: url('../img/homePage/LOADING.png');
 }
 
 /* --header-- */

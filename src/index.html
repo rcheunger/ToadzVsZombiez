@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Toadz Vs. Zombiez</title> 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="js/styles.css">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
     </style>
@@ -31,36 +31,37 @@
       </img>
     </div>
       <div id="helpBtns" style="display:none">
-        <img class="b1" src="img/nav/helpPage/b1.png">
+        <img class="b1" src="img/helpPage/b1.png">
         <div class="b1txt">Polygon Testnet</div>
-        <img class="b2" src="img/nav/helpPage/b1.png">
+        <img class="b2" src="img/helpPage/b1.png">
         <div class="b2txt">https://matic-mumbai.chainstacklabs.com</div>
-        <img class="b3" src="img/nav/helpPage/b1.png">
+        <img class="b3" src="img/helpPage/b1.png">
         <div class="b3txt">80001</div>
-        <img class="b4" src="img/nav/helpPage/b1.png">
+        <img class="b4" src="img/helpPage/b1.png">
         <div class="b4txt">MATIC</div>
-        <img class="b5" src="img/nav/helpPage/b5.png" onclick="window.open('https://faucet.polygon.technology/')">
-        <img class="b6" src="img/nav/helpPage/b2.png">
+        <img class="b5" src="img/helpPage/b5.png" onclick="window.open('https://faucet.polygon.technology/')">
+        <img class="b6" src="img/helpPage/b2.png">
         <div class="b6txt">0x44Ad8298A925F12d89A27f5C06069A6292099875</div>
-        <img class="b7" src="img/nav/helpPage/b2.png">
+        <img class="b7" src="img/helpPage/b2.png">
         <div class="b7txt">TOAD</div>
-        <img class="b8" src="img/nav/helpPage/b2.png">
+        <img class="b8" src="img/helpPage/b2.png">
         <div class="b8txt">18</div>
       </div> 
 
       <div id="shopBtns" style="display:none">
-        <img class="b9" src="img/nav/shopPage/b9.png" onclick="window.open('https://testnets.opensea.io/account')">
-        <img class="nft1" src="img/nav/shopPage/nft1.png" onclick= "claimNft1()">
+        <img class="b9" src="img/shopPage/b9.png" onclick="window.open('https://testnets.opensea.io/account')">
+        <img class="nft1" src="img/shopPage/nft1.png" onclick= "claimNft1()">
         <div class="nft1txt">PRICE: 10 $TOAD</div>
-        <img class="nft2" src="img/nav/shopPage/nft2.png" onclick= "claimNft2()">
+        <img class="nft2" src="img/shopPage/nft2.png" onclick= "claimNft2()">
         <div class="nft2txt">PRICE: 25 $TOAD</div>
-        <img class="nft3" src="img/nav/shopPage/nft3.png" onclick= "claimNft3()">
+        <img class="nft3" src="img/shopPage/nft3.png" onclick= "claimNft3()">
         <div class="nft3txt">PRICE: 50 $TOAD</div>
-        <img class="nft4" src="img/nav/shopPage/nft4.png" onclick= "claimNft4()">
+        <img class="nft4" src="img/shopPage/nft4.png" onclick= "claimNft4()">
         <div class="nft4txt">PRICE: 100 $TOAD</div>
 
       </div>
-    <canvas></canvas>
+    <canvas>
+    </canvas>
     <div class="footer">
       <img class="footerimg" src="img/nav/BotNav.png">
       <img class="twitter" src="img/nav/twitter.png" onclick= "window.open('https://twitter.com/rcheunger')">
@@ -68,6 +69,13 @@
     </div>
     <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" 
     type="application/javascript"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>"
+    <script type="module" src="js/canvas.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/images.js"></script>
+    <script src="js/audio.js"></script>
     <script src="js/blockchain.js"></script>
+
   </body>
 </html>

@@ -13,13 +13,15 @@ async function connectMetamask() {
 }
 
 async function claimCoins() {
+    let coinsCollectedElem = document.querySelector("[data-coins]")
+    let coinsCollected = coinsCollectedElem.textContent
     const ToadTokenContractAddress = "0x44Ad8298A925F12d89A27f5C06069A6292099875";
     const ToadTokenContractAbi = [
         "function mintCoins(address account, uint256 amount) public",
     ];
     const ToadTokenContract = new ethers.Contract(ToadTokenContractAddress, ToadTokenContractAbi, provider);
     let convertToWei = 1000000000000000000
-    let amountToClaim = window.totalCoinsCollected * convertToWei
+    let amountToClaim = coinsCollected * convertToWei
     await ToadTokenContract.connect(signer).mintCoins(signer.getAddress(), amountToClaim.toString())
 }
 
