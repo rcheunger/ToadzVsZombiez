@@ -46,6 +46,7 @@ import { images } from './images.js'
 const canvas = document.querySelector('canvas')
 const helpBtns = document.getElementById('helpBtns')
 const shopBtns = document.getElementById('shopBtns')
+const claimBtn = document.getElementsByClassName('claim')
 const loader = document.getElementById('loader-wrapper')
 const c = canvas.getContext('2d')
 
@@ -2328,7 +2329,6 @@ async function goShop() {
             break
         }
     })
-
 }
 
 function animate() {
@@ -2394,7 +2394,8 @@ function animate() {
         } else potion.update()
     })
 
-//window.totalCoinsCollected = coinsCollected
+window.totalCoinsCollected = coinsCollected
+coinsCollectedElem.textContent = `${coinsCollected}`
 
     //collect coins
     coins.forEach((coin, i) => {
@@ -2404,14 +2405,12 @@ function animate() {
         })
         ) {
         coinsCollected ++
-        coinsCollectedElem.textContent = `${coinsCollected}`
         setTimeout(() => {
             coins.splice(i, 1)
             audio.coinCollect.play()
         }, 0)
         } else coin.update()
     })
-    
 
     zombiez.forEach((zombie, index) => {
         zombie.update()
@@ -2765,6 +2764,7 @@ selectLevel(currentLevel)
 //gameResetLevel4()
 animate()
 // down key listener (asdw)
+
 addEventListener('keydown', ({ keyCode }) => {
     if (game.disableUserInput) return
 
@@ -2806,7 +2806,6 @@ addEventListener('keydown', ({ keyCode }) => {
             break
 
         case 32:
-
             if (!player.powerUps.potion) return
 
             audio.audioLaser.play()
@@ -2823,7 +2822,7 @@ addEventListener('keydown', ({ keyCode }) => {
                     x: velocity,
                     y: 0
                 },
-                radius: 3,
+                radius: 5,
                 color: 'red',
                 laser: true
             }))
@@ -2836,7 +2835,7 @@ addEventListener('keydown', ({ keyCode }) => {
                     x: velocity,
                     y: 0
                 },
-                radius: 3,
+                radius: 5,
                 color: 'red',
                 laser: true
             }))

@@ -23,22 +23,8 @@ async function claimCoins() {
     await ToadTokenContract.connect(signer).mintCoins(signer.getAddress(), amountToClaim.toString())
 }
 
-
 async function claimNft1() {
-    const toadzNFTContractAddress = "0xd6f81aD4Cb63a1267372Bfd8F100c5F4a4DF408B";
-    const toadzNFTContractAbi = [
-        "function mint(address _to, uint256 _mintAmount, uint256 _pid) public payable",
-        "function setBaseURI(string memory _newBaseURI) public"
-    ]; 
-    const nftContract = new ethers.Contract(toadzNFTContractAddress, toadzNFTContractAbi, provider);
-    let claimAmount = 1
-    let pid = 5
-    baseURI = "ipfs://QmWkiWXWY4uWR6dVCpSLUyCWCUzyLxvKwr4jtbuKSSzgGi/11.png/"
-    await nftContract.connect(signer).mint(signer.getAddress(), claimAmount.toString(), pid.toString())
-}
-
-async function claimNft2() {
-    const toadzNFTContractAddress = "0xd6f81aD4Cb63a1267372Bfd8F100c5F4a4DF408B";
+    const toadzNFTContractAddress = "0xD0a65f55bA5a85F41CCbDb4b3e71DfDb2b6a1571";
     const toadzNFTContractAbi = [
         "function mint(address _to, uint256 _mintAmount, uint256 _pid) public payable",
         "function setBaseURI(string memory _newBaseURI) public"
@@ -46,12 +32,25 @@ async function claimNft2() {
     const nftContract = new ethers.Contract(toadzNFTContractAddress, toadzNFTContractAbi, provider);
     let claimAmount = 1
     let pid = 4
+    baseURI = "ipfs://QmWkiWXWY4uWR6dVCpSLUyCWCUzyLxvKwr4jtbuKSSzgGi/11.png/"
+    await nftContract.connect(signer).mint(signer.getAddress(), claimAmount.toString(), pid.toString())
+}
+
+async function claimNft2() {
+    const toadzNFTContractAddress = "0xD0a65f55bA5a85F41CCbDb4b3e71DfDb2b6a1571";
+    const toadzNFTContractAbi = [
+        "function mint(address _to, uint256 _mintAmount, uint256 _pid) public payable",
+        "function setBaseURI(string memory _newBaseURI) public"
+    ]; 
+    const nftContract = new ethers.Contract(toadzNFTContractAddress, toadzNFTContractAbi, provider);
+    let claimAmount = 1
+    let pid = 5
     baseURI = "ipfs://QmWkiWXWY4uWR6dVCpSLUyCWCUzyLxvKwr4jtbuKSSzgGi/22.png/"
     await nftContract.connect(signer).mint(signer.getAddress(), claimAmount.toString(), pid.toString())
 }
 
 async function claimNft3() {
-    const toadzNFTContractAddress = "0xd6f81aD4Cb63a1267372Bfd8F100c5F4a4DF408B";
+    const toadzNFTContractAddress = "0xD0a65f55bA5a85F41CCbDb4b3e71DfDb2b6a1571";
     const toadzNFTContractAbi = [
         "function mint(address _to, uint256 _mintAmount, uint256 _pid) public payable",
         "function setBaseURI(string memory _newBaseURI) public"
@@ -64,7 +63,7 @@ async function claimNft3() {
 }
 
 async function claimNft4() {
-    const toadzNFTContractAddress = "0xd6f81aD4Cb63a1267372Bfd8F100c5F4a4DF408B";
+    const toadzNFTContractAddress = "0xD0a65f55bA5a85F41CCbDb4b3e71DfDb2b6a1571";
     const toadzNFTContractAbi = [
         "function mint(address _to, uint256 _mintAmount, uint256 _pid) public payable",
         "function setBaseURI(string memory _newBaseURI) public"

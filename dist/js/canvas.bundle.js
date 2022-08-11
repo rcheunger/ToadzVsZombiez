@@ -4249,6 +4249,7 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 var canvas = document.querySelector('canvas');
 var helpBtns = document.getElementById('helpBtns');
 var shopBtns = document.getElementById('shopBtns');
+var claimBtn = document.getElementsByClassName('claim');
 var loader = document.getElementById('loader-wrapper');
 var c = canvas.getContext('2d');
 canvas.width = 1024;
@@ -6549,8 +6550,9 @@ function animate() {
         _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].audioLaser.play();
       }, 0);
     } else potion.update();
-  }); //window.totalCoinsCollected = coinsCollected
-  //collect coins
+  });
+  window.totalCoinsCollected = coinsCollected;
+  coinsCollectedElem.textContent = "".concat(coinsCollected); //collect coins
 
   coins.forEach(function (coin, i) {
     if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["objectsTouch"])({
@@ -6558,7 +6560,6 @@ function animate() {
       object2: coin
     })) {
       coinsCollected++;
-      coinsCollectedElem.textContent = "".concat(coinsCollected);
       setTimeout(function () {
         coins.splice(i, 1);
         _audio_js__WEBPACK_IMPORTED_MODULE_29__["audio"].coinCollect.play();
@@ -6903,7 +6904,7 @@ addEventListener('keydown', function (_ref8) {
           x: velocity,
           y: 0
         },
-        radius: 3,
+        radius: 5,
         color: 'red',
         laser: true
       }));
@@ -6916,7 +6917,7 @@ addEventListener('keydown', function (_ref8) {
           x: velocity,
           y: 0
         },
-        radius: 3,
+        radius: 5,
         color: 'red',
         laser: true
       }));
