@@ -386,6 +386,9 @@ let scrollOffset
 let game
 let currentLevel = 5
 
+let laserTimeOut = 0
+let jumpInt = 0
+
 function selectLevel(currentLevel) {
     switch (currentLevel) {
         case 1:
@@ -2003,7 +2006,7 @@ async function gameResetLevel4() {
     ]
     const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap','plat','plat', 
     'plat', 'plat','plat','plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap','gap', 'gap',
-     'plat', 'plat', 'gap', 'gap','plat', 'plat', 'plat','plat','plat',]
+     'plat', 'plat', 'gap', 'gap','plat', 'plat', 'plat','plat','plat','plat']
 
     let platformDistance = 0
 
@@ -2565,14 +2568,16 @@ coinsCollectedElem.textContent = `${coinsCollected}`
                 platform
             })
         ) {
-            player.velocity.y = 0
-        } 
+            player.velocity.y = 0,
+            jumpInt = 0
+        }
 
         if (platform.block && hitTopOfPlatform({
             object: player,
             platform
         })) {
-            player.velocity.y = 0
+            player.velocity.y = 0,
+            jumpInt = 0
         }
 
         if ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) &&
@@ -2687,6 +2692,47 @@ coinsCollectedElem.textContent = `${coinsCollected}`
     } 
 }
 
+async function laserBeam(){
+    if (laserTimeOut == 0) {
+
+        audioLaser.audio.play()
+
+        let velocity = 60
+        if (lastKey === 'left') velocity = -60
+
+        particles.push(new Particle({
+            position: {
+                x: player.position.x + player.width / 2,
+                y: player.position.y + player.height / 2 -43
+            },
+            velocity: {
+                x: velocity,
+                y: 0
+            },
+            radius: 5,
+            color: 'red',
+            laser: true
+        }))
+        particles.push(new Particle({
+            position: {
+                x: player.position.x + player.width / 2,
+                y: player.position.y + player.height / 2 -35
+            },
+            velocity: {
+                x: velocity,
+                y: 0
+            },
+            radius: 5,
+            color: 'red',
+            laser: true
+        }))
+        laserTimeOut = 1
+        setTimeout(() => {
+            laserTimeOut = 0
+        }, 1500)
+        }
+}
+
 selectLevel(currentLevel)
 //gameResetLevel0()
 //gameResetLevel1()
@@ -2694,8 +2740,8 @@ selectLevel(currentLevel)
 //gameResetLevel3()
 //gameResetLevel4()
 animate()
-// down key listener (asdw)
 
+// down key listener (asdw)
 addEventListener('keydown', ({ keyCode }) => {
     if (game.disableUserInput) return
 
@@ -2719,8 +2765,11 @@ addEventListener('keydown', ({ keyCode }) => {
             break
 
         case 87:
-            player.velocity.y -= 15
-            audioJump.audio.play()
+            if (jumpInt == 0) {
+                player.velocity.y -= 15 
+                audioJump.audio.play()
+                jumpInt = 1
+            }
 
             if (lastKey === 'right') 
             player.currentSprite = player.sprites.jump.right
@@ -2738,38 +2787,12 @@ addEventListener('keydown', ({ keyCode }) => {
 
         case 32:
             if (!player.powerUps.potion) return
-
-            audioLaser.audio.play()
-
-            let velocity = 60
-            if (lastKey === 'left') velocity = -60
-
-            particles.push(new Particle({
-                position: {
-                    x: player.position.x + player.width / 2,
-                    y: player.position.y + player.height / 2 -43
-                },
-                velocity: {
-                    x: velocity,
-                    y: 0
-                },
-                radius: 5,
-                color: 'red',
-                laser: true
-            }))
-            particles.push(new Particle({
-                position: {
-                    x: player.position.x + player.width / 2,
-                    y: player.position.y + player.height / 2 -35
-                },
-                velocity: {
-                    x: velocity,
-                    y: 0
-                },
-                radius: 5,
-                color: 'red',
-                laser: true
-            }))
+            laserBeam()
+            // laserTimeOut = true
+            // setTimeout(() => {
+            //     laserTimeOut = false
+            // }, 1000)
+            break
     }
 })
 
