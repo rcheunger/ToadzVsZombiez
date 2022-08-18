@@ -1,17 +1,3 @@
-function randomIntFromRange(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
-}
-
-function randomColor(colors) {
-  return colors[Math.floor(Math.random() * colors.length)]
-}
-
-function distance(x1, y1, x2, y2) {
-  const xDist = x2 - x1
-  const yDist = y2 - y1
-
-  return Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2))
-}
 
 //create image function
 function createImage(imageSrc) {
@@ -19,7 +5,6 @@ function createImage(imageSrc) {
   image.src= imageSrc
   return image
 }
-
 
 //create player after platforms loaded function
 function createImageAsync(imageSrc) {
@@ -111,27 +96,14 @@ function objectsTouch({ object1, object2 }) {
   )
 }
 
-function playerOnTopOfPlatform({ player, platform }) {
-  return (
-      player.position + player.height <= 
-      platform.position && 
-      player.position + player.height + player.velocity>= 
-      platform.position && 
-      player.position + player.width >= 
-      platform.position && player.position <= platform.position + platform.width
-  )
-}
-
-
 //loading bar move function
-
-function move() {
+async function move() {
   let i = 0;
     if (i == 0) {
       i = 1;
       let elem = document.getElementById("myBar");
       let width = 1;
-      let id = setInterval(frame, 50);
+      let id = setInterval(frame, 60);
       function frame() {
         if (width >= 100) {
           clearInterval(id);

@@ -6,6 +6,7 @@ body {
   flex-direction: column;
 }
 
+
 canvas{
   display: block;
   font-size: 0;
@@ -227,11 +228,6 @@ h4 {
   box-shadow: -7px 7px black;
   border: 3px solid black;
 }
-
-.nft1:hover {
-  transform: scale(1.02)
-}
-
 .nft2 {
   height: 150px;
   position: absolute;
@@ -241,11 +237,6 @@ h4 {
   box-shadow: -7px 7px black;
   border: 3px solid black;
 }
-
-.nft2:hover {
-  transform: scale(1.02)
-}
-
 .nft3 {
   height: 150px;
   position: absolute;
@@ -255,11 +246,6 @@ h4 {
   box-shadow: -7px 7px black;
   border: 3px solid black;
 }
-
-.nft3:hover {
-  transform: scale(1.02)
-}
-
 .nft4 {
   height: 150px;
   position: absolute;
@@ -268,10 +254,6 @@ h4 {
   cursor: pointer;
   box-shadow: -7px 7px black;
   border: 3px solid black;
-}
-
-.nft4:hover {
-  transform: scale(1.02)
 }
 
 .nft1txt {

@@ -1,6 +1,7 @@
 const canvas = document.querySelector('canvas')
 const helpBtns = document.getElementById('helpBtns')
 const shopBtns = document.getElementById('shopBtns')
+const claimBtn = document.getElementById('claimBtn')
 const loader = document.getElementById('loader-wrapper')
 const c = canvas.getContext('2d')
 let coinsCollectedElem = document.querySelector("[data-coins]")
@@ -413,6 +414,12 @@ function selectLevel(currentLevel) {
             goShop()
             break
     }
+}
+
+async function claimCoinBtn() {
+    claimCoins(), 
+    approveContract(),
+    coinsCollected = 0
 }
 
 async function gameResetLevel1() {
@@ -2063,12 +2070,12 @@ async function goHome() {
     loader.style.display = "block"
     setTimeout(function(){
         loader.style.display = "none"
-    }, 6000)
+    }, 7500)
 
     setTimeout(function(){
             audioGameOver.audio.play()
             player = new Player()
-    }, 5900)
+    }, 7400)
 
 
     helpBtns.style.display = "none"
@@ -2278,6 +2285,7 @@ function animate() {
     homeElem.onclick = goHome
     helpElem.onclick = goHelp
     shopElem.onclick = goShop
+    claimBtn.onclick = claimCoinBtn
 
     genericObjects.forEach(genericObject => {
         genericObject.update()
@@ -2329,7 +2337,7 @@ function animate() {
         } else potion.update()
     })
 
-coinsCollectedElem.textContent = `${coinsCollected}`
+    coinsCollectedElem.textContent = `${coinsCollected}`
 
     //collect coins
     coins.forEach((coin, i) => {
@@ -2350,14 +2358,18 @@ coinsCollectedElem.textContent = `${coinsCollected}`
         zombie.update()
 
         //remove zombie on laser beam
-        particles.filter(particle => particle.laser) .forEach((particle, particleIndex) => {
-            if (particle.position.x + particle.radius >= zombie.position.x
+        particles.forEach((particle, particleIndex) => {
+            if (
+                particle.laser &&
+                particle.position.x + particle.radius >= zombie.position.x
                 && particle.position.y + particle.radius >= zombie.position.y
                 && particle.position.x - particle.radius <= zombie.position.x + zombie.width
-                && particle.position.y - particle.radius <= zombie.position.y + zombie.height)
+                && particle.position.y - particle.radius <= zombie.position.y + zombie.height
+                )
             {
             for (let i = 0; i < 50; i++) {
-                particles.push(new Particle({
+                particles.push(
+                    new Particle({
                     position: {
                         x: zombie.position.x + zombie.width / 2,
                         y: zombie.position.y + zombie.height / 2
@@ -2692,47 +2704,6 @@ coinsCollectedElem.textContent = `${coinsCollected}`
     } 
 }
 
-async function laserBeam(){
-    if (laserTimeOut == 0) {
-
-        audioLaser.audio.play()
-
-        let velocity = 60
-        if (lastKey === 'left') velocity = -60
-
-        particles.push(new Particle({
-            position: {
-                x: player.position.x + player.width / 2,
-                y: player.position.y + player.height / 2 -43
-            },
-            velocity: {
-                x: velocity,
-                y: 0
-            },
-            radius: 5,
-            color: 'red',
-            laser: true
-        }))
-        particles.push(new Particle({
-            position: {
-                x: player.position.x + player.width / 2,
-                y: player.position.y + player.height / 2 -35
-            },
-            velocity: {
-                x: velocity,
-                y: 0
-            },
-            radius: 5,
-            color: 'red',
-            laser: true
-        }))
-        laserTimeOut = 1
-        setTimeout(() => {
-            laserTimeOut = 0
-        }, 1500)
-        }
-}
-
 selectLevel(currentLevel)
 //gameResetLevel0()
 //gameResetLevel1()
@@ -2787,11 +2758,44 @@ addEventListener('keydown', ({ keyCode }) => {
 
         case 32:
             if (!player.powerUps.potion) return
-            laserBeam()
-            // laserTimeOut = true
-            // setTimeout(() => {
-            //     laserTimeOut = false
-            // }, 1000)
+            if (laserTimeOut == 0) {
+
+                audioLaser.audio.play()
+        
+                let velocity = 60
+                if (lastKey === 'left') velocity = -60
+        
+                particles.push(new Particle({
+                    position: {
+                        x: player.position.x + player.width / 2,
+                        y: player.position.y + player.height / 2 -43
+                    },
+                    velocity: {
+                        x: velocity,
+                        y: 0
+                    },
+                    radius: 5,
+                    color: 'red',
+                    laser: true
+                }))
+                particles.push(new Particle({
+                    position: {
+                        x: player.position.x + player.width / 2,
+                        y: player.position.y + player.height / 2 -35
+                    },
+                    velocity: {
+                        x: velocity,
+                        y: 0
+                    },
+                    radius: 5,
+                    color: 'red',
+                    laser: true
+                }))
+                laserTimeOut = 1
+                setTimeout(() => {
+                    laserTimeOut = 0
+                }, 1500)
+                }
             break
     }
 })
