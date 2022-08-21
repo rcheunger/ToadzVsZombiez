@@ -9,17 +9,7 @@
     </style>
   </head>
   <body>
-    <div class="bodycontents">
-      <div id="loader-wrapper" style="display:none">
-        <div class="loader"></div>
-        <div id="myProgress">
-          <div id="myBar">
-            <span style="width:100%"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="header">
+      <div id="header" class="header" style="display:block">
         <img class="headerimg" src="img/nav/TopNav.png">
         <img class="home" src="img/nav/homebutton.png">
         <img class="help" src="img/nav/helpbutton.png">
@@ -30,11 +20,14 @@
           <span class="claimCoinz" src="img/nav/twitter.png"> CLAIM</span>
         <img class="account" src="img/nav/account.png" onclick="connectMetamask()">
           <h4 onclick="connectMetamask()"> CONNECT</h4>
-        </img>
       </div>
-        <div class="enterPage" style="display: block;">
-        </div>
-        <div id="helpBtns" style="display:none">
+
+      <div id="enterPageImg" class="enterPageImg" style="display: block">
+        <img id="toadJump" class="toadJump" src="img/toadJumpRight.png" style= "display: block">
+        <img id="startBtn" class="startBtn" src="img/startGame.png" style="display: block">
+      </div>
+
+        <div id="helpBtns" class="helpBtns" style="display:none">
           <img class="b1" src="img/helpPage/b1.png">
           <div class="b1txt">Polygon Testnet</div>
           <img class="b2" src="img/helpPage/b1.png">
@@ -52,20 +45,15 @@
           <div class="b8txt">18</div>
         </div> 
 
-        <div id="shopBtns" style="display:none">
+        <div id="shopBtns" class="shopBtns" style="display:none">
           <img class="b9" src="img/shopPage/b9.png" onclick="window.open('https://testnets.opensea.io/account')">
-          <img class="nft1" src="img/shopPage/nft1.png" onclick= "claimNft1()">
-          <div class="nft1txt">PRICE: 10 $TOAD</div>
-          <img class="nft2" src="img/shopPage/nft2.png" onclick= "claimNft2()">
-          <div class="nft2txt">PRICE: 25 $TOAD</div>
-          <img class="nft3" src="img/shopPage/nft3.png" onclick= "claimNft3()">
-          <div class="nft3txt">PRICE: 50 $TOAD</div>
-          <img class="nft4" src="img/shopPage/nft4.png" onclick= "claimNft4()">
-          <div class="nft4txt">PRICE: 100 $TOAD</div>
+          <img class="nft" src="img/shopPage/nft1.png" onclick= "claimNft()">
+          <div class="nfttxt">MINT FOR 25 $TOAD</div>
         </div>
       <canvas>
       </canvas>
-      <div class="footer">
+
+      <div id="footer" class="footer" style="display:block">
         <img class="footerimg" src="img/nav/BotNav.png">
         <img class="twitter" src="img/nav/twitter.png" onclick= "window.open('https://twitter.com/rcheunger')">
         <img class="email" src="img/nav/email.png" onclick= "window.open('mailto:rowancheung@gmail.com')">

@@ -3,8 +3,6 @@ let homeBackground = '../src/img/homePage/background.png'
 let helpBackground = '../src/img/helpPage/helpPage.png'
 let shopBackground = '../src/img/shopPage/shopPage.png'
 
-let help = '../src/img/homePage/help.png'
-let shop = '../src/img/homePage/shop.png'
 let play = '../src/img/homePage/play.png'
 
 let platform = '../src/img/platform.png'
@@ -32,6 +30,8 @@ let cyclopsLeftStand = '../src/img/cyclopsLeftStand.png'
 let cyclopsJumpRight = '../src/img/cyclopsJumpRight.png'
 let cyclopsJumpLeft = '../src/img/cyclopsJumpLeft.png'
 
+let abduction = '../src/img/abduction.png'
+
 let zombieSprite = '../src/img/zombieSprite.png'
 let zombieSpriteRight = '../src/img/zombieSpriteRight.png'
 let potion = '../src/img/potion.png'
@@ -51,3 +51,5 @@ let xtPlatformLevel3 = '../src/img/level3/xtPlatform.png'
 
 let backgroundLevel4 = '../src/img/level4/background.png'
 let hillsLevel4 = '../src/img/level4/hills.png'
+
+let enterPageBg = '../src/img/enterPageBG.png'

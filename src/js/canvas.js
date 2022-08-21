@@ -2,7 +2,10 @@ const canvas = document.querySelector('canvas')
 const helpBtns = document.getElementById('helpBtns')
 const shopBtns = document.getElementById('shopBtns')
 const claimBtn = document.getElementById('claimBtn')
-const loader = document.getElementById('loader-wrapper')
+const startGame = document.getElementById('startBtn')
+const header = document.getElementById('header')
+const footer = document.getElementById('footer')
+const enterPageToad = document.getElementById('toadJump')
 const c = canvas.getContext('2d')
 let coinsCollectedElem = document.querySelector("[data-coins]")
 
@@ -201,9 +204,6 @@ class Zombie {
     }
 
     draw() {
-        // c.fillStyle = 'red'
-        // c.fillRect(this.position.x, this.position.y, this.width, this.height)
-    
         c.drawImage(
             this.currentSprite,
             300 * this.frames,
@@ -359,6 +359,45 @@ class Particle {
     }
 }
 
+class Abduction {
+    constructor({ x, y }) {
+        this.position = {
+            x,
+            y
+        }
+
+        this.width = 400
+        this.height = 576
+        this.frames= 0
+
+        this.sprites = {
+            abduction: {
+                abduction: createImage(abduction),
+            }
+        }
+        this.currentSprite = this.sprites.abduction.abduction
+    }
+
+    draw() {
+        c.drawImage(
+            this.currentSprite,
+            400 * this.frames,
+            0,
+            400,
+            576,
+            this.position.x, 
+            this.position.y, 
+            this.width, 
+            this.height,
+            this.position.x)
+    }
+
+    update() {
+        this.frames++
+        this.draw()
+    }
+}
+
 //defining platforms
 let platformImage
 let tPlatformImage
@@ -377,6 +416,7 @@ let particles = []
 let potions = []
 let coins = []
 let pads = []
+let abductions = []
 
 let coinsCollected = 0
 
@@ -385,10 +425,11 @@ let keys
 
 let scrollOffset
 let game
-let currentLevel = 5
+let currentLevel = 8
 
 let laserTimeOut = 0
 let jumpInt = 0
+let letAbduction = false
 
 function selectLevel(currentLevel) {
     switch (currentLevel) {
@@ -413,7 +454,15 @@ function selectLevel(currentLevel) {
         case 7: 
             goShop()
             break
+        case 8:
+            enterPage()
+            break
     }
+}
+
+async function abductionFunction() {
+        enterPageToad.style.display = "none"
+        letAbduction = true
 }
 
 async function claimCoinBtn() {
@@ -423,6 +472,13 @@ async function claimCoinBtn() {
 }
 
 async function gameResetLevel1() {
+    helpBtns.style.display = "none"
+    shopBtns.style.display = "none"
+    startGame.style.display = "none"
+    header.style.display = "block"
+    footer.style.display = "block"
+    enterPageToad.style.display = "none"
+
     currentLevel = 1
     player = new Player()
 
@@ -807,6 +863,8 @@ async function gameResetLevel1() {
         })
     ]
 
+    abductions = []
+
     scrollOffset = 0
 
     const platformsMap = ['plat', 'plat', 'plat', 'plat', 'plat', 'gap', 'plat', 'plat', 
@@ -863,6 +921,13 @@ async function gameResetLevel1() {
 }
 
 async function gameResetLevel2() {
+    helpBtns.style.display = "none"
+    shopBtns.style.display = "none"
+    startGame.style.display = "none"
+    header.style.display = "block"
+    footer.style.display = "block"
+    enterPageToad.style.display = "none"
+
     currentLevel = 2
     player = new Player()
 
@@ -1176,6 +1241,8 @@ async function gameResetLevel2() {
         })
     ]
 
+    abductions = []
+
     const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 
     'gap', 'gap', 'gap', 'gap', 'gap', 'plat', 'plat', 'gap', 'gap', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap',  'gap', 'plat', 
     'plat', 'plat', 'plat', 'plat', 'plat', 'plat' ]
@@ -1229,6 +1296,13 @@ async function gameResetLevel2() {
 }
 
 async function gameResetLevel3() {
+    helpBtns.style.display = "none"
+    shopBtns.style.display = "none"
+    startGame.style.display = "none"
+    header.style.display = "block"
+    footer.style.display = "block"
+    enterPageToad.style.display = "none"
+
     currentLevel = 3
     player = new Player()
 
@@ -1713,6 +1787,9 @@ async function gameResetLevel3() {
             image: createImage(hillsLevel3)
         })
     ]
+
+    abductions = []
+
     const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'plat', 'plat', 'plat','plat','gap',
      'gap', 'gap','gap', 'gap', 'gap','gap', 'gap', 'gap', 'gap', 'gap','gap', 'gap', 'gap','gap', 'gap', 'gap', 
      'gap', 'gap', 'plat','plat','plat','plat','plat','plat','plat']
@@ -1766,6 +1843,13 @@ async function gameResetLevel3() {
 }
 
 async function gameResetLevel4() {
+    helpBtns.style.display = "none"
+    shopBtns.style.display = "none"
+    startGame.style.display = "none"
+    header.style.display = "block"
+    footer.style.display = "block"
+    enterPageToad.style.display = "none"
+
     currentLevel = 4
     player = new Player()
 
@@ -2011,6 +2095,9 @@ async function gameResetLevel4() {
             image: createImage(hillsLevel4)
         })
     ]
+
+    abductions = []
+
     const platformsMap = ['plat', 'plat', 'plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap','plat','plat', 
     'plat', 'plat','plat','plat', 'gap', 'gap', 'gap', 'gap', 'gap', 'gap','gap', 'gap',
      'plat', 'plat', 'gap', 'gap','plat', 'plat', 'plat','plat','plat','plat']
@@ -2064,31 +2151,14 @@ async function gameResetLevel4() {
 }
 
 async function goHome() { 
-    currentLevel = 5
-
-    move()
-    loader.style.display = "block"
-    setTimeout(function(){
-        loader.style.display = "none"
-    }, 7500)
-
-    setTimeout(function(){
-            audioGameOver.audio.play()
-            player = new Player()
-    }, 7400)
-
-
     helpBtns.style.display = "none"
     shopBtns.style.display = "none"
+    startGame.style.display = "none"
+    header.style.display = "block"
+    footer.style.display = "block"
+    enterPageToad.style.display = "none"
 
-    keys = {
-        right: {
-            pressed: false
-        },
-        left: {
-            pressed: false
-        }
-    }
+    currentLevel = 5
 
     scrollOffset = 0
 
@@ -2103,21 +2173,7 @@ async function goHome() {
 
     platforms = [ 
         new Platform ({
-        x: 385,
-        y: 300,
-        image: createImage(help),
-        help: true,
-        block: true
-        }),
-         new Platform ({
         x: 485,
-        y: 300,
-        image: createImage(shop),
-        shop: true,
-        block: true
-        }),
-         new Platform ({
-        x: 585,
         y: 300,
         image: createImage(play),
         play: true,
@@ -2128,6 +2184,7 @@ async function goHome() {
     potions = []
     coins = []
     pads = []
+    abductions = []
 
     genericObjects = [
         new GenericObject({
@@ -2137,7 +2194,6 @@ async function goHome() {
         }),
     ]
     
-
     const platformsMap = ['plat', 'plat', 'plat']
 
     let platformDistance = 0
@@ -2158,6 +2214,13 @@ async function goHome() {
 }
 
 async function goHelp() {
+    helpBtns.style.display = "block"
+    shopBtns.style.display = "none"
+    startGame.style.display = "none"
+    header.style.display = "block"
+    footer.style.display = "block"
+    enterPageToad.style.display = "none"
+
     currentLevel = 6
     keys = {
         right: {
@@ -2167,9 +2230,6 @@ async function goHelp() {
             pressed: false
         }
     }
-
-    helpBtns.style.display = "block"
-    shopBtns.style.display = "none"
 
     scrollOffset = 0
 
@@ -2185,6 +2245,7 @@ async function goHelp() {
     potions = []
     coins = []
     pads = []
+    abductions = []
 
     genericObjects = [
         new GenericObject({
@@ -2216,6 +2277,13 @@ async function goHelp() {
 }
 
 async function goShop() {
+    helpBtns.style.display = "none"
+    shopBtns.style.display = "block"
+    startGame.style.display = "none"
+    header.style.display = "block"
+    footer.style.display = "block"
+    enterPageToad.style.display = "none"
+
     currentLevel = 7
 
     keys = {
@@ -2226,9 +2294,6 @@ async function goShop() {
             pressed: false
         }
     }
-
-    helpBtns.style.display = "none"
-    shopBtns.style.display = "block"
 
     scrollOffset = 0
 
@@ -2244,6 +2309,7 @@ async function goShop() {
     potions = []
     coins = []
     pads = []
+    abductions = []
 
     genericObjects = [
         new GenericObject({
@@ -2273,6 +2339,55 @@ async function goShop() {
     })
 }
 
+async function enterPage() {
+    helpBtns.style.display = "none"
+    shopBtns.style.display = "none"
+    startGame.style.display = "block"
+    header.style.display = "none"
+    footer.style.display = "none"
+
+    currentLevel = 8
+
+    player.position.x = 462
+
+    keys = {
+        right: {
+            pressed: false
+        },
+        left: {
+            pressed: false
+        }
+    }
+
+    scrollOffset = 0
+
+    game = {
+        disableUserInput: false
+    }
+
+    zombiez = []
+    particles = []
+    platforms = []
+    potions = []
+    coins = []
+    pads = []
+
+     abductions = [
+        new Abduction ({
+            x: 316,
+            y: 0
+        })
+    ]
+
+    genericObjects = [
+        new GenericObject({
+            x: 0,
+            y: 0,
+            image: createImage(enterPageBg)
+        }),
+    ]
+}
+
 function animate() {
     requestAnimationFrame(animate)
     c.fillStyle= 'white'
@@ -2281,11 +2396,21 @@ function animate() {
     const homeElem = document.querySelector('.home')
     const helpElem = document.querySelector('.help')
     const shopElem = document.querySelector('.shop')
+    const claimButton = document.querySelector('.claim')
+    const startGameButton = document.querySelector('.startBtn')
     
     homeElem.onclick = goHome
     helpElem.onclick = goHelp
     shopElem.onclick = goShop
-    claimBtn.onclick = claimCoinBtn
+    claimButton.onclick = claimCoinBtn
+    startGameButton.onclick = abductionFunction
+
+    if (currentLevel == 8) {
+        canvas.height = 750
+    }
+    else {
+        canvas.height = 576
+    }
 
     genericObjects.forEach(genericObject => {
         genericObject.update()
@@ -2321,6 +2446,7 @@ function animate() {
             selectLevel(currentLevel + 1)
             }                
         })
+
 
     //Toad potion powerup
     potions.forEach((potion, i) => {
@@ -2436,6 +2562,17 @@ function animate() {
         }
     })
 
+    abductions.forEach(abduction => {
+        if (letAbduction == true){
+        abduction.update()
+        letAbduction == false
+      
+        setTimeout(() => {
+            goHome() 
+        }, 4225)
+        }
+    })
+
     particles.forEach((particle, i) => {
         particle.update()
 
@@ -2450,7 +2587,7 @@ function animate() {
     {
         player.update()
     }
-
+    
     if (game.disableUserInput) return
 
     //scrolling code start
@@ -2458,16 +2595,16 @@ function animate() {
     //left and right movement 
     if (
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.right.pressed && player.position.x < 400) ||
-        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.right.pressed && player.position.x < 935) 
+        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7 || currentLevel == 8) && keys.right.pressed && player.position.x < 935) 
     ) {
         player.velocity.x = player.speed
     } else if (
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.left.pressed && player.position.x > 100) || 
-        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.left.pressed && player.position.x > 0) ||
+        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7 || currentLevel == 8) && keys.left.pressed && player.position.x > 0) ||
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
-        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
+        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7 || currentLevel == 8) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250) ||
-        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
+        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7 || currentLevel == 8) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
     ) {
         player.velocity.x = -player.speed
     } else {
@@ -2614,21 +2751,6 @@ function animate() {
                 audioGameOver.audio.play()
                 player.velocity.y = -player.velocity.y
                 selectLevel(currentLevel = 1)
-
-            }
-        if ((currentLevel == 5) && platform.shop && hitBottomOfPlatform({
-                object: player,
-                platform
-            })) {
-                player.velocity.y = -player.velocity.y
-                selectLevel(currentLevel = 7)
-            }
-        if ((currentLevel == 5) && platform.help && hitBottomOfPlatform({
-                object: player,
-                platform
-            })) {
-                player.velocity.y = -player.velocity.y
-                selectLevel(currentLevel = 6)
             }
 
         //particle bounce

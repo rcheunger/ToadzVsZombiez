@@ -18,11 +18,11 @@ contract Collection is ERC721Enumerable, Ownable {
     using Strings for uint256;
     string public baseURI;
     string public baseExtension = ".json";
-    uint256 public maxSupply = 1000;
+    uint256 public maxSupply = 4444;
     uint256 public maxMintAmount = 50;
     bool public paused = false;
 
-    constructor() ERC721("ToadzVsZombiezNFT", "Toadz Collection") {}
+    constructor() ERC721("ToadzVsZombiez", "Toadz") {}
 
     function addCurrency(
         IERC20 _paytoken,
@@ -37,7 +37,7 @@ contract Collection is ERC721Enumerable, Ownable {
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
-    return "ipfs://Qmc98e3znSrLw82c63cR5pCUcE9sXyPaC8ZQKZiztkvoKT/";
+    return "ipfs://QmRdgnZqpsTYWm8asFW1rKpqpisih19oSyQ8qquKbJNQLy/";
 
     }
 

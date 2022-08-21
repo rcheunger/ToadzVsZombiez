@@ -1,73 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
 body {
-  margin: 25px;
+  margin-top: 25px;
   background-color: black;
   flex-direction: column;
+  display: flex;
 }
 
 
 canvas{
   display: block;
   font-size: 0;
+  margin: 0 auto;
 }
 
-.loader {
-  width: 1024px;
-  height: 576px;
-  top: 100px;
+
+/* --enter page-- */
+
+
+.toadJump {
   position: absolute;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('../img/homePage/LOADING.png');
+  width: 89px;
+  top: 343px;
+  left: 501px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.startBtn {
+  position: absolute;
+  top: 659px;
+  left: 427px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.startBtn:hover {
+  transform: scale(1.03);
+  opacity: 80%;
 }
 
 /* --header-- */
 
-.headerimg {
-  display: block;
+
+.header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-.header .footer {
-  display: block;
-  position: relative;
-  top: 0;
-  left: 0;
-  margin: 0;
+.headerimg {
+  display: flex;
 }
 
 .home {
   position: absolute;
-  top: 45px;
-  left: 45px;
+  top: 20px;
+  left: 20px;
   cursor: pointer
 }
 
 .help {
   position: absolute;
-  top: 45px;
-  left: 95px;
+  top: 20px;
+  left: 70px;
   cursor: pointer
 }
 
 .shop {
   position: absolute;
-  top: 45px;
-  left: 145px;
+  top: 20px;
+  left: 120px;
   cursor: pointer
 }
 
 .coinz {
   position: absolute;
-  top: 45px;
-  left: 195px;
+  top: 20px;
+  left: 170px;
 }
 
 span {
   position: absolute;
-  top: 56px;
-  left: 213px;
+  top: 31px;
+  left: 187px;
   font-size: larger;
   font-weight: bolder;
   font-family: Arial, Helvetica, sans-serif;
@@ -76,15 +102,15 @@ span {
 
 .claim {
   position: absolute;
-  top: 50px;
-  left: 740px;
+  top: 25px;
+  left: 715px;
   cursor: pointer
 }
 
 .claimCoinz {
   position: absolute;
-  top: 55px;
-  left: 782px;
+  top: 30px;
+  left: 757px;
   font-size: larger;
   font-weight: bolder;
   font-family: 'Concert One', cursive;
@@ -95,15 +121,15 @@ span {
 
 .account {
   position: absolute;
-  top: 50px;
-  left: 890px;
+  top: 25px;
+  left: 865px;
   cursor: pointer
 }
 
 h4 {
   position: absolute;
-  top: 29px;
-  left: 920px;
+  top: 4px;
+  left: 895px;
   font-size: larger;
   font-weight: bolder;
   font-family: 'Concert One', cursive;
@@ -113,294 +139,180 @@ h4 {
 }
 
 /* --helpbuttons-- */
+.helpBtns {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
 .b1 {
   position: absolute;
-  top: 327px;
-  left: 65px;
+  top: 227px;
+  right: 230px;
 }
 
 .b1txt {
   position: absolute;
-  top: 332px;
-  left: 75px;
+  top: 232px;
+  right: 379px;
   font-size: 13px;
 }
 
 .b2 {
   position: absolute;
-  top: 385px;
-  left: 65px;
+  top: 285px;
+  right: 230px;
 }
 
 .b2txt {
   position: absolute;
-  top: 390px;
-  left: 75px;
+  top: 290px;
+  right: 246px;
   font-size: 13px;
 }
 
 .b3 {
   position: absolute;
-  top: 440px;
-  left: 65px;
+  top: 340px;
+  right: 230px;
 }
 
 .b3txt {
   position: absolute;
-  top: 445px;
-  left: 75px;
+  top: 345px;
+  right: 430px;
   font-size: 13px;
 }
 
 .b4 {
   position: absolute;
-  top: 498px;
-  left: 65px;
+  top: 398px;
+  right: 230px;
 }
 
 .b4txt {
   position: absolute;
-  top: 503px;
-  left: 75px;
+  top: 403px;
+  right: 423px;
   font-size: 13px;
 }
 
 .b5 {
   position: absolute;
-  top: 308px;
-  left: 386px;
+  top: 208px;
+  right: -155px;
   cursor: pointer;
 }
 
 .b6 {
   position: absolute;
-  top: 327px;
-  left: 756px;
+  top: 227px;
+  left: 216px;
 }
 
 .b6txt {
   position: absolute;
-  top: 333px;
-  left: 762px;
+  top: 234px;
+  left: 222px;
   font-size: 11.5px;
 }
 
 .b7 {
   position: absolute;
-  top: 385px;
-  left: 756px;
+  top: 285px;
+  left: 216px;
 }
 
 .b7txt {
   position: absolute;
-  top: 391px;
-  left: 766px;
+  top: 291px;
+  left: 224px;
   font-size: 13px;
 }
 
 .b8 {
   position: absolute;
-  top: 440px;
-  left: 756px;
+  top: 340px;
+  left: 216px;
 }
 
 .b8txt {
   position: absolute;
-  top: 446px;
-  left: 766px;
+  top: 346px;
+  left: 224px;
   font-size: 13px;
 }
 
 /* --shopbuttons-- */
+.shopBtns {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
 .b9 {
   position: absolute;
-  top: 125px;
-  left: 765px;
+  top: 30px;
+  left: 230px;
   cursor: pointer
 }
 
-.nft1 {
-  height: 150px;
+.nft {
+  height: 175px;
   position: absolute;
-  top: 225px;
-  left: 335px;
-  cursor: pointer;
-  box-shadow: -7px 7px black;
-  border: 3px solid black;
-}
-.nft2 {
-  height: 150px;
-  position: absolute;
-  top: 225px;
-  left: 535px;
-  cursor: pointer;
-  box-shadow: -7px 7px black;
-  border: 3px solid black;
-}
-.nft3 {
-  height: 150px;
-  position: absolute;
-  top: 425px;
-  left: 335px;
-  cursor: pointer;
-  box-shadow: -7px 7px black;
-  border: 3px solid black;
-}
-.nft4 {
-  height: 150px;
-  position: absolute;
-  top: 425px;
-  left: 535px;
+  top: 180px;
+  left: -90px;
   cursor: pointer;
   box-shadow: -7px 7px black;
   border: 3px solid black;
 }
 
-.nft1txt {
-  position: absolute;
-  top: 388px;
-  left: 343px;
-  font-size: larger;
-  font-weight: bolder;
-  font-family: 'Concert One', cursive;
-  color: white;
-  text-shadow: -2px 2px black;
+.nft:hover {
+  transform: scale(1.05);
+  opacity: 80%;
 }
 
-.nft2txt {
-  position: absolute;
-  top: 388px;
-  left: 542px;
-  font-size: larger;
-  font-weight: bolder;
-  font-family: 'Concert One', cursive;
-  color: white;
-  text-shadow: -2px 2px black;
-}
 
-.nft3txt {
+.nfttxt {
   position: absolute;
-  top: 588px;
-  left: 339px;
-  font-size: larger;
+  top: 380px;
+  left: -107px;
+  font-size: x-large;
   font-weight: bolder;
   font-family: 'Concert One', cursive;
   color: white;
-  text-shadow: -2px 2px black;
-}
-
-.nft4txt {
-  position: absolute;
-  top: 588px;
-  left: 535px;
-  font-size: larger;
-  font-weight: bolder;
-  font-family: 'Concert One', cursive;
-  color: white;
-  text-shadow: -2px 2px black;
+  text-shadow: -3px 3px black;
 }
 
 /* --footer-- */
+.footer {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.footerimg {
+  display: flex;
+}
 
 .twitter {
   position: absolute;
-  top: 685px;
-  left: 950px;
+  bottom: 12px;
+  left: 922px;
   cursor: pointer
 }
 
 .email {
   position: absolute;
-  top: 686px;
-  left: 990px;
+  bottom: 13px;
+  left: 962px;
   cursor: pointer
 }  
-
-/*-- Loading animation below --*/
-
-#loader-wrapper {
-  width: 1024px;
-}
-
-#myProgress {
-  position: absolute;
-  display:flex;
-  align-items: center;
-  width: 400px;
-  background-color: grey;
-  top: 612px;
-  left: 340px;
-  right: 340px;
-  border-radius: 25px;
-  border: 3px solid black;
-  box-shadow: 0px 2px 5px black;
-}
-
-#myBar {
-  width: 1%;
-  height: 20px;
-  border-radius: 25px;
-}
-
-#myBar > span {
-  display: block;
-  height: 100%;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: rgb(43, 194, 83);
-  background-image: linear-gradient(
-    center bottom,
-    rgb(43, 194, 83) 37%,
-    rgb(84, 240, 84) 69%
-  );
-  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
-    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
-  position: relative;
-  overflow: hidden;
-  left: 0px;
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
-}
-
-#myBar > span:after,
-.animate > span > span {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-image: linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.2) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0.2) 75%,
-    transparent 75%,
-    transparent
-  );
-  z-index: 1;
-  background-size: 50px 50px;
-  animation: move 2s linear infinite;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.animate > span:after {
-  display: none;
-}
-
-@keyframes move {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 50px 50px;
-  }
-}
