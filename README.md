@@ -23,7 +23,8 @@ Development Tools used:
 -hardhat
 -ipfs
 -polygon faucet
--polygon mumbai testbet network
+-polygon mumbai testnet network
+-heroku
 
 Design Tools used:
 -adobe photoshop
