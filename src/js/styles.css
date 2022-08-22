@@ -246,6 +246,15 @@ h4 {
   font-size: 13px;
 }
 
+.b9txt {
+  position: absolute;
+  font-weight: bold;
+  top: 508px;
+  left: -110px;
+  font-size: 14px;
+  color: rgb(252, 249, 232);
+}
+
 /* --shopbuttons-- */
 .shopBtns {
   display: flex;
