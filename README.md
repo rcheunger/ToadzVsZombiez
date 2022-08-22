@@ -22,7 +22,6 @@ Development Tools used:
 -remix
 -hardhat
 -ipfs
--AWS
 -polygon faucet
 -polygon mumbai testbet network
 

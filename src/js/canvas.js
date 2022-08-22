@@ -17,7 +17,7 @@ let gravity = 0.5
 
 class Player {
     constructor() {
-        this.speed = 10
+        this.speed = 9
         this.position = {
             x: 100,
             y: 100
@@ -461,8 +461,9 @@ async function abductionFunction() {
     letAbduction = true
 
     setTimeout(()=> {
-        audioGameOver.audio.play()  
-      },4100)
+        goHome()
+        selectLevel(currentLevel == 5)
+      },4500)
 }
 
 async function claimCoinBtn() {
@@ -2130,6 +2131,9 @@ async function goHome() {
 
     currentLevel = 5
 
+    player = new Player()
+    audioGameOver.audio.play()  
+
     scrollOffset = 0
 
     game = {
@@ -2360,7 +2364,7 @@ function animate() {
     helpElem.onclick = goHelp
     shopElem.onclick = goShop
     claimButton.onclick = claimCoinBtn
-    startGameButton.onclick = abductionFunction
+    startGameButton.onclick = abductionFunction 
 
     if (currentLevel == 8) {
         canvas.height = 750
@@ -2526,9 +2530,6 @@ function animate() {
         if (letAbduction == true){
         abduction.update()
         letAbduction == false
-        setTimeout(() => {
-            goHome() 
-        }, 4225)
         }
     })
 
