@@ -398,7 +398,6 @@ class Abduction {
     }
 }
 
-//defining platforms
 let platformImage
 let tPlatformImage
 let xtPlatformImage
@@ -418,18 +417,15 @@ let coins = []
 let pads = []
 let abductions = []
 
-let coinsCollected = 0
-
 let lastKey
 let keys 
-
 let scrollOffset
 let game
+let coinsCollected = 0
 let currentLevel = 8
-
 let laserTimeOut = 0
 let jumpInt = 0
-let letAbduction = false
+let letAbduction 
 
 function selectLevel(currentLevel) {
     switch (currentLevel) {
@@ -461,8 +457,12 @@ function selectLevel(currentLevel) {
 }
 
 async function abductionFunction() {
-        enterPageToad.style.display = "none"
-        letAbduction = true
+    enterPageToad.style.display = "none"
+    letAbduction = true
+
+    setTimeout(()=> {
+        audioGameOver.audio.play()  
+      },4100)
 }
 
 async function claimCoinBtn() {
@@ -472,13 +472,6 @@ async function claimCoinBtn() {
 }
 
 async function gameResetLevel1() {
-    helpBtns.style.display = "none"
-    shopBtns.style.display = "none"
-    startGame.style.display = "none"
-    header.style.display = "block"
-    footer.style.display = "block"
-    enterPageToad.style.display = "none"
-
     currentLevel = 1
     player = new Player()
 
@@ -921,13 +914,6 @@ async function gameResetLevel1() {
 }
 
 async function gameResetLevel2() {
-    helpBtns.style.display = "none"
-    shopBtns.style.display = "none"
-    startGame.style.display = "none"
-    header.style.display = "block"
-    footer.style.display = "block"
-    enterPageToad.style.display = "none"
-
     currentLevel = 2
     player = new Player()
 
@@ -1296,13 +1282,6 @@ async function gameResetLevel2() {
 }
 
 async function gameResetLevel3() {
-    helpBtns.style.display = "none"
-    shopBtns.style.display = "none"
-    startGame.style.display = "none"
-    header.style.display = "block"
-    footer.style.display = "block"
-    enterPageToad.style.display = "none"
-
     currentLevel = 3
     player = new Player()
 
@@ -1843,13 +1822,6 @@ async function gameResetLevel3() {
 }
 
 async function gameResetLevel4() {
-    helpBtns.style.display = "none"
-    shopBtns.style.display = "none"
-    startGame.style.display = "none"
-    header.style.display = "block"
-    footer.style.display = "block"
-    enterPageToad.style.display = "none"
-
     currentLevel = 4
     player = new Player()
 
@@ -1867,7 +1839,6 @@ async function gameResetLevel4() {
     game = {
         disableUserInput: false
     }
-
 
    platformImage = await createImageAsync(platform)
    tPlatformImage = await createImageAsync(tPlatform)
@@ -1957,7 +1928,6 @@ async function gameResetLevel4() {
             y: 281,
             image: xtPlatformImage,
         }),
-
     ]
     
     zombiez = [
@@ -2153,9 +2123,9 @@ async function gameResetLevel4() {
 async function goHome() { 
     helpBtns.style.display = "none"
     shopBtns.style.display = "none"
-    startGame.style.display = "none"
     header.style.display = "block"
     footer.style.display = "block"
+    startGame.style.display = "none"
     enterPageToad.style.display = "none"
 
     currentLevel = 5
@@ -2216,10 +2186,6 @@ async function goHome() {
 async function goHelp() {
     helpBtns.style.display = "block"
     shopBtns.style.display = "none"
-    startGame.style.display = "none"
-    header.style.display = "block"
-    footer.style.display = "block"
-    enterPageToad.style.display = "none"
 
     currentLevel = 6
     keys = {
@@ -2234,7 +2200,7 @@ async function goHelp() {
     scrollOffset = 0
 
     game = {
-        disableUserInput: false
+        disableUserInput: true
     }
 
     platformImage = await createImageAsync(platformLevel3)
@@ -2279,10 +2245,6 @@ async function goHelp() {
 async function goShop() {
     helpBtns.style.display = "none"
     shopBtns.style.display = "block"
-    startGame.style.display = "none"
-    header.style.display = "block"
-    footer.style.display = "block"
-    enterPageToad.style.display = "none"
 
     currentLevel = 7
 
@@ -2298,7 +2260,7 @@ async function goShop() {
     scrollOffset = 0
 
     game = {
-        disableUserInput: false
+        disableUserInput: true
     }
 
     platformImage = await createImageAsync(platformLevel2)
@@ -2340,12 +2302,6 @@ async function goShop() {
 }
 
 async function enterPage() {
-    helpBtns.style.display = "none"
-    shopBtns.style.display = "none"
-    startGame.style.display = "block"
-    header.style.display = "none"
-    footer.style.display = "none"
-
     currentLevel = 8
 
     player.position.x = 462
@@ -2362,7 +2318,7 @@ async function enterPage() {
     scrollOffset = 0
 
     game = {
-        disableUserInput: false
+        disableUserInput: true
     }
 
     zombiez = []
@@ -2393,6 +2349,7 @@ function animate() {
     c.fillStyle= 'white'
     c.fillRect(0, 0, canvas.width, canvas.height)
 
+
     const homeElem = document.querySelector('.home')
     const helpElem = document.querySelector('.help')
     const shopElem = document.querySelector('.shop')
@@ -2422,6 +2379,7 @@ function animate() {
        platform.velocity.x = 0
     })
 
+    
     pads.forEach(pad => {
         if 
         (currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4)
@@ -2429,7 +2387,7 @@ function animate() {
             pad.update() 
             pad.velocity.x = 0   
         }             
-
+        //end of level pad detection -> go to next level
         if (isOnTopOfPad({
                     object: player,
                     pad
@@ -2535,6 +2493,7 @@ function animate() {
                 }))
             }
             audioZombieDeath.audio.play()
+            //player boost on zombie squish
             player.velocity.y -=`25`
             setTimeout(() => {
                 zombiez.splice(index, 1)   
@@ -2562,20 +2521,20 @@ function animate() {
         }
     })
 
+    //start game abduction 
     abductions.forEach(abduction => {
         if (letAbduction == true){
         abduction.update()
         letAbduction == false
-      
         setTimeout(() => {
             goHome() 
         }, 4225)
         }
     })
 
+    //particle creation
     particles.forEach((particle, i) => {
         particle.update()
-
         if (particle.laser && (particle.position.x - particle.radius >= canvas.width 
             || particle.position.x + particle.radius <= 0)) 
         setTimeout(() => {
@@ -2595,16 +2554,16 @@ function animate() {
     //left and right movement 
     if (
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.right.pressed && player.position.x < 400) ||
-        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7 || currentLevel == 8) && keys.right.pressed && player.position.x < 935) 
+        ((currentLevel == 5) && keys.right.pressed && player.position.x < 935) 
     ) {
         player.velocity.x = player.speed
     } else if (
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.left.pressed && player.position.x > 100) || 
-        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7 || currentLevel == 8) && keys.left.pressed && player.position.x > 0) ||
+        ((currentLevel == 5) && keys.left.pressed && player.position.x > 0) ||
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
-        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7 || currentLevel == 8) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
+        ((currentLevel == 5) && keys.left.pressed && scrollOffset === 0 && player.position.x > 0) ||
         ((currentLevel == 1 || currentLevel == 2 || currentLevel == 3 || currentLevel == 4) && keys.right.pressed && scrollOffset === 13250 && player.position.x > 13250) ||
-        ((currentLevel == 5 || currentLevel == 6 || currentLevel == 7 || currentLevel == 8) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
+        ((currentLevel == 5) && keys.right.pressed && scrollOffset === 0 && player.position.x > 934)
     ) {
         player.velocity.x = -player.speed
     } else {
@@ -2616,7 +2575,6 @@ function animate() {
             for (let i = 0; i < platforms.length; i++) {
                 const platform = platforms[i]
                 platform.velocity.x = -player.speed
-        
                 if (
                   platform.block &&
                   hitSideOfPlatform({
@@ -2627,7 +2585,6 @@ function animate() {
                   platforms.forEach((platform) => {
                     platform.velocity.x = 0
                   })
-
                 hitSide = true
                 break
                 }
@@ -2639,23 +2596,18 @@ function animate() {
         genericObjects.forEach((genericObject) => {
           genericObject.velocity.x = -player.speed * 0.66
         })
-
             zombiez.forEach((zombie) => {
                 zombie.position.x -= player.speed
             })
-
             potions.forEach((potion) => {
                 potion.position.x -= player.speed
             })
-
             coins.forEach((coin) => {
                 coin.position.x -= player.speed
             })
-
             particles.forEach((particle) => {
                 particle.position.x -= player.speed
             })
-
             pads.forEach((pad) => {
                 pad.position.x -= player.speed
              })
@@ -2753,7 +2705,7 @@ function animate() {
                 selectLevel(currentLevel = 1)
             }
 
-        //particle bounce
+        //particle bounce off platforms
         particles.forEach((particle, index) => {
                 if (
                     isOnTopOfPlatformCircle({
@@ -2766,12 +2718,11 @@ function animate() {
                 if (particle.radius - 0.4 < 0) particles.splice(index, 1)
                 else particle.radius -= 0.4
             } 
-
                 if ( particle.ttl < 0)
                     particles.splice(index, 1)
         })
-        
 
+        //zombie platform detection
         zombiez.forEach(zombie => {
             if (isOnTopOfPlatform({
                 object: zombie,
@@ -2780,6 +2731,7 @@ function animate() {
             zombie.velocity.y = 0
         })
 
+        //potion platform detection
         potions.forEach(potion => {
             if (isOnTopOfPlatform({
                 object: potion,
@@ -2789,18 +2741,13 @@ function animate() {
         })
     })       
 
-
-  //win con
-    if (platformImage && scrollOffset + 400 + player.width > 13215) {
-    }
-
-    //lose con
+    //player falls off map (lose con)
     if (player.position.y > canvas.height) {
         audioGameOver.audio.play()
         selectLevel(currentLevel)
     }
 
-    //Sprite Switching
+    //sprite Switching
     if (player.velocity.y !== 0) return
 
     if (keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.run.right) {
@@ -2813,7 +2760,7 @@ function animate() {
         player.currentSprite = player.sprites.stand.right
     } 
 
-    //cyclops(potion) sprites
+    //cyclops (potion) sprites
     if (!player.powerUps.potion) return
     if (keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.run.potion.right) {
         player.currentSprite = player.sprites.run.potion.right
@@ -2827,21 +2774,13 @@ function animate() {
 }
 
 selectLevel(currentLevel)
-//gameResetLevel0()
-//gameResetLevel1()
-//gameResetLevel2()
-//gameResetLevel3()
-//gameResetLevel4()
 animate()
 
 // down key listener (asdw)
 addEventListener('keydown', ({ keyCode }) => {
     if (game.disableUserInput) return
-
     switch (keyCode) {
         case 13:
-            //(selectLevel(currentLevel - 3))
-            // lastKey = 'enter'
             break
         
         case 65:
@@ -2869,24 +2808,21 @@ addEventListener('keydown', ({ keyCode }) => {
             else
             player.currentSprite = player.sprites.jump.left
 
-            if (!player.powerUps.potion) break
+            if (!player.powerUps.potion) 
+            break
 
             if (lastKey === 'right') 
             player.currentSprite = player.sprites.jump.potion.right
             else
             player.currentSprite = player.sprites.jump.potion.left
-
             break
 
         case 32:
             if (!player.powerUps.potion) return
             if (laserTimeOut == 0) {
-
                 audioLaser.audio.play()
-        
                 let velocity = 60
                 if (lastKey === 'left') velocity = -60
-        
                 particles.push(new Particle({
                     position: {
                         x: player.position.x + player.width / 2,
